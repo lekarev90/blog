@@ -1,7 +1,11 @@
 type Mods = Record<string, string | boolean>;
 
-
-export const classNames = (className: string, mods: Mods, additional: string[]) => {
+interface classNamesProps {
+    className: string;
+    mods?: Mods;
+    additional?: string[]
+}
+export const classNames = ({className, mods = {}, additional = []}: classNamesProps) => {
     return [
         className,
         ...additional,
