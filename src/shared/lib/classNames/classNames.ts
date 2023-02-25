@@ -1,11 +1,11 @@
-type Mods = Record<string, string | boolean>;
+type Mods = Record<string, string | boolean>
 
 interface classNamesProps {
-    className: string;
-    mods?: Mods;
+    className: string
+    mods?: Mods
     additional?: string[]
 }
-export const classNames = ({className, mods = {}, additional = []}: classNamesProps) => {
+export const classNames = ({ className, mods = {}, additional = [] }: classNamesProps): string => {
     return [
         className,
         ...additional,
@@ -17,4 +17,4 @@ export const classNames = ({className, mods = {}, additional = []}: classNamesPr
                 return acc
             }, [])
     ].join(' ')
-};
+}
