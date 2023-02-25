@@ -1,0 +1,11 @@
+{
+  "hide": "Скрыть",
+  "loading": "Загрузка...",
+  "mainPage": "Главная",
+  "navbar": {
+    "menu": {
+      "aboutUs": "О нас"
+    }
+  },
+  "switchLanguage": "RU"
+}
