@@ -11,5 +11,9 @@
       "mainText": "Такой страницы не существует"
     }
   },
-  "switchLanguage": "RU"
+  "switchLanguage": "RU",
+  "errorPage": {
+    "mainTitle": "Что-то сломалось",
+    "reloadButtonText": "Перезагрузить страницу"
+  }
 }
