@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { type FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
@@ -10,7 +10,7 @@ interface SidebarProps {
     className?: string
 }
 
-export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
+export const Sidebar: FC<SidebarProps> = ({ className }) => {
     const [collapsed, setCollapsed] = useState(false)
     const { t } = useTranslation()
 

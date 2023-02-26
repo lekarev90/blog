@@ -1,10 +1,14 @@
 {
   "hide": "Скрыть",
-  "loading": "Загрузка...",
   "mainPage": "Главная",
   "navbar": {
     "menu": {
       "aboutUs": "О нас"
+    }
+  },
+  "notFoundPage": {
+    "body": {
+      "mainText": "Такой страницы не существует"
     }
   },
   "switchLanguage": "RU"

@@ -1,10 +1,14 @@
 {
   "hide": "Hide",
-  "loading": "Loading...",
   "mainPage": "Main",
   "navbar": {
     "menu": {
       "aboutUs": "About us"
+    }
+  },
+  "notFoundPage": {
+    "body": {
+      "mainText": "This page doesn't exist"
     }
   },
   "switchLanguage": "ENG"

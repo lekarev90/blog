@@ -1,15 +1,20 @@
+import { type RouteProps } from 'react-router-dom'
+
 import { AboutPage } from 'pages/AboutPage'
 import { MainPage } from 'pages/MainPage'
-import { type RouteProps } from 'react-router-dom'
+import { NotFoundPage } from 'pages/NotFoundPage'
 
 export enum AppRoutes {
     MAIN = 'main',
-    ABOUT = 'about'
+    ABOUT = 'about',
+
+    NOT_FOUND = '404'
 }
 
 export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about'
+    [AppRoutes.ABOUT]: '/about',
+    [AppRoutes.NOT_FOUND]: '*'
 }
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
@@ -20,5 +25,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.ABOUT]: {
         path: RouterPath.about,
         element: <AboutPage />
+    },
+    [AppRoutes.NOT_FOUND]: {
+        path: RouterPath['404'],
+        element: <NotFoundPage />
     }
 }

@@ -1,12 +1,13 @@
+import { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonVariants } from 'shared/ui/Button/Button'
 
 import styles from './LangSwitcher.module.scss'
 
-export const LangSwitcher = () => {
+export const LangSwitcher: FC = () => {
     const { t, i18n } = useTranslation()
 
-    const onToggleLang = () => {
+    const onToggleLang = (): void => {
         const isRu = i18n.language === 'ru'
 
         void i18n.changeLanguage(isRu ? 'en' : 'ru')
