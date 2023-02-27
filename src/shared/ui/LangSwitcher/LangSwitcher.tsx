@@ -14,6 +14,7 @@ export const LangSwitcher: FC = () => {
     }
     return (
         <Button variant={ButtonVariants.CLEAR}
+            /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
             onClick={onToggleLang}
             className={styles.button}
         >
