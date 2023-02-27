@@ -7,10 +7,10 @@ import styles from './LangSwitcher.module.scss'
 export const LangSwitcher: FC = () => {
     const { t, i18n } = useTranslation()
 
-    const onToggleLang = (): void => {
+    const onToggleLang = async (): Promise<void> => {
         const isRu = i18n.language === 'ru'
 
-        void i18n.changeLanguage(isRu ? 'en' : 'ru')
+        await i18n.changeLanguage(isRu ? 'en' : 'ru')
     }
     return (
         <Button variant={ButtonVariants.CLEAR}
