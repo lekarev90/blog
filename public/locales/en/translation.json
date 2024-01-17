@@ -1,5 +1,8 @@
 {
-  "hide": "Hide",
+  "errorPage": {
+    "mainTitle": "Something broke",
+    "reloadButtonText": "Reload page"
+  },
   "mainPage": "Main",
   "navbar": {
     "menu": {
@@ -10,6 +13,10 @@
     "body": {
       "mainText": "This page doesn't exist"
     }
+  },
+  "sidebar": {
+    "hide": "<",
+    "open": ">"
   },
   "switchLanguage": "ENG"
 }

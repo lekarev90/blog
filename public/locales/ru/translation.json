@@ -1,5 +1,8 @@
 {
-  "hide": "Скрыть",
+  "errorPage": {
+    "mainTitle": "Что-то сломалось",
+    "reloadButtonText": "Перезагрузить страницу"
+  },
   "mainPage": "Главная",
   "navbar": {
     "menu": {
@@ -11,9 +14,9 @@
       "mainText": "Такой страницы не существует"
     }
   },
-  "switchLanguage": "RU",
-  "errorPage": {
-    "mainTitle": "Что-то сломалось",
-    "reloadButtonText": "Перезагрузить страницу"
-  }
+  "sidebar": {
+    "hide": "<",
+    "open": ">"
+  },
+  "switchLanguage": "RU"
 }

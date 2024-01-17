@@ -23,5 +23,6 @@
     "./config/jest/testSetup.ts",
     "**/*.ts",
     "**/*.tsx",
-  ]
+  ],
+  "strictBindCallApply": true
 }

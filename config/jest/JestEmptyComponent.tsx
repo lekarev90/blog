@@ -1,5 +1,5 @@
-import React, { type FC } from 'react'
+import React, { type FC } from 'react';
 
-const JestEmptyComponent: FC = () => <div />
+const JestEmptyComponent: FC = () => <div />;
 
-export default JestEmptyComponent
+export default JestEmptyComponent;

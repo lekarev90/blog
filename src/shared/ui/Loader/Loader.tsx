@@ -1,10 +1,6 @@
-import { type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { type FC } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
 
-import './Loader.scss'
+import './Loader.scss';
 
-export const Loader: FC = () => {
-    return (
-        <span className={classNames({ className: 'loader' })}></span>
-    )
-}
+export const Loader: FC = () => <span className={classNames({ className: 'loader' })} />;

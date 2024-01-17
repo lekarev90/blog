@@ -1,20 +1,20 @@
-type Mods = Record<string, string | boolean>
-
 interface classNamesProps {
-    className: string
-    mods?: Mods
-    additional?: string[]
+  className: string;
+  mods?: Record<string, string | boolean>;
+  additional?: string[];
 }
-export const classNames = ({ className, mods = {}, additional = [] }: classNamesProps): string => {
-    return [
-        className,
-        ...additional,
-        ...Object.entries(mods)
-            .reduce((acc, [className, value]) => {
-                if (value) {
-                    acc.push(className)
-                }
-                return acc
-            }, [])
-    ].join(' ')
-}
+
+export const classNames = ({ className, mods = {}, additional = [] }: classNamesProps): string => [
+  className,
+  ...additional,
+  ...Object.entries(mods).reduce(
+    (acc, [className, value]) => {
+      if (value) {
+        acc.push(className);
+      }
+
+      return acc;
+    },
+    [],
+  ),
+].join(' ');
