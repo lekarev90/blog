@@ -15,4 +15,5 @@ declare module '*.svg' {
   export default SVG;
 }
 
+// eslint-disable-next-line no-underscore-dangle,no-unused-vars
 declare const __IS_DEV__: boolean;
