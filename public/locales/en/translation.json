@@ -5,6 +5,7 @@
   },
   "mainPage": "Main",
   "navbar": {
+    "empty": "text/",
     "menu": {
       "aboutUs": "About us"
     }

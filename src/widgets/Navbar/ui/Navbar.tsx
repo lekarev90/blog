@@ -15,18 +15,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   return (
     <div className={classNames({ className: styles.container, additional: [className] })}>
       <div className={styles.links}>
-        <AppLink
-          color={AppLinkColor.SECONDARY}
-          to="/"
-        >
-          {t('translation:mainPage')}
-        </AppLink>
-        <AppLink
-          color={AppLinkColor.SECONDARY}
-          to="/about"
-        >
-          {t('translation:navbar.menu.aboutUs')}
-        </AppLink>
+        {t('translation:navbar.empty')}
       </div>
     </div>
   );

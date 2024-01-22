@@ -5,6 +5,7 @@
   },
   "mainPage": "Главная",
   "navbar": {
+    "empty": "/",
     "menu": {
       "aboutUs": "О нас"
     }
