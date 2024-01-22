@@ -5,10 +5,13 @@ import { MemoryRouter } from 'react-router-dom';
 import i18nTestConfig from 'shared/config/i18n/i18nTest.config';
 
 export interface IComponentRouter {
-  route?: string
+  route?: string;
 }
 
-export const componentRender = (Component: ReactNode, options: IComponentRouter = {}): RenderResult => {
+export const componentRender = (
+  Component: ReactNode,
+  options: IComponentRouter = {},
+): RenderResult => {
   const { route = '/' } = options;
 
   return render(<MemoryRouter initialEntries={[route]}>
