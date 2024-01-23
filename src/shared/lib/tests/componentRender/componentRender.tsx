@@ -14,9 +14,11 @@ export const componentRender = (
 ): RenderResult => {
   const { route = '/' } = options;
 
-  return render(<MemoryRouter initialEntries={[route]}>
-    <I18nextProvider i18n={i18nTestConfig}>
-      {Component}
-    </I18nextProvider>
-  </MemoryRouter>);
+  // eslint-disable-next-line function-paren-newline
+  return render(
+    <MemoryRouter initialEntries={[route]}>
+      <I18nextProvider i18n={i18nTestConfig}>
+        {Component}
+      </I18nextProvider>
+    </MemoryRouter>);
 };
