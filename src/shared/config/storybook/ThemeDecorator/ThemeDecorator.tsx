@@ -7,6 +7,8 @@ import { classNames } from '../../../lib/classNames/classNames';
 export const ThemeDecorator = (Story: Story, context: StoryContext) => {
   const { globals: { theme } } = context;
 
+  document.documentElement.dataset.theme = theme;
+
   return (
     <ThemeProvider>
       <div className={classNames({ className: 'app', additional: [theme] })}>

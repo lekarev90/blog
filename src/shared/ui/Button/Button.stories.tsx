@@ -10,17 +10,18 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-
-Primary.args = {
-  children: 'text',
-};
-
 export const Clear = Template.bind({});
 
 Clear.args = {
   children: 'text',
   variant: ButtonVariants.CLEAR,
+};
+
+export const ClearInverted = Template.bind({});
+
+ClearInverted.args = {
+  children: 'text',
+  variant: ButtonVariants.CLEAR_INVERTED,
 };
 
 export const Outline = Template.bind({});

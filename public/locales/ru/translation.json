@@ -5,6 +5,7 @@
   },
   "mainPage": "Главная",
   "navbar": {
+    "authModalButton": "Войти",
     "empty": "/",
     "menu": {
       "aboutUs": "О нас"
