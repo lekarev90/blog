@@ -64,9 +64,10 @@ module.exports = {
         next: 'return',
       },
     ],
-    'function-paren-newline': ['error', 'multiline'],
+    'function-paren-newline': ['error', 'multiline-arguments'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'no-param-reassign': 0,
   },
   globals: {
     __IS_DEV__: true,

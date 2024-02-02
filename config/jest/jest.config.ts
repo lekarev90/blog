@@ -7,7 +7,7 @@ export default {
     '/node_modules/',
   ],
   moduleDirectories: [
-    'node_modules',
+    'node_modules', '<rootDir>src',
   ],
   testPathIgnorePatterns: [
     '/node_modules/',
@@ -23,18 +23,18 @@ export default {
     'node',
   ],
   rootDir: '../../',
-  roots: [
-    '<rootDir>',
+  testMatch: [
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   modulePaths: [
     '<rootDir>src',
-  ],
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   setupFilesAfterEnv: ['<rootDir>/config/jest/testSetup.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg$': path.resolve(__dirname, 'JestEmptyComponent.tsx'),
+  },
+  globals: {
+    __IS_DEV__: true,
   },
 };

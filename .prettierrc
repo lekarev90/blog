@@ -8,5 +8,5 @@
   "arrowParens": "avoid",
   "proseWrap": "always",
   "endOfLine": "lf",
-  "printWidth": 100
+  "printWidth": 140
 }
