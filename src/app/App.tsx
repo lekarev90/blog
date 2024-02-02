@@ -13,7 +13,7 @@ const App: FC = () => {
   }, [theme]);
 
   return (
-    <div className={classNames({ className: 'app', additional: [theme] })}>
+    <div className={classNames({ className: 'app' })}>
       <Suspense fallback="">
         <Navbar />
         <div className="main-container">
