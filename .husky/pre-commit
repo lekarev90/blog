@@ -1,0 +1,5 @@
+yarn run lint:ts
+yarn run lint:scss
+yarn run test:unit
+yarn run storybook:build
+yarn run test:ui:ci
