@@ -1,4 +1,9 @@
 {
+  "authModal": {
+    "loginBtn": "Log in",
+    "password": "Password",
+    "username": "Username"
+  },
   "errorPage": {
     "mainTitle": "Something broke",
     "reloadButtonText": "Reload page"

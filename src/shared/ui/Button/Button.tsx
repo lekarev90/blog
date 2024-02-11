@@ -1,7 +1,9 @@
-import { type ButtonHTMLAttributes, type FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { type ButtonHTMLAttributes } from 'react';
+import classNames from 'classnames';
 
 import styles from './Button.module.scss';
+
+const cx = classNames.bind(styles);
 
 export enum ButtonVariants {
   CLEAR = 'clear',
@@ -24,28 +26,26 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button = ({
   className,
   children,
   variant = ButtonVariants.CLEAR,
   square,
   size = ButtonSize.M,
   ...props
-}) => {
+}: ButtonProps) => {
   const mods: Record<string, string | boolean> = {
     [styles[variant]]: variant,
     [styles.square]: square,
     [styles[size]]: size,
   };
 
+  const containerClassNames = cx(styles.container, className, mods);
+
   return (
     <button
       type="button"
-      className={classNames({
-        className: styles.container,
-        mods,
-        additional: [className],
-      })}
+      className={containerClassNames}
       {...props}
     >
       {children}

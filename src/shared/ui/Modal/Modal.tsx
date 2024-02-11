@@ -1,24 +1,29 @@
+import classNames from 'classnames';
 import React, {
-  type FC, ReactNode, useCallback, useEffect, useRef, useState,
+  type FC, lazy, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+
 import { Portal } from 'shared/ui/Portal/Portal';
 
 import styles from './Modal.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface ModalProps {
   className?: string;
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean
 }
 
 const ANIMATION_DELAY = 300;
 
-export const Modal: FC<ModalProps> = ({
-  className, children, isOpen, onClose,
-}) => {
+export const Modal = ({
+  className, children, isOpen, onClose, lazy,
+}: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const closeHandler = useCallback(() => {
@@ -36,6 +41,12 @@ export const Modal: FC<ModalProps> = ({
       closeHandler();
     }
   }, [closeHandler]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -57,9 +68,15 @@ export const Modal: FC<ModalProps> = ({
     [styles.isClosing]: isClosing,
   };
 
+  const containerClassNames = cx(styles.container, className, mods);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
+
   return (
     <Portal>
-      <div className={classNames({ className: styles.container, mods, additional: [className] })}>
+      <div className={containerClassNames}>
         {/* eslint-disable-next-line max-len */}
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
         <div

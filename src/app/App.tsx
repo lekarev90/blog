@@ -1,6 +1,6 @@
-import { AppRouter } from 'app/providers/router';
 import React, { type FC, Suspense, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+
+import { AppRouter } from 'app/providers/router';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
@@ -13,7 +13,7 @@ const App: FC = () => {
   }, [theme]);
 
   return (
-    <div className={classNames({ className: 'app' })}>
+    <div className="app">
       <Suspense fallback="">
         <Navbar />
         <div className="main-container">

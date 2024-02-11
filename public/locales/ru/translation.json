@@ -1,4 +1,9 @@
 {
+  "authModal": {
+    "loginBtn": "Войти",
+    "password": "Пароль",
+    "username": "Логин"
+  },
   "errorPage": {
     "mainTitle": "Что-то сломалось",
     "reloadButtonText": "Перезагрузить страницу"

@@ -1,9 +1,12 @@
+import classNames from 'classnames';
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 
 import styles from './ErrorPage.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface ErrorPageProps {
   className?: string;
@@ -18,7 +21,7 @@ export const ErrorPage: FC<ErrorPageProps> = ({ className }) => {
   };
 
   return (
-    <div className={classNames({ className: styles.container, additional: [className] })}>
+    <div className={cx(styles.container, className)}>
       {t('translation:errorPage.mainTitle')}
       <Button
         variant={ButtonVariants.CLEAR}

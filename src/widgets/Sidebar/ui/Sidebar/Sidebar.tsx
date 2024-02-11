@@ -1,21 +1,25 @@
-import { type FC, useState } from 'react';
+import { useState } from 'react';
+import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
+
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkColor } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonSize, ButtonVariants } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 
 import styles from './Sidebar.module.scss';
 
+const cx = classNames.bind(styles);
+
 interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
+export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
 
@@ -24,17 +28,12 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
   const onToggle = (): void => {
     setCollapsed((prevState) => !prevState);
   };
+  const containerClassName = cx(styles.container, className, { [styles.collapsed]: collapsed });
 
   return (
     <div
       data-testid="sidebar"
-      className={classNames({
-        className: styles.container,
-        additional: [className],
-        mods: {
-          [styles.collapsed]: collapsed,
-        },
-      })}
+      className={containerClassName}
     >
       <Button
         data-testid="sidebar-toggle"

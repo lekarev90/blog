@@ -2,7 +2,6 @@ import { Story, StoryContext } from '@storybook/react';
 import React from 'react';
 
 import { ThemeProvider } from '../../../../app/providers/ThemeProvider';
-import { classNames } from '../../../lib/classNames/classNames';
 
 export const ThemeDecorator = (Story: Story, context: StoryContext) => {
   const { globals: { theme } } = context;
@@ -11,7 +10,7 @@ export const ThemeDecorator = (Story: Story, context: StoryContext) => {
 
   return (
     <ThemeProvider>
-      <div className={classNames({ className: 'app', additional: [theme] })}>
+      <div className={`app ${theme}`}>
         <Story />
       </div>
     </ThemeProvider>
