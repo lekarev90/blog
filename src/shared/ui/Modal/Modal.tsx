@@ -1,6 +1,6 @@
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import React, {
-  type FC, lazy, ReactNode, useCallback, useEffect, useRef, useState,
+  ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 
 import { Portal } from 'shared/ui/Portal/Portal';
@@ -64,8 +64,8 @@ export const Modal = ({
   };
 
   const mods: Record<string, boolean> = {
-    [styles.isOpen]: isOpen,
-    [styles.isClosing]: isClosing,
+    isOpen,
+    isClosing,
   };
 
   const containerClassNames = cx(styles.container, className, mods);

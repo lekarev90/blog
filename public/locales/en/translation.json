@@ -2,15 +2,22 @@
   "authModal": {
     "loginBtn": "Log in",
     "password": "Password",
+    "title": "Auth form",
     "username": "Username"
   },
   "errorPage": {
     "mainTitle": "Something broke",
     "reloadButtonText": "Reload page"
   },
+  "login": {
+    "error": "Error. Try again later"
+  },
   "mainPage": "Main",
   "navbar": {
-    "authModalButton": "Sign in",
+    "authModalButton": {
+      "login": "Log in",
+      "logout": "Log out"
+    },
     "empty": "text/",
     "menu": {
       "aboutUs": "About us"

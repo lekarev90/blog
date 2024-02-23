@@ -12,7 +12,7 @@ export const WithI18Decorator = (Story: Story, context: StoryContext) => {
   useEffect(() => {
     const isRu = locale === 'ru';
 
-    i18n.changeLanguage(isRu ? 'en' : 'ru');
+    i18n.changeLanguage(isRu ? 'ru' : 'en');
   }, [locale, i18n]);
 
   return <Story />;

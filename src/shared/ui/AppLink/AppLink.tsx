@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import { Link, type LinkProps } from 'react-router-dom';
 
 import styles from './AppLink.module.scss';
@@ -18,7 +18,7 @@ interface AppLinkProps extends LinkProps {
 export const AppLink = ({
   className, to, children, color = AppLinkColor.PRIMARY, ...props
 }: AppLinkProps) => {
-  const containerClassNames = cx(styles.container, className, { [styles[color]]: color });
+  const containerClassNames = cx(styles.container, className, { [color]: color });
 
   return (
     <Link

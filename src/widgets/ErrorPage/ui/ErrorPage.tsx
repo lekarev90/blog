@@ -1,5 +1,4 @@
-import classNames from 'classnames';
-import { type FC } from 'react';
+import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
@@ -12,7 +11,7 @@ interface ErrorPageProps {
   className?: string;
 }
 
-export const ErrorPage: FC<ErrorPageProps> = ({ className }) => {
+export const ErrorPage = ({ className }: ErrorPageProps) => {
   const { t } = useTranslation();
 
   const onReloadButtonClick = (): void => {

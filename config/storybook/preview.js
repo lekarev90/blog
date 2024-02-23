@@ -21,9 +21,6 @@ export const globalTypes = {
     description: 'Global theme for components',
 
     toolbar: {
-      onChange: () => {
-        console.log('lol');
-      },
       icon: 'circlehollow',
       items: [
         { value: 'light', title: 'Light' },
@@ -35,7 +32,7 @@ export const globalTypes = {
   locale: {
     name: 'Locale',
     description: 'Internationalization locale',
-    defaultValue: 'ru',
+    defaultValue: 'en',
     toolbar: {
       icon: 'globe',
       items: [

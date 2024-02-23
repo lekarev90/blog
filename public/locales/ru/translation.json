@@ -2,15 +2,22 @@
   "authModal": {
     "loginBtn": "Войти",
     "password": "Пароль",
+    "title": "Форма авторизации",
     "username": "Логин"
   },
   "errorPage": {
     "mainTitle": "Что-то сломалось",
     "reloadButtonText": "Перезагрузить страницу"
   },
+  "login": {
+    "error": "Ошибка. Попробуйте позже"
+  },
   "mainPage": "Главная",
   "navbar": {
-    "authModalButton": "Войти",
+    "authModalButton": {
+      "login": "Войти",
+      "logout": "Выйти"
+    },
     "empty": "/",
     "menu": {
       "aboutUs": "О нас"

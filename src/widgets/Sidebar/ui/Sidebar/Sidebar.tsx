@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
@@ -28,7 +28,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const onToggle = (): void => {
     setCollapsed((prevState) => !prevState);
   };
-  const containerClassName = cx(styles.container, className, { [styles.collapsed]: collapsed });
+  const containerClassName = cx(styles.container, className, { collapsed });
 
   return (
     <div

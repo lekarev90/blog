@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes } from 'react';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 
 import styles from './Button.module.scss';
 
@@ -32,12 +32,14 @@ export const Button = ({
   variant = ButtonVariants.CLEAR,
   square,
   size = ButtonSize.M,
+  disabled,
   ...props
 }: ButtonProps) => {
   const mods: Record<string, string | boolean> = {
-    [styles[variant]]: variant,
-    [styles.square]: square,
-    [styles[size]]: size,
+    [variant]: variant,
+    [size]: size,
+    square,
+    disabled,
   };
 
   const containerClassNames = cx(styles.container, className, mods);
@@ -46,6 +48,7 @@ export const Button = ({
     <button
       type="button"
       className={containerClassNames}
+      disabled={disabled}
       {...props}
     >
       {children}

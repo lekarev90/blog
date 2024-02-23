@@ -1,6 +1,6 @@
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import React, {
-  InputHTMLAttributes, memo, useEffect, useRef, useState,
+  InputHTMLAttributes, memo, useEffect, useRef,
 } from 'react';
 
 import styles from './Input.module.scss';
