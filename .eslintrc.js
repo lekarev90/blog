@@ -42,7 +42,6 @@ module.exports = {
     ],
     'import/no-unresolved': 0,
     'import/prefer-default-export': 0,
-    'no-unused-vars': 'warn',
     'react/require-default-props': 0,
     'react/react-in-jsx-scope': 0,
     'react/jsx-props-no-spreading': 0,
@@ -69,6 +68,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 0,
     'max-len': ['error', { code: 140 }],
+    '@typescript-eslint/no-unused-vars': 'error',
   },
   globals: {
     __IS_DEV__: true,
