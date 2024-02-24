@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   Component, type ErrorInfo, type ReactNode, Suspense, JSX,
 } from 'react';
