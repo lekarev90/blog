@@ -3,14 +3,14 @@ import {
 } from '@reduxjs/toolkit';
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features/AuthByUsername';
+import { ILoginSchema } from 'features/AuthByUsername';
 
 export interface IStateSchema {
   counter: CounterSchema;
   user: UserSchema;
 
   // async
-  loginForm?: LoginSchema;
+  loginForm?: ILoginSchema;
 }
 
 export type StateSchemaKey = keyof IStateSchema

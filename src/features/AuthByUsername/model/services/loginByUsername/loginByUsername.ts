@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { User, userActions } from 'entities/User';
+import { IUser, userActions } from 'entities/User';
 import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
@@ -11,7 +11,7 @@ interface ILoginByUsername {
 
 const LOGIN_URL = 'http://localhost:8000/login';
 
-export const loginByUsername = createAsyncThunk<User, ILoginByUsername, { rejectValue: string}>(
+export const loginByUsername = createAsyncThunk<IUser, ILoginByUsername, { rejectValue: string}>(
   'login/loginByUsername',
   async (authData, { rejectWithValue, dispatch }) => {
     try {

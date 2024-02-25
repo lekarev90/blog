@@ -1,4 +1,4 @@
-import '../../../../shared/config/i18n/i18nStorybook';
+import '../../../../shared/config/i18n/i18nTest.config';
 import { Story, StoryContext } from '@storybook/react';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';

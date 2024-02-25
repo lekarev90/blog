@@ -21,7 +21,6 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
   rules: {
-    'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'react/jsx-max-props-per-line': [
       2,
@@ -32,8 +31,8 @@ module.exports = {
         },
       },
     ],
+    'no-console': ['error', { allow: ['warn', 'error', 'assert'] }],
     '@typescript-eslint/indent': [2, 2],
-    indent: [2, 2],
     'react/jsx-filename-extension': [
       2,
       {
