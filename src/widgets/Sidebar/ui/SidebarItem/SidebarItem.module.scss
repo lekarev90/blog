@@ -1,0 +1,28 @@
+.link {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+  flex: 1 0 100%;
+  white-space: nowrap;
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+.menuItem {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--inverted-primary-color);
+  text-decoration: none;
+}
+
+.icon {
+  flex: 1 0 auto;
+  fill: var(--inverted-primary-color)
+}
+

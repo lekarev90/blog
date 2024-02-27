@@ -1,4 +1,7 @@
 {
+  "aboutPage": {
+    "bodyText": "О нас"
+  },
   "authModal": {
     "loginBtn": "Войти",
     "password": "Пароль",
@@ -12,7 +15,9 @@
   "login": {
     "error": "Ошибка. Попробуйте позже"
   },
-  "mainPage": "Главная",
+  "mainPage": {
+    "bodyText": "Главная"
+  },
   "navbar": {
     "authModalButton": {
       "login": "Войти",
@@ -28,8 +33,18 @@
       "mainText": "Такой страницы не существует"
     }
   },
+  "profilePage": {
+    "bodyText": "Профиль"
+  },
   "sidebar": {
     "hide": "<",
+    "menu": {
+      "linkTitles": {
+        "about": "О нас",
+        "main": "Главная",
+        "profile": "Профиль"
+      }
+    },
     "open": ">"
   },
   "switchLanguage": "RU"

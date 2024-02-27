@@ -1,9 +1,9 @@
-import { type FC } from 'react';
+import { type FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import styles from './NotFoundPage.module.scss';
 
-export const NotFoundPage: FC = () => {
+export const NotFoundPage: FC = memo(() => {
   const { t } = useTranslation();
 
   return (
@@ -11,4 +11,4 @@ export const NotFoundPage: FC = () => {
       {t('translation:notFoundPage.body.mainText')}
     </div>
   );
-};
+});

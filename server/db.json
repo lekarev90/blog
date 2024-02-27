@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Ivan",
+    "lastName": "Ducalis",
+    "age": 25,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "Ducalis2000",
+    "avatar": "https://img.freepik.com/premium-photo/a-cat-wearing-sunglasses-and-a-hat-that-says-cat-on-it_924318-283.jpg"
+  }
 }

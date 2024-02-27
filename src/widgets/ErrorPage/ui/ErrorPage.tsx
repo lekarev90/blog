@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 
@@ -11,7 +12,7 @@ interface ErrorPageProps {
   className?: string;
 }
 
-export const ErrorPage = ({ className }: ErrorPageProps) => {
+export const ErrorPage = memo(({ className }: ErrorPageProps) => {
   const { t } = useTranslation();
 
   const onReloadButtonClick = (): void => {
@@ -30,4 +31,4 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
       </Button>
     </div>
   );
-};
+});

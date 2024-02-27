@@ -1,5 +1,7 @@
-import React, { HTMLProps } from 'react';
+import React, { HTMLProps, memo } from 'react';
+
 import classNames from 'classnames/bind';
+
 import styles from './Text.module.scss';
 
 const cx = classNames.bind(styles);
@@ -20,7 +22,7 @@ interface SectionTitleProps {
 
 type HTMLTagProps<T> = HTMLProps<T> & { [key: string]: any };
 
-export const Text = ({
+export const Text = memo(({
   className, title, text, titleTag = 'h3', textTag, variant = TextVariant.PRIMARY,
 }: SectionTitleProps) => {
   const TitleWrapperTag = titleTag || 'h3';
@@ -35,4 +37,4 @@ export const Text = ({
       {text && <DescWrapperTag {...descProps} />}
     </div>
   );
-};
+});

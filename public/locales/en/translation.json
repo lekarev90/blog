@@ -1,4 +1,7 @@
 {
+  "aboutPage": {
+    "bodyText": "About us"
+  },
   "authModal": {
     "loginBtn": "Log in",
     "password": "Password",
@@ -12,7 +15,9 @@
   "login": {
     "error": "Error. Try again later"
   },
-  "mainPage": "Main",
+  "mainPage": {
+    "bodyText": "Main"
+  },
   "navbar": {
     "authModalButton": {
       "login": "Log in",
@@ -28,8 +33,18 @@
       "mainText": "This page doesn't exist"
     }
   },
+  "profilePage": {
+    "bodyText": "Profile"
+  },
   "sidebar": {
     "hide": "<",
+    "menu": {
+      "linkTitles": {
+        "about": "About us",
+        "main": "Main",
+        "profile": "Profile"
+      }
+    },
     "open": ">"
   },
   "switchLanguage": "ENG"
