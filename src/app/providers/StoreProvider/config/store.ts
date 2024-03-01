@@ -2,6 +2,8 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { IStateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
+import { Reducer } from 'redux';
+import { $api } from 'shared/api/api';
 
 import { createReducerManager } from './reducerManager';
 
@@ -17,10 +19,17 @@ export const createReduxStore = (
 
   const reducerManager = createReducerManager(rootReducers);
 
-  const store = configureStore<IStateSchema>({
-    reducer: reducerManager.reduce,
+  const store = configureStore({
+    reducer: reducerManager.reduce as Reducer<IStateSchema>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      thunk: {
+        extraArgument: {
+          api: $api,
+        },
+      },
+    }),
   });
 
   // @ts-ignore

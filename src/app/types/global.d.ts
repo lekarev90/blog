@@ -17,3 +17,5 @@ declare module '*.svg' {
 
 // eslint-disable-next-line no-underscore-dangle,no-unused-vars
 declare const __IS_DEV__: boolean;
+// eslint-disable-next-line no-underscore-dangle,no-unused-vars
+declare const __API__: string;

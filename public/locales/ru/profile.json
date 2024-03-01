@@ -1,0 +1,8 @@
+{
+  "editButton": "Редактировать",
+  "inputsPlaceholder": {
+    "firstName": "Ваше имя",
+    "lastName": "Ваша фамилия"
+  },
+  "pageTitle": "Профиль"
+}

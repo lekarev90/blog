@@ -1,11 +1,12 @@
-import { ReducersMapObject } from '@reduxjs/toolkit';
-import { loginReducer } from 'features/AuthByUsername';
 import React from 'react';
 import { Story } from '@storybook/react';
 
+import { loginReducer } from 'features/AuthByUsername';
+import { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+
 import { IStateSchema, StoreProvider } from '../../../../app/providers/StoreProvider';
 
-const defaultAsyncReducer: Partial<ReducersMapObject<IStateSchema>> = {
+const defaultAsyncReducer: ReducersList = {
   loginForm: loginReducer,
 };
 

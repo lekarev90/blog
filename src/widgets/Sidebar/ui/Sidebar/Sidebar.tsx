@@ -45,7 +45,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         {sidebarStateText}
       </Button>
       <div className={styles.menuContainer}>
-        {getSidebarItemsList().map((item) => (
+        {getSidebarItemsList(t).map((item) => (
           <SidebarItem
             key={item.path}
             item={item}

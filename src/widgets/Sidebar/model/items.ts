@@ -1,7 +1,7 @@
 import { FC, SVGProps } from 'react';
+import { TFunction } from 'react-i18next';
 
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import i18n from 'shared/config/i18n/i18n';
 
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
@@ -13,20 +13,20 @@ export interface ISidebarItem {
   Icon: FC<SVGProps<SVGSVGElement>>;
 }
 
-export const getSidebarItemsList: () => ISidebarItem[] = () => [
+export const getSidebarItemsList: (t: TFunction) => ISidebarItem[] = (t) => [
   {
     path: RouterPath.main,
     Icon: MainIcon,
-    text: i18n.t('translation:sidebar.menu.linkTitles.main'),
+    text: t('translation:sidebar.menu.linkTitles.main'),
   },
   {
     path: RouterPath.about,
     Icon: AboutIcon,
-    text: i18n.t('translation:sidebar.menu.linkTitles.about'),
+    text: t('translation:sidebar.menu.linkTitles.about'),
   },
   {
     path: RouterPath.profile,
     Icon: ProfileIcon,
-    text: i18n.t('translation:sidebar.menu.linkTitles.profile'),
+    text: t('translation:sidebar.menu.linkTitles.profile'),
   },
 ];

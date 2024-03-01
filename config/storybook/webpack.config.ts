@@ -15,14 +15,12 @@ export default ({ config } : {config: webpack.Configuration }) => {
       'src',
     ),
   };
-  config.resolve.modules.push(paths.src);
-  config.resolve.extensions.push(
-    '.ts',
-    '.tsx',
-  );
+  config!.resolve!.modules!.push(paths.src);
+  config!.resolve!.extensions!.push('.ts', '.tsx');
 
   // eslint-disable-next-line no-param-reassign
-  config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+  // @ts-ignore
+  config!.module.rules = config!.module.rules.map((rule: RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {
       return {
         test: /\.svg$/,
@@ -33,10 +31,11 @@ export default ({ config } : {config: webpack.Configuration }) => {
     return rule;
   });
 
-  config.module.rules.push(buildCssLoaders(true));
+  config!.module!.rules.push(buildCssLoaders(true));
 
-  config.plugins.push(new DefinePlugin({
-    __IS_DEV__: true,
+  config!.plugins!.push(new DefinePlugin({
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify('http://localhost:8000'),
   }));
 
   return config;

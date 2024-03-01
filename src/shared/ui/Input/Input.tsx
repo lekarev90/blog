@@ -19,7 +19,7 @@ interface InputProps extends HTMLInputProps {
 }
 
 export const Input = memo(({
-  className, value, onChange, type = 'text', placeholder, autofocus,
+  className, value, onChange, type = 'text', placeholder, autofocus, ...props
 }: InputProps) => {
   const ref = useRef<HTMLInputElement>(null);
 
@@ -46,6 +46,7 @@ export const Input = memo(({
         value={value}
         onChange={onChangeHandler}
         type={type}
+        {...props}
       />
     </div>
   );

@@ -63,7 +63,7 @@ export const Modal = ({
     e.stopPropagation();
   };
 
-  const mods: Record<string, boolean> = {
+  const mods: Record<string, boolean | undefined> = {
     isOpen,
     isClosing,
   };

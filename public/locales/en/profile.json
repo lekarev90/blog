@@ -1,0 +1,8 @@
+{
+  "editButton": "Edit",
+  "inputsPlaceholder": {
+    "firstName": "Your name",
+    "lastName": "Your lastname"
+  },
+  "pageTitle": "Profile"
+}

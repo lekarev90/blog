@@ -22,6 +22,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<IStateSc
         keysToRemove = [];
       }
 
+      // @ts-ignore
       return combinedReducer(state, action);
     },
     add: (key: StateSchemaKey, reducer: Reducer) => {
