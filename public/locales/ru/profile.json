@@ -1,8 +1,12 @@
 {
   "editButton": "Редактировать",
   "inputsPlaceholder": {
+    "age": "Выш возраст",
     "firstName": "Ваше имя",
-    "lastName": "Ваша фамилия"
+    "lastName": "Ваша фамилия",
+    "username": "Никнейм"
   },
-  "pageTitle": "Профиль"
+  "pageTitle": "Профиль",
+  "resetButton": "Отменить",
+  "saveButton": "Сохранить"
 }

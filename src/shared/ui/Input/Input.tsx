@@ -9,18 +9,26 @@ const cx = classNames.bind(styles);
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
 
-interface InputProps extends HTMLInputProps {
+interface InputProps<T extends string> extends HTMLInputProps {
   className?: string;
-  value?: string
-  onChange?: (value: string) => void
-  type?: string
-  placeholder?: string
-  autofocus?: boolean
+  name: T;
+  value?: string;
+  onChange?: (value: string, name: T) => void;
+  type?: string;
+  placeholder?: string;
+  autofocus?: boolean;
 }
 
-export const Input = memo(({
-  className, value, onChange, type = 'text', placeholder, autofocus, ...props
-}: InputProps) => {
+export const _Input = <T extends string>({
+  className,
+  value,
+  onChange,
+  type = 'text',
+  placeholder,
+  autofocus,
+  name,
+  ...props
+}: InputProps<T>) => {
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -30,7 +38,7 @@ export const Input = memo(({
   }, [autofocus]);
 
   const onChangeHandler = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(target.value);
+    onChange?.(target.value, name);
   };
 
   return (
@@ -50,4 +58,6 @@ export const Input = memo(({
       />
     </div>
   );
-});
+};
+
+export const Input = memo(_Input) as typeof _Input;

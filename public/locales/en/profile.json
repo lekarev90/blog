@@ -1,8 +1,12 @@
 {
   "editButton": "Edit",
   "inputsPlaceholder": {
+    "age": "Your age",
     "firstName": "Your name",
-    "lastName": "Your lastname"
+    "lastName": "Your lastname",
+    "username": "Nickname"
   },
-  "pageTitle": "Profile"
+  "pageTitle": "Profile",
+  "resetButton": "Reset",
+  "saveButton": "Save"
 }

@@ -31,6 +31,7 @@ module.exports = {
         },
       },
     ],
+    'no-underscore-dangle': 0,
     'no-console': ['error', { allow: ['warn', 'error', 'assert'] }],
     '@typescript-eslint/indent': [2, 2],
     'react/jsx-filename-extension': [

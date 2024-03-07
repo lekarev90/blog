@@ -68,12 +68,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           />
         )}
         <Input
+          name="username"
           placeholder={t('translation:authModal.username')}
           autofocus
           onChange={onChangeUsername}
           value={username}
         />
         <Input
+          name="password"
           placeholder={t('translation:authModal.password')}
           onChange={onChangePassword}
           value={password}

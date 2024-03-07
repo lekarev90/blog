@@ -28,7 +28,7 @@
   "profile": {
     "firstName": "Ivan",
     "lastName": "Ducalis",
-    "age": 25,
+    "age": "25",
     "currency": "RUB",
     "country": "Russia",
     "city": "Moscow",
