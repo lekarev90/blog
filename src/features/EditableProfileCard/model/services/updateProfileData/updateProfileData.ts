@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
-import { getProfileData } from 'entities/Profile';
+import { getProfileData } from 'features/EditableProfileCard';
 import i18n from 'shared/config/i18n/i18n';
 
 import { IProfile } from '../../types/profile';

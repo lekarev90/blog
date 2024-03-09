@@ -1,15 +1,15 @@
 import React, { Suspense, useEffect } from 'react';
-import { userActions } from 'entities/User';
 
+import { userActions } from 'entities/User';
 import { AppRouter } from 'app/providers/router';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 const App = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;

@@ -1,15 +1,13 @@
-import { Country, Currency } from 'shared/const/common';
+import { CountrySelectField } from 'entities/Country';
+import { CurrencySelectField } from 'entities/Currency';
 
-export interface IProfile {
+export interface IProfile extends CountrySelectField, CurrencySelectField {
   firstName: string,
   lastName: string,
   age: string,
-  currency: Currency,
-  country: Country,
   city: string,
   username: string,
   avatar: string
-  'some-value'?: string
 }
 
 export interface IProfileSchema {

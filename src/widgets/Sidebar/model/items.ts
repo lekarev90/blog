@@ -11,6 +11,7 @@ export interface ISidebarItem {
   path: string;
   text: string;
   Icon: FC<SVGProps<SVGSVGElement>>;
+  isAuthOnly?: boolean;
 }
 
 export const getSidebarItemsList: (t: TFunction) => ISidebarItem[] = (t) => [
@@ -28,5 +29,6 @@ export const getSidebarItemsList: (t: TFunction) => ISidebarItem[] = (t) => [
     path: RouterPath.profile,
     Icon: ProfileIcon,
     text: t('translation:sidebar.menu.linkTitles.profile'),
+    isAuthOnly: true,
   },
 ];

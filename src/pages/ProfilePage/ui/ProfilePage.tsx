@@ -1,8 +1,9 @@
 import React, { memo, useEffect } from 'react';
 
-import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
+import { fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
+import { Profile } from 'widgets/Profile';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -17,7 +18,7 @@ const ProfilePage = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <ProfileCard />
+      <Profile />
     </DynamicModuleLoader>
   );
 });

@@ -4,7 +4,10 @@
     "age": "Выш возраст",
     "firstName": "Ваше имя",
     "lastName": "Ваша фамилия",
-    "username": "Никнейм"
+    "username": "Никнейм",
+    "avatar": "Ссылка на аватар",
+    "currency": "Валюта",
+    "country": "Страна"
   },
   "pageTitle": "Профиль",
   "resetButton": "Отменить",

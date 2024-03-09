@@ -47,5 +47,7 @@
     },
     "open": ">"
   },
-  "switchLanguage": "RU"
+  "switchLanguage": "RU",
+  "countrySelectorLabel": "Страна",
+  "currencySelectorLabel": "Валюта"
 }

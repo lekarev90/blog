@@ -33,6 +33,15 @@ export default ({ config } : {config: webpack.Configuration }) => {
 
   config!.module!.rules.push(buildCssLoaders(true));
 
+  config!.module!.rules.push({
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  });
+
   config!.plugins!.push(new DefinePlugin({
     __IS_DEV__: JSON.stringify(true),
     __API__: JSON.stringify('http://localhost:8000'),

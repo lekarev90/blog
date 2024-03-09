@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
-import { IProfileSchema } from 'entities/Profile';
+import { IProfileSchema } from 'features/EditableProfileCard';
 import { UserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
 
