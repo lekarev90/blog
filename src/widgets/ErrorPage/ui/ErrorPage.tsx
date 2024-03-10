@@ -1,18 +1,12 @@
 import { memo } from 'react';
-import classNames from 'classnames/bind';
+
 import { useTranslation } from 'react-i18next';
 
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 
 import styles from './ErrorPage.module.scss';
 
-const cx = classNames.bind(styles);
-
-interface ErrorPageProps {
-  className?: string;
-}
-
-export const ErrorPage = memo(({ className }: ErrorPageProps) => {
+export const ErrorPage = memo(() => {
   const { t } = useTranslation();
 
   const onReloadButtonClick = (): void => {
@@ -21,7 +15,7 @@ export const ErrorPage = memo(({ className }: ErrorPageProps) => {
   };
 
   return (
-    <div className={cx(styles.container, className)}>
+    <div className={styles.container}>
       {t('translation:errorPage.mainTitle')}
       <Button
         variant={ButtonVariants.CLEAR}

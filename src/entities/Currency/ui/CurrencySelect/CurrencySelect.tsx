@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Select } from 'shared/ui/Select/Select';
@@ -22,7 +23,7 @@ const options = [
   },
 ];
 
-export const CurrencySelect = ({ value, isReadonly, onChangeHandler }: CurrencySelectorProps) => {
+export const CurrencySelect = memo(({ value, isReadonly, onChangeHandler }: CurrencySelectorProps) => {
   const { t } = useTranslation();
 
   return (
@@ -35,4 +36,4 @@ export const CurrencySelect = ({ value, isReadonly, onChangeHandler }: CurrencyS
       options={options}
     />
   );
-};
+});

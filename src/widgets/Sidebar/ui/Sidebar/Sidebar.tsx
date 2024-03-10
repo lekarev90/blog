@@ -13,11 +13,7 @@ import styles from './Sidebar.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface SidebarProps {
-  className?: string;
-}
-
-export const Sidebar = memo(({ className }: SidebarProps) => {
+export const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
 
@@ -27,7 +23,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     setCollapsed((prevState) => !prevState);
   };
 
-  const containerClassName = cx(styles.container, className, { collapsed });
+  const containerClassName = cx(styles.container, { collapsed });
 
   return (
     <div

@@ -7,6 +7,6 @@ export default {
   component: ErrorPage,
 } as ComponentMeta<typeof ErrorPage>;
 
-const Template: ComponentStory<typeof ErrorPage> = (args) => <ErrorPage {...args} />;
+const Template: ComponentStory<typeof ErrorPage> = () => <ErrorPage />;
 
 export const Default = Template.bind({});

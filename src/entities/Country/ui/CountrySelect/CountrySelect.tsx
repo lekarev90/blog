@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Select } from 'shared/ui/Select/Select';
@@ -24,7 +25,7 @@ const options = [
     value: Country.UKRAINE, content: Country.UKRAINE,
   },
 ];
-export const CountrySelect = ({ value, onChangeHandler, isReadonly }: CountrySelectorProps) => {
+export const CountrySelect = memo(({ value, onChangeHandler, isReadonly }: CountrySelectorProps) => {
   const { t } = useTranslation();
 
   return (
@@ -37,4 +38,4 @@ export const CountrySelect = ({ value, onChangeHandler, isReadonly }: CountrySel
       options={options}
     />
   );
-};
+});

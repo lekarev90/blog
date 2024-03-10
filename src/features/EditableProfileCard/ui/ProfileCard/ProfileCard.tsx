@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
@@ -16,7 +17,7 @@ interface ProfileCardProps {
   data?: IProfile;
 }
 
-export const ProfileCard = ({ isReadonly, onChangeHandler, data }: ProfileCardProps) => {
+export const ProfileCard = memo(({ isReadonly, onChangeHandler, data }: ProfileCardProps) => {
   const { t } = useTranslation('profile');
 
   return (
@@ -79,4 +80,4 @@ export const ProfileCard = ({ isReadonly, onChangeHandler, data }: ProfileCardPr
       </div>
     </div>
   );
-};
+});

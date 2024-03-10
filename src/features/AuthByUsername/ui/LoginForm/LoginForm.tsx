@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react';
-import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -15,10 +14,7 @@ import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 
 import styles from './LoginForm.module.scss';
 
-const cx = classNames.bind(styles);
-
 export interface LoginFormProps {
-  className?: string;
   onSuccess: () => void;
 }
 
@@ -26,7 +22,7 @@ const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
@@ -59,7 +55,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={cx(styles.container, className)}>
+      <div className={styles.container}>
         <Text title={t('translation:authModal.title')} />
         {error && (
           <Text

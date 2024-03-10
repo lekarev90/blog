@@ -7,7 +7,7 @@ import { IProfile, IProfileSchema, TProfileFieldName } from '../types/profile';
 
 const initialState: IProfileSchema = {
   isLoading: false,
-  error: undefined,
+  validateProfileError: undefined,
   data: undefined,
   prevData: undefined,
 };
@@ -28,33 +28,34 @@ export const ProfileSlice = createSlice({
     },
     restoreProfileData: (state) => {
       state.data = state.prevData;
+      state.validateProfileError = undefined;
     },
   },
   extraReducers: (builder) => builder
     .addCase(fetchProfileData.pending, (state) => {
       state.isLoading = true;
-      state.error = undefined;
+      state.validateProfileError = undefined;
     })
     .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<IProfile>) => {
-      state.error = undefined;
+      state.validateProfileError = undefined;
       state.isLoading = false;
       state.data = action.payload;
       state.prevData = action.payload;
     })
     .addCase(fetchProfileData.rejected, (state, action) => {
-      state.error = action.payload;
+      state.validateProfileError = action.payload;
       state.isLoading = false;
     })
     .addCase(updateProfileData.pending, (state) => {
       state.isLoading = true;
-      state.error = undefined;
+      state.validateProfileError = undefined;
     })
     .addCase(updateProfileData.fulfilled, (state) => {
-      state.error = undefined;
+      state.validateProfileError = undefined;
       state.isLoading = false;
     })
     .addCase(updateProfileData.rejected, (state, action) => {
-      state.error = action.payload;
+      state.validateProfileError = action.payload;
       state.isLoading = false;
     }),
 });

@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { memo } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 
 import styles from './AppLink.module.scss';
@@ -15,7 +16,7 @@ interface AppLinkProps extends LinkProps {
   color?: AppLinkColor;
 }
 
-export const AppLink = ({
+export const AppLink = memo(({
   className, to, children, color = AppLinkColor.PRIMARY, ...props
 }: AppLinkProps) => {
   const containerClassNames = cx(styles.container, className, { [color]: color });
@@ -29,4 +30,4 @@ export const AppLink = ({
       {children}
     </Link>
   );
-};
+});

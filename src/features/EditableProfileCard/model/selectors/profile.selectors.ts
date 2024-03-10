@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 export const getProfileData = (state: IStateSchema) => state.profile?.data;
 export const getProfilePrevData = (state: IStateSchema) => state.profile?.prevData;
 
-export const getProfileError = (state: IStateSchema) => state.profile?.error;
+export const getProfileErrors = (state: IStateSchema) => state.profile?.validateProfileError;
 
 export const getProfileIsLoading = (state: IStateSchema) => state.profile?.isLoading;
 

@@ -11,5 +11,11 @@
   },
   "pageTitle": "Профиль",
   "resetButton": "Отменить",
-  "saveButton": "Сохранить"
+  "saveButton": "Сохранить",
+  "errors": {
+    "server_error": "Ошибка сервера",
+    "no_data": "Нет данных",
+    "incorrect_user_data": "Фамилия и имя обязательны для заполнения",
+    "age": "Некорректный возраст"
+  }
 }

@@ -1,13 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
-import i18n from 'shared/config/i18n/i18n';
 
-import { IProfile } from '../../types/profile';
+import { IProfile, ValidateProfileError } from '../../types/profile';
 
 const PROFILE_URL = '/profile';
 
-export const fetchProfileData = createAsyncThunk<IProfile, void, IThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<IProfile, void, IThunkConfig<ValidateProfileError[]>>(
   'profile/fetchProfileData',
   async (_, { extra, rejectWithValue }) => {
     try {
@@ -19,7 +18,7 @@ export const fetchProfileData = createAsyncThunk<IProfile, void, IThunkConfig<st
 
       return data;
     } catch (e) {
-      return rejectWithValue(i18n.t('translation:login.error'));
+      return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
     }
   },
 );
