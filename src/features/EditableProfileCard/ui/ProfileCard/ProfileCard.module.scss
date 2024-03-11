@@ -1,11 +1,15 @@
 .container {
-  padding: 20px;
-  border: 2px solid;
-  border-color: var(--inverted-bg-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .inputs {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.loader {
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -11,7 +11,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
-
+  mockAddonConfigs: {
+    refreshStoryOnUpdate: true,
+  },
 };
 
 export const globalTypes = {

@@ -1,6 +1,4 @@
-import {
-  getValidateTextError,
-} from 'features/EditableProfileCard/model/services/validateProfileData/validateProfileData';
+import { getValidateTextError } from 'features/EditableProfileCard/model/services/validateProfileData/validateProfileData';
 import {
   FC, memo, useCallback, useState,
 } from 'react';
@@ -11,6 +9,7 @@ import {
   getIsProfileDataSame,
   getProfileData,
   getProfileErrors,
+  getProfileIsLoading,
   profileActions,
   ProfileCard,
   ProfileCardHeader,
@@ -28,6 +27,7 @@ export const Profile: FC = memo(() => {
 
   const dispatch = useAppDispatch();
   const data = useSelector(getProfileData);
+  const isLoading = useSelector(getProfileIsLoading);
   const isProfileDataSame = useSelector(getIsProfileDataSame);
   const profileErrors = useSelector(getProfileErrors);
 
@@ -63,14 +63,17 @@ export const Profile: FC = memo(() => {
         isProfileDataSame={isProfileDataSame}
         isReadonly={isReadonly}
       />
-      {profileErrors?.length && profileErrors.map((error) => (
-        <Text
-          key={error}
-          text={getValidateTextError(t)[error]}
-          variant={TextVariant.ERROR}
-        />
-      ))}
+
+      {profileErrors?.length
+        && profileErrors.map((error) => (
+          <Text
+            key={error}
+            text={getValidateTextError(t)[error]}
+            variant={TextVariant.ERROR}
+          />
+        ))}
       <ProfileCard
+        isLoading={isLoading}
         isReadonly={isReadonly}
         data={data}
         onChangeHandler={onChangeHandler}

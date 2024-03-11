@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 
+import { profileReducer } from 'features/EditableProfileCard';
 import { loginReducer } from 'features/AuthByUsername';
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 
@@ -8,6 +9,7 @@ import { IStateSchema, StoreProvider } from '../../../../app/providers/StoreProv
 
 const defaultAsyncReducer: ReducersList = {
   loginForm: loginReducer,
+  profile: profileReducer,
 };
 
 export const StoreDecorator = (state: Partial<IStateSchema>) => (Story: Story) => (
