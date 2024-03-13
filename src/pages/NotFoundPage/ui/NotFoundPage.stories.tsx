@@ -1,12 +1,9 @@
-import React from 'react';
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { NotFoundPage } from './NotFoundPage';
 
 export default {
   title: 'pages/NotFoundPage',
   component: NotFoundPage,
-} as ComponentMeta<typeof NotFoundPage>;
+} as Meta<typeof NotFoundPage>;
 
-const Template: ComponentStory<typeof NotFoundPage> = () => <NotFoundPage />;
-
-export const Default = Template.bind({});
+export const Default = {};

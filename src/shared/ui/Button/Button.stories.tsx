@@ -1,89 +1,82 @@
-import React from 'react';
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Button, ButtonSize, ButtonVariants } from './Button';
 
 export default {
   title: 'shared/Button',
   component: Button,
-} as ComponentMeta<typeof Button>;
+  args: {
+    children: 'text',
+  },
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Clear = Template.bind({});
-
-Clear.args = {
-  children: 'text',
-  variant: ButtonVariants.CLEAR,
+export const Clear: StoryObj<typeof Button> = {
+  args: {
+    variant: ButtonVariants.CLEAR,
+  },
 };
 
-export const ClearInverted = Template.bind({});
-
-ClearInverted.args = {
-  children: 'text',
-  variant: ButtonVariants.CLEAR_INVERTED,
+export const ClearInverted: StoryObj<typeof Button> = {
+  args: {
+    variant: ButtonVariants.CLEAR_INVERTED,
+  },
 };
 
-export const Outline = Template.bind({});
-
-Outline.args = {
-  children: 'text',
-  variant: ButtonVariants.OUTLINE,
+export const Outline: StoryObj<typeof Button> = {
+  args: {
+    variant: ButtonVariants.OUTLINE,
+  },
 };
 
-export const BG = Template.bind({});
-
-BG.args = {
-  children: 'text',
-  variant: ButtonVariants.BACKGROUND,
+export const BG: StoryObj<typeof Button> = {
+  args: {
+    variant: ButtonVariants.BACKGROUND,
+  },
 };
 
-export const BG_INVERTED = Template.bind({});
-
-BG_INVERTED.args = {
-  children: 'text',
-  variant: ButtonVariants.BACKGROUND_INVERTED,
+export const BG_INVERTED: StoryObj<typeof Button> = {
+  args: {
+    variant: ButtonVariants.BACKGROUND_INVERTED,
+  },
 };
 
-export const Square = Template.bind({});
-
-Square.args = {
-  children: 'text',
-  variant: ButtonVariants.BACKGROUND_INVERTED,
-  square: true,
+export const Square: StoryObj<typeof Button> = {
+  args: {
+    variant: ButtonVariants.BACKGROUND_INVERTED,
+    square: true,
+  },
 };
 
-export const SquareSizeM = Template.bind({});
-
-SquareSizeM.args = {
-  children: '<',
-  variant: ButtonVariants.BACKGROUND_INVERTED,
-  square: true,
-  size: ButtonSize.M,
+export const SquareSizeM: StoryObj<typeof Button> = {
+  args: {
+    children: '<',
+    variant: ButtonVariants.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.M,
+  },
 };
 
-export const SquareSizeL = Template.bind({});
-
-SquareSizeL.args = {
-  children: '<',
-  variant: ButtonVariants.BACKGROUND_INVERTED,
-  square: true,
-  size: ButtonSize.L,
+export const SquareSizeL: StoryObj<typeof Button> = {
+  args: {
+    children: '<',
+    variant: ButtonVariants.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.L,
+  },
+};
+export const SquareSizeXL: StoryObj<typeof Button> = {
+  args: {
+    children: '<',
+    variant: ButtonVariants.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.XL,
+  },
 };
 
-export const SquareSizeXL = Template.bind({});
-
-SquareSizeXL.args = {
-  children: '<',
-  variant: ButtonVariants.BACKGROUND_INVERTED,
-  square: true,
-  size: ButtonSize.XL,
-};
-
-export const Disabled = Template.bind({});
-
-Disabled.args = {
-  children: 'disabled',
-  variant: ButtonVariants.OUTLINE,
-  disabled: true,
+export const Disabled: StoryObj<typeof Button> = {
+  args: {
+    children: 'disabled',
+    variant: ButtonVariants.OUTLINE,
+    disabled: true,
+  },
 };

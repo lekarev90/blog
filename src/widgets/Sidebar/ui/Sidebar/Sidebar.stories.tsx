@@ -1,5 +1,4 @@
-import React from 'react';
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Sidebar } from './Sidebar';
@@ -7,14 +6,17 @@ import { Sidebar } from './Sidebar';
 export default {
   title: 'widgets/Sidebar',
   component: Sidebar,
-} as ComponentMeta<typeof Sidebar>;
+} as Meta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = () => <Sidebar />;
+type Story = StoryObj<typeof Sidebar>;
 
-export const Default = Template.bind({});
-
-Default.decorators = [StoreDecorator({})];
-
-export const WithAuth = Template.bind({});
-
-WithAuth.decorators = [StoreDecorator({ user: { authData: { id: '123', username: 'kek pek' } } })];
+export const Default: Story = {
+  decorators: [StoreDecorator({})],
+};
+export const WithAuth = {
+  decorators: [
+    StoreDecorator({
+      user: { authData: { id: '123', username: 'kek pek' } },
+    }),
+  ],
+};

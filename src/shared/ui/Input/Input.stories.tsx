@@ -1,5 +1,4 @@
-import React from 'react';
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 
 import { Input } from 'shared/ui/Input/Input';
 
@@ -11,6 +10,6 @@ export default {
     value: 'some value',
     autofocus: true,
   },
-} as ComponentMeta<typeof Input>;
+} as Meta<typeof Input>;
 
-export const Default: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+export const Default = {};

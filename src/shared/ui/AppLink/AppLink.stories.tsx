@@ -1,5 +1,4 @@
-import React from 'react';
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { AppLink, AppLinkColor } from './AppLink';
 
 export default {
@@ -8,14 +7,12 @@ export default {
   args: {
     children: 'link text',
   },
-} as ComponentMeta<typeof AppLink>;
+} as Meta<typeof AppLink>;
 
-const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
+export const Default = {};
 
-export const Default = Template.bind({});
-
-export const Secondary = Template.bind({});
-
-Secondary.args = {
-  color: AppLinkColor.SECONDARY,
+export const Secondary: StoryObj<typeof AppLink> = {
+  args: {
+    color: AppLinkColor.SECONDARY,
+  },
 };

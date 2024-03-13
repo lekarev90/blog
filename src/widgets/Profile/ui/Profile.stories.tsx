@@ -1,5 +1,4 @@
-import React from 'react';
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
@@ -8,10 +7,7 @@ import { Profile } from './Profile';
 export default {
   title: 'widgets/Profile',
   component: Profile,
-} as ComponentMeta<typeof Profile>;
+  decorators: [StoreDecorator({})],
+} as Meta<typeof Profile>;
 
-const Template: ComponentStory<typeof Profile> = () => <Profile />;
-
-export const Default = Template.bind({});
-
-Default.decorators = [StoreDecorator({})];
+export const Default = {};
