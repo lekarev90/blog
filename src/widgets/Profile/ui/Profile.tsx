@@ -1,4 +1,3 @@
-import { getValidateTextError } from 'features/EditableProfileCard/model/services/validateProfileData/validateProfileData';
 import {
   FC, memo, useCallback, useState,
 } from 'react';
@@ -6,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import {
+  getValidateTextError,
   getIsProfileDataSame,
   getProfileData,
   getProfileErrors,
@@ -63,7 +63,6 @@ export const Profile: FC = memo(() => {
         isProfileDataSame={isProfileDataSame}
         isReadonly={isReadonly}
       />
-
       {profileErrors?.length
         && profileErrors.map((error) => (
           <Text

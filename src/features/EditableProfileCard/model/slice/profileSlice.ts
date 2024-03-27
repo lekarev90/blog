@@ -23,9 +23,6 @@ export const ProfileSlice = createSlice({
         state.data[name] = value;
       }
     },
-    setProfileData: (state) => {
-      state.data = state.prevData;
-    },
     restoreProfileData: (state) => {
       state.data = state.prevData;
       state.validateProfileError = undefined;
@@ -50,7 +47,8 @@ export const ProfileSlice = createSlice({
       state.isLoading = true;
       state.validateProfileError = undefined;
     })
-    .addCase(updateProfileData.fulfilled, (state) => {
+    .addCase(updateProfileData.fulfilled, (state, action) => {
+      state.data = action.payload;
       state.validateProfileError = undefined;
       state.isLoading = false;
     })

@@ -1,3 +1,4 @@
+export { getValidateTextError } from './model/services/validateProfileData/validateProfileData';
 export { getIsProfileDataSame } from './model/selectors/profile.selectors';
 export { ProfileCardHeader } from './ui/ProfileCardHeader/ProfileCardHeader';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
