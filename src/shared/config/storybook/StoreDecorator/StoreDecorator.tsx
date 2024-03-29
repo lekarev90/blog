@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 
 import { profileReducer } from 'features/EditableProfileCard';
 import { loginReducer } from 'features/AuthByUsername';
@@ -12,7 +12,7 @@ const defaultAsyncReducer: ReducersList = {
   profile: profileReducer,
 };
 
-export const StoreDecorator = (state: Partial<IStateSchema>) => (Story: Story) => (
+export const StoreDecorator = (state: Partial<IStateSchema>) => (Story: StoryFn) => (
   <StoreProvider
     initialState={state}
     asyncReducers={defaultAsyncReducer}
