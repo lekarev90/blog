@@ -8,6 +8,8 @@
     "title": "Форма авторизации",
     "username": "Логин"
   },
+  "countrySelectorLabel": "Страна",
+  "currencySelectorLabel": "Валюта",
   "errorPage": {
     "mainTitle": "Что-то сломалось",
     "reloadButtonText": "Перезагрузить страницу"
@@ -41,13 +43,12 @@
     "menu": {
       "linkTitles": {
         "about": "О нас",
+        "article": "Статьи",
         "main": "Главная",
         "profile": "Профиль"
       }
     },
     "open": ">"
   },
-  "switchLanguage": "RU",
-  "countrySelectorLabel": "Страна",
-  "currencySelectorLabel": "Валюта"
+  "switchLanguage": "RU"
 }

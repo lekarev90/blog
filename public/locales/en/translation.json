@@ -8,6 +8,8 @@
     "title": "Auth form",
     "username": "Username"
   },
+  "countrySelectorLabel": "Country",
+  "currencySelectorLabel": "Currency",
   "errorPage": {
     "mainTitle": "Something broke",
     "reloadButtonText": "Reload page"
@@ -41,6 +43,7 @@
     "menu": {
       "linkTitles": {
         "about": "About us",
+        "article": "Articles",
         "main": "Main",
         "profile": "Profile"
       }

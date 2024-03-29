@@ -1,7 +1,16 @@
 {
   "editButton": "Edit",
+  "errors": {
+    "age": "Incorrect age",
+    "incorrect_user_data": "First and last names is required",
+    "no_data": "No data",
+    "server_error": "Server error"
+  },
   "inputsPlaceholder": {
     "age": "Your age",
+    "avatar": "Avatar link",
+    "country": "Country",
+    "currency": "Currency",
     "firstName": "Your name",
     "lastName": "Your lastname",
     "username": "Nickname"
