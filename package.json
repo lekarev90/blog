@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack serve --env port=3000 --env mode=development",
     "start:dev:server": "node server/index.js",
+    "start:dev": "concurrently \"yarn start\" \"yarn start:dev:server\"",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
@@ -25,6 +26,7 @@
     "@svgr/webpack": "^6.5.1",
     "axios": "^1.6.7",
     "classnames": "^2.5.1",
+    "concurrently": "^8.2.2",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
