@@ -38,6 +38,7 @@
   "profilePage": {
     "bodyText": "Profile"
   },
+  "serverError": "Server error. Try again later",
   "sidebar": {
     "hide": "<",
     "menu": {

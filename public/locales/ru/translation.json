@@ -14,9 +14,6 @@
     "mainTitle": "Что-то сломалось",
     "reloadButtonText": "Перезагрузить страницу"
   },
-  "login": {
-    "error": "Ошибка. Попробуйте позже"
-  },
   "mainPage": {
     "bodyText": "Главная"
   },
@@ -38,6 +35,7 @@
   "profilePage": {
     "bodyText": "Профиль"
   },
+  "serverError": "Проблема с подключением. Повторите еще раз.",
   "sidebar": {
     "hide": "<",
     "menu": {

@@ -26,7 +26,7 @@ export const loginByUsername = createAsyncThunk<IUser, ILoginByUsername, IThunkC
 
       return data;
     } catch (e) {
-      return rejectWithValue(i18n.t('translation:login.error'));
+      return rejectWithValue(i18n.t('translation:serverError'));
     }
   },
 );

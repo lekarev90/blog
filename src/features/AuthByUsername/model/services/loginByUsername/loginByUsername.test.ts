@@ -31,6 +31,6 @@ describe('loginByUsername', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toBe(i18n.t('translation:login.error'));
+    expect(result.payload).toBe(i18n.t('translation:serverError'));
   });
 });

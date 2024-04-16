@@ -24,6 +24,7 @@ export const globalTypes = {
       items: [
         { value: 'light', title: 'Light' },
         { value: 'dark', title: 'Dark' },
+        { value: 'orange', title: 'Orange' },
       ],
       dynamicTitle: true,
     },

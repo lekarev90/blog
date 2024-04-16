@@ -11,19 +11,25 @@ export enum TextVariant {
   ERROR = 'error',
 }
 
+export enum TextSize {
+  M = 'm',
+  L = 'l',
+}
+
 interface SectionTitleProps {
   className?: string;
   title?: string;
   titleTag?: string;
   text?: string;
   textTag?: string;
-  variant?: TextVariant
+  variant?: TextVariant;
+  size?: TextSize;
 }
 
 type HTMLTagProps<T> = HTMLProps<T> & { [key: string]: any };
 
 export const Text = memo(({
-  className, title, text, titleTag = 'h3', textTag, variant = TextVariant.PRIMARY,
+  className, title, text, titleTag = 'h3', textTag, variant = TextVariant.PRIMARY, size = TextSize.M,
 }: SectionTitleProps) => {
   const TitleWrapperTag = titleTag || 'h3';
   const DescWrapperTag = textTag || 'p';
@@ -32,7 +38,7 @@ export const Text = memo(({
   const descProps: HTMLTagProps<typeof DescWrapperTag> = { className: styles.text, children: text };
 
   return (
-    <div className={cx(styles.container, className, { [variant]: variant })}>
+    <div className={cx(styles.container, className, { [variant]: variant, [`size_${size}`]: size })}>
       {title && <TitleWrapperTag {...titleProps} />}
       {text && <DescWrapperTag {...descProps} />}
     </div>

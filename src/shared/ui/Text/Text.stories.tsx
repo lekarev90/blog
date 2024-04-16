@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Text, TextVariant } from './Text';
+import { Text, TextSize, TextVariant } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -30,5 +30,21 @@ export const Error: StoryObj<typeof Text> = {
     variant: TextVariant.ERROR,
     title: 'Title hey ya',
     text: 'Some text for presentation',
+  },
+};
+
+export const SizeM: StoryObj<typeof Text> = {
+  args: {
+    title: 'Title hey ya',
+    text: 'Some text for presentation',
+    size: TextSize.M,
+  },
+};
+
+export const SizeL: StoryObj<typeof Text> = {
+  args: {
+    title: 'Title hey ya',
+    text: 'Some text for presentation',
+    size: TextSize.L,
   },
 };
