@@ -6,12 +6,12 @@ import { AxiosInstance } from 'axios';
 import { IArticleDetailsSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
 import { IProfileSchema } from 'features/EditableProfileCard';
-import { UserSchema } from 'entities/User';
+import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
 
 export interface IStateSchema {
   counter: CounterSchema;
-  user: UserSchema;
+  user: IUserSchema;
 
   // async
   loginForm?: ILoginSchema;

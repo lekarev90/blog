@@ -3,7 +3,7 @@ export interface IUser {
   username: string
 }
 
-export interface UserSchema {
+export interface IUserSchema {
   authData?: IUser
   initialized?: boolean
 }
