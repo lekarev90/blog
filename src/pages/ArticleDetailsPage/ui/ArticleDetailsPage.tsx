@@ -12,9 +12,7 @@ const ArticleDetailsPage = memo(() => {
     return t('article-details:articleDoesntFound');
   }
 
-  return (
-    <ArticleRoot id={id} />
-  );
+  return <ArticleRoot id={id} />;
 });
 
 export default ArticleDetailsPage;

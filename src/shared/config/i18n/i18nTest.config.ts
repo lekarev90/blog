@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const ns = ['about', 'translation', 'profile', 'article-details'];
+const ns = ['about', 'translation', 'profile', 'article-details', 'comments'];
 const supportedLngs = ['en', 'ru'];
 const resources = ns.reduce((acc: Record<any, any>, n) => {
   supportedLngs.forEach((lng) => {

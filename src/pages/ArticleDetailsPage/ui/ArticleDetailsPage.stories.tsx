@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { REQUEST_URL } from 'entities/Article/model/const/const';
+import { ARTICLES_REQUEST_URL } from 'entities/Article/model/const/const';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
@@ -12,7 +12,7 @@ export default {
     withoutRouter: true,
     mockData: [
       {
-        url: `${__API__}${REQUEST_URL}1`,
+        url: `${__API__}${ARTICLES_REQUEST_URL}/1`,
         method: 'GET',
         status: 200,
         response: {

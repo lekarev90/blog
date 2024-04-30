@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { ArticleRoot } from './ArticleRoot';
-import { REQUEST_URL } from '../../model/const/const';
+import { ARTICLES_COMMENT_REQUEST_URL, ARTICLES_REQUEST_URL } from '../../model/const/const';
 
 export default {
   title: 'entities/ArticleRoot',
@@ -13,7 +13,40 @@ export default {
     withoutRouter: true,
     mockData: [
       {
-        url: `${__API__}${REQUEST_URL}1`,
+        url: `${__API__}${ARTICLES_COMMENT_REQUEST_URL}?articleId=1&_expand=user`,
+        method: 'GET',
+        status: 200,
+        response: [
+          {
+            id: '1',
+            text: 'some comment y',
+            articleId: '1',
+            userId: '1',
+            user: {
+              id: '1',
+              username: 'admin',
+              password: '123',
+              role: 'SUPER_ADMIN',
+              avatar: 'https://picsum.photos/200/200',
+            },
+          },
+          {
+            id: '2',
+            text: 'comment from John',
+            articleId: '1',
+            userId: '2',
+            user: {
+              id: '2',
+              username: 'John',
+              password: '123',
+              role: 'USER',
+              avatar: 'https://picsum.photos/200/300',
+            },
+          },
+        ],
+      },
+      {
+        url: `${__API__}${ARTICLES_REQUEST_URL}/1`,
         method: 'GET',
         status: 200,
         response: {
@@ -45,7 +78,7 @@ export default {
         },
       },
       {
-        url: `${__API__}${REQUEST_URL}2`,
+        url: `${__API__}${ARTICLES_REQUEST_URL}/2`,
         method: 'GET',
         status: 200,
         response: {
@@ -70,7 +103,7 @@ export default {
         },
       },
       {
-        url: `${__API__}${REQUEST_URL}3`,
+        url: `${__API__}${ARTICLES_REQUEST_URL}/3`,
         method: 'GET',
         status: 200,
         response: {

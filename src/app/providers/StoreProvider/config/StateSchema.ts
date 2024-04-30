@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
-import { IArticleDetailsSchema } from 'entities/Article';
+import { IArticleDetailsCommentsSchema, IArticleDetailsSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
 import { IProfileSchema } from 'features/EditableProfileCard';
 import { IUserSchema } from 'entities/User';
@@ -17,6 +17,7 @@ export interface IStateSchema {
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
   articleDetails?: IArticleDetailsSchema;
+  articleDetailsComments?: IArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof IStateSchema
