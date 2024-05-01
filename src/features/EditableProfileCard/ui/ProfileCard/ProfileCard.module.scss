@@ -1,12 +1,13 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: 35px;
 }
 
 .inputs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
 }
 
 .loader {

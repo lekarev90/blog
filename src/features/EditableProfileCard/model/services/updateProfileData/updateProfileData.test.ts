@@ -6,6 +6,7 @@ import { IProfile, IProfileSchema, ValidateProfileError } from '../../types/prof
 import { updateProfileData } from './updateProfileData';
 
 const userData: IProfile = {
+  id: '1',
   age: '30',
   firstName: 'Ivan',
   lastName: 'Ivanov',

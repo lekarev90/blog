@@ -14,6 +14,7 @@ import {
 import { ValidateProfileError } from '../types/profile';
 
 const userData: IProfile = {
+  id: '1',
   age: '30',
   firstName: 'Ivan',
   lastName: 'Ivanov',

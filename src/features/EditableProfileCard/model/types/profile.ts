@@ -9,6 +9,7 @@ export enum ValidateProfileError {
 }
 
 export interface IProfile extends CountrySelectField, CurrencySelectField {
+  id: string
   firstName: string;
   lastName: string;
   age: string;
