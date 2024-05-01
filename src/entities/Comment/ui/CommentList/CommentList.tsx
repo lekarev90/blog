@@ -27,7 +27,7 @@ export const CommentList = memo(({ className, isLoading = false, comments = [] }
           <CommentCard
             key={comment.id}
             isLoading={isLoading}
-            className={styles.comment}
+            className={cx(styles.comment, { isLoading })}
             {...comment}
           />
         ))

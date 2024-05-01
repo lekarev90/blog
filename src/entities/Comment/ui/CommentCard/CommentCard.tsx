@@ -41,6 +41,7 @@ export const CommentCard = memo(
           <Skeleton
             width="100%"
             height={50}
+            className={styles.text}
           />
         </div>
       );
