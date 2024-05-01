@@ -80,6 +80,7 @@ export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
               comments={comments}
             />
             <AddCommentForm
+              className={styles.commentForm}
               text={commentText}
               onSendComment={onChangeComment}
               onChangeComment={setCommentText}

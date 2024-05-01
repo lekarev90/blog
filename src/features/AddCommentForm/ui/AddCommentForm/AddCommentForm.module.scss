@@ -1,11 +1,10 @@
 .container {
   display: flex;
-  justify-content: space-between;
   gap: 30px;
-  padding: 20px;
 }
 
 .input {
+  max-width: 350px;
   width: 100%;
 }
 
