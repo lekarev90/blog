@@ -10,7 +10,6 @@ export default {
   component: ArticleRoot,
   decorators: [StoreDecorator({})],
   parameters: {
-    withoutRouter: true,
     mockData: [
       {
         url: `${__API__}${ARTICLES_COMMENT_REQUEST_URL}?articleId=1&_expand=user`,

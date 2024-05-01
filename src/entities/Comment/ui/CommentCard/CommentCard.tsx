@@ -5,6 +5,8 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import { IComment } from '../../model/types/comment';
 
 import styles from './CommentCard.module.scss';
@@ -20,7 +22,7 @@ export const CommentCard = memo(
   ({
     user, text, className, isLoading = false,
   }: CommentCardProps) => {
-    const { username, avatar } = user;
+    const { username, avatar, id: userId } = user;
 
     if (isLoading) {
       return (
@@ -46,7 +48,10 @@ export const CommentCard = memo(
 
     return (
       <div className={cx(styles.container, className)}>
-        <div className={styles.header}>
+        <AppLink
+          to={`${RouterPath.profile}/${userId}`}
+          className={styles.header}
+        >
           {avatar && (
             <Avatar
               src={avatar}
@@ -55,7 +60,7 @@ export const CommentCard = memo(
             />
           )}
           <Text title={username} />
-        </div>
+        </AppLink>
         <Text
           text={text}
           className={styles.text}

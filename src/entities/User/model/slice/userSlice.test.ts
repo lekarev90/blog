@@ -1,7 +1,7 @@
 import { DeepPartial } from 'shared/const/types';
 import { userActions, userReducer } from './userSlice';
 
-import { IUser, IUserSchema } from '../types/userSchema';
+import { ERoles, IUser, IUserSchema } from '../types/userSchema';
 
 describe('userReducer', () => {
   beforeAll(() => {
@@ -12,7 +12,7 @@ describe('userReducer', () => {
     localStorage.removeItem = jest.fn();
   });
   test('setAuthData', () => {
-    const authData: IUser = { id: '123', username: 'username' };
+    const authData: IUser = { id: '123', username: 'username', role: ERoles.SUPERADMIN };
 
     const initialState: DeepPartial<IUserSchema> = {};
 
@@ -34,7 +34,7 @@ describe('userReducer', () => {
   });
 
   test('logout', () => {
-    const authData: IUser = { id: '123', username: 'username' };
+    const authData: IUser = { id: '123', username: 'username', role: ERoles.SUPERADMIN };
 
     const initialState: DeepPartial<IUserSchema> = { authData };
 

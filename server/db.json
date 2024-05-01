@@ -19,7 +19,9 @@
       "img": "https://picsum.photos/200",
       "views": "2345",
       "createdAt": "30.03.2024",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -71,7 +73,9 @@
       "img": "https://picsum.photos/200",
       "views": "2345",
       "createdAt": "30.03.2024",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -135,6 +139,18 @@
       "text": "comment from John",
       "articleId": "2",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ccc",
+      "id": "j0Iwi7D"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "tttt",
+      "id": "1DcIv6e"
     }
   ],
   "users": [
@@ -153,14 +169,28 @@
       "avatar": "https://picsum.photos/200/300"
     }
   ],
-  "profile": {
-    "firstName": "Andrew",
-    "lastName": "Ducalis",
-    "age": "25",
-    "currency": "USD",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "Ducalis2000",
-    "avatar": "https://img.freepik.com/premium-photo/a-cat-wearing-sunglasses-and-a-hat-that-says-cat-on-it_924318-283.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Andrew",
+      "lastName": "Ducalis",
+      "age": "25",
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "Ducalis2000",
+      "avatar": "https://picsum.photos/600/600"
+    },
+    {
+      "id": "2",
+      "firstName": "Vasia",
+      "lastName": "Ivanov",
+      "age": "25",
+      "currency": "USD",
+      "country": "USA",
+      "city": "NY",
+      "username": "NYVasya",
+      "avatar": "https://picsum.photos/600/600"
+    }
+  ]
 }

@@ -1,4 +1,6 @@
-import React, { FC, memo, useEffect } from 'react';
+import React, {
+  FC, memo, useCallback, useEffect, useState,
+} from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -6,7 +8,9 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
+import { AddCommentForm } from 'features/AddCommentForm';
 
+import { addArticleComment } from '../../model/services/addArticleCommet';
 import { ArticleDetails } from '../ArticleDetails/ArticleDetails';
 import { fetchCommentsByArticleId } from '../../model/services/fetchArticleCommets';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
@@ -38,6 +42,16 @@ export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
   const article = useSelector(getArticleDetailsData);
   const comments = useSelector(getArticleComments.selectAll);
   const isCommentsLoading = useSelector(getArticleCommentsIsLoading);
+  const isContentReady = !isLoading && !error && article;
+
+  const [commentText, setCommentText] = useState('');
+
+  const onChangeComment = useCallback(() => {
+    dispatch(addArticleComment(commentText));
+    dispatch(fetchCommentsByArticleId(id));
+
+    setCommentText('');
+  }, [commentText, dispatch, id]);
 
   const { t } = useTranslation('comments');
 
@@ -56,17 +70,23 @@ export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
           variant={TextVariant.ERROR}
         />
       ) }
-      {!isLoading && !error && article
-        && (
-          <>
+      {
+        isContentReady && (
+          <div className={styles.wrapper}>
             <ArticleDetails {...article} />
             <Text title={t('article-details:commentTitle')} />
             <CommentList
               isLoading={isCommentsLoading}
               comments={comments}
             />
-          </>
-        )}
+            <AddCommentForm
+              text={commentText}
+              onSendComment={onChangeComment}
+              onChangeComment={setCommentText}
+            />
+          </div>
+        )
+      }
     </DynamicModuleLoader>
   );
 });

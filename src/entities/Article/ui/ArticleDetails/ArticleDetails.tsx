@@ -1,5 +1,4 @@
 import { FC, memo } from 'react';
-import classNames from 'classnames/bind';
 
 import { IArticle } from 'entities/Article';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -16,8 +15,6 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 
 import styles from './ArticleDetails.module.scss';
 
-const cx = classNames.bind(styles);
-
 interface ArticleDetailsProps extends IArticle {
   className?: string;
 }
@@ -30,9 +27,9 @@ const BLOCKS: Record<ArticleBlockType, FC<TArticleBlock & any>> = {
 };
 
 export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
-  className, blocks, title, subtitle, img, views, createdAt,
+  blocks, title, subtitle, img, views, createdAt,
 }) => (
-  <div className={cx(styles.container, className)}>
+  <>
     {img && (
       <div className={styles.avatarWrapper}>
         <Avatar
@@ -70,5 +67,5 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
         );
       })}
     </div>
-  </div>
+  </>
 ));

@@ -7,3 +7,9 @@
   justify-self: center;
   margin: 0 auto;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

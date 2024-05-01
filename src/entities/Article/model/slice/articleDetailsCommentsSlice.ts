@@ -2,9 +2,11 @@ import {
   createSlice,
   createEntityAdapter, PayloadAction,
 } from '@reduxjs/toolkit';
+
 import { IComment } from 'entities/Comment';
 import { IStateSchema } from 'app/providers/StoreProvider';
 
+import { addArticleComment } from '../services/addArticleCommet';
 import { fetchCommentsByArticleId } from '../services/fetchArticleCommets';
 import { IArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 
@@ -40,6 +42,18 @@ const articleDetailsCommentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload);
       })
       .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(addArticleComment.pending, (state) => {
+        state.isLoading = true;
+        state.error = undefined;
+      })
+      .addCase(addArticleComment.fulfilled, (state) => {
+        state.error = undefined;
+        state.isLoading = false;
+      })
+      .addCase(addArticleComment.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
       });

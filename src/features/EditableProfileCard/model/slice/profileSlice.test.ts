@@ -118,7 +118,7 @@ describe('profileSlice.test', () => {
       prevData: userData,
     };
 
-    const expected = profileReducer(state as IProfileSchema, fetchProfileData.fulfilled(userData, ''));
+    const expected = profileReducer(state as IProfileSchema, fetchProfileData.fulfilled(userData, '', '1'));
 
     expect(expected).toEqual(resultState);
   });
@@ -133,7 +133,7 @@ describe('profileSlice.test', () => {
       isLoading: true,
     };
 
-    const expected = profileReducer(state as IProfileSchema, fetchProfileData.pending(''));
+    const expected = profileReducer(state as IProfileSchema, fetchProfileData.pending('', '1'));
 
     expect(expected).toEqual(resultState);
   });
@@ -149,7 +149,7 @@ describe('profileSlice.test', () => {
       validateProfileError,
     };
 
-    const expected = profileReducer(state as IProfileSchema, fetchProfileData.rejected(null, '', undefined, validateProfileError));
+    const expected = profileReducer(state as IProfileSchema, fetchProfileData.rejected(null, '', '1', validateProfileError));
 
     expect(expected).toEqual(resultState);
   });

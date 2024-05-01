@@ -4,6 +4,7 @@ import { fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Profile } from 'widgets/Profile';
+import { useParams } from 'react-router';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -11,10 +12,13 @@ const reducers: ReducersList = {
 
 const ProfilePage = memo(() => {
   const dispatch = useAppDispatch();
+  const { id } = useParams<{id: string, know: string}>();
 
   useEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <DynamicModuleLoader reducers={reducers}>

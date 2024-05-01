@@ -6,7 +6,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 
 import ProfilePage from './ProfilePage';
 
-const url = `${__API__}/profile`;
+const url = `${__API__}/profile/1`;
 
 export default {
   title: 'pages/ProfilePage',
