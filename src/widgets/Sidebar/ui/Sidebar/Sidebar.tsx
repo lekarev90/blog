@@ -1,12 +1,13 @@
 import { memo, useState } from 'react';
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { Button, ButtonSize, ButtonVariants } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 
-import { getSidebarItemsList } from '../../model/items';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import styles from './Sidebar.module.scss';
@@ -14,8 +15,10 @@ import styles from './Sidebar.module.scss';
 const cx = classNames.bind(styles);
 
 export const Sidebar = memo(() => {
-  const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
+
+  const [collapsed, setCollapsed] = useState(false);
+  const sidebarItems = useSelector(getSidebarItems(t));
 
   const sidebarStateText = t(`translation:sidebar.${collapsed ? 'open' : 'hide'}`);
 
@@ -41,7 +44,7 @@ export const Sidebar = memo(() => {
         {sidebarStateText}
       </Button>
       <div className={styles.menuContainer}>
-        {getSidebarItemsList(t).map((item) => (
+        {sidebarItems.map((item) => (
           <SidebarItem
             key={item.path}
             item={item}
