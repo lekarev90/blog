@@ -1,15 +1,6 @@
 import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { ArticleList } from 'entities/Article';
 
-const ArticlePage = memo(() => {
-  const { t } = useTranslation();
-
-  return (
-    <div>
-      {t('translation:mainPage.bodyText')}
-      ARTICLE DETAILS PAGE
-    </div>
-  );
-});
+const ArticlePage = memo(() => <ArticleList />);
 
 export default ArticlePage;

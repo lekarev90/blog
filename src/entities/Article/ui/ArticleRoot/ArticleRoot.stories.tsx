@@ -4,6 +4,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 
 import { ArticleRoot } from './ArticleRoot';
 import { ARTICLES_COMMENT_REQUEST_URL, ARTICLES_REQUEST_URL } from '../../model/const/const';
+import { articlesMock1 } from '../ArticleList/model/mock/articlesMock';
 
 export default {
   title: 'entities/ArticleRoot',
@@ -48,33 +49,7 @@ export default {
         url: `${__API__}${ARTICLES_REQUEST_URL}/1`,
         method: 'GET',
         status: 200,
-        response: {
-          id: '1',
-          title: 'Post 1',
-          subtitle: 'Subtitle post 1',
-          img: 'https://picsum.photos/200',
-          views: '2345',
-          createdAt: '30.03.2024',
-          type: ['IT'],
-          blocks: [
-            {
-              id: '1',
-              type: 'TEXT',
-              title: 'Some title of block',
-              paragraphs: [
-                'That\'s first paragraphs',
-                'Entire any had depend and figure winter. '
-                + 'Change stairs and men likely wisdom new happen piqued six. Now taken him timed sex world get.',
-                'Enjoyed married an feeling delight pursuit '
-                + 'as offered. As admire roused length likely played pretty to no. Means had joy miles her merry solid order.',
-                'Conveying or northward offending admitting perfectly '
-                + 'my. Colonel gravity get thought fat smiling add but. Wonder twenty hunted and put income set desire expect.',
-                'Am cottage calling my is mistake cousins talking up.'
-                + ' Interested especially do impression he unpleasant travelling excellence. All few our knew time done draw ask.',
-              ],
-            },
-          ],
-        },
+        response: articlesMock1,
       },
       {
         url: `${__API__}${ARTICLES_REQUEST_URL}/2`,

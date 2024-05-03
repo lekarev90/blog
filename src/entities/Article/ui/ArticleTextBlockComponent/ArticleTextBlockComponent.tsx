@@ -10,7 +10,7 @@ export const ArticleTextBlockComponent: FC<IArticleTextBlock> = memo(({
   title,
   paragraphs,
 }) => (
-  <div className={styles.contentWrapper}>
+  <>
     {title && (
       <Text
         title={title}
@@ -22,5 +22,5 @@ export const ArticleTextBlockComponent: FC<IArticleTextBlock> = memo(({
         { paragraph }
       </p>
     ))}
-  </div>
+  </>
 ));

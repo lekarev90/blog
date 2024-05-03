@@ -24,18 +24,22 @@ interface SectionTitleProps {
   textTag?: string;
   variant?: TextVariant;
   size?: TextSize;
+  descriptionClassName?: string
+  titleClassName?: string
+  tooltipDescriptionText?: string
 }
 
 type HTMLTagProps<T> = HTMLProps<T> & { [key: string]: any };
 
 export const Text = memo(({
   className, title, text, titleTag = 'h3', textTag, variant = TextVariant.PRIMARY, size = TextSize.M,
+  descriptionClassName, titleClassName,
 }: SectionTitleProps) => {
   const TitleWrapperTag = titleTag || 'h3';
   const DescWrapperTag = textTag || 'p';
 
-  const titleProps: HTMLTagProps<typeof TitleWrapperTag> = { className: styles.title, children: title };
-  const descProps: HTMLTagProps<typeof DescWrapperTag> = { className: styles.text, children: text };
+  const titleProps: HTMLTagProps<typeof TitleWrapperTag> = { className: cx(styles.title, titleClassName), children: title, title };
+  const descProps: HTMLTagProps<typeof DescWrapperTag> = { className: cx(styles.text, descriptionClassName), children: text, title: text };
 
   return (
     <div className={cx(styles.container, className, { [variant]: variant, [`size_${size}`]: size })}>

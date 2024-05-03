@@ -32,7 +32,7 @@ export const getSidebarItems = (t: TFunction) => createSelector(getUserAuthData,
         isAuthOnly: true,
       },
       {
-        path: RouterPath.article,
+        path: RouterPath.articles,
         Icon: ArticleIcon,
         text: t('translation:sidebar.menu.linkTitles.article'),
         isAuthOnly: true,

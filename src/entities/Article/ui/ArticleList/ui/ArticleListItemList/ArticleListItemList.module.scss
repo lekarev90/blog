@@ -1,0 +1,48 @@
+.container {
+  width: 230px;
+}
+
+.imageWrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+}
+
+.date {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.typesWrapper {
+  flex: 1 0 auto;
+}
+
+.typesText {
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.views {
+  margin-left: auto;
+}
+
+.title {
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

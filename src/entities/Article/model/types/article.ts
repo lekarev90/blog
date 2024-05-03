@@ -1,3 +1,5 @@
+import { IUser } from 'entities/User';
+
 export enum ArticleBlockType {
   CODE = 'CODE',
   IMAGE = 'IMAGE',
@@ -42,6 +44,12 @@ export interface IArticle {
   img: string
   views: string
   createdAt: string
+  user: IUser
   types: ArticleType[]
   blocks: TArticleBlock[]
+}
+
+export enum EArticleView {
+  LIST = 'LIST',
+  GRID = 'GRID',
 }

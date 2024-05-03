@@ -21,13 +21,14 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
   rules: {
+    'react/no-array-index-key': 0,
     'react/prop-types': 0,
     'react/jsx-indent-props': [2, 2],
     'react/jsx-max-props-per-line': [
       2,
       {
         maximum: {
-          single: 1,
+          single: 5,
           multi: 1,
         },
       },
