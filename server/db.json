@@ -16,12 +16,13 @@
       "id": "1",
       "title": "Post 1",
       "subtitle": "Subtitle post 1",
-      "img": "https://picsum.photos/200",
-      "views": "2345",
-      "createdAt": "30.03.2024",
-      "type": [
-        "IT"
+      "img": "https://picsum.photos/400?random=1",
+      "views": "3",
+      "createdAt": "11.03.2024",
+      "types": [
+        "IT", "CARS"
       ],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",
@@ -68,13 +69,14 @@
     },
     {
       "id": "2",
-      "title": "Post 1",
-      "subtitle": "Subtitle post 1",
-      "img": "https://picsum.photos/200",
-      "views": "2345",
+      "userId": "2",
+      "title": "Some theme",
+      "subtitle": "Subtitle post 2",
+      "img": "https://picsum.photos/400?random=2",
+      "views": "345",
       "createdAt": "30.03.2024",
-      "type": [
-        "IT"
+      "types": [
+        "MEDICINE", "SCIENCE","IT"
       ],
       "blocks": [
         {

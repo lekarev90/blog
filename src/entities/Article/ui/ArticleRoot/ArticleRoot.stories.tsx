@@ -2,9 +2,9 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
+import { articlesMock1 } from '../../model/mock/articlesMock';
 import { ArticleRoot } from './ArticleRoot';
 import { ARTICLES_COMMENT_REQUEST_URL, ARTICLES_REQUEST_URL } from '../../model/const/const';
-import { articlesMock1 } from '../ArticleList/model/mock/articlesMock';
 
 export default {
   title: 'entities/ArticleRoot',

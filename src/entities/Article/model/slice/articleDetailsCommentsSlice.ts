@@ -14,16 +14,16 @@ const commentsAdapter = createEntityAdapter({
   selectId: (comment: IComment) => comment.id,
 });
 
-export const getArticleComments = commentsAdapter.getSelectors<IStateSchema>(
-  (state) => state.articleDetailsComments || commentsAdapter.getInitialState(),
-);
-
 const initialState = commentsAdapter.getInitialState<IArticleDetailsCommentsSchema>({
   isLoading: false,
-  ids: ['1', '2'],
+  ids: [],
   error: undefined,
   entities: {},
 });
+
+export const getArticleComments = commentsAdapter.getSelectors<IStateSchema>(
+  (state) => state.articleDetailsComments || initialState,
+);
 
 const articleDetailsCommentsSlice = createSlice({
   name: 'articleDetailsCommentsSlice',

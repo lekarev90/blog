@@ -10,7 +10,7 @@ import { getArticleDetailsData } from '../selectors/articleDetails.selectors';
 import { ARTICLES_COMMENT_REQUEST_URL } from '../const/const';
 
 export const addArticleComment = createAsyncThunk<IComment, string, IThunkConfig<string>>(
-  'profile/addArticleComment',
+  'article/addArticleComment',
   async (commentText, { extra, rejectWithValue, getState }) => {
     const userData = getUserAuthData(getState() as IStateSchema);
     const article = getArticleDetailsData(getState() as IStateSchema);

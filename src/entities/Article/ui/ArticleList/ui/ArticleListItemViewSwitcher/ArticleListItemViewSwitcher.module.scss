@@ -1,0 +1,12 @@
+.viewSwitcher {
+  display: flex;
+  gap: 8px;
+
+  :first-child {
+    margin-left: auto;
+  }
+
+  .isActive {
+    fill: var(--inverted-secondary-color)
+  }
+}

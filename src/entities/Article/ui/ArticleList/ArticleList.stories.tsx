@@ -2,26 +2,29 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { ArticleList, EArticleView } from 'entities/Article';
+import { articlesMockWithRandom } from '../../model/mock/articlesMock';
+import { ArticleList } from './ArticleList';
 
-import { articlesMock1 } from '../ArticleList/model/mock/articlesMock';
+import { ARTICLES_REQUEST_URL } from '../../model/const/const';
 
 export default {
   title: 'entities/ArticleList',
   component: ArticleList,
   decorators: [StoreDecorator({})],
-  args: {
-    articles: [articlesMock1, articlesMock1, articlesMock1, articlesMock1, articlesMock1, articlesMock1],
+  parameters: {
+    mockData: [{
+      url: `${__API__}${ARTICLES_REQUEST_URL}?_expand=user`,
+      method: 'GET',
+      status: 200,
+      response: [articlesMockWithRandom(), articlesMockWithRandom(), articlesMockWithRandom(), articlesMockWithRandom()],
+      // response: { articles: arr },
+    }],
   },
 } as Meta<typeof ArticleList>;
 
 export const ViewList: StoryObj<typeof ArticleList> = {};
 
-export const ViewGrid: StoryObj<typeof ArticleList> = {
-  args: {
-    view: EArticleView.GRID,
-  },
-};
+export const ViewGrid: StoryObj<typeof ArticleList> = {};
 
 export const LoadingViewList: StoryObj<typeof ArticleList> = {
   args: {
@@ -32,6 +35,5 @@ export const LoadingViewList: StoryObj<typeof ArticleList> = {
 export const LoadingViewGrid: StoryObj<typeof ArticleList> = {
   args: {
     isLoading: true,
-    view: EArticleView.GRID,
   },
 };

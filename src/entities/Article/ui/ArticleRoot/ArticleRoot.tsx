@@ -77,7 +77,7 @@ export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
       {
         isContentReady && (
           <div className={styles.wrapper}>
-            <Button variant={ButtonVariants.OUTLINE} onClick={onBackToList}>
+            <Button variant={ButtonVariants.OUTLINE} onClick={onBackToList} className={styles.goBackButton}>
               {t('article-details:goBack')}
             </Button>
             <ArticleDetails {...article} />

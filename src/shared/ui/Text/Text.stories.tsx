@@ -33,6 +33,14 @@ export const Error: StoryObj<typeof Text> = {
   },
 };
 
+export const SizeS: StoryObj<typeof Text> = {
+  args: {
+    title: 'Title hey ya',
+    text: 'Some text for presentation',
+    size: TextSize.S,
+  },
+};
+
 export const SizeM: StoryObj<typeof Text> = {
   args: {
     title: 'Title hey ya',

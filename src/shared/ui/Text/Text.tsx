@@ -12,6 +12,7 @@ export enum TextVariant {
 }
 
 export enum TextSize {
+  S = 's',
   M = 'm',
   L = 'l',
 }
