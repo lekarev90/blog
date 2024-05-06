@@ -33,7 +33,7 @@ export default {
   },
 } as Meta<typeof ArticleList>;
 
-export const ViewList: StoryObj<typeof ArticleList> = {};
+export const Default: StoryObj<typeof ArticleList> = {};
 
 export const ViewGrid: StoryObj<typeof ArticleList> = {};
 
