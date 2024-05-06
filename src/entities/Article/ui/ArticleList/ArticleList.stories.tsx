@@ -12,13 +12,24 @@ export default {
   component: ArticleList,
   decorators: [StoreDecorator({})],
   parameters: {
-    mockData: [{
-      url: `${__API__}${ARTICLES_REQUEST_URL}?_expand=user`,
-      method: 'GET',
-      status: 200,
-      response: [articlesMockWithRandom(), articlesMockWithRandom(), articlesMockWithRandom(), articlesMockWithRandom()],
-      // response: { articles: arr },
-    }],
+    mockData: [
+      {
+        url: `${__API__}${ARTICLES_REQUEST_URL}?_expand=user`,
+        method: 'GET',
+        status: 200,
+        response: [
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+          articlesMockWithRandom(),
+        ],
+      },
+    ],
   },
 } as Meta<typeof ArticleList>;
 

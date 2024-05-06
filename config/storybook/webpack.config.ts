@@ -47,5 +47,11 @@ export default ({ config } : {config: webpack.Configuration }) => {
     __API__: JSON.stringify('http://localhost:8000'),
   }));
 
+  config!.module!.rules.push({
+    test: /\.(ts|tsx)$/,
+    use: 'babel-loader', // Используйте Babel для транспиляции TypeScript и JSX
+    exclude: /node_modules/,
+  });
+
   return config;
 };
