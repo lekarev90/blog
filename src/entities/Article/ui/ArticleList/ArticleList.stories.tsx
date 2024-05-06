@@ -35,16 +35,16 @@ export default {
 
 export const Default: StoryObj<typeof ArticleList> = {};
 
-export const ViewGrid: StoryObj<typeof ArticleList> = {};
-
-export const LoadingViewList: StoryObj<typeof ArticleList> = {
-  args: {
-    isLoading: true,
-  },
-};
-
-export const LoadingViewGrid: StoryObj<typeof ArticleList> = {
-  args: {
-    isLoading: true,
+export const Loading: StoryObj<typeof ArticleList> = {
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}${ARTICLES_REQUEST_URL}?_expand=user`,
+        method: 'GET',
+        status: 200,
+        response: [],
+        delay: 10000 * 10000,
+      },
+    ],
   },
 };
