@@ -5,13 +5,17 @@ import { Page } from 'shared/ui/Page/Page';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
 
+import { articlesListReducer } from 'widgets/articleList/model/slices/articlesListSlice';
+import { ArticleList } from 'widgets/articleList';
 import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
-import { ARTICLES_LIST_DATA } from '../../../entities/Article/model/const/const';
 
-import { ArticleList, EArticleView } from '../../../entities/Article';
-import { getArticlesListHasMore, getArticlesListIsLoading } from '../../../entities/Article/model/selectors/articlesList.selectors';
-import { fetchArticlesList } from '../../../entities/Article/model/services/fetchArticlesList';
-import { articlesListReducer } from '../../../entities/Article/model/slice/articlesListSlice';
+import { getArticlesListHasMore, getArticlesListIsLoading } from 'widgets/articleList/model/selectors/articlesList.selectors';
+import { ARTICLES_LIST_DATA } from 'widgets/articleList/model/helpers/helpers';
+import { ArticlesListViewSwitcher } from 'features/articleList';
+import { EArticleView } from '../../../../entities/Article';
+import { fetchArticlesList } from '../../../../entities/Article/model/services/fetchArticlesList';
+
+import styles from './ArticlePage.module.scss';
 
 const reducers = {
   articlesList: articlesListReducer,
@@ -43,7 +47,10 @@ const ArticlePage = memo(() => {
   return (
     <Page onScrollEnd={onLoadNextPart}>
       <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-        <ArticleList onLoadNextPart={onLoadNextPart} onSwitchArticleView={onSwitchArticleView} articleView={articleView} />
+        <div className={styles.header}>
+          <ArticlesListViewSwitcher onSwitchView={onSwitchArticleView} currentView={articleView} />
+        </div>
+        <ArticleList onLoadNextPart={onLoadNextPart} articleView={articleView} />
       </DynamicModuleLoader>
     </Page>
   );

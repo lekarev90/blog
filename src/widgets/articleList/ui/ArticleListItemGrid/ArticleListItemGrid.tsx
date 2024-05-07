@@ -12,8 +12,8 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 
-import { IArticle, ArticleBlockType, IArticleTextBlock } from '../../../../model/types/article';
-import { ArticleTextBlockComponent } from '../../../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { IArticle, ArticleBlockType, IArticleTextBlock } from '../../../../entities/Article/model/types/article';
+import { ArticleTextBlockComponent } from '../../../../entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import styles from './ArticleListItemGrid.module.scss';
 

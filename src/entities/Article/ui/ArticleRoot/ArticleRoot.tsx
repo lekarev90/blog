@@ -13,15 +13,15 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 import { useNavigate } from 'react-router';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import { articleDetailsCommentsReducer, getArticleComments } from 'entities/Article/model/slices/articleDetailsCommentsSlice';
+import { articleDetailsReducer } from 'entities/Article/model/slices/articleDetailsSlice';
 import { addArticleComment } from '../../model/services/addArticleCommet';
 import { ArticleDetails } from '../ArticleDetails/ArticleDetails';
 import { fetchCommentsByArticleId } from '../../model/services/fetchArticleCommets';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/articleComments.selectors';
 import { ArticleDetailsLoading } from '../ArticleDetailsLoading/ArticleDetailsLoading';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails.selectors';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
 import styles from './ArticleRoot.module.scss';
 

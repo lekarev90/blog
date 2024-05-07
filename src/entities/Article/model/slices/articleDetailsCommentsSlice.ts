@@ -8,7 +8,7 @@ import { IStateSchema } from 'app/providers/StoreProvider';
 
 import { addArticleComment } from '../services/addArticleCommet';
 import { fetchCommentsByArticleId } from '../services/fetchArticleCommets';
-import { IArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+import { IArticleDetailsCommentsSchema } from '../types/articleDetailsCommentsSchema';
 
 const commentsAdapter = createEntityAdapter({
   selectId: (comment: IComment) => comment.id,

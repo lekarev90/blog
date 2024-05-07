@@ -2,10 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { articlesMockWithRandom } from '../../model/mock/articlesMock';
+import { articlesMockWithRandom, ARTICLES_REQUEST_URL } from 'entities/Article';
 import { ArticleList } from './ArticleList';
-
-import { ARTICLES_REQUEST_URL } from '../../model/const/const';
 
 export default {
   title: 'entities/ArticleList',

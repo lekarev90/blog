@@ -7,9 +7,9 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import GridIcon from 'shared/assets/icons/tiled-24-24.svg';
 
-import { EArticleView } from '../../../../model/types/article';
+import { EArticleView } from 'entities/Article';
 
-import styles from './ArticleListItemViewSwitcher.module.scss';
+import styles from './ArticlesListViewSwitcher.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -34,7 +34,7 @@ const viewTypes: Record<EArticleView, IViewType> = {
   },
 };
 
-export const ArticleListItemViewSwitcher = memo(({ onSwitchView, currentView }: ArticleListItemViewSwitcherProps) => (
+export const ArticlesListViewSwitcher = memo(({ onSwitchView, currentView }: ArticleListItemViewSwitcherProps) => (
   <div className={styles.viewSwitcher}>
     {Object.values(viewTypes).map(({ view, icon }) => (
       <Button onClick={() => onSwitchView(view)} key={view}>

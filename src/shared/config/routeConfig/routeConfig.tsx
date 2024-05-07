@@ -1,5 +1,5 @@
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
-import { ArticlePage } from 'pages/ArticlePage';
+import { ArticlePage } from 'pages/articlesPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { RouteProps } from 'react-router-dom';
 

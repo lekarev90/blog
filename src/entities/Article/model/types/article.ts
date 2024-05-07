@@ -50,6 +50,6 @@ export interface IArticle {
 }
 
 export enum EArticleView {
-  LIST = 'LIST',
-  GRID = 'GRID',
+  LIST = 'list',
+  GRID = 'grid',
 }

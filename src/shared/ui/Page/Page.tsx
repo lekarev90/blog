@@ -44,7 +44,7 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
       position: e.currentTarget.scrollTop,
       pathname,
     }));
-  }, 500);
+  }, 300);
 
   useLayoutEffect(() => {
     wrapperRef.current.scrollTop = pageScrollPosition;

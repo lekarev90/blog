@@ -8,7 +8,7 @@ import { Card } from 'shared/ui/Card/Card';
 
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 
-import { IArticle } from '../../../../model/types/article';
+import { IArticle } from '../../../../entities/Article/model/types/article';
 
 import styles from './ArticleListItemList.module.scss';
 

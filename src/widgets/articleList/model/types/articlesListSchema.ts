@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { IArticle } from './article';
+import { IArticle } from '../../../../entities/Article/model/types/article';
 
 export interface IArticlesListSchema extends EntityState<IArticle, IArticle['id']> {
   isLoading?: boolean;

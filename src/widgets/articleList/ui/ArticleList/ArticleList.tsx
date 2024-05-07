@@ -5,11 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 import { Card } from 'shared/ui/Card/Card';
 import { Text } from 'shared/ui/Text/Text';
-import { ARTICLES_LIST_DATA } from '../../model/const/const';
+
+import { EArticleView, IArticle } from 'entities/Article';
+import { getArticles } from '../../model/slices/articlesListSlice';
 import { getArticlesListHasMore, getArticlesListIsLoading } from '../../model/selectors/articlesList.selectors';
-import { ArticleListItemViewSwitcher } from './ui/ArticleListItemViewSwitcher/ArticleListItemViewSwitcher';
-import { EArticleView, IArticle } from '../../model/types/article';
-import { getArticles } from '../../model/slice/articlesListSlice';
+
+import { ARTICLES_LIST_DATA } from '../../model/helpers/helpers';
 
 import styles from './ArticleList.module.scss';
 
@@ -20,12 +21,11 @@ interface ArticleListProps {
   articles?: IArticle[];
   isLoading?: boolean;
   onLoadNextPart: () => void;
-  onSwitchArticleView: (view: EArticleView) => void;
   articleView: EArticleView;
 }
 
 export const ArticleList = memo(({
-  className, onLoadNextPart, onSwitchArticleView, articleView,
+  className, onLoadNextPart, articleView,
 }: ArticleListProps) => {
   const { t } = useTranslation();
 
@@ -45,17 +45,14 @@ export const ArticleList = memo(({
   );
 
   return (
-    <>
-      <ArticleListItemViewSwitcher currentView={articleView} onSwitchView={onSwitchArticleView} />
-      <div className={cx(className, { [`view-${articleView}`]: articleView })}>
-        {renderComponent()}
-        {isLoading && skeletonComponents}
-        {isShowMoreButton && (
-          <Card className={styles.fetchMore} onClick={onLoadNextPart}>
-            <Text text={t('translation:loadMore')} />
-          </Card>
-        )}
-      </div>
-    </>
+    <div className={cx(className, { [`view-${articleView}`]: articleView })}>
+      {renderComponent()}
+      {isLoading && skeletonComponents}
+      {isShowMoreButton && (
+        <Card className={styles.fetchMore} onClick={onLoadNextPart}>
+          <Text text={t('translation:loadMore')} />
+        </Card>
+      )}
+    </div>
   );
 });

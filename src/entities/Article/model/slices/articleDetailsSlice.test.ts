@@ -1,7 +1,7 @@
 import { DeepPartial } from 'shared/const/types';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById';
 
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from 'entities/Article/model/slices/articleDetailsSlice';
 import { IArticle } from 'entities/Article';
 
 import { IArticleDetailsSchema } from '../types/articleDetailsSchema';
