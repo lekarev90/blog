@@ -8,10 +8,12 @@ import { CounterSchema } from 'entities/Counter';
 import { IProfileSchema } from 'features/EditableProfileCard';
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
+import { IScroll } from 'shared/ui/Page/model/types/scrollTypes';
 
 export interface IStateSchema {
   counter: CounterSchema;
   user: IUserSchema;
+  scroll: IScroll
 
   // async
   loginForm?: ILoginSchema;
