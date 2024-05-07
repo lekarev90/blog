@@ -32,10 +32,10 @@ export const articlesMock1 = {
 };
 
 export const articlesMockWithRandom = () => ({
-  id: `${Math.floor(Math.random() * (500 - 1 + 1) + 1)}`,
+  id: `${Math.floor(Math.random() * (5000 - 1 + 1) + 1)}`,
   title: 'Post 1',
   subtitle: 'Subtitle post 1',
-  img: `https://picsum.photos/300/300?random=${Math.floor(Math.random() * (500 - 1 + 1) + 1)}`,
+  img: `https://picsum.photos/300/300?random=${Math.floor(Math.random() * (5000 - 1 + 1) + 1)}`,
   views: '2345',
   createdAt: '30.03.2024',
   types: ['IT', 'TRAVEL', 'ECONOMIC', 'MEDICINE'],

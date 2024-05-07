@@ -32,7 +32,7 @@ export const ArticleListItemGrid = memo(({
   const navigate = useNavigate();
 
   const onOpenArticle = useCallback(() => {
-    navigate(`${RouterPath.article_details}/${id}`);
+    navigate(`${RouterPath.article_details}${id}`);
   }, [id, navigate]);
 
   return (

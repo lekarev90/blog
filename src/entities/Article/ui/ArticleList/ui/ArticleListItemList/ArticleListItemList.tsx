@@ -16,7 +16,9 @@ export const ArticleListItemList = memo(({
   img, title, createdAt, types, views, id,
 }: IArticle) => {
   const navigate = useNavigate();
-  const onCardClickHandler = () => { navigate(`${RouterPath.articles}/${id}`); };
+  const onCardClickHandler = () => {
+    navigate(`${RouterPath.articles}/${id}`);
+  };
 
   return (
     <Card className={styles.container} onClick={onCardClickHandler}>

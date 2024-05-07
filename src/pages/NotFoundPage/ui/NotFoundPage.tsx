@@ -1,14 +1,14 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import styles from './NotFoundPage.module.scss';
+import { Page } from 'shared/ui/Page/Page';
 
 export const NotFoundPage = memo(() => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles.container}>
+    <Page>
       {t('translation:notFoundPage.body.mainText')}
-    </div>
+    </Page>
   );
 });

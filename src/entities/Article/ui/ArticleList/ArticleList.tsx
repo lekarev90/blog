@@ -1,24 +1,15 @@
-import {
-  memo, useCallback, useEffect, useState,
-} from 'react';
+import { memo, useCallback } from 'react';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-
-import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
-
-import { fetchArticlesList } from '../../model/services/fetchArticlesList';
-import { getArticlesListIsLoading } from '../../model/selectors/articlesList.selectors';
+import { Card } from 'shared/ui/Card/Card';
+import { Text } from 'shared/ui/Text/Text';
+import { ARTICLES_LIST_DATA } from '../../model/const/const';
+import { getArticlesListHasMore, getArticlesListIsLoading } from '../../model/selectors/articlesList.selectors';
 import { ArticleListItemViewSwitcher } from './ui/ArticleListItemViewSwitcher/ArticleListItemViewSwitcher';
-import { articlesListReducer, getArticles } from '../../model/slice/articlesListSlice';
-import { ArticleListItemList } from './ui/ArticleListItemList/ArticleListItemList';
-import { ArticleListItemGrid } from './ui/ArticleListItemGrid/ArticleListItemGrid';
-import { ArticleListItemListSkeleton } from './ui/ArticleListItemList/ArticleListItemListSkeleton';
-import { ArticleListItemGridSkeleton } from './ui/ArticleListItemGrid/ArticleListItemGridSkeleton';
-
 import { EArticleView, IArticle } from '../../model/types/article';
+import { getArticles } from '../../model/slice/articlesListSlice';
 
 import styles from './ArticleList.module.scss';
 
@@ -27,66 +18,44 @@ const cx = classNames.bind(styles);
 interface ArticleListProps {
   className?: string;
   articles?: IArticle[];
-  view?: EArticleView;
   isLoading?: boolean;
+  onLoadNextPart: () => void;
+  onSwitchArticleView: (view: EArticleView) => void;
+  articleView: EArticleView;
 }
 
-const CARD_COMPONENTS = {
-  [EArticleView.LIST]: ArticleListItemList,
-  [EArticleView.GRID]: ArticleListItemGrid,
-};
-
-const CARD_COMPONENTS_SKELETONS = {
-  [EArticleView.LIST]: ArticleListItemListSkeleton,
-  [EArticleView.GRID]: ArticleListItemGridSkeleton,
-};
-
-const SKELETON_QUANTITY = {
-  [EArticleView.LIST]: 9,
-  [EArticleView.GRID]: 3,
-};
-
-const reducers = {
-  articlesList: articlesListReducer,
-};
-
 export const ArticleList = memo(({
-  className,
+  className, onLoadNextPart, onSwitchArticleView, articleView,
 }: ArticleListProps) => {
-  const initialViewType = localStorage.getItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY) as EArticleView || EArticleView.LIST;
-  const dispatch = useAppDispatch();
-  const [articleView, setArticleView] = useState(initialViewType);
+  const { t } = useTranslation();
 
   const isLoading = useSelector(getArticlesListIsLoading);
   const articles = useSelector(getArticles.selectAll);
+  const isShowMoreButton = useSelector(getArticlesListHasMore) && ARTICLES_LIST_DATA[articleView].HAS_MORE_BUTTON && !isLoading;
 
-  const Component = CARD_COMPONENTS[articleView];
-  const ComponentSkeleton = CARD_COMPONENTS_SKELETONS[articleView];
-  const skeletonQuantity = SKELETON_QUANTITY[articleView];
-
-  const isContentReady = !isLoading && articles.length > 0;
+  const Component = ARTICLES_LIST_DATA[articleView].COMPONENT;
+  const ComponentSkeleton = ARTICLES_LIST_DATA[articleView].COMPONENT_SKELETON;
+  const skeletonQuantity = ARTICLES_LIST_DATA[articleView].SKELETON_QUANTITY;
 
   const skeletonComponents = Array.from({ length: skeletonQuantity }, (_, index) => <ComponentSkeleton key={index} />);
 
-  const renderComponent = useCallback(() => articles.map((article, index) => (
-    <Component key={index} {...article} />
-  )), [Component, articles]);
-
-  useEffect(() => {
-    dispatch(fetchArticlesList());
-  }, [dispatch]);
-
-  const onSwitchView = (view: EArticleView) => {
-    setArticleView(view);
-    localStorage.setItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY, view);
-  };
+  const renderComponent = useCallback(
+    () => articles.map((article, index) => <Component key={index} {...article} />),
+    [Component, articles],
+  );
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
-      <ArticleListItemViewSwitcher currentView={articleView} onSwitchView={onSwitchView} />
+    <>
+      <ArticleListItemViewSwitcher currentView={articleView} onSwitchView={onSwitchArticleView} />
       <div className={cx(className, { [`view-${articleView}`]: articleView })}>
-        {isContentReady ? renderComponent() : skeletonComponents}
+        {renderComponent()}
+        {isLoading && skeletonComponents}
+        {isShowMoreButton && (
+          <Card className={styles.fetchMore} onClick={onLoadNextPart}>
+            <Text text={t('translation:loadMore')} />
+          </Card>
+        )}
       </div>
-    </DynamicModuleLoader>
+    </>
   );
 });

@@ -17,10 +17,3 @@ body {
 .main-container {
   display: flex;
 }
-
-.page-wrapper {
-  flex: 0 1 100%;
-  padding: 20px 20px 20px 45px;
-  height: calc(100vh - var(--navbar-height));
-  overflow-y: scroll;
-}

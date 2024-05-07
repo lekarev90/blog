@@ -2,19 +2,21 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 
 import { IStateSchema } from 'app/providers/StoreProvider';
 
+import { IArticlesListSchema } from '../types/articlesListSchema';
 import { IArticle } from '../types/article';
-import { IArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList';
 
 const articlesListAdapter = createEntityAdapter({
   selectId: (comment: IArticle) => comment.id,
 });
 
-const initialState = articlesListAdapter.getInitialState<IArticleDetailsCommentsSchema>({
+const initialState = articlesListAdapter.getInitialState<IArticlesListSchema>({
   isLoading: false,
   ids: [],
   error: undefined,
   entities: {},
+  page: 1,
+  hasMore: true,
 });
 
 export const getArticles = articlesListAdapter.getSelectors<IStateSchema>(
@@ -34,8 +36,13 @@ const articlesListSlice = createSlice({
       .addCase(fetchArticlesList.fulfilled, (state, action: PayloadAction<IArticle[]>) => {
         state.error = undefined;
         state.isLoading = false;
+        state.page += 1;
 
-        articlesListAdapter.setAll(state, action.payload);
+        if (!action.payload.length) {
+          state.hasMore = false;
+        }
+
+        articlesListAdapter.addMany(state, action.payload);
       })
       .addCase(fetchArticlesList.rejected, (state, action) => {
         state.error = action.payload;

@@ -29,7 +29,7 @@ export const Sidebar = memo(() => {
   const containerClassName = cx(styles.container, { collapsed });
 
   return (
-    <div
+    <menu
       data-testid="sidebar"
       className={containerClassName}
     >
@@ -56,6 +56,6 @@ export const Sidebar = memo(() => {
         <ThemeSwitcher />
         <LangSwitcher />
       </div>
-    </div>
+    </menu>
   );
 });

@@ -1,10 +1,11 @@
 import React, { memo, useEffect } from 'react';
+import { useParams } from 'react-router';
 
 import { fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Profile } from 'widgets/Profile';
-import { useParams } from 'react-router';
+import { Page } from 'shared/ui/Page/Page';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -12,7 +13,7 @@ const reducers: ReducersList = {
 
 const ProfilePage = memo(() => {
   const dispatch = useAppDispatch();
-  const { id } = useParams<{id: string, know: string}>();
+  const { id } = useParams<{ id: string; know: string }>();
 
   useEffect(() => {
     if (id) {
@@ -22,7 +23,9 @@ const ProfilePage = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Profile />
+      <Page>
+        <Profile />
+      </Page>
     </DynamicModuleLoader>
   );
 });

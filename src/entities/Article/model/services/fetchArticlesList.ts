@@ -2,18 +2,23 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import i18n from 'shared/config/i18n/i18n';
 
-import { IThunkConfig } from 'app/providers/StoreProvider';
+import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
 
+import { getArticlesListPage } from '../selectors/articlesList.selectors';
 import { IArticle } from '../types/article';
 import { ARTICLES_REQUEST_URL } from '../const/const';
 
-export const fetchArticlesList = createAsyncThunk<IArticle[], void, IThunkConfig<string>>(
+export const fetchArticlesList = createAsyncThunk<IArticle[], number, IThunkConfig<string>>(
   'article/fetchArticlesList',
-  async (_, { extra, rejectWithValue }) => {
+  async (quantityLimit, { extra, rejectWithValue, getState }) => {
+    const page = getArticlesListPage(getState() as IStateSchema);
+
     try {
       const { data } = await extra.api.get<IArticle[]>(`${ARTICLES_REQUEST_URL}`, {
         params: {
           _expand: 'user',
+          _limit: quantityLimit,
+          _page: page,
         },
       });
 

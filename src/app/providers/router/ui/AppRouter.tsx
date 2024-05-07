@@ -14,9 +14,7 @@ export const AppRouter: FC = () => {
     const page = (
       <Wrapper>
         <Suspense fallback={<PageLoader />}>
-          <div className="page-wrapper">
-            {element}
-          </div>
+          {element}
         </Suspense>
       </Wrapper>
     );
