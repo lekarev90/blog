@@ -19,3 +19,7 @@ declare module '*.svg' {
 declare const __IS_DEV__: boolean;
 // eslint-disable-next-line no-underscore-dangle,no-unused-vars
 declare const __API__: string;
+
+type OptionalRecord<K extends keyof any, T> = {
+  [P in K]?: T
+}

@@ -13,14 +13,14 @@ import { getArticlesListHasMore, getArticlesListIsLoading } from '../../../entit
 import { fetchArticlesList } from '../../../entities/Article/model/services/fetchArticlesList';
 import { articlesListReducer } from '../../../entities/Article/model/slice/articlesListSlice';
 
-const initialArticleListView = (localStorage.getItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY) as EArticleView) || EArticleView.LIST;
-
 const reducers = {
   articlesList: articlesListReducer,
 };
 
 const ArticlePage = memo(() => {
   const dispatch = useAppDispatch();
+
+  const initialArticleListView = (localStorage.getItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY) as EArticleView) || EArticleView.LIST;
 
   const [articleView, setArticleView] = useState(initialArticleListView);
 
@@ -42,7 +42,7 @@ const ArticlePage = memo(() => {
 
   return (
     <Page onScrollEnd={onLoadNextPart}>
-      <DynamicModuleLoader reducers={reducers}>
+      <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
         <ArticleList onLoadNextPart={onLoadNextPart} onSwitchArticleView={onSwitchArticleView} articleView={articleView} />
       </DynamicModuleLoader>
     </Page>
