@@ -5,8 +5,8 @@ import i18n from 'shared/config/i18n/i18n';
 import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
 
 import { getArticlesListPage } from 'widgets/articleList/model/selectors/articlesList.selectors';
-import { IArticle } from '../types/article';
-import { ARTICLES_REQUEST_URL } from '../const/const';
+import { IArticle } from '../../../../entities/Article/model/types/article';
+import { ARTICLES_REQUEST_URL } from '../../../../entities/Article/model/const/const';
 
 export const fetchArticlesList = createAsyncThunk<IArticle[], number, IThunkConfig<string>>(
   'article/fetchArticlesList',

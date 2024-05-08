@@ -2,9 +2,10 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 
 import { IStateSchema } from 'app/providers/StoreProvider';
 
+import { IArticle } from 'entities/Article';
+
 import { IArticlesListSchema } from '../types/articlesListSchema';
-import { IArticle } from '../../../../entities/Article/model/types/article';
-import { fetchArticlesList } from '../../../../entities/Article/model/services/fetchArticlesList';
+import { fetchArticlesList } from '../services/fetchArticlesList';
 
 const articlesListAdapter = createEntityAdapter({
   selectId: (comment: IArticle) => comment.id,

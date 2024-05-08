@@ -1,11 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { articlesMockWithRandom } from '../../../../entities/Article/model/mock/articlesMock';
+import { articlesMockWithRandom } from 'entities/Article';
 import { ArticleListItemList } from './ArticleListItemList';
 
+// @ts-ignore
 export default {
-  title: 'entities/ArticleList/ArticleListItemList',
+  title: 'widgets/articleList/ArticleListItemList',
   component: ArticleListItemList,
   decorators: [StoreDecorator({})],
   args: articlesMockWithRandom(),

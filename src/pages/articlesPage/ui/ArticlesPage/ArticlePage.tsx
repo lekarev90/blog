@@ -6,14 +6,14 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
 
 import { articlesListReducer } from 'widgets/articleList/model/slices/articlesListSlice';
-import { ArticleList } from 'widgets/articleList';
+import { ArticleList, fetchArticlesList } from 'widgets/articleList';
 import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
 import { getArticlesListHasMore, getArticlesListIsLoading } from 'widgets/articleList/model/selectors/articlesList.selectors';
 import { ARTICLES_LIST_DATA } from 'widgets/articleList/model/helpers/helpers';
 import { ArticlesListViewSwitcher } from 'features/articleList';
-import { EArticleView } from '../../../../entities/Article';
-import { fetchArticlesList } from '../../../../entities/Article/model/services/fetchArticlesList';
+
+import { EArticleView } from 'entities/Article';
 
 import styles from './ArticlePage.module.scss';
 
