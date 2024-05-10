@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 import { IStateSchema } from 'app/providers/StoreProvider';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { useThrottle } from 'shared/lib/hooks/useThrottle';
 
+import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { getScrollByPath } from './model/selectors/scroll.selectors';
 import { scrollActions } from './model/slices/scrollSlice';
 
@@ -39,19 +39,24 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
     callback: onScrollEnd,
   });
 
-  const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+  const dispatchScrollDebounced = useDebounce((scrollTop: number) => {
     dispatch(scrollActions.setScroll({
-      position: e.currentTarget.scrollTop,
+      position: scrollTop,
       pathname,
     }));
   }, 300);
+
+  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
+    const { scrollTop } = e.currentTarget;
+    dispatchScrollDebounced(scrollTop);
+  };
 
   useLayoutEffect(() => {
     wrapperRef.current.scrollTop = pageScrollPosition;
   });
 
   return (
-    <section ref={wrapperRef} className={cx(styles.container, className)} onScroll={onScroll}>
+    <section ref={wrapperRef} className={cx(styles.container, className)} onScroll={handleScroll}>
       {children}
       <div ref={triggerRef} />
     </section>

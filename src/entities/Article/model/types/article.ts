@@ -54,7 +54,7 @@ export interface IArticle {
   blocks: TArticleBlock[];
 }
 
-export enum EArticleView {
+export enum EArticlesView {
   LIST = 'list',
   GRID = 'grid',
 }

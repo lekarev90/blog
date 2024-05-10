@@ -19,7 +19,7 @@ interface SelectProps<T extends string> {
   options?: SelectOptions[];
   value?: string;
   onChange: (value: string, name: T) => void;
-  isReadonly: boolean;
+  isReadonly?: boolean;
 }
 
 const _Select = <T extends string>({

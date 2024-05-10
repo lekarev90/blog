@@ -57,7 +57,7 @@ export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
     navigate(RouterPath.articles);
   }, [navigate]);
 
-  const { t } = useTranslation('comments');
+  const { t } = useTranslation('articles');
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -78,10 +78,10 @@ export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
         isContentReady && (
           <div className={styles.wrapper}>
             <Button variant={ButtonVariants.OUTLINE} onClick={onBackToList} className={styles.goBackButton}>
-              {t('article-details:goBack')}
+              {t('articles:goBack')}
             </Button>
             <ArticleDetails {...article} />
-            <Text title={t('article-details:commentTitle')} />
+            <Text title={t('articles:commentTitle')} />
             <CommentList
               isLoading={isCommentsLoading}
               comments={comments}

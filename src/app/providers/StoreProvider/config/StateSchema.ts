@@ -10,6 +10,7 @@ import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { IScroll } from 'shared/ui/Page/model/types/scrollTypes';
 import { IArticlesListSchema } from 'widgets/articleList';
+import { IArticlesListSortSchema, IArticlesSearch } from 'features/articleList';
 
 export interface IStateSchema {
   counter: CounterSchema;
@@ -22,6 +23,8 @@ export interface IStateSchema {
   articleDetails?: IArticleDetailsSchema;
   articleDetailsComments?: IArticleDetailsCommentsSchema;
   articlesList?: IArticlesListSchema;
+  articlesSort?: IArticlesListSortSchema;
+  articlesSearch?: IArticlesSearch
 }
 
 export type StateSchemaKey = keyof IStateSchema
