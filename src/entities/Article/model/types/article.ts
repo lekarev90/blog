@@ -31,15 +31,27 @@ export interface IArticleTextBlock extends IArticleBlockBase {
 
 export type TArticleBlock = IArticleCodeBlock | IArticleTextBlock | IArticleImageBlock;
 
-export enum ArticleType {
+export enum EArticleTypes {
+  ALL = 'all',
   IT = 'IT',
-  SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS',
+  MEDICINE = 'MEDICINE',
   TRAVEL = 'TRAVEL',
   ECONOMIC = 'ECONOMIC',
-  MEDICINE = 'MEDICINE',
   POLITICS = 'POLITICS',
   SPORT = 'SPORT',
+  EDUCATION = 'EDUCATION',
+  BUSINESS = 'BUSINESS',
+  SECURITY = 'SECURITY',
+  ETHICS = 'ETHICS',
+  SOCIAL = 'SOCIAL',
+  PSYCHOLOGY = 'PSYCHOLOGY',
+  ENVIRONMENT = 'ENVIRONMENT',
+  TECHNOLOGY = 'TECHNOLOGY',
+  HEALTH = 'HEALTH',
+  GLOBAL = 'GLOBAL',
+  TRENDS = 'TRENDS',
+  SCIENCE = 'SCIENCE',
+  CULTURE = 'CULTURE'
 }
 
 export interface IArticle {
@@ -50,7 +62,7 @@ export interface IArticle {
   views: string;
   createdAt: string;
   user: IUser;
-  types: ArticleType[];
+  types: EArticleTypes[];
   blocks: TArticleBlock[];
 }
 

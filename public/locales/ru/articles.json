@@ -2,7 +2,6 @@
   "articleDoesntFound": "Статья не найдена",
   "commentTitle": "Комментарии",
   "goBack": "Обратно к статьям",
-  "sortBy": "Сортировать по",
   "orderBy": "Упорядочить по",
   "search": {
     "placeholder": "Введите текст для поиска"
@@ -14,8 +13,31 @@
     },
     "sortBy": {
       "created": "созданию",
-      "views": "просмотрам",
-      "title": "названию"
+      "title": "названию",
+      "views": "просмотрам"
     }
+  },
+  "sortBy": "Сортировать по",
+  "types": {
+    "all": "Все",
+    "business": "Бизнес",
+    "culture": "Культура",
+    "economic": "Экономика",
+    "education": "Образование",
+    "environment": "Окружающая среда",
+    "ethics": "Этика",
+    "global": "Глобальное",
+    "health": "Здоровье",
+    "it": "IT",
+    "medicine": "Медицина",
+    "politics": "Политика",
+    "psychology": "Психология",
+    "science": "Наука",
+    "security": "Безопасность",
+    "social": "Социальное",
+    "sport": "Спорт",
+    "technology": "Технологии",
+    "travel": "Путешествия",
+    "trends": "Тенденции"
   }
 }

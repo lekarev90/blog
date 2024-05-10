@@ -18,8 +18,10 @@ const ArticlePage = memo(() => {
     <Page onScrollEnd={onLoadNextPart}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <ArticlesListSort />
-          <ArticlesListViewSwitcher />
+          <div className={styles.sortContainer}>
+            <ArticlesListSort />
+            <ArticlesListViewSwitcher />
+          </div>
           <ArticleListSearch />
         </div>
         <ArticleList />

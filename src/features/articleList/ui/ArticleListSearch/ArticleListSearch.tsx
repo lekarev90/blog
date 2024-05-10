@@ -10,6 +10,7 @@ import { fetchArticlesList, articlesListActions } from 'widgets/articleList';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 
+import { ArticlesListTabs } from '../ArticlesListTabs/ArticlesListTabs';
 import { articlesSearchActions, articlesSearchReducer } from '../../model/slices/articlesSearchSlice';
 
 import styles from './ArticleListSearch.module.scss';
@@ -33,9 +34,12 @@ export const ArticleListSearch = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Card className={styles.container}>
-        <Input name="search" placeholder={t('articles:search.placeholder')} onChange={onChangeSearchText} />
-      </Card>
+      <div className={styles.container}>
+        <Card className={styles.searchCard}>
+          <Input name="search" placeholder={t('articles:search.placeholder')} onChange={onChangeSearchText} />
+        </Card>
+        <ArticlesListTabs />
+      </div>
     </DynamicModuleLoader>
   );
 });

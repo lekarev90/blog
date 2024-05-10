@@ -1,0 +1,15 @@
+.tab {
+  padding: 5px;
+  min-width: 35px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.tabs {
+  gap: 10px;
+}

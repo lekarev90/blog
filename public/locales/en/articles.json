@@ -1,5 +1,43 @@
 {
   "articleDoesntFound": "Article not found",
   "commentTitle": "Comments",
-  "goBack": "Go back"
+  "goBack": "Go back",
+  "orderBy": "Order by",
+  "search": {
+    "placeholder": "Search text"
+  },
+  "sort": {
+    "orderBy": {
+      "asc": "asc",
+      "desc": "desc"
+    },
+    "sortBy": {
+      "created": "created",
+      "title": "title",
+      "views": "views"
+    }
+  },
+  "sortBy": "Sort by",
+  "types": {
+    "all": "All",
+    "business": "Business",
+    "culture": "Culture",
+    "economic": "Economic",
+    "education": "Education",
+    "environment": "Environment",
+    "ethics": "Ethics",
+    "global": "Global",
+    "health": "Health",
+    "it": "IT",
+    "medicine": "Medicine",
+    "politics": "Politics",
+    "psychology": "Psychology",
+    "science": "Science",
+    "security": "Security",
+    "social": "Social",
+    "sport": "Sport",
+    "technology": "Technology",
+    "travel": "Travel",
+    "trends": "Trends"
+  }
 }

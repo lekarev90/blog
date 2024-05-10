@@ -1,9 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { EArticleTypes } from 'entities/Article';
+
 import { IArticlesSearch } from '../types/articlesSearch';
 
 const initialState: IArticlesSearch = {
   text: '',
+  type: EArticleTypes.ALL,
 };
 
 export const articlesSearchSlice = createSlice({
@@ -13,6 +16,10 @@ export const articlesSearchSlice = createSlice({
     setSearch: (state, action: PayloadAction<string>) => {
       state.text = action.payload;
     },
+    setType: (state, action: PayloadAction<EArticleTypes>) => {
+      state.type = action.payload;
+    },
+
   },
 });
 

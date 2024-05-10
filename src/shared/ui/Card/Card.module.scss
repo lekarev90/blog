@@ -1,5 +1,12 @@
 .container {
   padding: 15px;
   border-radius: 12px;
+}
+
+.theme-default {
   background: var(--card-bg);
+}
+
+.theme-outlined {
+  border: 1px solid var(--primary-color);
 }

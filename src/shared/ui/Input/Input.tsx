@@ -1,11 +1,8 @@
-import classNames from 'classnames/bind';
 import React, {
   InputHTMLAttributes, memo, useEffect, useRef,
 } from 'react';
 
 import styles from './Input.module.scss';
-
-const cx = classNames.bind(styles);
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
 
@@ -20,7 +17,6 @@ interface InputProps<T extends string> extends HTMLInputProps {
 }
 
 export const _Input = <T extends string>({
-  className,
   value,
   onChange,
   type = 'text',
@@ -42,21 +38,15 @@ export const _Input = <T extends string>({
   };
 
   return (
-    <div className={cx(styles.container, className)}>
-      {placeholder && (
-        <div className={styles.placeholder}>
-          {placeholder}
-        </div>
-      )}
-      <input
-        ref={ref}
-        className={styles.input}
-        value={value}
-        onChange={onChangeHandler}
-        type={type}
-        {...props}
-      />
-    </div>
+    <input
+      placeholder={placeholder}
+      ref={ref}
+      className={styles.input}
+      value={value}
+      onChange={onChangeHandler}
+      type={type}
+      {...props}
+    />
   );
 };
 

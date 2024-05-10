@@ -5,14 +5,22 @@ import styles from './Card.module.scss';
 
 const cx = classNames.bind(styles);
 
+export const enum ECardTheme {
+  DEFAULT = 'default',
+  OUTLINED = 'outlined',
+}
+
 interface CardProps extends HTMLAttributes<HTMLDivElement>{
   className?: string;
   children: ReactNode;
+  theme?: ECardTheme;
 }
 
-export const Card = ({ className, children, ...props }: CardProps) => (
+export const Card = ({
+  className, children, theme = ECardTheme.DEFAULT, ...props
+}: CardProps) => (
   <div
-    className={cx(styles.container, className)}
+    className={cx(styles.container, { [`theme-${theme}`]: theme }, className)}
     {...props}
   >
     {children}
