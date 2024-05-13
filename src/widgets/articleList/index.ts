@@ -1,3 +1,4 @@
+export { getArticles } from './model/slices/articlesListSlice';
 export { getArticlesListData } from './model/selectors/articlesList.selectors';
 export { articlesListActions } from './model/slices/articlesListSlice';
 export { fetchNextArticlesListPage } from './model/services/fetchNextArticlesListPage';

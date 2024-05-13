@@ -11,8 +11,8 @@ import { articlesListReducer, fetchNextArticlesListPage } from 'widgets/articleL
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
 
-import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/initSortAndSearchFromSearchParams';
-import { articlesListActions, getArticles } from '../../model/slices/articlesListSlice';
+import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
+import { articlesListActions } from '../../model/slices/articlesListSlice';
 import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
 import { ARTICLES_LIST_DATA } from '../../model/helpers/helpers';
 
@@ -22,23 +22,26 @@ const cx = classNames.bind(styles);
 
 interface ArticleListProps {
   className?: string;
-  articles?: IArticle[];
+  articles: IArticle[];
   isLoading?: boolean;
+  withMoreButton?: boolean;
 }
 
 const reducers = {
   articlesList: articlesListReducer,
 };
 
-export const ArticlesList = memo(({ className }: ArticleListProps) => {
+export const ArticlesList = memo(({
+  className, isLoading, withMoreButton, articles,
+}: ArticleListProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const {
-    isLoading, hasMore, articlesView = EArticlesView.LIST, quantityLimit = 9,
+    hasMore, articlesView = EArticlesView.LIST, quantityLimit = 9,
   } = useSelector(getArticlesListData) || {};
-  const articles = useSelector(getArticles.selectAll);
-  const isShowMoreButton = hasMore && ARTICLES_LIST_DATA[articlesView]?.HAS_MORE_BUTTON && !isLoading;
+
+  const isShowMoreButton = withMoreButton && hasMore && ARTICLES_LIST_DATA[articlesView]?.HAS_MORE_BUTTON && !isLoading;
 
   const Component = ARTICLES_LIST_DATA[articlesView].COMPONENT;
   const ComponentSkeleton = ARTICLES_LIST_DATA[articlesView].COMPONENT_SKELETON;

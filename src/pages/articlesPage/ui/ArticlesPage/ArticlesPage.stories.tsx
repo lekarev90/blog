@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react';
-import ArticlePage from './ArticlePage';
+import ArticlesPage from './ArticlesPage';
 
 export default {
   title: 'pages/ArticlePage',
-  component: ArticlePage,
-} as Meta<typeof ArticlePage>;
+  component: ArticlesPage,
+} as Meta<typeof ArticlesPage>;
 
 export const Default = {};

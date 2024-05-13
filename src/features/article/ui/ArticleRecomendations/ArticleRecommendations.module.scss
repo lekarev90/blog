@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.articles {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+}

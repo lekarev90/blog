@@ -7,6 +7,8 @@ import { Page } from 'shared/ui/Page/Page';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 
+import { ArticleRecommendations } from 'features/article';
+
 import styles from './ArticleDetailsPage.module.scss';
 
 const ArticleDetailsPage = memo(() => {
@@ -32,6 +34,9 @@ const ArticleDetailsPage = memo(() => {
         {t('articles:goBack')}
       </Button>
       <ArticleRoot id={id} />
+      <div className={styles.recommendations}>
+        <ArticleRecommendations />
+      </div>
       <div className={styles.commentsWrapper}>
         <ArticleComments id={id} />
       </div>

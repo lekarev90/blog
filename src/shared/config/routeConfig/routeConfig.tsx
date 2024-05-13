@@ -1,4 +1,4 @@
-import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsPage } from 'pages/articleDetails';
 import { ArticlePage } from 'pages/articlesPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { RouteProps } from 'react-router-dom';

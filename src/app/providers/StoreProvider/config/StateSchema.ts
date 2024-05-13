@@ -11,6 +11,7 @@ import { ILoginSchema } from 'features/AuthByUsername';
 import { IScroll } from 'shared/ui/Page/model/types/scrollTypes';
 import { IArticlesListSchema } from 'widgets/articleList';
 import { IArticlesListSortSchema, IArticlesSearch } from 'features/articleList';
+import { IArticleRecommendationsSchema } from 'widgets/article';
 
 export interface IStateSchema {
   counter: CounterSchema;
@@ -25,6 +26,7 @@ export interface IStateSchema {
   articlesList?: IArticlesListSchema;
   articlesSort?: IArticlesListSortSchema;
   articlesSearch?: IArticlesSearch
+  articleRecommendations?: IArticleRecommendationsSchema;
 }
 
 export type StateSchemaKey = keyof IStateSchema

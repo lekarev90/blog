@@ -8,7 +8,7 @@ import { IComment } from 'entities/Comment';
 import { ARTICLES_COMMENT_REQUEST_URL } from '../const/const';
 
 export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string, IThunkConfig<string>>(
-  'profile/fetchCommentsByArticleId',
+  'article/fetchCommentsByArticleId',
   async (articleId, { extra, rejectWithValue }) => {
     try {
       const { data } = await extra.api.get<IComment[]>(`${ARTICLES_COMMENT_REQUEST_URL}`, {

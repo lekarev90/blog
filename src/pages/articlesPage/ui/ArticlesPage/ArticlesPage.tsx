@@ -1,14 +1,20 @@
-import React, { memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Page } from 'shared/ui/Page/Page';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { ArticlesList, fetchNextArticlesListPage } from 'widgets/articleList';
+import {
+  ArticlesList, fetchNextArticlesListPage, getArticlesListData, getArticles,
+} from 'widgets/articleList';
 import { ArticleListSearch, ArticlesListSort, ArticlesListViewSwitcher } from 'features/articleList';
 
-import styles from './ArticlePage.module.scss';
+import styles from './ArticlesPage.module.scss';
 
-const ArticlePage = memo(() => {
+const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();
+  const { isLoading } = useSelector(getArticlesListData) || {};
+
+  const articles = useSelector(getArticles.selectAll);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesListPage());
@@ -24,10 +30,10 @@ const ArticlePage = memo(() => {
           </div>
           <ArticleListSearch />
         </div>
-        <ArticlesList />
+        <ArticlesList articles={articles} isLoading={isLoading} />
       </div>
     </Page>
   );
 });
 
-export default ArticlePage;
+export default ArticlesPage;
