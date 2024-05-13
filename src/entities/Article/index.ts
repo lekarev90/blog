@@ -1,3 +1,6 @@
+export { ArticleTextBlockComponent } from './ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+export { EArticleBlockType, type IArticleTextBlock } from './model/types/article';
+
 export { articleDetailsReducer } from './model/slices/articleDetailsSlice';
 
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';

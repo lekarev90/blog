@@ -16,7 +16,7 @@ import { articlesListActions, getArticles } from '../../model/slices/articlesLis
 import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
 import { ARTICLES_LIST_DATA } from '../../model/helpers/helpers';
 
-import styles from './ArticleList.module.scss';
+import styles from './ArticlesList.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -25,13 +25,12 @@ interface ArticleListProps {
   articles?: IArticle[];
   isLoading?: boolean;
 }
+
 const reducers = {
   articlesList: articlesListReducer,
 };
 
-export const ArticleList = memo(({
-  className,
-}: ArticleListProps) => {
+export const ArticlesList = memo(({ className }: ArticleListProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 

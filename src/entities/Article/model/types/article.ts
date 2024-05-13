@@ -1,6 +1,6 @@
 import { IUser } from 'entities/User';
 
-export enum ArticleBlockType {
+export enum EArticleBlockType {
   CODE = 'CODE',
   IMAGE = 'IMAGE',
   TEXT = 'TEXT',
@@ -8,23 +8,23 @@ export enum ArticleBlockType {
 
 export interface IArticleBlockBase {
   id: string;
-  type: ArticleBlockType;
+  type: EArticleBlockType;
 }
 
 export interface IArticleCodeBlock extends IArticleBlockBase {
-  type: ArticleBlockType.CODE;
+  type: EArticleBlockType.CODE;
   code: string;
   title?: string;
 }
 
 export interface IArticleImageBlock extends IArticleBlockBase {
-  type: ArticleBlockType.IMAGE;
+  type: EArticleBlockType.IMAGE;
   src: string;
   title: string;
 }
 
 export interface IArticleTextBlock extends IArticleBlockBase {
-  type: ArticleBlockType.TEXT;
+  type: EArticleBlockType.TEXT;
   title?: string;
   paragraphs: string[];
 }

@@ -8,7 +8,7 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 
-import { ArticleBlockType, TArticleBlock } from '../../model/types/article';
+import { EArticleBlockType, TArticleBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
@@ -20,10 +20,10 @@ interface ArticleDetailsProps extends IArticle {
 }
 
 // TODO разобраться с FC<TArticleBlock & any>
-const BLOCKS: Record<ArticleBlockType, FC<TArticleBlock & any>> = {
-  [ArticleBlockType.CODE]: ArticleCodeBlockComponent,
-  [ArticleBlockType.IMAGE]: ArticleImageBlockComponent,
-  [ArticleBlockType.TEXT]: ArticleTextBlockComponent,
+const BLOCKS: Record<EArticleBlockType, FC<TArticleBlock & any>> = {
+  [EArticleBlockType.CODE]: ArticleCodeBlockComponent,
+  [EArticleBlockType.IMAGE]: ArticleImageBlockComponent,
+  [EArticleBlockType.TEXT]: ArticleTextBlockComponent,
 };
 
 export const ArticleDetails: FC<ArticleDetailsProps> = memo(({

@@ -3,11 +3,11 @@ import { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { articlesMockWithRandom, ARTICLES_REQUEST_URL } from 'entities/Article';
-import { ArticleList } from './ArticleList';
+import { ArticlesList } from './ArticlesList';
 
 export default {
   title: 'entities/ArticleList',
-  component: ArticleList,
+  component: ArticlesList,
   decorators: [StoreDecorator({})],
   parameters: {
     mockData: [
@@ -29,11 +29,11 @@ export default {
       },
     ],
   },
-} as Meta<typeof ArticleList>;
+} as Meta<typeof ArticlesList>;
 
-export const Default: StoryObj<typeof ArticleList> = {};
+export const Default: StoryObj<typeof ArticlesList> = {};
 
-export const Loading: StoryObj<typeof ArticleList> = {
+export const Loading: StoryObj<typeof ArticlesList> = {
   parameters: {
     mockData: [
       {

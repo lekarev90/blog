@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 
 import { Page } from 'shared/ui/Page/Page';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { ArticleList, fetchNextArticlesListPage } from 'widgets/articleList';
+import { ArticlesList, fetchNextArticlesListPage } from 'widgets/articleList';
 import { ArticleListSearch, ArticlesListSort, ArticlesListViewSwitcher } from 'features/articleList';
 
 import styles from './ArticlePage.module.scss';
@@ -24,7 +24,7 @@ const ArticlePage = memo(() => {
           </div>
           <ArticleListSearch />
         </div>
-        <ArticleList />
+        <ArticlesList />
       </div>
     </Page>
   );
