@@ -6,30 +6,32 @@ import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
 import { IComment } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
 
-import { getArticleDetailsData } from '../selectors/articleDetails.selectors';
 import { ARTICLES_COMMENT_REQUEST_URL } from '../const/const';
 
-export const addArticleComment = createAsyncThunk<IComment, string, IThunkConfig<string>>(
+export const addArticleComment = createAsyncThunk<IComment, { commentText: string; articleId: string }, IThunkConfig<string>>(
   'article/addArticleComment',
-  async (commentText, { extra, rejectWithValue, getState }) => {
+  async ({ commentText, articleId }, { extra, rejectWithValue, getState }) => {
     const userData = getUserAuthData(getState() as IStateSchema);
-    const article = getArticleDetailsData(getState() as IStateSchema);
 
-    if (!userData || !commentText || !article) {
+    if (!userData) {
       return rejectWithValue('no data');
     }
 
     try {
-      const { data } = await extra.api.post<IComment>(`${ARTICLES_COMMENT_REQUEST_URL}`, {
-        articleId: article.id,
-        userId: userData.id,
-        text: commentText,
-      }, {
-        params: {
-          articleId: article.id,
-          _expand: 'user',
+      const { data } = await extra.api.post<IComment>(
+        `${ARTICLES_COMMENT_REQUEST_URL}`,
+        {
+          articleId,
+          userId: userData.id,
+          text: commentText,
         },
-      });
+        {
+          params: {
+            articleId,
+            _expand: 'user',
+          },
+        },
+      );
 
       if (!data) {
         throw new Error();

@@ -29,31 +29,33 @@ const BLOCKS: Record<ArticleBlockType, FC<TArticleBlock & any>> = {
 export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
   blocks, title, subtitle, img, views, createdAt,
 }) => (
-  <>
-    {img && (
-      <div className={styles.avatarWrapper}>
-        <Avatar
-          className={styles.img}
-          alt={title}
-          src={img}
-          size={200}
+  <div className={styles.container}>
+    <div className={styles.header}>
+      {img && (
+        <div className={styles.avatarWrapper}>
+          <Avatar
+            className={styles.img}
+            alt={title}
+            src={img}
+            size={200}
+          />
+        </div>
+      )}
+      {title && (
+        <Text
+          size={TextSize.L}
+          title={title}
+          text={subtitle}
         />
+      )}
+      <div className={styles.textWithIcon}>
+        <Icon Svg={EyeIcon} />
+        <Text text={views} />
       </div>
-    )}
-    {title && (
-      <Text
-        size={TextSize.L}
-        title={title}
-        text={subtitle}
-      />
-    )}
-    <div className={styles.textWithIcon}>
-      <Icon Svg={EyeIcon} />
-      <Text text={views} />
-    </div>
-    <div className={styles.textWithIcon}>
-      <Icon Svg={CalendarIcon} />
-      <Text text={createdAt} />
+      <div className={styles.textWithIcon}>
+        <Icon Svg={CalendarIcon} />
+        <Text text={createdAt} />
+      </div>
     </div>
     <div className={styles.blocksWrapper}>
       {blocks.map(({ type, id, ...articleData }) => {
@@ -67,5 +69,5 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
         );
       })}
     </div>
-  </>
+  </div>
 ));

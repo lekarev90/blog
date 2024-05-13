@@ -17,10 +17,12 @@ export const ArticleTextBlockComponent: FC<IArticleTextBlock> = memo(({
         className={styles.title}
       />
     )}
-    {paragraphs.map((paragraph) => (
-      <p key={paragraph}>
-        { paragraph }
-      </p>
-    ))}
+    <div className={styles.paragraphs}>
+      {paragraphs.map((paragraph) => (
+        <p key={paragraph}>
+          { paragraph }
+        </p>
+      ))}
+    </div>
   </>
 ));
