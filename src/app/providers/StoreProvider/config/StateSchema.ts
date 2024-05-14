@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
-import { IArticleDetailsCommentsSchema, IArticleDetailsSchema } from 'entities/Article';
+import { IArticleDetailsSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
 import { IProfileSchema } from 'features/EditableProfileCard';
 import { IUserSchema } from 'entities/User';
@@ -11,7 +11,8 @@ import { ILoginSchema } from 'features/AuthByUsername';
 import { IScroll } from 'shared/ui/Page/model/types/scrollTypes';
 import { IArticlesListSchema } from 'widgets/articleList';
 import { IArticlesListSortSchema, IArticlesSearch } from 'features/articleList';
-import { IArticleRecommendationsSchema } from 'widgets/article';
+import { IArticleRecommendationsSchema } from 'features/article';
+import { IArticleDetailsCommentsSchema } from 'widgets/article';
 
 export interface IStateSchema {
   counter: CounterSchema;

@@ -5,13 +5,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import {
-  ArticleDetails,
-  ArticleDetailsLoading,
-  articleDetailsReducer,
-  fetchArticleById,
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
+  ArticleDetails, ArticleDetailsLoading, articleDetailsReducer, fetchArticleById, getArticleDetails,
 } from 'entities/Article';
 
 import styles from './ArticleRoot.module.scss';
@@ -26,10 +20,9 @@ const reducers: ReducersList = {
 
 export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
   const dispatch = useAppDispatch();
-  const isLoading = useSelector(getArticleDetailsIsLoading);
-  const error = useSelector(getArticleDetailsError);
-  const article = useSelector(getArticleDetailsData);
-  const isContentReady = !isLoading && !error && article;
+  const { isLoading, error, data } = useSelector(getArticleDetails) || {};
+
+  const isContentReady = !isLoading && !error && data;
 
   useEffect(() => {
     dispatch(fetchArticleById(id));
@@ -40,7 +33,7 @@ export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
       {isLoading && <ArticleDetailsLoading />}
       {error && <Text className={styles.error} text="ERROR" variant={TextVariant.ERROR} />}
       {isContentReady && (
-        <ArticleDetails {...article} />
+        <ArticleDetails {...data} />
       )}
     </DynamicModuleLoader>
   );

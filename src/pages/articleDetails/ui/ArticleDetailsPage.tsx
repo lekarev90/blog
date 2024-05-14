@@ -14,7 +14,7 @@ import styles from './ArticleDetailsPage.module.scss';
 const ArticleDetailsPage = memo(() => {
   const navigate = useNavigate();
   const { t } = useTranslation('articles');
-  const { id } = useParams<{ id: string; know: string }>();
+  const { id } = useParams<{ id: string}>();
 
   const onBackToList = useCallback(() => {
     navigate(RouterPath.articles);
