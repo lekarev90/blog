@@ -1,9 +1,11 @@
-/* eslint-disable no-console */
 import path from 'path';
 import type webpack from 'webpack';
+import dotenv from 'dotenv';
 
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { type BuildEnv, type BuildPaths } from './config/build/types/config';
+
+dotenv.config({ path: './.env' });
 
 export default (env: BuildEnv): webpack.Configuration => {
   const paths: BuildPaths = {
@@ -17,8 +19,7 @@ export default (env: BuildEnv): webpack.Configuration => {
   const mode = env.mode || 'development';
   const isDev = mode === 'development';
   const PORT = env.port || 3000;
-  console.log(env.apiUrl);
-  const apiUrl = isDev ? 'http://localhost:8000' : env.apiUrl;
+  const apiUrl = isDev ? 'http://localhost:8000' : process.env.API_URL as string;
 
   return buildWebpackConfig({
     mode,
