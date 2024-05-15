@@ -19,7 +19,7 @@ export const updateProfileData = createAsyncThunk<IProfile, void, IThunkConfig<V
     }
 
     try {
-      const { data } = await extra.api.put<IProfile>(PROFILE_URL, profile);
+      const { data } = await extra.api.put<IProfile>(`${PROFILE_URL}/${profile?.id}`, profile);
 
       if (!data) {
         throw new Error();
