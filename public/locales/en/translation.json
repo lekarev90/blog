@@ -21,11 +21,13 @@
   "mainPage": {
     "bodyText": "Main"
   },
+  "mainTitleLogo": "Articles blog",
   "navbar": {
     "authModalButton": {
       "login": "Log in",
       "logout": "Log out"
     },
+    "createArticle": "Create article",
     "empty": "text/",
     "menu": {
       "aboutUs": "About us"

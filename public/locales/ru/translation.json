@@ -21,16 +21,17 @@
   "mainPage": {
     "bodyText": "Главная"
   },
+  "mainTitleLogo": "Сборник статей",
   "navbar": {
     "authModalButton": {
       "login": "Войти",
       "logout": "Выйти"
     },
+    "createArticle": "Создать статью",
     "empty": "/",
     "menu": {
       "aboutUs": "О нас"
-    },
-    "createArticle": "Создать статью"
+    }
   },
   "notFoundPage": {
     "body": {
@@ -54,6 +55,5 @@
     },
     "open": ">"
   },
-  "switchLanguage": "RU",
-  "mainTitleLogo": "Сборник статей"
+  "switchLanguage": "RU"
 }
