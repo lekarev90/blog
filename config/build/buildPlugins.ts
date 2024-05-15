@@ -4,6 +4,7 @@ import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 import { type BuildOptions } from './types/config';
 
 export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] => {
@@ -27,6 +28,9 @@ export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): webpack.We
           to: paths.buildLocales,
         },
       ],
+    }),
+    new Dotenv({
+      systemvars: true,
     }),
   ];
 
