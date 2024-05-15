@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import path from 'path';
 import type webpack from 'webpack';
 
@@ -16,7 +17,7 @@ export default (env: BuildEnv): webpack.Configuration => {
   const mode = env.mode || 'development';
   const isDev = mode === 'development';
   const PORT = env.port || 3000;
-
+  console.log(env.apiUrl);
   const apiUrl = isDev ? 'http://localhost:8000' : env.apiUrl;
 
   return buildWebpackConfig({
