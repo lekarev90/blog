@@ -1,7 +1,8 @@
 import { IStateSchema } from 'app/providers/StoreProvider';
-import { getUserAuthData, IUser } from 'entities/User';
-import { getIsUserInit } from 'entities/User/model/selectors/user.selectors';
 import { DeepPartial } from 'shared/const/types';
+
+import { IUser } from '../types/userSchema';
+import { getIsUserInit, getUserAuthData } from './user.selectors';
 
 describe('user.selectors', () => {
   test('getUserAuthData', () => {

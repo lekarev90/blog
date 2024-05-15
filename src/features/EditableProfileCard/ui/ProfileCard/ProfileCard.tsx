@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
 import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
 
-import { IProfile, TProfileFieldName } from 'features/EditableProfileCard';
-
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
+
+import { IProfile, TProfileFieldName } from '../../model/types/profile';
 
 import styles from './ProfileCard.module.scss';
 

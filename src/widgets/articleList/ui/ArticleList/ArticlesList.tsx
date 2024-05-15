@@ -7,12 +7,12 @@ import { Card } from 'shared/ui/Card/Card';
 import { Text } from 'shared/ui/Text/Text';
 
 import { EArticlesView, IArticle } from 'entities/Article';
-import { articlesListReducer, fetchNextArticlesListPage } from 'widgets/articleList';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
 
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
-import { articlesListActions } from '../../model/slices/articlesListSlice';
+import { fetchNextArticlesListPage } from '../../model/services/fetchNextArticlesListPage';
+import { articlesListActions, articlesListReducer } from '../../model/slices/articlesListSlice';
 import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
 import { ARTICLES_LIST_DATA } from '../../model/helpers/helpers';
 

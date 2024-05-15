@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
-import { getProfileData } from 'features/EditableProfileCard';
-import { validateProfileData } from 'features/EditableProfileCard/model/services/validateProfileData/validateProfileData';
+
+import { getProfileData } from '../../selectors/profile.selectors';
+import { validateProfileData } from '../validateProfileData/validateProfileData';
 
 import { IProfile, ValidateProfileError } from '../../types/profile';
 

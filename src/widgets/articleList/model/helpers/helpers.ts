@@ -1,8 +1,9 @@
 import { EArticlesView } from 'entities/Article';
-import { ArticleListItemListSkeleton } from 'widgets/articleList/ui/ArticleListItemList/ArticleListItemListSkeleton';
-import { ArticleListItemList } from 'widgets/articleList/ui/ArticleListItemList/ArticleListItemList';
-import { ArticleListItemGridSkeleton } from 'widgets/articleList/ui/ArticleListItemGrid/ArticleListItemGridSkeleton';
-import { ArticleListItemGrid } from 'widgets/articleList/ui/ArticleListItemGrid/ArticleListItemGrid';
+
+import { ArticleListItemListSkeleton } from '../../ui/ArticleListItemList/ArticleListItemListSkeleton';
+import { ArticleListItemList } from '../../ui/ArticleListItemList/ArticleListItemList';
+import { ArticleListItemGridSkeleton } from '../../ui/ArticleListItemGrid/ArticleListItemGridSkeleton';
+import { ArticleListItemGrid } from '../../ui/ArticleListItemGrid/ArticleListItemGrid';
 
 export const ARTICLES_LIST_DATA = {
   [EArticlesView.LIST]: {

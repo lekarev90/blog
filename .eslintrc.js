@@ -19,7 +19,7 @@ module.exports = {
     sourceType: 'module',
     // project: './tsconfig.json',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'lekarev'],
   rules: {
     'react/no-array-index-key': 0,
     'react/prop-types': 0,
@@ -71,6 +71,7 @@ module.exports = {
     'no-param-reassign': 0,
     'max-len': ['error', { code: 140 }],
     '@typescript-eslint/no-unused-vars': 'error',
+    'lekarev/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

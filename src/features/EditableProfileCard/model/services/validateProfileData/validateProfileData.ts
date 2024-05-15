@@ -1,5 +1,6 @@
-import { IProfile } from 'features/EditableProfileCard';
 import { TFunction } from 'react-i18next';
+
+import { IProfile } from '../../types/profile';
 
 import { ValidateProfileError } from '../../../model/types/profile';
 

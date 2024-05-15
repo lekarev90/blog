@@ -1,9 +1,8 @@
 import { DeepPartial } from 'shared/const/types';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById';
 
-import { articleDetailsReducer } from 'entities/Article/model/slices/articleDetailsSlice';
-import { IArticle } from 'entities/Article';
-
+import { articleDetailsReducer } from './articleDetailsSlice';
+import { fetchArticleById } from '../services/fetchArticleById';
+import { IArticle } from '../types/article';
 import { IArticleDetailsSchema } from '../types/articleDetailsSchema';
 
 describe('articleDetailsSlice', () => {

@@ -1,16 +1,12 @@
 import { IStateSchema } from 'app/providers/StoreProvider';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import {
-  getIsProfileDataSame,
-  getProfileData,
-  getProfileErrors,
-  getProfileIsLoading,
-  IProfile,
-} from 'features/EditableProfileCard';
 
-import { getProfilePrevData } from './profile.selectors';
-import { ValidateProfileError } from '../types/profile';
+import {
+  getIsProfileDataSame, getProfileData, getProfileErrors, getProfileIsLoading, getProfilePrevData,
+} from './profile.selectors';
+
+import { IProfile, ValidateProfileError } from '../types/profile';
 
 const userData: IProfile = {
   id: '1',

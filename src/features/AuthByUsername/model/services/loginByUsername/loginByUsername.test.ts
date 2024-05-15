@@ -1,7 +1,9 @@
-import { userActions } from 'entities/User';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import i18n from 'shared/config/i18n/i18nTest.config';
+
+import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+
+import { loginByUsername } from './loginByUsername';
 
 jest.mock('axios');
 

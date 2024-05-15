@@ -2,16 +2,12 @@ import { DeepPartial } from 'shared/const/types';
 
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import {
-  fetchProfileData,
-  IProfile,
-  IProfileSchema,
-  profileActions,
-  profileReducer,
-  updateProfileData,
-} from 'features/EditableProfileCard';
 
-import { ValidateProfileError } from '../types/profile';
+import { profileActions, profileReducer } from './profileSlice';
+
+import { IProfile, IProfileSchema, ValidateProfileError } from '../types/profile';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 
 const userData: IProfile = {
   id: '1',
