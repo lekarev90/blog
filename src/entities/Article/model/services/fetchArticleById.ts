@@ -8,10 +8,12 @@ import { IArticle } from '../types/article';
 import { ARTICLES_REQUEST_URL } from '../const/const';
 
 export const fetchArticleById = createAsyncThunk<IArticle, string, IThunkConfig<string>>(
-  'profile/fetchArticleById',
+  'article/fetchArticleById',
   async (articleId, { extra, rejectWithValue }) => {
     try {
-      const { data } = await extra.api.get<IArticle>(`${ARTICLES_REQUEST_URL}/${articleId}`);
+      const { data } = await extra.api.get<IArticle>(`${ARTICLES_REQUEST_URL}/${articleId}`, {
+        params: { _expand: 'user' },
+      });
 
       if (!data) {
         throw new Error();

@@ -1,8 +1,10 @@
 {
   "articleDoesntFound": "Статья не найдена",
   "commentTitle": "Комментарии",
+  "editButton": "Редактировать статью",
   "goBack": "Обратно к статьям",
   "orderBy": "Упорядочить по",
+  "recommendationTitle": "Рекомендации",
   "search": {
     "placeholder": "Введите текст для поиска"
   },
@@ -39,6 +41,5 @@
     "technology": "Технологии",
     "travel": "Путешествия",
     "trends": "Тенденции"
-  },
-  "recommendationTitle": "Рекомендации"
+  }
 }

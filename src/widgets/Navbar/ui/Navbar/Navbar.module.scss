@@ -8,8 +8,18 @@
 }
 
 .links {
+  flex: 1 0 auto;
   display: flex;
   gap: 10px;
-  margin-left: auto;
   color: var(--inverted-primary-color);
+}
+
+.authButton {
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.mainTitle {
+  width: calc(var(--sidebar-width) - var(--sidebar-paddings));
+  text-align: center;
 }

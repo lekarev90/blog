@@ -30,7 +30,7 @@ const ArticlesPage = memo(() => {
           </div>
           <ArticleListSearch />
         </div>
-        <ArticlesList articles={articles} isLoading={isLoading} />
+        <ArticlesList articles={articles} isLoading={isLoading} withMoreButton />
       </div>
     </Page>
   );

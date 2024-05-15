@@ -1,6 +1,7 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
 
 import { ArticlesList } from 'widgets/articleList';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
@@ -19,6 +20,7 @@ const reducers = {
 
 export const ArticleRecommendations = memo(() => {
   const { t } = useTranslation('articles');
+  const { id } = useParams<{ id: string}>();
 
   const dispatch = useAppDispatch();
   const isLoading = useSelector(articleRecommendationsIsLoading);
@@ -26,7 +28,7 @@ export const ArticleRecommendations = memo(() => {
 
   useEffect(() => {
     dispatch(fetchArticleRecommendations());
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>

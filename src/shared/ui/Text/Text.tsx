@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 
 export enum TextVariant {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error',
 }
 

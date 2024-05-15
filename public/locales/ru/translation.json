@@ -29,7 +29,8 @@
     "empty": "/",
     "menu": {
       "aboutUs": "О нас"
-    }
+    },
+    "createArticle": "Создать статью"
   },
   "notFoundPage": {
     "body": {
@@ -53,5 +54,6 @@
     },
     "open": ">"
   },
-  "switchLanguage": "RU"
+  "switchLanguage": "RU",
+  "mainTitleLogo": "Сборник статей"
 }

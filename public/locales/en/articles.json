@@ -1,8 +1,10 @@
 {
   "articleDoesntFound": "Article not found",
   "commentTitle": "Comments",
+  "editButton": "Edit article",
   "goBack": "Go back",
   "orderBy": "Order by",
+  "recommendationTitle": "Recommendations",
   "search": {
     "placeholder": "Search text"
   },

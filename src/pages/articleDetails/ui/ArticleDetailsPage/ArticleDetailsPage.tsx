@@ -1,24 +1,18 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router';
+import { useParams } from 'react-router';
 
 import { ArticleComments, ArticleRoot } from 'widgets/article';
 import { Page } from 'shared/ui/Page/Page';
-import { Button, ButtonVariants } from 'shared/ui/Button/Button';
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-
 import { ArticleRecommendations } from 'features/article';
+
+import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 
 import styles from './ArticleDetailsPage.module.scss';
 
 const ArticleDetailsPage = memo(() => {
-  const navigate = useNavigate();
   const { t } = useTranslation('articles');
-  const { id } = useParams<{ id: string}>();
-
-  const onBackToList = useCallback(() => {
-    navigate(RouterPath.articles);
-  }, [navigate]);
+  const { id } = useParams<{ id: string }>();
 
   if (!id) {
     return (
@@ -30,9 +24,7 @@ const ArticleDetailsPage = memo(() => {
 
   return (
     <Page className={styles.container}>
-      <Button variant={ButtonVariants.OUTLINE} onClick={onBackToList} className={styles.goBackButton}>
-        {t('articles:goBack')}
-      </Button>
+      <ArticleDetailsHeader id={id} />
       <ArticleRoot id={id} />
       <div className={styles.recommendations}>
         <ArticleRecommendations />

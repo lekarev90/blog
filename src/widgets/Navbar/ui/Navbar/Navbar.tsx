@@ -7,6 +7,10 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 
+import { AppLink, AppLinkColor } from 'shared/ui/AppLink/AppLink';
+import { RouterPath } from 'shared/config/routeConfig/routeConfig';
+import { Text, TextVariant } from 'shared/ui/Text/Text';
+
 import styles from './Navbar.module.scss';
 
 export const Navbar = memo(() => {
@@ -28,37 +32,28 @@ export const Navbar = memo(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
-  if (authData) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.links}>
-          <Button
-            variant={ButtonVariants.CLEAR_INVERTED}
-            className={styles.links}
-            onClick={onLogout}
-          >
-            {t('translation:navbar.authModalButton.logout')}
-          </Button>
-        </div>
-      </div>
-    );
-  }
+  const userAreaButtons = authData ? (
+    <>
+      <AppLink to={RouterPath.article_create} color={AppLinkColor.SECONDARY}>
+        {t('translation:navbar.createArticle')}
+      </AppLink>
+      <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onLogout}>
+        {t('translation:navbar.authModalButton.logout')}
+      </Button>
+    </>
+  ) : (
+    <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
+      {t('translation:navbar.authModalButton.login')}
+    </Button>
+  );
 
   return (
     <div className={styles.container}>
+      <Text variant={TextVariant.INVERTED} className={styles.mainTitle} title={t('translation:mainTitleLogo')} />
       <div className={styles.links}>
-        <Button
-          variant={ButtonVariants.CLEAR_INVERTED}
-          className={styles.links}
-          onClick={onOpenAuthModal}
-        >
-          {t('translation:navbar.authModalButton.login')}
-        </Button>
+        {userAreaButtons}
       </div>
-      <LoginModal
-        onClose={onCloseAuthModal}
-        isOpen={isAuthModalOpen}
-      />
+      <LoginModal onClose={onCloseAuthModal} isOpen={isAuthModalOpen} />
     </div>
   );
 });

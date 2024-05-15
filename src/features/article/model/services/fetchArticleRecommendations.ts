@@ -19,7 +19,7 @@ export const fetchArticleRecommendations = createAsyncThunk<IArticle[], void, IT
         params: {
           _expand: 'user',
           _limit: 10,
-          _page: 1,
+          _page: Math.floor(Math.random() * (5 - 1 + 1) + 1),
           _sort: sortBy,
           _order: orderBy,
           q: text,
