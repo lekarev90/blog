@@ -3,6 +3,7 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import { type BuildOptions } from './types/config';
 
 export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] => {
@@ -19,14 +20,24 @@ export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): webpack.We
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: paths.locales,
+          to: paths.buildLocales,
+        },
+      ],
+    }),
   ];
 
   if (isDev) {
     plugins.push(new ReactRefreshPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
-    plugins.push(new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }));
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      }),
+    );
   }
 
   return plugins;
