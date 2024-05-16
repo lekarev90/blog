@@ -15,6 +15,7 @@ import { EArticlesView } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { articlesListActions, getArticlesListData } from 'widgets/articleList';
 
+import { HStack } from 'shared/ui/Stack';
 import styles from './ArticlesListViewSwitcher.module.scss';
 
 const cx = classNames.bind(styles);
@@ -25,13 +26,13 @@ interface IViewType {
 }
 
 const viewTypes: Record<EArticlesView, IViewType> = {
-  [EArticlesView.LIST]: {
-    view: EArticlesView.LIST,
-    icon: ListIcon,
-  },
   [EArticlesView.GRID]: {
     view: EArticlesView.GRID,
     icon: GridIcon,
+  },
+  [EArticlesView.LIST]: {
+    view: EArticlesView.LIST,
+    icon: ListIcon,
   },
 };
 
@@ -44,12 +45,12 @@ export const ArticlesListViewSwitcher = memo(() => {
   }, [dispatch]);
 
   return (
-    <div className={styles.viewSwitcher}>
+    <HStack gap="8">
       {Object.values(viewTypes).map(({ view, icon }) => (
         <Button onClick={() => onSwitchView(view)} key={view}>
           <Icon Svg={icon} className={cx({ isActive: view === articlesView })} />
         </Button>
       ))}
-    </div>
+    </HStack>
   );
 });

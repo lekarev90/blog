@@ -3,6 +3,8 @@ import {
   ChangeEvent, memo, useCallback, useMemo,
 } from 'react';
 
+import { VStack } from '../Stack';
+
 import styles from './Select.module.scss';
 
 const cx = classNames.bind(styles);
@@ -40,7 +42,7 @@ const _Select = <T extends string>({
   )), [options]);
 
   return (
-    <div className={cx(styles.container, className)}>
+    <VStack gap="2" maxWidth className={cx(styles.container, className, { withLabel: label })}>
       {label && (
         <span className={styles.label}>
           {label}
@@ -55,7 +57,7 @@ const _Select = <T extends string>({
       >
         {optionList}
       </select>
-    </div>
+    </VStack>
   );
 };
 

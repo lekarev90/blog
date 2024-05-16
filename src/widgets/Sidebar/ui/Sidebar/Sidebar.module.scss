@@ -7,9 +7,6 @@
   flex: 0 0 auto;
 }
 
-
-
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 }
@@ -18,10 +15,6 @@
   width: 100%;
   position: absolute;
   bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
   padding: 0 20px;
 }
 
@@ -34,7 +27,5 @@
 
 .menuContainer {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
   padding: 0 var(--sidebar-paddings);
 }

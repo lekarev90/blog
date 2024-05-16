@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonVariants } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+import { VStack } from 'shared/ui/Stack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -43,7 +44,7 @@ export const Sidebar = memo(() => {
       >
         {sidebarStateText}
       </Button>
-      <div className={styles.menuContainer}>
+      <VStack className={styles.menuContainer}>
         {sidebarItems.map((item) => (
           <SidebarItem
             key={item.path}
@@ -51,11 +52,11 @@ export const Sidebar = memo(() => {
             collapsed={collapsed}
           />
         ))}
-      </div>
-      <div className={styles.switchers}>
+      </VStack>
+      <VStack align="center" className={styles.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
-      </div>
+      </VStack>
     </menu>
   );
 });

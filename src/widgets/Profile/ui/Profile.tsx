@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import {
-  getValidateTextError,
   getIsProfileDataSame,
   getProfileData,
   getProfileErrors,
   getProfileIsLoading,
+  getValidateTextError,
   profileActions,
   ProfileCard,
   ProfileCardHeader,
@@ -20,7 +20,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 
-import styles from './Profile.module.scss';
+import { VStack } from 'shared/ui/Stack';
 
 export const Profile: FC = memo(() => {
   const { t } = useTranslation('profile');
@@ -55,7 +55,7 @@ export const Profile: FC = memo(() => {
   );
 
   return (
-    <div className={styles.container}>
+    <VStack gap="32">
       <ProfileCardHeader
         onToggleEditButton={onToggleEditButton}
         onResetButton={onResetButton}
@@ -64,19 +64,8 @@ export const Profile: FC = memo(() => {
         isReadonly={isReadonly}
       />
       {profileErrors?.length
-        && profileErrors.map((error) => (
-          <Text
-            key={error}
-            text={getValidateTextError(t)[error]}
-            variant={TextVariant.ERROR}
-          />
-        ))}
-      <ProfileCard
-        isLoading={isLoading}
-        isReadonly={isReadonly}
-        data={data}
-        onChangeHandler={onChangeHandler}
-      />
-    </div>
+        && profileErrors.map((error) => <Text key={error} text={getValidateTextError(t)[error]} variant={TextVariant.ERROR} />)}
+      <ProfileCard isLoading={isLoading} isReadonly={isReadonly} data={data} onChangeHandler={onChangeHandler} />
+    </VStack>
   );
 });

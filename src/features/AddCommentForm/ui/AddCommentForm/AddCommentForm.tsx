@@ -1,27 +1,24 @@
-import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 
 import { Input } from 'shared/ui/Input/Input';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 
 import styles from './AddCommentForm.module.scss';
 
-const cx = classNames.bind(styles);
-
 interface AddCommentFormProps {
-  className?: string;
-  text?: string
-  onSendComment: () => void
-  onChangeComment: (text: string) => void
+  text?: string;
+  onSendComment: () => void;
+  onChangeComment: (text: string) => void;
 }
 
 export const AddCommentForm = ({
-  className, text = '', onChangeComment, onSendComment,
+  text = '', onChangeComment, onSendComment,
 }: AddCommentFormProps) => {
   const { t } = useTranslation('comments');
 
   return (
-    <div className={cx(styles.container, className)}>
+    <HStack gap="32" maxWidth align="stretch">
       <Input
         name="comment"
         placeholder={t('comments:addComment')}
@@ -37,6 +34,6 @@ export const AddCommentForm = ({
       >
         {t('comments:sendComment')}
       </Button>
-    </div>
+    </HStack>
   );
 };

@@ -1,14 +1,13 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 
 import { ArticleComments, ArticleRoot } from 'widgets/article';
 import { Page } from 'shared/ui/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 import { ArticleRecommendations } from 'features/article';
 
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
-
-import styles from './ArticleDetailsPage.module.scss';
 
 const ArticleDetailsPage = memo(() => {
   const { t } = useTranslation('articles');
@@ -23,16 +22,12 @@ const ArticleDetailsPage = memo(() => {
   }
 
   return (
-    <Page className={styles.container}>
+    <VStack Component={Page} gap="32" flexWrap={false}>
       <ArticleDetailsHeader id={id} />
       <ArticleRoot id={id} />
-      <div className={styles.recommendations}>
-        <ArticleRecommendations />
-      </div>
-      <div className={styles.commentsWrapper}>
-        <ArticleComments id={id} />
-      </div>
-    </Page>
+      <ArticleRecommendations />
+      <ArticleComments id={id} />
+    </VStack>
   );
 });
 

@@ -2,27 +2,23 @@ import { FC, memo } from 'react';
 
 import { Text } from 'shared/ui/Text/Text';
 
+import { VStack } from 'shared/ui/Stack';
 import { IArticleTextBlock } from '../../model/types/article';
-
-import styles from './ArticleTextBlockComponent.module.scss';
 
 export const ArticleTextBlockComponent: FC<IArticleTextBlock> = memo(({
   title,
   paragraphs,
 }) => (
-  <>
+  <VStack gap="4">
     {title && (
       <Text
         title={title}
-        className={styles.title}
       />
     )}
-    <div className={styles.paragraphs}>
-      {paragraphs.map((paragraph) => (
-        <p key={paragraph}>
-          { paragraph }
-        </p>
-      ))}
-    </div>
-  </>
+    {paragraphs.map((paragraph) => (
+      <p key={paragraph}>
+        { paragraph }
+      </p>
+    ))}
+  </VStack>
 ));

@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux';
 
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
+import { HStack } from 'shared/ui/Stack';
 
 import { getIsProfileOwner } from '../../model/selectors/profile.selectors';
-
-import styles from './ProfileCardHeader.module.scss';
 
 interface ProfileCardHeaderProps {
   isReadonly: boolean;
@@ -34,28 +33,26 @@ export const ProfileCardHeader = memo(
     const editButtonText = isReadonly ? 'edit' : 'reset';
 
     return (
-      <div className={styles.container}>
+      <HStack justify="between">
         <Text title={t('profile:pageTitle')} />
         {isProfileOwner && (
-          <div className={styles.buttonContainer}>
+          <HStack gap="8">
             <Button
               variant={ButtonVariants.BACKGROUND_INVERTED}
-              className={styles.button}
               onClick={editButtonHandler}
             >
               {t(`profile:${editButtonText}Button`)}
             </Button>
             <Button
               variant={ButtonVariants.OUTLINE}
-              className={styles.button}
               onClick={onSaveButton}
               disabled={isProfileDataSame || isReadonly}
             >
               {t('profile:saveButton')}
             </Button>
-          </div>
+          </HStack>
         )}
-      </div>
+      </HStack>
     );
   },
 );

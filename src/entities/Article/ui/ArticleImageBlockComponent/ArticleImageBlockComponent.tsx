@@ -1,5 +1,7 @@
 import { FC, memo } from 'react';
 
+import { VStack } from 'shared/ui/Stack';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import { IArticleImageBlock } from '../../model/types/article';
 
 import styles from './ArticleImageBlockComponent.module.scss';
@@ -9,14 +11,8 @@ interface ArticleImageBlockComponentProps extends IArticleImageBlock{
 }
 
 export const ArticleImageBlockComponent: FC<ArticleImageBlockComponentProps> = memo(({ src, title }) => (
-  <p className={styles.container}>
-    <img
-      alt={title}
-      src={src}
-      className={styles.image}
-    />
-    <span className={styles.title}>
-      {title}
-    </span>
-  </p>
+  <VStack gap="8" align="center">
+    <img alt={title} src={src} className={styles.image} />
+    {title && <Text text={title} size={TextSize.M} textTag="span" />}
+  </VStack>
 ));

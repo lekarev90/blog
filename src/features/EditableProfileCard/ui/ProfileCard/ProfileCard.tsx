@@ -8,6 +8,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 
+import { VStack } from 'shared/ui/Stack';
 import { IProfile, TProfileFieldName } from '../../model/types/profile';
 
 import styles from './ProfileCard.module.scss';
@@ -25,13 +26,13 @@ export const ProfileCard = memo(({
   const { t } = useTranslation('profile');
 
   return (
-    <div className={styles.container}>
+    <VStack gap="32">
       {isLoading ? (
         <div className={styles.loader}>
           <Loader />
         </div>
       ) : (
-        <>
+        <VStack gap="16" align="center">
           {data?.avatar && (
             <Avatar
               src={data?.avatar}
@@ -39,58 +40,54 @@ export const ProfileCard = memo(({
               size={200}
             />
           )}
-
-          <div className={styles.inputs}>
-            <Input<TProfileFieldName>
-              value={data?.firstName || ''}
-              name="firstName"
-              placeholder={t('profile:inputsPlaceholder.firstName')}
-              disabled={isReadonly}
-              onChange={onChangeHandler}
-            />
-            <Input<TProfileFieldName>
-              value={data?.lastName || ''}
-              name="lastName"
-              placeholder={t('profile:inputsPlaceholder.lastName')}
-              disabled={isReadonly}
-              onChange={onChangeHandler}
-            />
-            <Input<TProfileFieldName>
-              value={data?.age || ''}
-              name="age"
-              placeholder={t('profile:inputsPlaceholder.age')}
-              disabled={isReadonly}
-              onChange={onChangeHandler}
-            />
-            <Input<TProfileFieldName>
-              value={data?.username || ''}
-              name="username"
-              placeholder={t('profile:inputsPlaceholder.username')}
-              disabled={isReadonly}
-              onChange={onChangeHandler}
-            />
-            <Input<TProfileFieldName>
-              value={data?.avatar || ''}
-              name="avatar"
-              placeholder={t('profile:inputsPlaceholder.avatar')}
-              disabled={isReadonly}
-              onChange={onChangeHandler}
-            />
-
-            <CurrencySelect
-              value={data?.currency}
-              isReadonly={isReadonly}
-              onChangeHandler={onChangeHandler}
-            />
-            <CountrySelect
-              value={data?.country}
-              isReadonly={isReadonly}
-              onChangeHandler={onChangeHandler}
-            />
-          </div>
-        </>
+          <Input<TProfileFieldName>
+            value={data?.firstName || ''}
+            name="firstName"
+            placeholder={t('profile:inputsPlaceholder.firstName')}
+            disabled={isReadonly}
+            onChange={onChangeHandler}
+          />
+          <Input<TProfileFieldName>
+            value={data?.lastName || ''}
+            name="lastName"
+            placeholder={t('profile:inputsPlaceholder.lastName')}
+            disabled={isReadonly}
+            onChange={onChangeHandler}
+          />
+          <Input<TProfileFieldName>
+            value={data?.age || ''}
+            name="age"
+            placeholder={t('profile:inputsPlaceholder.age')}
+            disabled={isReadonly}
+            onChange={onChangeHandler}
+          />
+          <Input<TProfileFieldName>
+            value={data?.username || ''}
+            name="username"
+            placeholder={t('profile:inputsPlaceholder.username')}
+            disabled={isReadonly}
+            onChange={onChangeHandler}
+          />
+          <Input<TProfileFieldName>
+            value={data?.avatar || ''}
+            name="avatar"
+            placeholder={t('profile:inputsPlaceholder.avatar')}
+            disabled={isReadonly}
+            onChange={onChangeHandler}
+          />
+          <CurrencySelect
+            value={data?.currency}
+            isReadonly={isReadonly}
+            onChangeHandler={onChangeHandler}
+          />
+          <CountrySelect
+            value={data?.country}
+            isReadonly={isReadonly}
+            onChangeHandler={onChangeHandler}
+          />
+        </VStack>
       )}
 
-    </div>
+    </VStack>
   );
 });

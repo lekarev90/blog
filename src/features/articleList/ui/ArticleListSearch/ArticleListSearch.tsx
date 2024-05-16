@@ -3,17 +3,16 @@ import { useTranslation } from 'react-i18next';
 
 import { Input } from 'shared/ui/Input/Input';
 import { Card } from 'shared/ui/Card/Card';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 
-import { fetchArticlesList, articlesListActions } from 'widgets/articleList';
+import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 
 import { ArticlesListTabs } from '../ArticlesListTabs/ArticlesListTabs';
 import { articlesSearchActions, articlesSearchReducer } from '../../model/slices/articlesSearchSlice';
-
-import styles from './ArticleListSearch.module.scss';
 
 const reducers = {
   articlesSearch: articlesSearchReducer,
@@ -34,12 +33,12 @@ export const ArticleListSearch = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={styles.container}>
-        <Card className={styles.searchCard}>
+      <VStack gap="8">
+        <HStack Component={Card}>
           <Input name="search" placeholder={t('articles:search.placeholder')} onChange={onChangeSearchText} />
-        </Card>
+        </HStack>
         <ArticlesListTabs />
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 });

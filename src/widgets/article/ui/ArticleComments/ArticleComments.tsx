@@ -10,13 +10,12 @@ import { AddCommentForm } from 'features/AddCommentForm';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
+import { VStack } from 'shared/ui/Stack';
 
 import { addArticleComment } from '../../model/services/addArticleCommet';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/articleComments.selectors';
 import { fetchCommentsByArticleId } from '../../model/services/fetchArticleCommets';
-
-import styles from './ArticleComments.module.scss';
 
 interface ArticleCommentsProps {
   id: string;
@@ -48,11 +47,11 @@ export const ArticleComments = memo(({ id }: ArticleCommentsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={styles.container}>
+      <VStack gap="16">
         <Text title={t('articles:commentTitle')} />
         <AddCommentForm text={commentText} onSendComment={onChangeComment} onChangeComment={setCommentText} />
         <CommentList isLoading={isCommentsLoading} comments={comments} />
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 });

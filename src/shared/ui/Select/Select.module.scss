@@ -1,8 +1,11 @@
+$label-positions: 24px;
+
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
   position: relative;
+
+  &.withLabel {
+    margin-top: $label-positions;
+  }
 }
 
 
@@ -22,5 +25,5 @@
 
 .label {
   position: absolute;
-  top: -24px;
+  top: -$label-positions;
 }

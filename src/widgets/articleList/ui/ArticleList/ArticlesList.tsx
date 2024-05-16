@@ -1,5 +1,4 @@
 import { memo, useCallback, useLayoutEffect } from 'react';
-import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -9,6 +8,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { EArticlesView, IArticle } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
+import { HStack, VStack, FlexGap } from 'shared/ui/Stack';
 
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
 import { fetchNextArticlesListPage } from '../../model/services/fetchNextArticlesListPage';
@@ -17,8 +17,6 @@ import { getArticlesListData } from '../../model/selectors/articlesList.selector
 import { ARTICLES_LIST_DATA } from '../../model/helpers/helpers';
 
 import styles from './ArticlesList.module.scss';
-
-const cx = classNames.bind(styles);
 
 interface ArticleListProps {
   className?: string;
@@ -32,7 +30,7 @@ const reducers = {
 };
 
 export const ArticlesList = memo(({
-  className, isLoading, withMoreButton, articles,
+  isLoading, withMoreButton, articles,
 }: ArticleListProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
@@ -42,9 +40,13 @@ export const ArticlesList = memo(({
   } = useSelector(getArticlesListData) || {};
 
   const isShowMoreButton = withMoreButton && hasMore && ARTICLES_LIST_DATA[articlesView]?.HAS_MORE_BUTTON && !isLoading;
+  const isListView = articlesView === EArticlesView.LIST;
 
   const Component = ARTICLES_LIST_DATA[articlesView].COMPONENT;
   const ComponentSkeleton = ARTICLES_LIST_DATA[articlesView].COMPONENT_SKELETON;
+
+  const StackComponent = isListView ? VStack : HStack;
+  const stackProps: Record<string, FlexGap> = isListView ? { gap: '16' } : { gap: '8' };
 
   const skeletonComponents = Array.from({ length: quantityLimit }, (_, index) => <ComponentSkeleton key={index} />);
 
@@ -65,15 +67,22 @@ export const ArticlesList = memo(({
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <div className={cx(className, { [`view-${articlesView}`]: articlesView })}>
+      <StackComponent align="stretch" {...stackProps}>
         {renderComponent()}
         {isLoading && skeletonComponents}
         {isShowMoreButton && (
-          <Card className={styles.fetchMore} onClick={onLoadNextPart}>
+          <StackComponent
+            Component={Card}
+            className={styles.fetchMore}
+            align="center"
+            justify="center"
+            maxWidth
+            onClick={onLoadNextPart}
+          >
             <Text text={t('translation:loadMore')} />
-          </Card>
+          </StackComponent>
         )}
-      </div>
+      </StackComponent>
     </DynamicModuleLoader>
   );
 });

@@ -20,7 +20,7 @@ export interface IArticleCodeBlock extends IArticleBlockBase {
 export interface IArticleImageBlock extends IArticleBlockBase {
   type: EArticleBlockType.IMAGE;
   src: string;
-  title: string;
+  title?: string;
 }
 
 export interface IArticleTextBlock extends IArticleBlockBase {
