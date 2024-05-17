@@ -12,6 +12,9 @@ import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 
 import { HStack } from 'shared/ui/Stack';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+
 import styles from './Navbar.module.scss';
 
 export const Navbar = memo(() => {
@@ -34,14 +37,26 @@ export const Navbar = memo(() => {
   }, [dispatch]);
 
   const userAreaButtons = authData ? (
-    <>
+    <HStack maxWidth justify="between" align="center">
       <AppLink to={RouterPath.article_create} color={AppLinkColor.SECONDARY}>
         {t('translation:navbar.createArticle')}
       </AppLink>
-      <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onLogout}>
-        {t('translation:navbar.authModalButton.logout')}
-      </Button>
-    </>
+      <div className={styles.dropdownWrapper}>
+        <Dropdown
+          TriggerComponent={<Avatar src={authData.avatar} alt={authData.username} size={55} />}
+          items={[
+            {
+              value: t('translation:navbar.profileLink'),
+              to: `${RouterPath.profile}/${authData.id}`,
+            },
+            {
+              value: t('translation:navbar.authModalButton.logout'),
+              onClick: onLogout,
+            },
+          ]}
+        />
+      </div>
+    </HStack>
   ) : (
     <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
       {t('translation:navbar.authModalButton.login')}
@@ -49,7 +64,7 @@ export const Navbar = memo(() => {
   );
 
   return (
-    <HStack align="center" maxWidth className={styles.container}>
+    <HStack Component="header" align="center" maxWidth className={styles.container}>
       <Text variant={TextVariant.INVERTED} className={styles.mainTitle} title={t('translation:mainTitleLogo')} />
       <div className={styles.links}>
         {userAreaButtons}

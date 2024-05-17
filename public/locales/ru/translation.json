@@ -31,7 +31,8 @@
     "empty": "/",
     "menu": {
       "aboutUs": "О нас"
-    }
+    },
+    "profileLink": "Профиль"
   },
   "notFoundPage": {
     "body": {

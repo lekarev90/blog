@@ -1,0 +1,35 @@
+.triggerWrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background: var(--inverted-bg-color);
+  position: absolute;
+  left: 0;
+  z-index: 10000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--listbox-bg);
+}
+
+.menuItem {
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: opacity 0.2s ease-in-out;
+  color: var(--inverted-primary-color);
+
+  &.focus {
+    background: var(--inverted-secondary-color);
+    color: #fff;
+    opacity: 0.8;
+  }
+}

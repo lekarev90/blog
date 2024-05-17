@@ -3,17 +3,19 @@ import classNames from 'classnames/bind';
 
 import styles from './Avatar.module.scss';
 
+import picture from './storybook.jpg';
+
 const cx = classNames.bind(styles);
 
 interface AvatarProps {
   className?: string;
-  src: string;
+  src? : string;
   alt: string;
   size: number;
 }
 
 export const Avatar = memo(({
-  className, src, alt, size,
+  className, src = picture, alt, size,
 }: AvatarProps) => {
   const style = useMemo(
     () => ({
