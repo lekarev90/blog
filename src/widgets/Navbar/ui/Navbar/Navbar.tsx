@@ -11,6 +11,7 @@ import { AppLink, AppLinkColor } from 'shared/ui/AppLink/AppLink';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 
+import { HStack } from 'shared/ui/Stack';
 import styles from './Navbar.module.scss';
 
 export const Navbar = memo(() => {
@@ -48,12 +49,12 @@ export const Navbar = memo(() => {
   );
 
   return (
-    <div className={styles.container}>
+    <HStack align="center" maxWidth className={styles.container}>
       <Text variant={TextVariant.INVERTED} className={styles.mainTitle} title={t('translation:mainTitleLogo')} />
       <div className={styles.links}>
         {userAreaButtons}
       </div>
       <LoginModal onClose={onCloseAuthModal} isOpen={isAuthModalOpen} />
-    </div>
+    </HStack>
   );
 });

@@ -8,7 +8,7 @@ import {
 } from 'widgets/articleList';
 import { ArticleListSearch, ArticlesListSort, ArticlesListViewSwitcher } from 'features/articleList';
 
-import styles from './ArticlesPage.module.scss';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();
@@ -22,16 +22,16 @@ const ArticlesPage = memo(() => {
 
   return (
     <Page onScrollEnd={onLoadNextPart}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.sortContainer}>
+      <VStack Component="section" gap="16">
+        <VStack justify="between" gap="16">
+          <HStack justify="between">
             <ArticlesListSort />
             <ArticlesListViewSwitcher />
-          </div>
+          </HStack>
           <ArticleListSearch />
-        </div>
+        </VStack>
         <ArticlesList articles={articles} isLoading={isLoading} withMoreButton />
-      </div>
+      </VStack>
     </Page>
   );
 });

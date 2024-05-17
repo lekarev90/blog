@@ -5,9 +5,8 @@ import { useSelector } from 'react-redux';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { getIsCanEditArticle } from '../../model/selectors/articleDetails.selector';
-
-import styles from './ArticleDetailsHeader.module.scss';
 
 export const ArticleDetailsHeader = memo(({ id }: {id: string}) => {
   const { t } = useTranslation();
@@ -15,7 +14,7 @@ export const ArticleDetailsHeader = memo(({ id }: {id: string}) => {
   const isCanEditArticle = useSelector(getIsCanEditArticle);
 
   return (
-    <div className={styles.container}>
+    <HStack justify="between">
       <AppLink to={RouterPath.articles}>
         <Button variant={ButtonVariants.OUTLINE}>
           {t('articles:goBack')}
@@ -28,6 +27,6 @@ export const ArticleDetailsHeader = memo(({ id }: {id: string}) => {
           </Button>
         </AppLink>
       )}
-    </div>
+    </HStack>
   );
 });

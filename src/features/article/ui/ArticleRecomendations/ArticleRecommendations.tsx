@@ -31,7 +31,7 @@ export const ArticleRecommendations = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <VStack gap="16">
+      <VStack Component="section" gap="16">
         <Text title={t('articles:recommendationTitle')} />
         <ArticlesList articles={articles} isLoading={isLoading} withMoreButton={false} />
       </VStack>
