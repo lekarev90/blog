@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, memo } from 'react';
+import { type ButtonHTMLAttributes, forwardRef, memo } from 'react';
 
 import classNames from 'classnames/bind';
 
@@ -27,7 +27,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
 }
 
-export const Button = memo(({
+const _Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   className,
   children,
   variant = ButtonVariants.CLEAR,
@@ -35,7 +35,7 @@ export const Button = memo(({
   size = ButtonSize.M,
   disabled,
   ...props
-}: ButtonProps) => {
+}: ButtonProps, ref) => {
   const mods: Record<string, string | boolean | undefined> = {
     [variant]: variant,
     [size]: size,
@@ -50,9 +50,12 @@ export const Button = memo(({
       type="button"
       className={containerClassNames}
       disabled={disabled}
+      ref={ref}
       {...props}
     >
       {children}
     </button>
   );
 });
+
+export const Button = memo(_Button) as typeof _Button;

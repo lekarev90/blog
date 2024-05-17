@@ -1,39 +1,45 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Select } from 'shared/ui/Select/Select';
-
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 import { Currency, CurrencySelectorFieldName } from '../../model/types/currency';
 
 interface CurrencySelectorProps {
   value?: Currency;
-  onChangeHandler: (value: string, name: CurrencySelectorFieldName) => void;
+  onChange: (value: string, name: CurrencySelectorFieldName) => void;
   isReadonly: boolean;
 }
 
 const options = [
   {
-    value: Currency.RUR, content: Currency.RUR,
+    value: Currency.RUR,
+    content: Currency.RUR,
   },
   {
-    value: Currency.EUR, content: Currency.EUR,
+    value: Currency.EUR,
+    content: Currency.EUR,
   },
   {
-    value: Currency.USD, content: Currency.USD,
+    value: Currency.USD,
+    content: Currency.USD,
   },
 ];
 
-export const CurrencySelect = memo(({ value, isReadonly, onChangeHandler }: CurrencySelectorProps) => {
+export const CurrencySelect = memo(({ value, isReadonly, onChange }: CurrencySelectorProps) => {
   const { t } = useTranslation();
 
+  const onChangeHandler = useCallback((value: string) => {
+    onChange(value, 'currency');
+  }, [onChange]);
+
   return (
-    <Select<CurrencySelectorFieldName>
-      value={value}
-      label={t('translation:currencySelectorLabel')}
-      name="currency"
+    <ListBox
+      items={options}
       onChange={onChangeHandler}
-      isReadonly={isReadonly}
-      options={options}
+      value={value}
+      disabled={isReadonly}
+      label={t('translation:currencySelectorLabel')}
+      defaultValue={t('translation:currencySelectorDefaultValue')}
     />
   );
 });

@@ -6,7 +6,7 @@ export enum Country {
 }
 
 export interface CountrySelectField {
-  country: Country
+  country?: Country
 }
 
 export type CountrySelectorFieldName = keyof CountrySelectField

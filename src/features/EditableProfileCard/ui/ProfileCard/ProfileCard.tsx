@@ -78,12 +78,12 @@ export const ProfileCard = memo(({
           <CurrencySelect
             value={data?.currency}
             isReadonly={isReadonly}
-            onChangeHandler={onChangeHandler}
+            onChange={onChangeHandler}
           />
           <CountrySelect
             value={data?.country}
             isReadonly={isReadonly}
-            onChangeHandler={onChangeHandler}
+            onChange={onChangeHandler}
           />
         </VStack>
       )}

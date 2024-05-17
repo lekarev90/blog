@@ -1,13 +1,12 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Select } from 'shared/ui/Select/Select';
-
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 import { Country, CountrySelectorFieldName } from '../../model/types/country';
 
 interface CountrySelectorProps {
   value?: Country;
-  onChangeHandler: (value: string, name: CountrySelectorFieldName) => void;
+  onChange: (value: string, name: CountrySelectorFieldName) => void;
   isReadonly: boolean;
 }
 
@@ -25,17 +24,21 @@ const options = [
     value: Country.UKRAINE, content: Country.UKRAINE,
   },
 ];
-export const CountrySelect = memo(({ value, onChangeHandler, isReadonly }: CountrySelectorProps) => {
+export const CountrySelect = memo(({ value, isReadonly, onChange }: CountrySelectorProps) => {
   const { t } = useTranslation();
 
+  const onChangeHandler = useCallback((value: string) => {
+    onChange(value, 'country');
+  }, [onChange]);
+
   return (
-    <Select<CountrySelectorFieldName>
-      value={value}
-      label={t('translation:countrySelectorLabel')}
-      name="country"
+    <ListBox
+      items={options}
       onChange={onChangeHandler}
-      isReadonly={isReadonly}
-      options={options}
+      value={value}
+      disabled={isReadonly}
+      label={t('translation:countrySelectorLabel')}
+      defaultValue={t('translation:countrySelectorDefaultValue')}
     />
   );
 });

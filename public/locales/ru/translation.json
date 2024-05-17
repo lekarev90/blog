@@ -55,5 +55,7 @@
     },
     "open": ">"
   },
-  "switchLanguage": "RU"
+  "switchLanguage": "RU",
+  "countrySelectorDefaultValue": "Укажите страну",
+  "currencySelectorDefaultValue": "Укажите валюту"
 }

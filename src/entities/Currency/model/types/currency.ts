@@ -5,7 +5,7 @@ export enum Currency {
 }
 
 export interface CurrencySelectField {
-  currency: Currency
+  currency?: Currency
 }
 
 export type CurrencySelectorFieldName = keyof CurrencySelectField

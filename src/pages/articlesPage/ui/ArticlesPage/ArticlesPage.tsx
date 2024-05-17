@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import {
-  ArticlesList, fetchNextArticlesListPage, getArticlesListData, getArticles,
+  ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,
 } from 'widgets/articleList';
 import { ArticleListSearch, ArticlesListSort, ArticlesListViewSwitcher } from 'features/articleList';
 
