@@ -1,4 +1,4 @@
-import { memo, useCallback, useLayoutEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -8,7 +8,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { EArticlesView, IArticle } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
-import { HStack, VStack, FlexGap } from 'shared/ui/Stack';
+import { FlexGap, HStack, VStack } from 'shared/ui/Stack';
 
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
 import { fetchNextArticlesListPage } from '../../model/services/fetchNextArticlesListPage';
@@ -36,7 +36,7 @@ export const ArticlesList = memo(({
   const dispatch = useAppDispatch();
 
   const {
-    hasMore, articlesView = EArticlesView.LIST, quantityLimit = 9,
+    hasMore, articlesView = EArticlesView.LIST, quantityLimit = 9, _inited,
   } = useSelector(getArticlesListData) || {};
 
   const isShowMoreButton = withMoreButton && hasMore && ARTICLES_LIST_DATA[articlesView]?.HAS_MORE_BUTTON && !isLoading;
@@ -59,16 +59,16 @@ export const ArticlesList = memo(({
     dispatch(fetchNextArticlesListPage());
   }, [dispatch]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     dispatch(articlesListActions.init());
-  });
+  }, [dispatch]);
 
   useInitSortAndSearchFromSearchParams();
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <StackComponent align="stretch" {...stackProps}>
-        {!isLoading && renderComponent()}
+        {_inited && renderComponent()}
         {isLoading && skeletonComponents}
         {isShowMoreButton && (
           <StackComponent

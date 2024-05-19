@@ -7,10 +7,14 @@ import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ArticleEditPage } from 'pages/articleEdit';
+import { AdminPanelPage } from 'pages/adminPanel';
+import { ERoles } from 'entities/User/model/types/userSchema';
+import { AccessDeniedPage } from 'pages/accessDenied';
 
 export type AppRouterProps = RouteProps & {
-  isAuthOnly?: boolean
-}
+  isAuthOnly?: boolean;
+  roles?: ERoles[];
+};
 
 export enum AppRoutes {
   MAIN = 'main',
@@ -20,6 +24,8 @@ export enum AppRoutes {
   ARTICLE_DETAILS = 'article_details',
   ARTICLE_CREATE = 'article_create',
   ARTICLE_EDIT = 'article_edit',
+  ADMIN_PANEL = 'admin_panel',
+  ACCESS_DENIED = 'access_denied',
 
   NOT_FOUND = '404'
 }
@@ -32,6 +38,8 @@ export const RouterPath: Record<AppRoutes, string> = {
   [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + id
   [AppRoutes.ARTICLE_CREATE]: '/articles/new',
   [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
+  [AppRoutes.ADMIN_PANEL]: '/admin',
+  [AppRoutes.ACCESS_DENIED]: '/forbidden',
   [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -68,6 +76,16 @@ export const routeConfig: Record<AppRoutes, AppRouterProps> = {
     path: `${RouterPath.article_edit}`,
     element: <ArticleEditPage />,
     isAuthOnly: true,
+  },
+  [AppRoutes.ADMIN_PANEL]: {
+    path: `${RouterPath.admin_panel}`,
+    element: <AdminPanelPage />,
+    isAuthOnly: true,
+    roles: [ERoles.MANAGER, ERoles.ADMIN],
+  },
+  [AppRoutes.ACCESS_DENIED]: {
+    path: `${RouterPath.access_denied}`,
+    element: <AccessDeniedPage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: RouterPath['404'],

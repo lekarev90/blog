@@ -32,7 +32,8 @@
     "menu": {
       "aboutUs": "О нас"
     },
-    "profileLink": "Профиль"
+    "profileLink": "Профиль",
+    "adminLink": "Админка"
   },
   "notFoundPage": {
     "body": {

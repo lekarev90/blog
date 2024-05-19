@@ -4,6 +4,7 @@ import { IStateSchema } from 'app/providers/StoreProvider';
 
 import { EArticlesView, IArticle } from 'entities/Article';
 import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+
 import { ARTICLES_LIST_DATA } from '../helpers/helpers';
 import { IArticlesListSchema } from '../types/articlesListSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList';
@@ -21,6 +22,7 @@ const initialState = articlesListAdapter.getInitialState<IArticlesListSchema>({
   hasMore: true,
   articlesView: EArticlesView.LIST,
   quantityLimit: ARTICLES_LIST_DATA[EArticlesView.LIST].SKELETON_QUANTITY,
+  _inited: false,
 });
 
 export const getArticles = articlesListAdapter.getSelectors<IStateSchema>(
@@ -37,6 +39,7 @@ const articlesListSlice = createSlice({
 
       state.articlesView = initialArticleListView;
       state.quantityLimit = quantityLimit;
+      state._inited = true;
     },
     setArticlesView: (state, action: PayloadAction<EArticlesView>) => {
       const quantityLimit = ARTICLES_LIST_DATA[action.payload].SKELETON_QUANTITY;

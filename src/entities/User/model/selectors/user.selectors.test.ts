@@ -1,8 +1,7 @@
 import { IStateSchema } from 'app/providers/StoreProvider';
-import { DeepPartial } from 'shared/const/types';
 
 import { IUser } from '../types/userSchema';
-import { getIsUserInit, getUserAuthData } from './user.selectors';
+import { getUserAuthData } from './user.selectors';
 
 describe('user.selectors', () => {
   test('getUserAuthData', () => {
@@ -19,18 +18,6 @@ describe('user.selectors', () => {
 
     const expected = getUserAuthData(state as IStateSchema);
 
-    expect(expected).toEqual(authData);
-  });
-
-  test('getIsUserInit', () => {
-    const state: DeepPartial<IStateSchema> = {
-      user: {
-        initialized: true,
-      },
-    };
-
-    const expected = getIsUserInit(state as IStateSchema);
-
-    expect(expected).toBeTruthy();
+    expect(expected).toEqual({ authData });
   });
 });

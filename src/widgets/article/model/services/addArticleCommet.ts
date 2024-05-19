@@ -11,9 +11,9 @@ import { ARTICLES_COMMENT_REQUEST_URL } from '../const/const';
 export const addArticleComment = createAsyncThunk<IComment, { commentText: string; articleId: string }, IThunkConfig<string>>(
   'article/addArticleComment',
   async ({ commentText, articleId }, { extra, rejectWithValue, getState }) => {
-    const userData = getUserAuthData(getState() as IStateSchema);
+    const { authData } = getUserAuthData(getState() as IStateSchema);
 
-    if (!userData) {
+    if (!authData) {
       return rejectWithValue('no data');
     }
 
@@ -22,7 +22,7 @@ export const addArticleComment = createAsyncThunk<IComment, { commentText: strin
         `${ARTICLES_COMMENT_REQUEST_URL}`,
         {
           articleId,
-          userId: userData.id,
+          userId: authData.id,
           text: commentText,
         },
         {

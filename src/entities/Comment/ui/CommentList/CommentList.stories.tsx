@@ -20,7 +20,7 @@ export default {
           id: '1',
           username: 'admin',
           password: '123',
-          role: 'SUPER_ADMIN',
+          roles: ['ADMIN'],
           avatar: 'https://picsum.photos/200/200',
         },
       },

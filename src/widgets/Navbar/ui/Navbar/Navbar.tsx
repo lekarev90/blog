@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { LoginModal } from 'features/AuthByUsername';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 
@@ -18,10 +20,15 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import styles from './Navbar.module.scss';
 
 export const Navbar = memo(() => {
-  const dispatch = useAppDispatch();
-  const authData = useSelector(getUserAuthData);
-
   const { t } = useTranslation();
+
+  const dispatch = useAppDispatch();
+  const { authData } = useSelector(getUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+
+  const isShowAdminLink = isAdmin || isManager;
+
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   const onCloseAuthModal = useCallback(() => {
@@ -45,6 +52,14 @@ export const Navbar = memo(() => {
         <Dropdown
           TriggerComponent={<Avatar src={authData.avatar} alt={authData.username} size={55} />}
           items={[
+            ...(isShowAdminLink
+              ? [
+                {
+                  value: t('translation:navbar.adminLink'),
+                  to: `${RouterPath.admin_panel}`,
+                },
+              ]
+              : []),
             {
               value: t('translation:navbar.profileLink'),
               to: `${RouterPath.profile}/${authData.id}`,

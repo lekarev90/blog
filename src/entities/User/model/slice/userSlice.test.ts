@@ -12,7 +12,7 @@ describe('userReducer', () => {
     localStorage.removeItem = jest.fn();
   });
   test('setAuthData', () => {
-    const authData: IUser = { id: '123', username: 'username', role: ERoles.SUPERADMIN };
+    const authData: IUser = { id: '123', username: 'username', roles: [ERoles.ADMIN] };
 
     const initialState: DeepPartial<IUserSchema> = {};
 
@@ -34,7 +34,7 @@ describe('userReducer', () => {
   });
 
   test('logout', () => {
-    const authData: IUser = { id: '123', username: 'username', role: ERoles.SUPERADMIN };
+    const authData: IUser = { id: '123', username: 'username', roles: [ERoles.ADMIN] };
 
     const initialState: DeepPartial<IUserSchema> = { authData };
 

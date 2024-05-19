@@ -2408,21 +2408,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "SUPER_ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://picsum.photos/200/200"
     },
     {
       "id": "2",
-      "username": "John",
+      "username": "manager",
       "password": "123",
-      "role": "USER",
+      "roles": ["MANAGER"],
       "avatar": "https://picsum.photos/200/300"
     },
     {
       "id": "3",
-      "username": "Mamba",
+      "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://picsum.photos/200/300"
     }
   ],

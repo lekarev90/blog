@@ -8,11 +8,14 @@ import { AppRouterProps, routeConfig } from 'shared/config/routeConfig/routeConf
 import { PageLoader } from 'widgets/PageLoader';
 
 export const AppRouter: FC = () => {
-  const renderWithWrapper = useCallback(({ path, element, isAuthOnly }: AppRouterProps) => {
+  const renderWithWrapper = useCallback(({
+    path, element, isAuthOnly, roles,
+  }: AppRouterProps) => {
     const Wrapper = isAuthOnly ? RequireAuth : Fragment;
+    const wrapperProps = roles ? { roles } : {};
 
     const page = (
-      <Wrapper>
+      <Wrapper {...wrapperProps}>
         <Suspense fallback={<PageLoader />}>
           {element}
         </Suspense>

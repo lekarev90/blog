@@ -19,5 +19,5 @@ export const getIsProfileDataSame = createSelector(
 export const getIsProfileOwner = createSelector(
   getProfileData,
   getUserAuthData,
-  (profileData, authData) => isEqual(profileData?.id, authData?.id),
+  (profileData, user) => isEqual(profileData?.id, user.authData?.id),
 );

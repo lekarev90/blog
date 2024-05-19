@@ -1,6 +1,6 @@
 export enum ERoles {
   ADMIN ='ADMIN',
-  SUPERADMIN ='SUPERADMIN',
+  MANAGER ='MANAGER',
   USER = 'USER'
 }
 
@@ -8,7 +8,7 @@ export interface IUser {
   id: string;
   username: string;
   password?: string;
-  role?: ERoles;
+  roles?: ERoles[];
   avatar?: string;
 }
 

@@ -10,18 +10,19 @@ import ArticleIcon from 'shared/assets/icons/article-20-20.svg';
 
 import { ISidebarItem } from '../types/types';
 
-export const getSidebarItems = (t: TFunction) => createSelector(getUserAuthData, (authData) => {
-  const items: ISidebarItem[] = [{
-    path: RouterPath.main,
-    Icon: MainIcon,
-    text: t('translation:sidebar.menu.linkTitles.main'),
-  },
-  {
-    path: RouterPath.about,
-    Icon: AboutIcon,
-    text: t('translation:sidebar.menu.linkTitles.about'),
-
-  }];
+export const getSidebarItems = (t: TFunction) => createSelector(getUserAuthData, ({ authData }) => {
+  const items: ISidebarItem[] = [
+    {
+      path: RouterPath.main,
+      Icon: MainIcon,
+      text: t('translation:sidebar.menu.linkTitles.main'),
+    },
+    {
+      path: RouterPath.about,
+      Icon: AboutIcon,
+      text: t('translation:sidebar.menu.linkTitles.about'),
+    },
+  ];
 
   if (authData) {
     items.push(

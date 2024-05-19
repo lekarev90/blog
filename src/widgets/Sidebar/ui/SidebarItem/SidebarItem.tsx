@@ -18,9 +18,9 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
-  const isAuth = useSelector(getUserAuthData);
+  const { authData } = useSelector(getUserAuthData);
 
-  if (item.isAuthOnly && !isAuth) {
+  if (item.isAuthOnly && !authData) {
     return null;
   }
 
