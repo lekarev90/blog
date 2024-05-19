@@ -20,7 +20,7 @@ import styles from './ArticlesList.module.scss';
 
 interface ArticleListProps {
   className?: string;
-  articles: IArticle[];
+  articles?: IArticle[];
   isLoading?: boolean;
   withMoreButton?: boolean;
 }
@@ -30,7 +30,7 @@ const reducers = {
 };
 
 export const ArticlesList = memo(({
-  isLoading, withMoreButton, articles,
+  isLoading, withMoreButton, articles = [],
 }: ArticleListProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
