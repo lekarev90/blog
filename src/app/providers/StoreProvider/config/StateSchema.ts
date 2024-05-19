@@ -13,11 +13,13 @@ import { IArticlesListSchema } from 'widgets/articleList';
 import { IArticlesListSortSchema, IArticlesSearch } from 'features/articleList';
 import { IArticleRecommendationsSchema } from 'features/article';
 import { IArticleDetailsCommentsSchema } from 'widgets/article';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface IStateSchema {
   counter: CounterSchema;
   user: IUserSchema;
   scroll: IScroll
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // async
   loginForm?: ILoginSchema;

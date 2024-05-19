@@ -5,6 +5,7 @@ import { userReducer } from 'entities/User';
 import { scrollReducer } from 'shared/ui/Page/model/slices/scrollSlice';
 import { Reducer } from 'redux';
 import { $api } from 'shared/api/api';
+import { rtkApi } from 'shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 
 export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: ReducersMapObject<IStateSchema>) => {
@@ -13,6 +14,7 @@ export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: Re
     counter: counterReducer,
     user: userReducer,
     scroll: scrollReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
@@ -27,7 +29,7 @@ export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: Re
           api: $api,
         },
       },
-    }),
+    }).concat(rtkApi.middleware),
   });
 
   // @ts-ignore

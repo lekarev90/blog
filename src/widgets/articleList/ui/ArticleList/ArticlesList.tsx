@@ -68,7 +68,7 @@ export const ArticlesList = memo(({
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <StackComponent align="stretch" {...stackProps}>
-        {renderComponent()}
+        {!isLoading && renderComponent()}
         {isLoading && skeletonComponents}
         {isShowMoreButton && (
           <StackComponent
