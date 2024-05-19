@@ -6,6 +6,8 @@ import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { HStack } from 'shared/ui/Stack';
 
+import { EProfileCardTestIdButtons } from '../../model/types/profile';
+import { getProfileCardTestId } from '../../model/const/const';
 import { getIsProfileOwner } from '../../model/selectors/profile.selectors';
 
 interface ProfileCardHeaderProps {
@@ -38,12 +40,14 @@ export const ProfileCardHeader = memo(
         {isProfileOwner && (
           <HStack gap="8">
             <Button
+              data-testid={getProfileCardTestId(EProfileCardTestIdButtons.EDIT_BUTTON)}
               variant={ButtonVariants.BACKGROUND_INVERTED}
               onClick={editButtonHandler}
             >
               {t(`profile:${editButtonText}Button`)}
             </Button>
             <Button
+              data-testid={getProfileCardTestId(EProfileCardTestIdButtons.SAVE_BUTTON)}
               variant={ButtonVariants.OUTLINE}
               onClick={onSaveButton}
               disabled={isProfileDataSame || isReadonly}

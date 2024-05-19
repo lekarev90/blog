@@ -1,3 +1,4 @@
+export { getProfileCardTestId } from './model/const/const';
 export { getIsProfileOwner } from './model/selectors/profile.selectors';
 export { getValidateTextError } from './model/services/validateProfileData/validateProfileData';
 export { getIsProfileDataSame } from './model/selectors/profile.selectors';
@@ -8,3 +9,4 @@ export { getProfileData, getProfileIsLoading, getProfileErrors } from './model/s
 export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
 export { profileReducer, profileActions } from './model/slice/profileSlice';
 export type { IProfile, IProfileSchema, TProfileFieldName } from './model/types/profile';
+export { EProfileCardTestIdButtons, EProfileCardTestIdInputs } from './model/types/profile';

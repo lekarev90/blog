@@ -7,13 +7,14 @@ import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySele
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-
 import { VStack } from 'shared/ui/Stack';
-import { IProfile, TProfileFieldName } from '../../model/types/profile';
+
+import { EProfileCardTestIdInputs, IProfile, TProfileFieldName } from '../../model/types/profile';
+import { getProfileCardTestId } from '../../model/const/const';
 
 import styles from './ProfileCard.module.scss';
 
-interface ProfileCardProps {
+export interface ProfileCardProps {
   isReadonly: boolean;
   isLoading?: boolean;
   onChangeHandler: (value: string, name: TProfileFieldName) => void;
@@ -46,6 +47,7 @@ export const ProfileCard = memo(({
             placeholder={t('profile:inputsPlaceholder.firstName')}
             disabled={isReadonly}
             onChange={onChangeHandler}
+            data-testid={getProfileCardTestId(EProfileCardTestIdInputs.FIRST_NAME)}
           />
           <Input<TProfileFieldName>
             value={data?.lastName || ''}
@@ -53,6 +55,7 @@ export const ProfileCard = memo(({
             placeholder={t('profile:inputsPlaceholder.lastName')}
             disabled={isReadonly}
             onChange={onChangeHandler}
+            data-testid={getProfileCardTestId(EProfileCardTestIdInputs.LAST_NAME)}
           />
           <Input<TProfileFieldName>
             value={data?.age || ''}
@@ -60,6 +63,7 @@ export const ProfileCard = memo(({
             placeholder={t('profile:inputsPlaceholder.age')}
             disabled={isReadonly}
             onChange={onChangeHandler}
+            data-testid={getProfileCardTestId(EProfileCardTestIdInputs.AGE)}
           />
           <Input<TProfileFieldName>
             value={data?.username || ''}
@@ -67,6 +71,7 @@ export const ProfileCard = memo(({
             placeholder={t('profile:inputsPlaceholder.username')}
             disabled={isReadonly}
             onChange={onChangeHandler}
+            data-testid={getProfileCardTestId(EProfileCardTestIdInputs.USERNAME)}
           />
           <Input<TProfileFieldName>
             value={data?.avatar || ''}

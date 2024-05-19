@@ -9,7 +9,7 @@ export enum ValidateProfileError {
 }
 
 export interface IProfile extends CountrySelectField, CurrencySelectField {
-  id: string
+  id: string;
   firstName: string;
   lastName: string;
   age: string;
@@ -25,4 +25,16 @@ export interface IProfileSchema {
   validateProfileError?: ValidateProfileError[];
 }
 
-export type TProfileFieldName = keyof IProfile
+export enum EProfileCardTestIdInputs {
+  FIRST_NAME = 'firstName',
+  LAST_NAME = 'lastName',
+  AGE = 'age',
+  USERNAME = 'username'
+}
+
+export enum EProfileCardTestIdButtons {
+  EDIT_BUTTON = 'editButton',
+  SAVE_BUTTON = 'saveButton',
+}
+
+export type TProfileFieldName = keyof IProfile;

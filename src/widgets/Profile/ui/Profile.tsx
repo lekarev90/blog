@@ -49,7 +49,12 @@ export const Profile: FC = memo(() => {
 
   const onChangeHandler = useCallback(
     (value: string, name: TProfileFieldName) => {
-      dispatch(profileActions.setProfileDataValue({ value, name }));
+      dispatch(
+        profileActions.setProfileDataValue({
+          value,
+          name,
+        }),
+      );
     },
     [dispatch],
   );
@@ -64,7 +69,13 @@ export const Profile: FC = memo(() => {
         isReadonly={isReadonly}
       />
       {profileErrors?.length
-        && profileErrors.map((error) => <Text key={error} text={getValidateTextError(t)[error]} variant={TextVariant.ERROR} />)}
+        && profileErrors.map((error) => (
+          <Text
+            key={error}
+            text={getValidateTextError(t)[error]}
+            variant={TextVariant.ERROR}
+          />
+        ))}
       <ProfileCard isLoading={isLoading} isReadonly={isReadonly} data={data} onChangeHandler={onChangeHandler} />
     </VStack>
   );

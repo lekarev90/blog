@@ -26,27 +26,54 @@ interface SectionTitleProps {
   textTag?: string;
   variant?: TextVariant;
   size?: TextSize;
-  descriptionClassName?: string
-  titleClassName?: string
-  tooltipDescriptionText?: string
+  descriptionClassName?: string;
+  titleClassName?: string;
+  tooltipDescriptionText?: string;
+  'data-testid'?: string;
 }
 
 type HTMLTagProps<T> = HTMLProps<T> & { [key: string]: any };
 
-export const Text = memo(({
-  className, title, text, titleTag = 'h3', textTag, variant = TextVariant.PRIMARY, size = TextSize.M,
-  descriptionClassName, titleClassName,
-}: SectionTitleProps) => {
-  const TitleWrapperTag = titleTag || 'h3';
-  const DescWrapperTag = textTag || 'p';
+export const Text = memo(
+  ({
+    className,
+    title,
+    text,
+    titleTag = 'h3',
+    textTag,
+    variant = TextVariant.PRIMARY,
+    size = TextSize.M,
+    'data-testid': dataTestId = 'TEXT',
+    descriptionClassName,
+    titleClassName,
+  }: SectionTitleProps) => {
+    const TitleWrapperTag = titleTag || 'h3';
+    const TextWrapperTag = textTag || 'p';
 
-  const titleProps: HTMLTagProps<typeof TitleWrapperTag> = { className: cx(styles.title, titleClassName), children: title, title };
-  const descProps: HTMLTagProps<typeof DescWrapperTag> = { className: cx(styles.text, descriptionClassName), children: text, title: text };
+    const titleProps: HTMLTagProps<typeof TitleWrapperTag> = {
+      className: cx(styles.title, titleClassName),
+      children: title,
+      title,
+      'data-testid': `${dataTestId}.Title`,
+    };
 
-  return (
-    <div className={cx(styles.container, className, { [variant]: variant, [`size_${size}`]: size })}>
-      {title && <TitleWrapperTag {...titleProps} />}
-      {text && <DescWrapperTag {...descProps} />}
-    </div>
-  );
-});
+    const textProps: HTMLTagProps<typeof TextWrapperTag> = {
+      className: cx(styles.text, descriptionClassName),
+      children: text,
+      title: text,
+      'data-testid': `${dataTestId}.Text`,
+    };
+
+    return (
+      <div
+        className={cx(styles.container, className, {
+          [variant]: variant,
+          [`size_${size}`]: size,
+        })}
+      >
+        {title && <TitleWrapperTag {...titleProps} />}
+        {text && <TextWrapperTag {...textProps} />}
+      </div>
+    );
+  },
+);
