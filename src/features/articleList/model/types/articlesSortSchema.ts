@@ -1,15 +1,6 @@
 import { TSortOrder } from 'shared/types';
+import { EArticleSortField, ESortFieldNames } from '../const/const';
 
-export enum EArticleSortField {
-  VIEWS = 'views',
-  TITLE = 'title',
-  CREATED = 'createdAt',
-}
-
-export enum ESortFieldNames {
-  SORT_BY = 'sortBy',
-  ORDER_BY = 'orderBy',
-}
 export interface IArticlesListSortSchema {
   [ESortFieldNames.ORDER_BY]: TSortOrder;
   [ESortFieldNames.SORT_BY]: EArticleSortField;

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { ECountrySchema } from 'entities/Country';
+import { ECurrency } from 'entities/Currency';
 
 import { ProfileCard } from './ProfileCard';
 
@@ -14,8 +14,8 @@ const meta: Meta<typeof ProfileCard> = {
       firstName: 'Andrew2',
       lastName: 'Ducalis',
       age: '25',
-      currency: Currency.EUR,
-      country: Country.USA,
+      currency: ECurrency.EUR,
+      country: ECountrySchema.USA,
       city: 'Moscow',
       username: 'Ducalis2000',
       avatar: 'https://img.freepik.com/premium-photo/a-cat-wearing-sunglasses-and-a-hat-that-says-cat-on-it_924318-283.jpg',

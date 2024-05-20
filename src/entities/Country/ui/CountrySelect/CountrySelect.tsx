@@ -2,26 +2,28 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ListBox } from 'shared/ui/ListBox/ListBox';
-import { Country, CountrySelectorFieldName } from '../../model/types/country';
+
+import { ECountrySchema } from '../../model/const/const';
+import { CountrySelectorFieldName } from '../../model/types/countrySchema';
 
 interface CountrySelectorProps {
-  value?: Country;
+  value?: ECountrySchema;
   onChange: (value: string, name: CountrySelectorFieldName) => void;
   isReadonly: boolean;
 }
 
 const options = [
   {
-    value: Country.RUSSIA, content: Country.RUSSIA,
+    value: ECountrySchema.RUSSIA, content: ECountrySchema.RUSSIA,
   },
   {
-    value: Country.SPAIN, content: Country.SPAIN,
+    value: ECountrySchema.SPAIN, content: ECountrySchema.SPAIN,
   },
   {
-    value: Country.USA, content: Country.USA,
+    value: ECountrySchema.USA, content: ECountrySchema.USA,
   },
   {
-    value: Country.UKRAINE, content: Country.UKRAINE,
+    value: ECountrySchema.UKRAINE, content: ECountrySchema.UKRAINE,
   },
 ];
 export const CountrySelect = memo(({ value, isReadonly, onChange }: CountrySelectorProps) => {

@@ -1,12 +1,13 @@
 import { IStateSchema } from 'app/providers/StoreProvider';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { ECountrySchema } from 'entities/Country';
+import { ECurrency } from 'entities/Currency';
 
+import { EValidateProfileError } from '../const/const';
 import {
   getIsProfileDataSame, getProfileData, getProfileErrors, getProfileIsLoading, getProfilePrevData,
 } from './profile.selectors';
 
-import { IProfile, ValidateProfileError } from '../types/profile';
+import { IProfile } from '../types/profileCardSchema';
 
 const userData: IProfile = {
   id: '1',
@@ -15,12 +16,12 @@ const userData: IProfile = {
   lastName: 'Ivanov',
   city: 'Moscow',
   username: 'Vano_8000',
-  currency: Currency.RUR,
-  country: Country.RUSSIA,
+  currency: ECurrency.RUR,
+  country: ECountrySchema.RUSSIA,
   avatar: 'url',
 };
 
-const validateProfileError = [ValidateProfileError.INCORRECT_USER_DATA];
+const validateProfileError = [EValidateProfileError.INCORRECT_USER_DATA];
 
 const profile = {
   isLoading: false,
@@ -71,7 +72,10 @@ describe('getIsProfileDataSame', () => {
     const modifiedState = {
       profile: {
         ...profile,
-        prevData: { ...userData, lastName: 'diff' },
+        prevData: {
+          ...userData,
+          lastName: 'diff',
+        },
       },
     };
     const expected = getIsProfileDataSame(modifiedState as IStateSchema);

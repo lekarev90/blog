@@ -1,11 +1,7 @@
-export enum Currency {
-  RUR = 'RUR',
-  EUR = 'EUR',
-  USD = 'USD',
-}
+import { ECurrency } from '../const/const';
 
 export interface CurrencySelectField {
-  currency?: Currency
+  currency?: ECurrency;
 }
 
 export type CurrencySelectorFieldName = keyof CurrencySelectField

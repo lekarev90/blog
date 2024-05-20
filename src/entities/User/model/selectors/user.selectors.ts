@@ -1,7 +1,7 @@
 import { IStateSchema } from 'app/providers/StoreProvider';
 import { createSelector } from 'reselect';
 
-import { ERoles } from '../types/userSchema';
+import { ERoles } from '../const/const';
 
 export const getUserAuthData = (state: IStateSchema) => state.user;
 

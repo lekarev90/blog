@@ -1,8 +1,9 @@
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { ECountrySchema } from 'entities/Country';
+import { ECurrency } from 'entities/Currency';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { IProfile, IProfileSchema, ValidateProfileError } from '../../types/profile';
+import { EValidateProfileError } from '../../const/const';
+import { IProfile, IProfileSchema } from '../../types/profileCardSchema';
 import { updateProfileData } from './updateProfileData';
 
 const userData: IProfile = {
@@ -12,8 +13,8 @@ const userData: IProfile = {
   lastName: 'Ivanov',
   city: 'Moscow',
   username: 'Vano_8000',
-  currency: Currency.RUR,
-  country: Country.RUSSIA,
+  currency: ECurrency.RUR,
+  country: ECountrySchema.RUSSIA,
   avatar: 'url',
 };
 
@@ -51,8 +52,8 @@ describe('updateProfileData', () => {
     expect(thunk.api.put).toHaveBeenCalledTimes(0);
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toEqual([
-      ValidateProfileError.INCORRECT_USER_DATA,
-      ValidateProfileError.INCORRECT_AGE,
+      EValidateProfileError.INCORRECT_USER_DATA,
+      EValidateProfileError.INCORRECT_AGE,
     ]);
   });
 
@@ -64,6 +65,6 @@ describe('updateProfileData', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
+    expect(result.payload).toEqual([EValidateProfileError.SERVER_ERROR]);
   });
 });

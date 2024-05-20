@@ -1,8 +1,4 @@
-export enum ERoles {
-  ADMIN ='ADMIN',
-  MANAGER ='MANAGER',
-  USER = 'USER'
-}
+import { ERoles } from '../const/const';
 
 export interface IUser {
   id: string;

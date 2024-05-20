@@ -1,11 +1,12 @@
 import { DeepPartial } from 'shared/const/types';
 
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { ECountrySchema } from 'entities/Country';
+import { ECurrency } from 'entities/Currency';
 
+import { EValidateProfileError } from '../const/const';
 import { profileActions, profileReducer } from './profileSlice';
 
-import { IProfile, IProfileSchema, ValidateProfileError } from '../types/profile';
+import { IProfile, IProfileSchema } from '../types/profileCardSchema';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 
@@ -16,8 +17,8 @@ const userData: IProfile = {
   lastName: 'Ivanov',
   city: 'Moscow',
   username: 'Vano_8000',
-  currency: Currency.RUR,
-  country: Country.RUSSIA,
+  currency: ECurrency.RUR,
+  country: ECountrySchema.RUSSIA,
   avatar: 'url',
 };
 
@@ -42,7 +43,7 @@ describe('profileSlice.test', () => {
 
     const state: DeepPartial<IProfileSchema> = {
       data: { username: '123' },
-      validateProfileError: [ValidateProfileError.INCORRECT_USER_DATA],
+      validateProfileError: [EValidateProfileError.INCORRECT_USER_DATA],
       prevData,
     };
 
@@ -59,7 +60,7 @@ describe('profileSlice.test', () => {
   test('updateProfileData pending', () => {
     const state: DeepPartial<IProfileSchema> = {
       isLoading: false,
-      validateProfileError: [ValidateProfileError.INCORRECT_USER_DATA],
+      validateProfileError: [EValidateProfileError.INCORRECT_USER_DATA],
     };
 
     const resultState: DeepPartial<IProfileSchema> = {
@@ -74,7 +75,7 @@ describe('profileSlice.test', () => {
   test('updateProfileData fulfilled', () => {
     const state: DeepPartial<IProfileSchema> = {
       isLoading: false,
-      validateProfileError: [ValidateProfileError.INCORRECT_USER_DATA],
+      validateProfileError: [EValidateProfileError.INCORRECT_USER_DATA],
     };
 
     const resultState: DeepPartial<IProfileSchema> = {
@@ -88,7 +89,7 @@ describe('profileSlice.test', () => {
   });
 
   test('updateProfileData rejected', () => {
-    const validateProfileError = [ValidateProfileError.INCORRECT_USER_DATA];
+    const validateProfileError = [EValidateProfileError.INCORRECT_USER_DATA];
     const state: DeepPartial<IProfileSchema> = {
       isLoading: true,
     };
@@ -106,7 +107,7 @@ describe('profileSlice.test', () => {
   test('fetchProfileData fulfilled', () => {
     const state: DeepPartial<IProfileSchema> = {
       isLoading: true,
-      validateProfileError: [ValidateProfileError.INCORRECT_USER_DATA],
+      validateProfileError: [EValidateProfileError.INCORRECT_USER_DATA],
     };
 
     const resultState: DeepPartial<IProfileSchema> = {
@@ -123,7 +124,7 @@ describe('profileSlice.test', () => {
   test('fetchProfileData pending', () => {
     const state: DeepPartial<IProfileSchema> = {
       isLoading: false,
-      validateProfileError: [ValidateProfileError.INCORRECT_USER_DATA],
+      validateProfileError: [EValidateProfileError.INCORRECT_USER_DATA],
     };
 
     const resultState: DeepPartial<IProfileSchema> = {
@@ -136,7 +137,7 @@ describe('profileSlice.test', () => {
   });
 
   test('fetchProfileData rejected', () => {
-    const validateProfileError = [ValidateProfileError.INCORRECT_USER_DATA];
+    const validateProfileError = [EValidateProfileError.INCORRECT_USER_DATA];
     const state: DeepPartial<IProfileSchema> = {
       isLoading: true,
     };

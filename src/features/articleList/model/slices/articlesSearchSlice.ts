@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { EArticleTypes } from 'entities/Article';
 
-import { IArticlesSearch } from '../types/articlesSearch';
+import { IArticlesSearch } from '../types/articlesSearchSchema';
 
 const initialState: IArticlesSearch = {
   text: '',

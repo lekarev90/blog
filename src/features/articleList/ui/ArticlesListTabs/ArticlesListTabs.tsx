@@ -7,7 +7,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Tabs } from 'shared/ui/Tabs/Tabs';
 import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
 
-import { getArticlesSearchText } from '../../selectors/articlesSearch.selectors';
+import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';
 import { articlesSearchActions } from '../../model/slices/articlesSearchSlice';
 
 import styles from './ArticlesListTabs.module.scss';

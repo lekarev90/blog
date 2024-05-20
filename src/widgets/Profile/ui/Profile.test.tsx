@@ -11,9 +11,9 @@ import {
   profileReducer,
 } from 'features/EditableProfileCard';
 import { IStateSchema } from 'app/providers/StoreProvider';
-import { ValidateProfileError } from 'features/EditableProfileCard/model/types/profile';
 import { $api } from 'shared/api/api';
 
+import { EValidateProfileError } from 'features/EditableProfileCard/model/const/const';
 import { Profile } from './Profile';
 
 const userId = '1';
@@ -107,7 +107,7 @@ describe('widgets/Profile', () => {
 
     await userEvent.click(saveButton);
 
-    const text = getValidateTextError(i18n.t)[ValidateProfileError.INCORRECT_USER_DATA];
+    const text = getValidateTextError(i18n.t)[EValidateProfileError.INCORRECT_USER_DATA];
 
     const elemWithError = screen.getByText(text);
 

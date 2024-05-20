@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { ValidateProfileError } from '../../types/profile';
+import { EValidateProfileError } from '../../const/const';
 import { fetchProfileData } from './fetchProfileData';
 
 describe('fetchProfileData', () => {
@@ -35,6 +35,6 @@ describe('fetchProfileData', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
+    expect(result.payload).toEqual([EValidateProfileError.SERVER_ERROR]);
   });
 });

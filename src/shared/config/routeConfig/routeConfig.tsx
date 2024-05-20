@@ -8,8 +8,8 @@ import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ArticleEditPage } from 'pages/articleEdit';
 import { AdminPanelPage } from 'pages/adminPanel';
-import { ERoles } from 'entities/User/model/types/userSchema';
 import { AccessDeniedPage } from 'pages/accessDenied';
+import { ERoles } from 'entities/User/model/const/const';
 
 export type AppRouterProps = RouteProps & {
   isAuthOnly?: boolean;

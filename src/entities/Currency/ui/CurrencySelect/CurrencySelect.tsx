@@ -2,26 +2,27 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ListBox } from 'shared/ui/ListBox/ListBox';
-import { Currency, CurrencySelectorFieldName } from '../../model/types/currency';
+import { ECurrency } from '../../model/const/const';
+import { CurrencySelectorFieldName } from '../../model/types/ECurrency';
 
 interface CurrencySelectorProps {
-  value?: Currency;
+  value?: ECurrency;
   onChange: (value: string, name: CurrencySelectorFieldName) => void;
   isReadonly: boolean;
 }
 
 const options = [
   {
-    value: Currency.RUR,
-    content: Currency.RUR,
+    value: ECurrency.RUR,
+    content: ECurrency.RUR,
   },
   {
-    value: Currency.EUR,
-    content: Currency.EUR,
+    value: ECurrency.EUR,
+    content: ECurrency.EUR,
   },
   {
-    value: Currency.USD,
-    content: Currency.USD,
+    value: ECurrency.USD,
+    content: ECurrency.USD,
   },
 ];
 

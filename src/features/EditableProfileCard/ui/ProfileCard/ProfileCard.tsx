@@ -9,8 +9,8 @@ import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { VStack } from 'shared/ui/Stack';
 
-import { EProfileCardTestIdInputs, IProfile, TProfileFieldName } from '../../model/types/profile';
-import { getProfileCardTestId } from '../../model/const/const';
+import { IProfile, TProfileFieldName } from '../../model/types/profileCardSchema';
+import { EProfileCardTestIdInputs, getProfileCardTestId } from '../../model/const/const';
 
 import styles from './ProfileCard.module.scss';
 

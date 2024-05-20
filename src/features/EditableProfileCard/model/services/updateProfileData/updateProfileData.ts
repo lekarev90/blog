@@ -2,14 +2,15 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
 
+import { EValidateProfileError } from '../../const/const';
 import { getProfileData } from '../../selectors/profile.selectors';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
 
-import { IProfile, ValidateProfileError } from '../../types/profile';
+import { IProfile } from '../../types/profileCardSchema';
 
 const PROFILE_URL = '/profile';
 
-export const updateProfileData = createAsyncThunk<IProfile, void, IThunkConfig<ValidateProfileError[]>>(
+export const updateProfileData = createAsyncThunk<IProfile, void, IThunkConfig<EValidateProfileError[]>>(
   'profile/updateProfileData',
   async (_, { extra, rejectWithValue, getState }) => {
     const profile = getProfileData(getState() as IStateSchema);
@@ -28,7 +29,7 @@ export const updateProfileData = createAsyncThunk<IProfile, void, IThunkConfig<V
 
       return data;
     } catch (e) {
-      return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
+      return rejectWithValue([EValidateProfileError.SERVER_ERROR]);
     }
   },
 );

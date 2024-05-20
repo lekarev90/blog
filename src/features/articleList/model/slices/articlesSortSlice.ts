@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TSortOrder } from 'shared/types';
-import { EArticleSortField, IArticlesListSortSchema } from '../types/articlesSort';
+import { EArticleSortField } from '../const/const';
+import { IArticlesListSortSchema } from '../types/articlesSortSchema';
 
 const initialState: IArticlesListSortSchema = {
   orderBy: 'asc',

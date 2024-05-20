@@ -9,8 +9,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
 import { HStack } from 'shared/ui/Stack';
 
-import { getArticlesSortData } from '../../selectors/articlesSort.selectors';
-import { EArticleSortField, ESortFieldNames } from '../../model/types/articlesSort';
+import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';
+import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
 import { articlesSortActions, articlesSortReducer } from '../../model/slices/articlesSortSlice';
 
 const reducers = {

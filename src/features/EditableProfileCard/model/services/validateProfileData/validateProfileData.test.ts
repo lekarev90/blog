@@ -1,8 +1,9 @@
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { ECountrySchema } from 'entities/Country';
+import { ECurrency } from 'entities/Currency';
 
+import { EValidateProfileError } from '../../const/const';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
-import { IProfile, ValidateProfileError } from '../../types/profile';
+import { IProfile } from '../../types/profileCardSchema';
 
 const profile: IProfile = {
   id: '1',
@@ -11,8 +12,8 @@ const profile: IProfile = {
   lastName: 'Ivanov',
   city: 'Moscow',
   username: 'Vano_8000',
-  currency: Currency.RUR,
-  country: Country.RUSSIA,
+  currency: ECurrency.RUR,
+  country: ECountrySchema.RUSSIA,
   avatar: 'url',
 };
 describe('validateProfileData', () => {
@@ -24,7 +25,7 @@ describe('validateProfileData', () => {
 
   test('with array of validation errors', async () => {
     const expected = validateProfileData({ ...profile, firstName: '', age: 'age' });
-    const result = [ValidateProfileError.INCORRECT_USER_DATA, ValidateProfileError.INCORRECT_AGE];
+    const result = [EValidateProfileError.INCORRECT_USER_DATA, EValidateProfileError.INCORRECT_AGE];
 
     expect(expected).toEqual(result);
   });

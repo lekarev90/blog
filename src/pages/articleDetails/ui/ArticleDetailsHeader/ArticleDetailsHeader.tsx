@@ -6,7 +6,8 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RouterPath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
-import { getIsCanEditArticle } from '../../model/selectors/articleDetails.selector';
+
+import { getIsCanEditArticle } from 'entities/Article';
 
 export const ArticleDetailsHeader = memo(({ id }: {id: string}) => {
   const { t } = useTranslation();

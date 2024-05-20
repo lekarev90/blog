@@ -1,4 +1,4 @@
-import { EArticleTypes } from 'entities/Article/model/types/article';
+import { EArticleTypes } from 'entities/Article';
 
 export interface IArticlesSearch {
   text: string

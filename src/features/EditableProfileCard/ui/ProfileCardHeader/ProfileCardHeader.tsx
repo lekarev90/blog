@@ -6,8 +6,7 @@ import { Button, ButtonVariants } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { HStack } from 'shared/ui/Stack';
 
-import { EProfileCardTestIdButtons } from '../../model/types/profile';
-import { getProfileCardTestId } from '../../model/const/const';
+import { EProfileCardTestIdButtons, getProfileCardTestId } from '../../model/const/const';
 import { getIsProfileOwner } from '../../model/selectors/profile.selectors';
 
 interface ProfileCardHeaderProps {

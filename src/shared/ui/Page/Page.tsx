@@ -20,7 +20,7 @@ const cx = classNames.bind(styles);
 interface PageProps {
   className?: string;
   children?: ReactNode;
-  onScrollEnd?: () => void
+  onScrollEnd?: () => void;
 }
 
 export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
@@ -40,11 +40,13 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
   });
 
   const dispatchScrollDebounced = useDebounce((scrollTop: number) => {
-    dispatch(scrollActions.setScroll({
-      position: scrollTop,
-      pathname,
-    }));
-  }, 300);
+    dispatch(
+      scrollActions.setScroll({
+        position: scrollTop,
+        pathname,
+      }),
+    );
+  }, 100);
 
   const handleScroll = (e: UIEvent<HTMLDivElement>) => {
     const { scrollTop } = e.currentTarget;
