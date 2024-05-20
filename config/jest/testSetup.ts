@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import 'cross-fetch/polyfill';
+import { TextEncoder } from 'node:util';
 
 /* eslint-disable class-methods-use-this */
 global.ResizeObserver = class {
@@ -9,3 +10,5 @@ global.ResizeObserver = class {
 
   disconnect() {}
 };
+
+global.TextEncoder = TextEncoder;

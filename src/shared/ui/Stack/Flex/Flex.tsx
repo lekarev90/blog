@@ -3,18 +3,18 @@ import classNames from 'classnames/bind';
 
 import styles from './Flex.module.scss';
 
-export type FlexJustify = 'start' | 'end' | 'center' | 'between';
-export type FlexAlign = 'start' | 'end' | 'center' | 'stretch';
-export type FlexDirection = 'row' | 'column';
-export type FlexGap = '2' | '4' | '8' | '16' | '32';
+export type TFlexJustify = 'start' | 'end' | 'center' | 'between';
+export type TFlexAlign = 'start' | 'end' | 'center' | 'stretch';
+export type TFlexDirection = 'row' | 'column';
+export type TFlexGap = '2' | '4' | '8' | '16' | '32';
 
 export interface FlexProps {
   className?: string;
   children?: ReactNode;
-  justify?: FlexJustify;
-  align?: FlexAlign;
-  direction: FlexDirection;
-  gap?: FlexGap;
+  justify?: TFlexJustify;
+  align?: TFlexAlign;
+  direction: TFlexDirection;
+  gap?: TFlexGap;
   maxWidth?: boolean;
   flexWrap?: boolean
 }

@@ -120,7 +120,7 @@ describe('widgets/Profile', () => {
       asyncReducers,
     });
 
-    const mockedPut = jest.spyOn($api, 'put');
+    const mockedPut = jest.spyOn($api, 'put').mockImplementation();
 
     const editButton = screen.getByTestId(getProfileCardTestId(EProfileCardTestIdButtons.EDIT_BUTTON));
     const saveButton = screen.getByTestId(getProfileCardTestId(EProfileCardTestIdButtons.SAVE_BUTTON));

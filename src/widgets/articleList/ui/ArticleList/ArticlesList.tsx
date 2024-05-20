@@ -8,7 +8,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { EArticlesView, IArticle } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
-import { FlexGap, HStack, VStack } from 'shared/ui/Stack';
+import { TFlexGap, HStack, VStack } from 'shared/ui/Stack';
 
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
 import { fetchNextArticlesListPage } from '../../model/services/fetchNextArticlesListPage';
@@ -46,7 +46,7 @@ export const ArticlesList = memo(({
   const ComponentSkeleton = ARTICLES_LIST_DATA[articlesView].COMPONENT_SKELETON;
 
   const StackComponent = isListView ? VStack : HStack;
-  const stackProps: Record<string, FlexGap> = isListView ? { gap: '16' } : { gap: '8' };
+  const stackProps: Record<string, TFlexGap> = isListView ? { gap: '16' } : { gap: '8' };
 
   const skeletonComponents = Array.from({ length: quantityLimit }, (_, index) => <ComponentSkeleton key={index} />);
 
