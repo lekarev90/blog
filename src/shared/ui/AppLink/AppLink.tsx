@@ -11,7 +11,7 @@ export enum AppLinkColor {
   SECONDARY = 'secondary',
 }
 
-interface AppLinkProps extends LinkProps {
+export interface AppLinkProps extends LinkProps {
   className?: string;
   color?: AppLinkColor;
 }

@@ -8,8 +8,9 @@ const cx = classNames.bind(styles);
 interface IconProps {
   className?: string;
   Svg: FunctionComponent<SVGProps<SVGSVGElement>>;
+  inverted?: boolean
 }
 
-export const Icon = ({ Svg, className }: IconProps) => (
-  <Svg className={cx(styles.icon, className)} />
+export const Icon = ({ Svg, className, inverted = false }: IconProps) => (
+  <Svg className={cx(styles.icon, className, { inverted })} />
 );
