@@ -8,6 +8,7 @@ import { NotificationList } from '@/entities/Notification';
 
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 import { Button } from '@/shared/ui/Button/Button';
+
 import styles from './NotificationModal.module.scss';
 
 export const NotificationModal = memo(() => {
