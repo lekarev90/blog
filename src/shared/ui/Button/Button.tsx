@@ -10,6 +10,7 @@ export enum ButtonVariants {
   CLEAR = 'clear',
   CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
+  OUTLINE_RED = 'outlineRed',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
 }
@@ -25,6 +26,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;
   square?: boolean;
   size?: ButtonSize;
+  isWide?: boolean
 }
 
 const _Button = forwardRef<HTMLButtonElement, ButtonProps>(({
@@ -34,6 +36,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   square,
   size = ButtonSize.M,
   disabled,
+  isWide,
   ...props
 }: ButtonProps, ref) => {
   const mods: Record<string, string | boolean | undefined> = {
@@ -41,6 +44,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     [size]: size,
     square,
     disabled,
+    isWide,
   };
 
   const containerClassNames = cx(styles.container, className, mods);

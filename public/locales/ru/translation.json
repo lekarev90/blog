@@ -59,5 +59,10 @@
   },
   "switchLanguage": "RU",
   "countrySelectorDefaultValue": "Укажите страну",
-  "currencySelectorDefaultValue": "Укажите валюту"
+  "currencySelectorDefaultValue": "Укажите валюту",
+  "feedbackRating": {
+    "placeholder": "Ваш отзыв",
+    "closeBtn": "Закрыть",
+    "sendFeedbackBtn": "Отправить"
+  }
 }

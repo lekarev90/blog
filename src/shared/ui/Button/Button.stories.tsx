@@ -28,6 +28,12 @@ export const Outline: StoryObj<typeof Button> = {
   },
 };
 
+export const OutlineRed: StoryObj<typeof Button> = {
+  args: {
+    variant: ButtonVariants.OUTLINE_RED,
+  },
+};
+
 export const BG: StoryObj<typeof Button> = {
   args: {
     variant: ButtonVariants.BACKGROUND,

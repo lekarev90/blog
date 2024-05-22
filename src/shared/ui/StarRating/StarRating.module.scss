@@ -1,0 +1,10 @@
+.star {
+  fill: none;
+  cursor: pointer;
+
+  &.isFilled {
+    fill: var(--primary-color);
+  }
+}
+
+
