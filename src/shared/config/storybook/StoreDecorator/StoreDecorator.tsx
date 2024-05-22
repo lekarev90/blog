@@ -3,7 +3,7 @@ import { StoryFn } from '@storybook/react';
 
 import { profileReducer } from 'features/EditableProfileCard';
 import { loginReducer } from 'features/AuthByUsername';
-import { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 import { IStateSchema, StoreProvider } from '../../../../app/providers/StoreProvider';
 

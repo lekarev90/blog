@@ -7,7 +7,7 @@ import { Text } from 'shared/ui/Text/Text';
 
 import { EArticlesView, IArticle } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { TFlexGap, HStack, VStack } from 'shared/ui/Stack';
 
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';

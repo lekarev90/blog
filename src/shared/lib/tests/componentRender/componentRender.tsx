@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import i18nTestConfig from 'shared/config/i18n/i18nTest.config';
 import { IStateSchema, StoreProvider } from 'app/providers/StoreProvider';
 
-import { ReducersList } from '../../components/DynamicModuleLoader';
+import { ReducersList } from '../../components/DynamicModuleLoader/DynamicModuleLoader';
 
 export interface IComponentRouter {
   route?: string;

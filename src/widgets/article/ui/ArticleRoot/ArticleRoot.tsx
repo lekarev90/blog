@@ -1,7 +1,7 @@
 import { FC, memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import {

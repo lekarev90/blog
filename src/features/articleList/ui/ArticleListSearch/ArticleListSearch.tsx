@@ -8,7 +8,7 @@ import { HStack, VStack } from 'shared/ui/Stack';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 
 import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 
 import { ArticlesListTabs } from '../ArticlesListTabs/ArticlesListTabs';

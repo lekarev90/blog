@@ -9,7 +9,7 @@ import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
 
 import { addArticleComment } from '../../model/services/addArticleCommet';

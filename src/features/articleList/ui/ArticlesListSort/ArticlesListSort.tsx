@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
 
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Select, SelectOptions } from 'shared/ui/Select/Select';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
 import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
