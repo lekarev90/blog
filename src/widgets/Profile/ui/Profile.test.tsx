@@ -2,18 +2,18 @@ import { screen } from '@testing-library/react';
 import i18n from 'i18next';
 import { userEvent } from '@testing-library/user-event';
 
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import {
   EProfileCardTestIdButtons,
   EProfileCardTestIdInputs,
   getProfileCardTestId,
   getValidateTextError,
   profileReducer,
-} from 'features/EditableProfileCard';
-import { IStateSchema } from 'app/providers/StoreProvider';
-import { $api } from 'shared/api/api';
+} from '@/features/EditableProfileCard';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import { $api } from '@/shared/api/api';
 
-import { EValidateProfileError } from 'features/EditableProfileCard/model/const/const';
+import { EValidateProfileError } from '@/features/EditableProfileCard/model/const/const';
 import { Profile } from './Profile';
 
 const userId = '1';

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 import styles from './ArticleDetailsLoading.module.scss';
 

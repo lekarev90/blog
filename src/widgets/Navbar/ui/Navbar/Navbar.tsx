@@ -2,15 +2,15 @@ import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { LoginModal } from 'features/AuthByUsername';
-import { getUserAuthData } from 'entities/User';
-import { Button, ButtonVariants } from 'shared/ui/Button/Button';
-import { AppLink, AppLinkColor } from 'shared/ui/AppLink/AppLink';
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { Text, TextVariant } from 'shared/ui/Text/Text';
-import { HStack } from 'shared/ui/Stack';
+import { LoginModal } from '@/features/AuthByUsername';
+import { getUserAuthData } from '@/entities/User';
+import { Button, ButtonVariants } from '@/shared/ui/Button/Button';
+import { AppLink, AppLinkColor } from '@/shared/ui/AppLink/AppLink';
+import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { Text, TextVariant } from '@/shared/ui/Text/Text';
+import { HStack } from '@/shared/ui/Stack';
 
-import { NotificationModal } from 'features/navbar';
+import { NotificationModal } from '@/features/navbar';
 import { NavbarMenuDropDown } from '../NavbarMenuDropDown/NavbarMenuDropDown';
 
 import styles from './Navbar.module.scss';

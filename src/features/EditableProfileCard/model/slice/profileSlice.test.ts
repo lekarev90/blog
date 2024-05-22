@@ -1,7 +1,7 @@
-import { DeepPartial } from 'shared/const/types';
+import { DeepPartial } from '@/shared/const/types';
 
-import { ECountrySchema } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
+import { ECountrySchema } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
 
 import { EValidateProfileError } from '../const/const';
 import { profileActions, profileReducer } from './profileSlice';

@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticlesList } from 'widgets/articleList';
-import { Text } from 'shared/ui/Text/Text';
-import { VStack } from 'shared/ui/Stack';
+import { ArticlesList } from '@/widgets/articleList';
+import { Text } from '@/shared/ui/Text/Text';
+import { VStack } from '@/shared/ui/Stack';
 
 import { useGetArticleRecommendationsQuery } from '../../model/api/getArticleRecommendations';
 

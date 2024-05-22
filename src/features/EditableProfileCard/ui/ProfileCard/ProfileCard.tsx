@@ -1,13 +1,13 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
-import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
+import { CountrySelect } from '@/entities/Country/ui/CountrySelect/CountrySelect';
+import { CurrencySelect } from '@/entities/Currency/ui/CurrencySelect/CurrencySelect';
 
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Input } from 'shared/ui/Input/Input';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { VStack } from 'shared/ui/Stack';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Input } from '@/shared/ui/Input/Input';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { VStack } from '@/shared/ui/Stack';
 
 import { IProfile, TProfileFieldName } from '../../model/types/profileCardSchema';
 import { EProfileCardTestIdInputs, getProfileCardTestId } from '../../model/const/const';

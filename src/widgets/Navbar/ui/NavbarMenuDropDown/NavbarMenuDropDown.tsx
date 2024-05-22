@@ -1,14 +1,14 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { useSelector } from 'react-redux';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { Dropdown } from '@/shared/ui/Dropdown/Dropdown';
 import {
   isUserAdmin, isUserManager, IUser, userActions,
-} from 'entities/User';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
+} from '@/entities/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 
 interface NavbarMenuDropDownProps {
   authData: IUser;

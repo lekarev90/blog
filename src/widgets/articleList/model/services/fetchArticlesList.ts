@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import i18n from 'shared/config/i18n/i18n';
+import i18n from '@/shared/config/i18n/i18n';
 
-import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
-import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams';
+import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
+import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
 
-import { IArticle, ARTICLES_REQUEST_URL, EArticleTypes } from 'entities/Article';
-import { getArticlesSortData, getArticlesSearchText } from 'features/articleList';
+import { IArticle, ARTICLES_REQUEST_URL, EArticleTypes } from '@/entities/Article';
+import { getArticlesSortData, getArticlesSearchText } from '@/features/articleList';
 
 import { getArticlesListData } from '../selectors/articlesList.selectors';
 

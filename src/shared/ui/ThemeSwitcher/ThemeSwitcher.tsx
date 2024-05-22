@@ -1,8 +1,8 @@
 import { type FC, memo } from 'react';
 
-import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import DarkThemeIcon from 'shared/assets/icons/theme-dark.svg';
-import LightThemeIcon from 'shared/assets/icons/theme-light.svg';
+import { Theme, useTheme } from '@/app/providers/ThemeProvider';
+import DarkThemeIcon from '@/shared/assets/icons/theme-dark.svg';
+import LightThemeIcon from '@/shared/assets/icons/theme-light.svg';
 
 import { Button, ButtonVariants } from '../Button/Button';
 

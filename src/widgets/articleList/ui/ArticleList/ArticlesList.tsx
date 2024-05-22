@@ -2,13 +2,13 @@ import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { Card } from 'shared/ui/Card/Card';
-import { Text } from 'shared/ui/Text/Text';
+import { Card } from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui/Text/Text';
 
-import { EArticlesView, IArticle } from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { TFlexGap, HStack, VStack } from 'shared/ui/Stack';
+import { EArticlesView, IArticle } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { TFlexGap, HStack, VStack } from '@/shared/ui/Stack';
 
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
 import { fetchNextArticlesListPage } from '../../model/services/fetchNextArticlesListPage';

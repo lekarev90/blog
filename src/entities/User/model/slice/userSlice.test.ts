@@ -1,4 +1,4 @@
-import { DeepPartial } from 'shared/const/types';
+import { DeepPartial } from '@/shared/const/types';
 import { ERoles } from '../const/const';
 import { userActions, userReducer } from './userSlice';
 

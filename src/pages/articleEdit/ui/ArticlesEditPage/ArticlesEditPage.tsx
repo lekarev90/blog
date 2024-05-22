@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import { Page } from 'shared/ui/Page/Page';
 import { useParams } from 'react-router';
+import { Page } from '@/shared/ui/Page/Page';
 
 const ArticlesEditPage = memo(() => {
   const { id } = useParams<{ id: string }>();

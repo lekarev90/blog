@@ -1,6 +1,6 @@
-import { IStateSchema } from 'app/providers/StoreProvider';
-import { ECountrySchema } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import { ECountrySchema } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
 
 import { EValidateProfileError } from '../const/const';
 import {

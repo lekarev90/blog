@@ -1,14 +1,14 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Page } from 'shared/ui/Page/Page';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
+import { Page } from '@/shared/ui/Page/Page';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import {
   ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,
-} from 'widgets/articleList';
-import { ArticleListSearch, ArticlesListSort, ArticlesListViewSwitcher } from 'features/articleList';
+} from '@/widgets/articleList';
+import { ArticleListSearch, ArticlesListSort, ArticlesListViewSwitcher } from '@/features/articleList';
 
-import { HStack, VStack } from 'shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();

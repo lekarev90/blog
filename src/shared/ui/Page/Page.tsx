@@ -5,11 +5,11 @@ import classNames from 'classnames/bind';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 
-import { IStateSchema } from 'app/providers/StoreProvider';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { getScrollByPath } from './model/selectors/scroll.selectors';
 import { scrollActions } from './model/slices/scrollSlice';
 

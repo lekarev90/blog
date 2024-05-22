@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
 
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Select, SelectOptions } from 'shared/ui/Select/Select';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
-import { HStack } from 'shared/ui/Stack';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Select, SelectOptions } from '@/shared/ui/Select/Select';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { articlesListActions, fetchArticlesList } from '@/widgets/articleList';
+import { HStack } from '@/shared/ui/Stack';
 
 import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';
 import { EArticleSortField, ESortFieldNames } from '../../model/const/const';

@@ -4,18 +4,18 @@ import {
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
-import { Button } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Button } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
 
-import ListIcon from 'shared/assets/icons/list-24-24.svg';
-import GridIcon from 'shared/assets/icons/tiled-24-24.svg';
+import ListIcon from '@/shared/assets/icons/list-24-24.svg';
+import GridIcon from '@/shared/assets/icons/tiled-24-24.svg';
 
-import { EArticlesView } from 'entities/Article';
+import { EArticlesView } from '@/entities/Article';
 
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { articlesListActions, getArticlesListData } from 'widgets/articleList';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { articlesListActions, getArticlesListData } from '@/widgets/articleList';
 
-import { HStack } from 'shared/ui/Stack';
+import { HStack } from '@/shared/ui/Stack';
 import styles from './ArticlesListViewSwitcher.module.scss';
 
 const cx = classNames.bind(styles);

@@ -1,6 +1,6 @@
-import { IStateSchema } from 'app/providers/StoreProvider';
 import { createSelector } from 'reselect';
-import { getUserAuthData } from 'entities/User';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import { getUserAuthData } from '@/entities/User';
 
 export const getArticleDetails = (state: IStateSchema) => state.articleDetails;
 

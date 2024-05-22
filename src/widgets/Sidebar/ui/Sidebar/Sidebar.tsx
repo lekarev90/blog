@@ -3,10 +3,10 @@ import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { Button, ButtonSize, ButtonVariants } from 'shared/ui/Button/Button';
-import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
-import { VStack } from 'shared/ui/Stack';
+import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/Button/Button';
+import { LangSwitcher } from '@/shared/ui/LangSwitcher/LangSwitcher';
+import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher/ThemeSwitcher';
+import { VStack } from '@/shared/ui/Stack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

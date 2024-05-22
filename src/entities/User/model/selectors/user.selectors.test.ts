@@ -1,4 +1,4 @@
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 
 import { IUser } from '../types/userSchema';
 import { getUserAuthData } from './user.selectors';

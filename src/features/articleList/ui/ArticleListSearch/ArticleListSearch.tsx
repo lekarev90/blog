@@ -1,15 +1,15 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Input } from 'shared/ui/Input/Input';
-import { Card } from 'shared/ui/Card/Card';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card/Card';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 
-import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
+import { articlesListActions, fetchArticlesList } from '@/widgets/articleList';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 
 import { ArticlesListTabs } from '../ArticlesListTabs/ArticlesListTabs';
 import { articlesSearchActions, articlesSearchReducer } from '../../model/slices/articlesSearchSlice';

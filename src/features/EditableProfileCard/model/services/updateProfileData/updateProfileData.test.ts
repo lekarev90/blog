@@ -1,6 +1,6 @@
-import { ECountrySchema } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { ECountrySchema } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 import { EValidateProfileError } from '../../const/const';
 import { IProfile, IProfileSchema } from '../../types/profileCardSchema';

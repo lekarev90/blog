@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ECountrySchema } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
+import { ECountrySchema } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
 
 import { ProfileCard } from './ProfileCard';
 

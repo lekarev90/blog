@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TSortOrder } from 'shared/types';
+import { TSortOrder } from '@/shared/types';
 import { EArticleSortField } from '../const/const';
 import { IArticlesListSortSchema } from '../types/articlesSortSchema';
 

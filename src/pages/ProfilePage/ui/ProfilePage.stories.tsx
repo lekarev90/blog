@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ECountrySchema } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ECountrySchema } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import ProfilePage from './ProfilePage';
 

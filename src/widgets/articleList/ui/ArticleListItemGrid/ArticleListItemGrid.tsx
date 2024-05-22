@@ -1,14 +1,14 @@
 import { memo } from 'react';
 
-import { RouterPath } from 'shared/config/routeConfig/routeConfig';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Card } from 'shared/ui/Card/Card';
+import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Card } from '@/shared/ui/Card/Card';
 
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 
-import { IArticle } from 'entities/Article';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { IArticle } from '@/entities/Article';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
 
 import styles from './ArticleListItemGrid.module.scss';
 

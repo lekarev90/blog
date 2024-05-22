@@ -1,5 +1,5 @@
-import { IStateSchema } from 'app/providers/StoreProvider';
 import { createSelector } from 'reselect';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 
 export const getScroll = (state: IStateSchema) => state.scroll;
 

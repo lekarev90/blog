@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ARTICLES_REQUEST_URL } from 'entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ARTICLES_REQUEST_URL } from '@/entities/Article';
 
 import ArticleDetailsPage from './ArticleDetailsPage';
 

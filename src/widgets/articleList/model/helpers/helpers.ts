@@ -1,4 +1,4 @@
-import { EArticlesView } from 'entities/Article';
+import { EArticlesView } from '@/entities/Article';
 import { ArticleListItemListSkeleton } from '../../ui/ArticleListItemList/ArticleListItemListSkeleton';
 import { ArticleListItemList } from '../../ui/ArticleListItemList/ArticleListItemList';
 import { ArticleListItemGridSkeleton } from '../../ui/ArticleListItemGrid/ArticleListItemGridSkeleton';

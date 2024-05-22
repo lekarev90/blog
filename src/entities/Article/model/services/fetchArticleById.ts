@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import i18n from 'shared/config/i18n/i18n';
+import i18n from '@/shared/config/i18n/i18n';
 
-import { IThunkConfig } from 'app/providers/StoreProvider';
+import { IThunkConfig } from '@/app/providers/StoreProvider';
 
 import { IArticle } from '../types/article';
 import { ARTICLES_REQUEST_URL } from '../const/const';

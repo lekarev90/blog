@@ -1,12 +1,12 @@
 import { FC, memo } from 'react';
 
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
-import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 
 import { EArticleBlockType } from '../../model/const/const';
 import { IArticle, TArticleBlock } from '../../model/types/article';

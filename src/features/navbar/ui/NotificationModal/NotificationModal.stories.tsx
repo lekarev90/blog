@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { NOTIFICATION_REQUEST_URL } from 'entities/Notification';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { PaddingsDecorator } from 'shared/config/storybook/PaddingsDecorator/PaddingsDecorator';
+import { NOTIFICATION_REQUEST_URL } from '@/entities/Notification';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { PaddingsDecorator } from '@/shared/config/storybook/PaddingsDecorator/PaddingsDecorator';
 
 import { NotificationModal } from './NotificationModal';
 

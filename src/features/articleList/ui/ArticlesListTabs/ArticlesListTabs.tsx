@@ -2,10 +2,10 @@ import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { EArticleTypes } from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { Tabs } from 'shared/ui/Tabs/Tabs';
-import { articlesListActions, fetchArticlesList } from 'widgets/articleList';
+import { EArticleTypes } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { Tabs } from '@/shared/ui/Tabs/Tabs';
+import { articlesListActions, fetchArticlesList } from '@/widgets/articleList';
 
 import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';
 import { articlesSearchActions } from '../../model/slices/articlesSearchSlice';

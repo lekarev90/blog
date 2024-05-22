@@ -1,7 +1,7 @@
-import { IStateSchema } from 'app/providers/StoreProvider';
 import { isEqual } from 'lodash';
 import { createSelector } from 'reselect';
-import { getUserAuthData } from 'entities/User';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import { getUserAuthData } from '@/entities/User';
 
 export const getProfileData = (state: IStateSchema) => state.profile?.data;
 export const getProfilePrevData = (state: IStateSchema) => state.profile?.prevData;

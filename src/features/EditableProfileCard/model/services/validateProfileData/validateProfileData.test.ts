@@ -1,5 +1,5 @@
-import { ECountrySchema } from 'entities/Country';
-import { ECurrency } from 'entities/Currency';
+import { ECountrySchema } from '@/entities/Country';
+import { ECurrency } from '@/entities/Currency';
 
 import { EValidateProfileError } from '../../const/const';
 import { validateProfileData } from '../validateProfileData/validateProfileData';

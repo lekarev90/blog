@@ -15,12 +15,12 @@ import {
   ProfileCardHeader,
   TProfileFieldName,
   updateProfileData,
-} from 'features/EditableProfileCard';
+} from '@/features/EditableProfileCard';
 
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch.hook';
-import { Text, TextVariant } from 'shared/ui/Text/Text';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { Text, TextVariant } from '@/shared/ui/Text/Text';
 
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 export const Profile: FC = memo(() => {
   const { t } = useTranslation('profile');

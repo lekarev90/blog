@@ -2,10 +2,10 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 
-import { ArticleComments, ArticleRoot } from 'widgets/article';
-import { Page } from 'shared/ui/Page/Page';
-import { VStack } from 'shared/ui/Stack';
-import { ArticleRecommendations } from 'features/article';
+import { ArticleComments, ArticleRoot } from '@/widgets/article';
+import { Page } from '@/shared/ui/Page/Page';
+import { VStack } from '@/shared/ui/Stack';
+import { ArticleRecommendations } from '@/features/article';
 
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 

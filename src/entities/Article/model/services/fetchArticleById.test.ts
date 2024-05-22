@@ -1,5 +1,5 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import i18n from 'shared/config/i18n/i18nTest.config';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import i18n from '@/shared/config/i18n/i18nTest.config';
 
 import { fetchArticleById } from './fetchArticleById';
 

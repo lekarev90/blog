@@ -1,9 +1,9 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 
-import { EArticlesView, IArticle } from 'entities/Article';
-import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { EArticlesView, IArticle } from '@/entities/Article';
+import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
 import { ARTICLES_LIST_DATA } from '../helpers/helpers';
 import { IArticlesListSchema } from '../types/articlesListSchema';

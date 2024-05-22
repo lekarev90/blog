@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { IStateSchema, IThunkConfig } from 'app/providers/StoreProvider';
+import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
 
 import { EValidateProfileError } from '../../const/const';
 import { getProfileData } from '../../selectors/profile.selectors';

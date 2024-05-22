@@ -1,11 +1,11 @@
-import { RequireAuth } from 'app/providers/router/ui/RequireAuth';
 import {
   type FC, Fragment, Suspense, useCallback,
 } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
 
-import { AppRouterProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { PageLoader } from 'widgets/PageLoader';
+import { AppRouterProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
+import { PageLoader } from '@/widgets/PageLoader';
 
 export const AppRouter: FC = () => {
   const renderWithWrapper = useCallback(({

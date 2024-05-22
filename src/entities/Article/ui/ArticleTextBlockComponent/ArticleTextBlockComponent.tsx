@@ -1,8 +1,8 @@
 import { FC, memo } from 'react';
 
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/Text';
 
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 import { IArticleTextBlock } from '../../model/types/article';
 
 export const ArticleTextBlockComponent: FC<IArticleTextBlock> = memo(({

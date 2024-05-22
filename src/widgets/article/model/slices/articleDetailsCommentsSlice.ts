@@ -3,8 +3,8 @@ import {
   createEntityAdapter, PayloadAction,
 } from '@reduxjs/toolkit';
 
-import { IComment } from 'entities/Comment';
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IComment } from '@/entities/Comment';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 
 import { addArticleComment } from '../services/addArticleCommet';
 import { fetchCommentsByArticleId } from '../services/fetchArticleCommets';

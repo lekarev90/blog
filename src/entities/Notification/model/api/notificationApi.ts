@@ -1,4 +1,4 @@
-import { rtkApi } from 'shared/api/rtkApi';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { INotificationSchema } from '../types/NotificationSchema';
 import { NOTIFICATION_REQUEST_URL } from '../const/const';
 
