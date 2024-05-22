@@ -3,6 +3,7 @@ import React, {
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 
 import styles from './Modal.module.scss';
@@ -14,7 +15,7 @@ interface ModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
-  lazy?: boolean
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -22,25 +23,28 @@ const ANIMATION_DELAY = 300;
 export const Modal = ({
   className, children, isOpen, onClose, lazy,
 }: ModalProps) => {
-  const [isClosing, setIsClosing] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-  const closeHandler = useCallback(() => {
+  const onCloseHandler = useCallback(() => {
     if (onClose) {
-      setIsClosing(true);
+      setIsClosed(true);
       timerRef.current = setTimeout(() => {
         onClose();
-        setIsClosing(false);
+        setIsClosed(false);
       }, ANIMATION_DELAY);
     }
   }, [onClose]);
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onCloseHandler();
+      }
+    },
+    [onCloseHandler],
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -59,13 +63,9 @@ export const Modal = ({
     };
   }, [isOpen, onKeyDown]);
 
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   const mods: Record<string, boolean | undefined> = {
     isOpen,
-    isClosing,
+    isClosed,
   };
 
   const containerClassNames = cx(styles.container, className, mods);
@@ -77,20 +77,9 @@ export const Modal = ({
   return (
     <Portal>
       <div className={containerClassNames}>
-        {/* eslint-disable-next-line max-len */}
-        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-        <div
-          className={styles.overlay}
-          onClick={closeHandler}
-        >
-          {/* eslint-disable-next-line max-len */}
-          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-          <div
-            className={styles.content}
-            onClick={onContentClick}
-          >
-            {children}
-          </div>
+        <Overlay onClick={onCloseHandler} />
+        <div className={styles.content}>
+          {children}
         </div>
       </div>
     </Portal>
