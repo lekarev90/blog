@@ -1,10 +1,11 @@
 import { memo, useState } from 'react';
 import classNames from 'classnames/bind';
 
+import { Icon } from '../Icon/Icon';
+
 import StarIcon from '@/shared/assets/icons/star.svg';
 
 import styles from './StarRating.module.scss';
-import { Icon } from '@/shared/ui/Icon/Icon';
 
 const cx = classNames.bind(styles);
 

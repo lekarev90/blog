@@ -71,7 +71,7 @@ module.exports = {
     'no-param-reassign': 0,
     'max-len': ['error', { code: 140 }],
     '@typescript-eslint/no-unused-vars': 'error',
-    'lekarev/path-checker': 'error',
+    'lekarev/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
