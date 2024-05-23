@@ -2494,5 +2494,37 @@
       "username": "Live_is_good",
       "avatar": "https://picsum.photos/600/600"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Очень круто",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 3,
+      "feedback": "Интересно!",
+      "userId": "2",
+      "articleId": "1"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Очень круто",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 3,
+      "feedback": "Интересно!",
+      "userId": "2",
+      "profileId": "1"
+    }
   ]
 }
