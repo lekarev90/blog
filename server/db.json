@@ -2442,21 +2442,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://picsum.photos/200/200"
     },
     {
       "id": "2",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://picsum.photos/200/300"
     },
     {
       "id": "3",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://picsum.photos/200/300"
     }
   ],
@@ -2509,6 +2515,27 @@
       "feedback": "Интересно!",
       "userId": "2",
       "articleId": "1"
+    },
+    {
+      "userId": "1",
+      "articleId": "3620",
+      "rate": 4,
+      "feedback": "Норм",
+      "id": "XT5Ciyv"
+    },
+    {
+      "userId": "1",
+      "articleId": "1274",
+      "rate": 2,
+      "feedback": "Так себе!",
+      "id": "h01YpdL"
+    },
+    {
+      "userId": "1",
+      "articleId": "4863",
+      "rate": 3,
+      "feedback": "Вполне",
+      "id": "J992kdA"
     }
   ],
   "profile-ratings": [

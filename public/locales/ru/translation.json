@@ -63,6 +63,7 @@
   "feedbackRating": {
     "placeholder": "Ваш отзыв",
     "closeBtn": "Закрыть",
-    "sendFeedbackBtn": "Отправить"
+    "sendFeedbackBtn": "Отправить",
+    "rated": "Ваша оценка"
   }
 }

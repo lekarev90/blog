@@ -34,9 +34,9 @@ export const RatingCard = memo(({
 
     if (hasFeedback) {
       setIsModalOpen(true);
+    } else {
+      onAccept?.(selectedStarsCount);
     }
-
-    onAccept?.(selectedStarsCount);
   }, [hasFeedback, onAccept]);
 
   const acceptHandle = useCallback(() => {
@@ -59,7 +59,7 @@ export const RatingCard = memo(({
   return (
     <Card>
       <VStack gap="8" align="center">
-        <Text title={title} />
+        <Text title={starsCount ? t('translation:feedbackRating.rated') : title} />
         <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
       </VStack>
 
