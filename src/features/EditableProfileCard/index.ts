@@ -9,4 +9,4 @@ export { getProfileData, getProfileIsLoading, getProfileErrors } from './model/s
 export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
 export { profileReducer, profileActions } from './model/slice/profileSlice';
 export type { IProfile, IProfileSchema, TProfileFieldName } from './model/types/profileCardSchema';
-export { EProfileCardTestIdButtons, EProfileCardTestIdInputs } from './model/const/const';
+export { EProfileCardTestIdButtons, EProfileCardTestIdInputs, EValidateProfileError } from './model/const/const';

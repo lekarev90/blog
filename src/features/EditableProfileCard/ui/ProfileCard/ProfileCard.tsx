@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { CountrySelect } from '@/entities/Country/ui/CountrySelect/CountrySelect';
-import { CurrencySelect } from '@/entities/Currency/ui/CurrencySelect/CurrencySelect';
+import { CountrySelect } from '@/entities/Country';
+import { CurrencySelect } from '@/entities/Currency';
 
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Input } from '@/shared/ui/Input/Input';

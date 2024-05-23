@@ -72,6 +72,13 @@ module.exports = {
     'max-len': ['error', { code: 140 }],
     '@typescript-eslint/no-unused-vars': 'error',
     'lekarev/path-checker': ['error', { alias: '@' }],
+    'lekarev/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

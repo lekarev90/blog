@@ -1,4 +1,5 @@
 export { articlesSearchActions } from './model/slices/articlesSearchSlice';
+export { articlesSortActions } from './model/slices/articlesSortSlice';
 export { ArticlesListTabs } from './ui/ArticlesListTabs/ArticlesListTabs';
 export { getArticlesSearchText } from '@/features/articleList/model/selectors/articlesSearch.selectors';
 export { getArticlesSortData } from '@/features/articleList/model/selectors/articlesSort.selectors';

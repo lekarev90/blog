@@ -9,7 +9,7 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ArticleEditPage } from '@/pages/articleEdit';
 import { AdminPanelPage } from '@/pages/adminPanel';
 import { AccessDeniedPage } from '@/pages/accessDenied';
-import { ERoles } from '@/entities/User/model/const/const';
+import { ERoles } from '@/entities/User';
 
 export type AppRouterProps = RouteProps & {
   isAuthOnly?: boolean;

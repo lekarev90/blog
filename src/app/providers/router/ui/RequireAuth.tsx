@@ -1,10 +1,8 @@
 import { FC, ReactNode, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
-import { getUserAuthData } from '@/entities/User';
+import { getUserAuthData, ERoles } from '@/entities/User';
 import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
-
-import { ERoles } from '@/entities/User/model/const/const';
 
 interface RequireAuthProps {
   children: ReactNode

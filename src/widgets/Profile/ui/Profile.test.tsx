@@ -9,11 +9,12 @@ import {
   getProfileCardTestId,
   getValidateTextError,
   profileReducer,
+  EValidateProfileError,
 } from '@/features/EditableProfileCard';
 import { IStateSchema } from '@/app/providers/StoreProvider';
+
 import { $api } from '@/shared/api/api';
 
-import { EValidateProfileError } from '@/features/EditableProfileCard/model/const/const';
 import { Profile } from './Profile';
 
 const userId = '1';
