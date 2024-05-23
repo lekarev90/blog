@@ -1,6 +1,5 @@
 import { memo } from 'react';
 
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import { Card } from '@/shared/ui/Card/Card';
@@ -11,6 +10,7 @@ import { IArticle } from '@/entities/Article';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 
 import styles from './ArticleListItemGrid.module.scss';
+import { RouterPath } from '@/shared/const/router';
 
 export const ArticleListItemGrid = memo(({
   img, title, createdAt, types, views, id,

@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import { useSelector } from 'react-redux';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
 import { Dropdown } from '@/shared/ui/Dropdown/Dropdown';
 import {
   isUserAdmin, isUserManager, IUser, userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { RouterPath } from '@/shared/const/router';
 
 interface NavbarMenuDropDownProps {
   authData: IUser;

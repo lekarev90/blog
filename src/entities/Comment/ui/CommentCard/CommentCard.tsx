@@ -5,11 +5,11 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Text } from '@/shared/ui/Text/Text';
 
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
 
 import { IComment } from '../../model/types/comment';
 
 import styles from './CommentCard.module.scss';
+import { RouterPath } from '@/shared/const/router';
 
 const cx = classNames.bind(styles);
 

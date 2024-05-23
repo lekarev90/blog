@@ -9,7 +9,6 @@ import { Button, ButtonVariants } from '@/shared/ui/Button/Button';
 
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 
 import {
@@ -17,6 +16,7 @@ import {
 } from '@/entities/Article';
 
 import styles from './ArticleListItemList.module.scss';
+import { RouterPath } from '@/shared/const/router';
 
 export const ArticleListItemList = memo(({
   user, views, createdAt, types, title, img, blocks, id,

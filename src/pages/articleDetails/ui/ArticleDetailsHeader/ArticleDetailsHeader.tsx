@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { RouterPath } from '@/shared/config/routeConfig/routeConfig';
 import { Button, ButtonVariants } from '@/shared/ui/Button/Button';
 import { HStack } from '@/shared/ui/Stack';
 
 import { getIsCanEditArticle } from '@/entities/Article';
+import { RouterPath } from '@/shared/const/router';
 
 export const ArticleDetailsHeader = memo(({ id }: {id: string}) => {
   const { t } = useTranslation();

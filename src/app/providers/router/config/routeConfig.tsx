@@ -10,84 +10,58 @@ import { ArticleEditPage } from '@/pages/articleEdit';
 import { AdminPanelPage } from '@/pages/adminPanel';
 import { AccessDeniedPage } from '@/pages/accessDenied';
 import { ERoles } from '@/entities/User';
+import { EAppRoutes, RouterPath } from '@/shared/const/router';
 
-export type AppRouterProps = RouteProps & {
+export type TAppRouterProps = RouteProps & {
   isAuthOnly?: boolean;
   roles?: ERoles[];
 };
 
-export enum AppRoutes {
-  MAIN = 'main',
-  ABOUT = 'about',
-  PROFILE = 'profile',
-  ARTICLES = 'articles',
-  ARTICLE_DETAILS = 'article_details',
-  ARTICLE_CREATE = 'article_create',
-  ARTICLE_EDIT = 'article_edit',
-  ADMIN_PANEL = 'admin_panel',
-  ACCESS_DENIED = 'access_denied',
-
-  NOT_FOUND = '404'
-}
-
-export const RouterPath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile', // + :id
-  [AppRoutes.ARTICLES]: '/articles',
-  [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + id
-  [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-  [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-  [AppRoutes.ADMIN_PANEL]: '/admin',
-  [AppRoutes.ACCESS_DENIED]: '/forbidden',
-  [AppRoutes.NOT_FOUND]: '*',
-};
-
-export const routeConfig: Record<AppRoutes, AppRouterProps> = {
-  [AppRoutes.MAIN]: {
+export const routeConfig: Record<EAppRoutes, TAppRouterProps> = {
+  [EAppRoutes.MAIN]: {
     path: RouterPath.main,
     element: <MainPage />,
   },
-  [AppRoutes.ABOUT]: {
+  [EAppRoutes.ABOUT]: {
     path: RouterPath.about,
     element: <AboutPage />,
   },
-  [AppRoutes.PROFILE]: {
+  [EAppRoutes.PROFILE]: {
     path: `${RouterPath.profile}/:id`,
     element: <ProfilePage />,
     isAuthOnly: true,
   },
-  [AppRoutes.ARTICLES]: {
+  [EAppRoutes.ARTICLES]: {
     path: RouterPath.articles,
     element: <ArticlePage />,
     isAuthOnly: true,
   },
-  [AppRoutes.ARTICLE_DETAILS]: {
+  [EAppRoutes.ARTICLE_DETAILS]: {
     path: `${RouterPath.article_details}:id`,
     element: <ArticleDetailsPage />,
     isAuthOnly: true,
   },
-  [AppRoutes.ARTICLE_CREATE]: {
+  [EAppRoutes.ARTICLE_CREATE]: {
     path: `${RouterPath.article_create}`,
     element: <ArticleEditPage />,
     isAuthOnly: true,
   },
-  [AppRoutes.ARTICLE_EDIT]: {
+  [EAppRoutes.ARTICLE_EDIT]: {
     path: `${RouterPath.article_edit}`,
     element: <ArticleEditPage />,
     isAuthOnly: true,
   },
-  [AppRoutes.ADMIN_PANEL]: {
+  [EAppRoutes.ADMIN_PANEL]: {
     path: `${RouterPath.admin_panel}`,
     element: <AdminPanelPage />,
     isAuthOnly: true,
     roles: [ERoles.MANAGER, ERoles.ADMIN],
   },
-  [AppRoutes.ACCESS_DENIED]: {
+  [EAppRoutes.ACCESS_DENIED]: {
     path: `${RouterPath.access_denied}`,
     element: <AccessDeniedPage />,
   },
-  [AppRoutes.NOT_FOUND]: {
+  [EAppRoutes.NOT_FOUND]: {
     path: RouterPath['404'],
     element: <NotFoundPage />,
   },

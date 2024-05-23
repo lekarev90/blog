@@ -4,13 +4,13 @@ import {
 import { Route, Routes } from 'react-router-dom';
 import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
 
-import { AppRouterProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
+import { TAppRouterProps, routeConfig } from '@/app/providers/router/config/routeConfig';
 import { PageLoader } from '@/widgets/PageLoader';
 
 export const AppRouter: FC = () => {
   const renderWithWrapper = useCallback(({
     path, element, isAuthOnly, roles,
-  }: AppRouterProps) => {
+  }: TAppRouterProps) => {
     const Wrapper = isAuthOnly ? RequireAuth : Fragment;
     const wrapperProps = roles ? { roles } : {};
 
