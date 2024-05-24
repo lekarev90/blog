@@ -1,6 +1,6 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { Reducer } from 'redux';
-import { IStateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
+import { IStateSchema } from './StateSchema';
 import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
 import { scrollReducer } from '@/shared/ui/Page/model/slices/scrollSlice';

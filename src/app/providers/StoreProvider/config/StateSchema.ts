@@ -9,17 +9,17 @@ import { IProfileSchema } from '@/features/EditableProfileCard';
 import { IUserSchema } from '@/entities/User';
 import { ILoginSchema } from '@/features/AuthByUsername';
 import { IScroll } from '@/shared/ui/Page/model/types/scrollTypes';
-import { IArticlesListSchema } from '@/widgets/articleList';
+
 import { IArticlesListSortSchema, IArticlesSearch } from '@/features/articleList';
-import { IArticleRecommendationsSchema } from '@/features/article';
 import { IArticleDetailsCommentsSchema } from '@/widgets/article';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { IArticlesListSchema, IArticleRecommendationsSchema } from '@/widgets/articleList';
 
 export interface IStateSchema {
   counter: CounterSchema;
   user: IUserSchema;
-  scroll: IScroll
-  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+  scroll: IScroll;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // async
   loginForm?: ILoginSchema;
@@ -28,28 +28,28 @@ export interface IStateSchema {
   articleDetailsComments?: IArticleDetailsCommentsSchema;
   articlesList?: IArticlesListSchema;
   articlesSort?: IArticlesListSortSchema;
-  articlesSearch?: IArticlesSearch
+  articlesSearch?: IArticlesSearch;
   articleRecommendations?: IArticleRecommendationsSchema;
 }
 
-export type StateSchemaKey = keyof IStateSchema
+export type TStateSchemaKey = keyof IStateSchema;
 
 export interface IReducerManager {
   getReducerMap: () => ReducersMapObject<IStateSchema>;
   reduce: (state: IStateSchema, action: UnknownAction) => IStateSchema;
-  add: (key: StateSchemaKey, reducer: Reducer) => void;
-  remove: (key: StateSchemaKey) => void;
+  add: (key: TStateSchemaKey, reducer: Reducer) => void;
+  remove: (key: TStateSchemaKey) => void;
 }
 
-export interface ReduxStoreWithManager extends EnhancedStore<IStateSchema> {
-  reducerManager: IReducerManager
+export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema> {
+  reducerManager: IReducerManager;
 }
 
 export interface IThunkExtraArg {
-  api: AxiosInstance
+  api: AxiosInstance;
 }
 
 export interface IThunkConfig<T> {
-  rejectValue: T,
-  extra: IThunkExtraArg
+  rejectValue: T;
+  extra: IThunkExtraArg;
 }

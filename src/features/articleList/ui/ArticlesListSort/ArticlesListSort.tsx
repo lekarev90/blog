@@ -6,18 +6,21 @@ import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Select, SelectOptions } from '@/shared/ui/Select/Select';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { articlesListActions, fetchArticlesList } from '@/widgets/articleList';
 import { HStack } from '@/shared/ui/Stack';
 
 import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';
-import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
 import { articlesSortActions, articlesSortReducer } from '../../model/slices/articlesSortSlice';
+import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
+
+interface IArticlesListSortProps {
+  onSwitchSort: () => void;
+}
 
 const reducers = {
   articlesSort: articlesSortReducer,
 };
 
-export const ArticlesListSort = memo(() => {
+export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) => {
   const { t } = useTranslation('articles');
 
   const dispatch = useAppDispatch();
@@ -70,10 +73,9 @@ export const ArticlesListSort = memo(() => {
   const onSwitchSortHandler = useCallback(
     (value: string, name: ESortFieldNames) => {
       dispatch(handlers[name](value));
-      dispatch(articlesListActions.setPage(1));
-      dispatch(fetchArticlesList({ withSetAll: true }));
+      onSwitchSort();
     },
-    [dispatch, handlers],
+    [dispatch, handlers, onSwitchSort],
   );
 
   return (

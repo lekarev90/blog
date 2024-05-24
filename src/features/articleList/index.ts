@@ -1,10 +1,7 @@
-export { articlesSearchActions } from './model/slices/articlesSearchSlice';
+export { articlesSearchActions } from '../../widgets/articleList/model/slices/articlesSearchSlice';
 export { articlesSortActions } from './model/slices/articlesSortSlice';
 export { ArticlesListTabs } from './ui/ArticlesListTabs/ArticlesListTabs';
-export { getArticlesSearchText } from '@/features/articleList/model/selectors/articlesSearch.selectors';
-export { getArticlesSortData } from '@/features/articleList/model/selectors/articlesSort.selectors';
-export { ArticleListSearch } from './ui/ArticleListSearch/ArticleListSearch';
-export { type IArticlesSearch } from './model/types/articlesSearchSchema';
+export { type IArticlesSearch } from '../../widgets/articleList/model/types/articlesSearchSchema';
 export { type IArticlesListSortSchema } from './model/types/articlesSortSchema';
-export { ArticlesListSort } from './ui/ArticlesListSort/ArticlesListSort';
+export { ArticlesListSort } from '@/features/articleList/ui/ArticlesListSort/ArticlesListSort';
 export { ArticlesListViewSwitcher } from './ui/ArticlesListViewSwitcher/ArticlesListViewSwitcher';

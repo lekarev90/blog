@@ -1,3 +1,4 @@
+export { ArticleRecommendations } from './ui/ArticleRecomendations/ArticleRecommendations';
 export { getArticles } from './model/slices/articlesListSlice';
 export { getArticlesListData } from './model/selectors/articlesList.selectors';
 export { articlesListActions } from './model/slices/articlesListSlice';
@@ -7,3 +8,4 @@ export { ARTICLES_LIST_DATA } from './model/helpers/helpers';
 export { articlesListReducer } from './model/slices/articlesListSlice';
 export { type IArticlesListSchema } from './model/types/articlesListSchema';
 export { ArticlesList } from './ui/ArticleList/ArticlesList';
+export { type IArticleRecommendationsSchema } from './model/types/articleRecommendationsSchema';

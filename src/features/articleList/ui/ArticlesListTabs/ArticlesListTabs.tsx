@@ -1,22 +1,18 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 
 import { EArticleTypes } from '@/entities/Article';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Tabs } from '@/shared/ui/Tabs/Tabs';
-import { articlesListActions, fetchArticlesList } from '@/widgets/articleList';
-
-import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';
-import { articlesSearchActions } from '../../model/slices/articlesSearchSlice';
 
 import styles from './ArticlesListTabs.module.scss';
 
-export const ArticlesListTabs = memo(() => {
-  const { t } = useTranslation();
+interface IArticlesListTabsProps {
+  currentType: EArticleTypes;
+  onTabClick: ({ value }: { value: EArticleTypes }) => void;
+}
 
-  const dispatch = useAppDispatch();
-  const { type = EArticleTypes.ALL } = useSelector(getArticlesSearchText) || {};
+export const ArticlesListTabs = memo(({ currentType, onTabClick }: IArticlesListTabsProps) => {
+  const { t } = useTranslation();
 
   const articleTypes = useMemo<{ value: EArticleTypes; content: string }[]>(
     () => [
@@ -104,11 +100,5 @@ export const ArticlesListTabs = memo(() => {
     [t],
   );
 
-  const onTypeClick = useCallback(({ value }: { value: EArticleTypes }) => {
-    dispatch(articlesListActions.setPage(1));
-    dispatch(articlesSearchActions.setType(value));
-    dispatch(fetchArticlesList({ withSetAll: true }));
-  }, [dispatch]);
-
-  return <Tabs tabs={articleTypes} className={styles.tabs} tabClassName={styles.tab} onTabClick={onTypeClick} value={type} />;
+  return <Tabs tabs={articleTypes} className={styles.tabs} tabClassName={styles.tab} onTabClick={onTabClick} value={currentType} />;
 });

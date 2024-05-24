@@ -5,8 +5,8 @@ import { useParams } from 'react-router';
 import { ArticleComments, ArticleRoot } from '@/widgets/article';
 import { Page } from '@/shared/ui/Page/Page';
 import { VStack } from '@/shared/ui/Stack';
-import { ArticleRecommendations } from '@/features/article';
 import { ArticleRating } from '@/features/articleRaiting';
+import { ArticleRecommendations } from '@/widgets/articleList';
 
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 

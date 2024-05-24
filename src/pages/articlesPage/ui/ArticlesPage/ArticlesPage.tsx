@@ -6,9 +6,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import {
   ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,
 } from '@/widgets/articleList';
-import { ArticleListSearch, ArticlesListSort, ArticlesListViewSwitcher } from '@/features/articleList';
+import { ArticleListHeader } from '@/features/articleList';
 
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();
@@ -22,14 +22,8 @@ const ArticlesPage = memo(() => {
 
   return (
     <Page onScrollEnd={onLoadNextPart}>
-      <VStack Component="section" gap="16">
-        <VStack justify="between" gap="16">
-          <HStack justify="between">
-            <ArticlesListSort />
-            <ArticlesListViewSwitcher />
-          </HStack>
-          <ArticleListSearch />
-        </VStack>
+      <VStack Component="section" gap="32">
+        <ArticleListHeader />
         <ArticlesList articles={articles} isLoading={isLoading} withMoreButton />
       </VStack>
     </Page>
