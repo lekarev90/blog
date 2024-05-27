@@ -4,9 +4,8 @@ import { useSelector } from 'react-redux';
 import { Page } from '@/shared/ui/Page';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import {
-  ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,
+  ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData, ArticleListHeader,
 } from '@/widgets/articleList';
-import { ArticleListHeader } from '@/features/articleList';
 
 import { VStack } from '@/shared/ui/Stack';
 

@@ -1,3 +1,4 @@
+export { ArticleListHeader } from './ui/ArticleListHeader/ArticleListHeader';
 export { ArticleRecommendations } from './ui/ArticleRecomendations/ArticleRecommendations';
 export { getArticles } from './model/slices/articlesListSlice';
 export { getArticlesListData } from './model/selectors/articlesList.selectors';

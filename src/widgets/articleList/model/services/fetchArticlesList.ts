@@ -3,11 +3,11 @@ import i18n from '@/shared/config/i18n/i18n';
 
 import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
 import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
-
 import { IArticle, ARTICLES_REQUEST_URL, EArticleTypes } from '@/entities/Article';
-import { getArticlesSortData, getArticlesSearchText } from '@/features/articleList';
+import { getArticlesSortData } from '@/features/articleList';
 
 import { getArticlesListData } from '../selectors/articlesList.selectors';
+import { getArticlesSearchText } from '../selectors/articlesSearch.selectors';
 
 export const fetchArticlesList = createAsyncThunk<IArticle[], {withSetAll: boolean } | undefined, IThunkConfig<string>>(
   'articles/fetchArticlesList',
