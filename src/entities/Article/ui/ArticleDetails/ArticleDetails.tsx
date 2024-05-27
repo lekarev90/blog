@@ -1,8 +1,8 @@
 import { FC, memo } from 'react';
 
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Icon } from '@/shared/ui/Icon';
+import { Text, TextSize } from '@/shared/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';
 
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';

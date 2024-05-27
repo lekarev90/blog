@@ -1,8 +1,8 @@
 import { FunctionComponent, memo, SVGProps } from 'react';
 import classNames from 'classnames/bind';
 
-import { Button } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import GridIcon from '@/shared/assets/icons/tiled-24-24.svg';

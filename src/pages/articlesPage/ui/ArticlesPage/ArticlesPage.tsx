@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/shared/ui/Page';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import {
   ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,

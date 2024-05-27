@@ -18,7 +18,7 @@ import {
 } from '@/features/EditableProfileCard';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Text, TextVariant } from '@/shared/ui/Text/Text';
+import { Text, TextVariant } from '@/shared/ui/Text';
 
 import { VStack } from '@/shared/ui/Stack';
 

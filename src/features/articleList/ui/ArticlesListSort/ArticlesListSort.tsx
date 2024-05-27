@@ -4,7 +4,7 @@ import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
 
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Select, SelectOptions } from '@/shared/ui/Select/Select';
+import { Select, SelectOptions } from '@/shared/ui/Select';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { HStack } from '@/shared/ui/Stack';
 

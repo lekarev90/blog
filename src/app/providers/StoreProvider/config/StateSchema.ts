@@ -8,7 +8,7 @@ import { CounterSchema } from '@/entities/Counter';
 import { IProfileSchema } from '@/features/EditableProfileCard';
 import { IUserSchema } from '@/entities/User';
 import { ILoginSchema } from '@/features/AuthByUsername';
-import { IScroll } from '@/shared/ui/Page/model/types/scrollTypes';
+import { IScroll } from '@/shared/ui/Page';
 
 import { IArticlesListSortSchema, IArticlesSearch } from '@/features/articleList';
 import { IArticleDetailsCommentsSchema } from '@/widgets/article';

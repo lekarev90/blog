@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 
 import { ArticleComments, ArticleRoot } from '@/widgets/article';
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/shared/ui/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRating } from '@/features/articleRaiting';
 import { ArticleRecommendations } from '@/widgets/articleList';

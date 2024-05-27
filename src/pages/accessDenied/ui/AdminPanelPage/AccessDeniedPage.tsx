@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/shared/ui/Page';
 
 const AccessDeniedPage = memo(() => <Page>Access denied</Page>);
 

@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
-import { Button, ButtonVariants } from '@/shared/ui/Button/Button';
-import { AppLink, AppLinkColor } from '@/shared/ui/AppLink/AppLink';
-import { Text, TextVariant } from '@/shared/ui/Text/Text';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { AppLink, AppLinkColor } from '@/shared/ui/AppLink';
+import { Text, TextVariant } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
 
 import { NotificationModal } from '@/features/navbar';

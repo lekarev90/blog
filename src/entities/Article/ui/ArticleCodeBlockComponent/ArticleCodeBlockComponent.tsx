@@ -1,5 +1,5 @@
-import { Code } from '@/shared/ui/Code/Code';
-import { Text } from '@/shared/ui/Text/Text';
+import { Code } from '@/shared/ui/Code';
+import { Text } from '@/shared/ui/Text';
 
 import { VStack } from '@/shared/ui/Stack';
 import { IArticleCodeBlock } from '../../model/types/article';

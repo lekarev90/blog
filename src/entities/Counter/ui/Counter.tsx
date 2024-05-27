@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { Button, ButtonVariants } from '@/shared/ui/Button/Button';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 
 import { decrementAction, incrementAction } from '../model/slice/counterSlice';

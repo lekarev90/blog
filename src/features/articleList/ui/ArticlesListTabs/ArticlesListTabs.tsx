@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { EArticleTypes } from '@/entities/Article';
-import { Tabs } from '@/shared/ui/Tabs/Tabs';
+import { Tabs } from '@/shared/ui/Tabs';
 
 import styles from './ArticlesListTabs.module.scss';
 

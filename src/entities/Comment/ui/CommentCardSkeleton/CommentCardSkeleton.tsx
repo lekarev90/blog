@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import styles from './CommentCardSkeleton.module.scss';
 

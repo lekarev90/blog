@@ -3,7 +3,7 @@ import { Reducer } from 'redux';
 import { IStateSchema } from './StateSchema';
 import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
-import { scrollReducer } from '@/shared/ui/Page/model/slices/scrollSlice';
+import { scrollReducer } from '@/shared/ui/Page';
 import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
