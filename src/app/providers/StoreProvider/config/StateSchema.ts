@@ -3,11 +3,11 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
+import { IProfileSchema } from 'src/features/editableProfileCard';
+import { ILoginSchema } from 'src/features/authByUsername';
 import { IArticleDetailsSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
-import { IProfileSchema } from '@/features/EditableProfileCard';
 import { IUserSchema } from '@/entities/User';
-import { ILoginSchema } from '@/features/AuthByUsername';
 import { IScroll } from '@/shared/ui/Page';
 
 import { IArticlesListSortSchema, IArticlesSearch } from '@/features/articleList';

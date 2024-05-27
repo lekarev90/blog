@@ -3,17 +3,17 @@ import i18n from 'i18next';
 import { userEvent } from '@testing-library/user-event';
 
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
-import {
-  EProfileCardTestIdButtons,
-  EProfileCardTestIdInputs,
-  getProfileCardTestId,
-  getValidateTextError,
-  profileReducer,
-  EValidateProfileError,
-} from '@/features/EditableProfileCard';
 import { IStateSchema } from '@/app/providers/StoreProvider';
 
 import { $api } from '@/shared/api/api';
+
+import {
+  EProfileCardTestIdButtons,
+  EProfileCardTestIdInputs, EValidateProfileError,
+  getProfileCardTestId,
+  getValidateTextError,
+  profileReducer,
+} from '@/features/editableProfileCard';
 
 import { Profile } from './Profile';
 

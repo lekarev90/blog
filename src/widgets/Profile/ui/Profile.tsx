@@ -4,6 +4,10 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { Text, TextVariant } from '@/shared/ui/Text';
+
+import { VStack } from '@/shared/ui/Stack';
 import {
   getIsProfileDataSame,
   getProfileData,
@@ -15,17 +19,13 @@ import {
   ProfileCardHeader,
   TProfileFieldName,
   updateProfileData,
-} from '@/features/EditableProfileCard';
-
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Text, TextVariant } from '@/shared/ui/Text';
-
-import { VStack } from '@/shared/ui/Stack';
+} from '@/features/editableProfileCard';
 
 export const Profile: FC = memo(() => {
   const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
+  // eslint-disable-next-line no-undef
   const data = useSelector(getProfileData);
   const isLoading = useSelector(getProfileIsLoading);
   const isProfileDataSame = useSelector(getIsProfileDataSame);
@@ -69,13 +69,7 @@ export const Profile: FC = memo(() => {
         isReadonly={isReadonly}
       />
       {profileErrors?.length
-        && profileErrors.map((error) => (
-          <Text
-            key={error}
-            text={getValidateTextError(t)[error]}
-            variant={TextVariant.ERROR}
-          />
-        ))}
+        && profileErrors.map((error) => <Text key={error} text={getValidateTextError(t)[error]} variant={TextVariant.ERROR} />)}
       <ProfileCard isLoading={isLoading} isReadonly={isReadonly} data={data} onChangeHandler={onChangeHandler} />
     </VStack>
   );

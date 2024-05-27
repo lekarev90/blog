@@ -4,9 +4,9 @@ import {
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
+import { AddCommentForm } from 'src/features/addCommentForm';
 import { Text } from '@/shared/ui/Text';
 import { CommentList } from '@/entities/Comment';
-import { AddCommentForm } from '@/features/AddCommentForm';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';

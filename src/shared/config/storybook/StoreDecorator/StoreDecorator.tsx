@@ -2,9 +2,9 @@ import React from 'react';
 import { StoryFn } from '@storybook/react';
 
 // eslint-disable-next-line lekarev/layer-imports
-import { profileReducer } from '@/features/EditableProfileCard';
+import { profileReducer } from 'src/features/editableProfileCard';
 // eslint-disable-next-line lekarev/layer-imports
-import { loginReducer } from '@/features/AuthByUsername';
+import { loginReducer } from 'src/features/authByUsername';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 import { IStateSchema, StoreProvider } from '@/app/providers/StoreProvider';

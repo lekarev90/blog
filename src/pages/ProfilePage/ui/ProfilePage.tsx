@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { useParams } from 'react-router';
 
-import { fetchProfileData, profileReducer } from '@/features/EditableProfileCard';
+import { fetchProfileData, profileReducer } from 'src/features/editableProfileCard';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Profile } from '@/widgets/Profile';

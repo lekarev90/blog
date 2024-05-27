@@ -25,7 +25,8 @@
   "include": [
     "./config/jest/testSetup.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "**/*.*.tsx"
   ],
   "strictBindCallApply": true
 }
