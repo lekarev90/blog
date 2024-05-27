@@ -1,7 +1,5 @@
 import classNames from 'classnames/bind';
-import {
-  ChangeEvent, memo, useCallback, useMemo,
-} from 'react';
+import { ChangeEvent, useCallback, useMemo } from 'react';
 
 import { VStack } from '../Stack';
 
@@ -9,26 +7,26 @@ import styles from './Select.module.scss';
 
 const cx = classNames.bind(styles);
 
-export interface SelectOptions {
-  value: string;
+export interface SelectOptions<T extends string> {
+  value: T;
   content: string;
 }
 
-interface SelectProps<T extends string> {
+interface SelectProps<T extends string, N extends string> {
   className?: string;
-  name: T;
+  name: N;
   label?: string;
-  options?: SelectOptions[];
-  value?: string;
-  onChange: (value: string, name: T) => void;
+  options?: SelectOptions<T>[];
+  value?: T;
+  onChange: (value: T, name: N) => void;
   isReadonly?: boolean;
 }
 
-const _Select = <T extends string>({
+export const Select = <T extends string, N extends string>({
   className, label, options, value, onChange, name, isReadonly,
-}: SelectProps<T>) => {
+}: SelectProps<T, N>) => {
   const onChangeHandler = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
-    onChange(e.target.value, name);
+    onChange(e.target.value as T, name);
   }, [name, onChange]);
 
   const optionList = useMemo(() => options?.map((option) => (
@@ -61,4 +59,4 @@ const _Select = <T extends string>({
   );
 };
 
-export const Select = memo(_Select) as typeof _Select;
+// export const Select = memo(_Select) as typeof _Select;

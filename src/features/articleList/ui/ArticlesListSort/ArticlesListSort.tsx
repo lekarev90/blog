@@ -11,6 +11,9 @@ import { HStack } from '@/shared/ui/Stack';
 import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';
 import { articlesSortActions, articlesSortReducer } from '../../model/slices/articlesSortSlice';
 import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
+import { TSortOrder } from '@/shared/types';
+
+type TSwitchValue = EArticleSortField | TSortOrder;
 
 interface IArticlesListSortProps {
   onSwitchSort: () => void;
@@ -27,7 +30,7 @@ export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) 
 
   const { orderBy, sortBy } = useSelector(getArticlesSortData) || {};
 
-  const orderOptions = useMemo<SelectOptions[]>(
+  const orderOptions = useMemo<SelectOptions<TSortOrder>[]>(
     () => [
       {
         value: 'asc',
@@ -41,7 +44,7 @@ export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) 
     [t],
   );
 
-  const sortOptions = useMemo<SelectOptions[]>(
+  const sortOptions = useMemo<SelectOptions<EArticleSortField>[]>(
     () => [
       {
         value: EArticleSortField.CREATED,
@@ -71,7 +74,7 @@ export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) 
   );
 
   const onSwitchSortHandler = useCallback(
-    (value: string, name: ESortFieldNames) => {
+    (value: TSwitchValue, name: ESortFieldNames) => {
       dispatch(handlers[name](value));
       onSwitchSort();
     },
@@ -81,14 +84,14 @@ export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <HStack gap="8" flexWrap={false}>
-        <Select<ESortFieldNames.SORT_BY>
+        <Select
           options={sortOptions}
           value={sortBy}
           name={ESortFieldNames.SORT_BY}
           onChange={onSwitchSortHandler}
           label={t('articles:sortBy')}
         />
-        <Select<ESortFieldNames.ORDER_BY>
+        <Select
           options={orderOptions}
           value={orderBy}
           name={ESortFieldNames.ORDER_BY}
