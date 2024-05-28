@@ -24,7 +24,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
       rules: buildLoaders(options),
     },
     resolve: buildResolvers(options),
-    devtool: isDev && 'source-map',
+    devtool: isDev && 'eval-cheap-module-source-map',
     devServer: isDev ? buildDevServer(options) : undefined,
   };
 };

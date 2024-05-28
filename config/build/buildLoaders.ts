@@ -6,6 +6,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
+    exclude: /node_modules/,
   };
 
   const tsLoader = {
@@ -18,6 +19,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif)$/i,
+    exclude: /node_modules/,
     use: [
       {
         loader: 'file-loader',
@@ -31,6 +33,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
     use: {
       loader: 'babel-loader',
       options: {
+        cacheDirectory: true,
         presets: ['@babel/preset-env'],
       },
     },

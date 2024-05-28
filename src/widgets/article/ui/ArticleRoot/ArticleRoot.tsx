@@ -1,4 +1,4 @@
-import { FC, memo, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -18,7 +18,7 @@ const reducers: ReducersList = {
   articleDetails: articleDetailsReducer,
 };
 
-export const ArticleRoot: FC<ArticleDetailsProps> = memo(({ id }) => {
+export const ArticleRoot = memo(({ id }: ArticleDetailsProps) => {
   const dispatch = useAppDispatch();
   const { isLoading, error, data } = useSelector(getArticleDetails) || {};
 
