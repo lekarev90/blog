@@ -8,8 +8,9 @@ import { useSelector } from 'react-redux';
 import { IStateSchema } from '@/app/providers/StoreProvider';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-
+import { ITestId } from '@/shared/types/tests';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+
 import { getScrollByPath } from './model/selectors/scroll.selectors';
 import { scrollActions } from './model/slices/scrollSlice';
 
@@ -17,13 +18,15 @@ import styles from './Page.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface PageProps {
+interface PageProps extends ITestId{
   className?: string;
   children?: ReactNode;
   onScrollEnd?: () => void;
 }
 
-export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
+export const Page = memo(({
+  className, children, onScrollEnd, 'data-testid': dataTestId,
+}: PageProps) => {
   const dispatch = useAppDispatch();
 
   const { pathname } = useLocation();
@@ -58,7 +61,7 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
   });
 
   return (
-    <main ref={wrapperRef} className={cx(styles.container, className)} onScroll={handleScroll}>
+    <main ref={wrapperRef} className={cx(styles.container, className)} onScroll={handleScroll} data-testid={dataTestId}>
       {children}
       <div ref={triggerRef} />
     </main>

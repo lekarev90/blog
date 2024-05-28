@@ -23,7 +23,7 @@ const ProfilePage = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Page>
+      <Page data-testid="profile-page">
         <Profile />
       </Page>
     </DynamicModuleLoader>

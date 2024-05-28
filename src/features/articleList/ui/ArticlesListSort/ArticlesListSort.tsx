@@ -11,7 +11,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';
 import { articlesSortActions, articlesSortReducer } from '../../model/slices/articlesSortSlice';
 import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
-import { TSortOrder } from '@/shared/types';
+import { TSortOrder } from '@/shared/types/sort';
 
 type TSwitchValue = EArticleSortField | TSortOrder;
 

@@ -7,7 +7,7 @@ const MainPage = memo(() => {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page data-testid="main-page">
       {t('translation:mainPage.bodyText')}
     </Page>
   );

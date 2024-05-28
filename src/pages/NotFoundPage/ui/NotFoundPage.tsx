@@ -7,7 +7,7 @@ export const NotFoundPage = memo(() => {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page data-testid="not-found-page">
       {t('translation:notFoundPage.body.mainText')}
     </Page>
   );
