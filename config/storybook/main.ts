@@ -1,7 +1,14 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
+const target = 'browserslist:browserslist config, not maintained node versions';
+
 const config: StorybookConfig = {
   stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  webpackFinal(config) {
+    config.target = target;
+
+    return config;
+  },
   core: {
     builder: {
       name: '@storybook/builder-webpack5',

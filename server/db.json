@@ -2464,6 +2464,14 @@
         "USER"
       ],
       "avatar": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "3",
+      "username": "noAvatar",
+      "password": "123",
+      "roles": [
+        "USER"
+      ]
     }
   ],
   "profile": [

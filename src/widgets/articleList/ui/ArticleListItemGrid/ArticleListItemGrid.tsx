@@ -9,6 +9,8 @@ import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { IArticle } from '@/entities/Article';
 import { AppLink } from '@/shared/ui/AppLink';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import styles from './ArticleListItemGrid.module.scss';
 
@@ -18,7 +20,7 @@ export const ArticleListItemGrid = memo(({
   <AppLink to={getRouteArticleDetails(id)}>
     <Card className={styles.container}>
       <div className={styles.imageWrapper}>
-        <img src={img} alt={title} className={styles.img} />
+        <AppImage fallback={<Skeleton width={200} height={200} />} src={img} alt={title} className={styles.img} />
         <Text size={TextSize.S} text={createdAt} className={styles.dateWrapper} descriptionClassName={styles.dateText} />
       </div>
       <div className={styles.infoWrapper}>

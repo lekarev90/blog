@@ -50,6 +50,7 @@ export const NavbarMenuDropDown = memo(({ authData }: NavbarMenuDropDownProps) =
     <Dropdown
       TriggerComponent={(
         <Avatar
+          invertedDefaultAvatar
           src={authData.avatar}
           alt={authData.username}
           size={55}

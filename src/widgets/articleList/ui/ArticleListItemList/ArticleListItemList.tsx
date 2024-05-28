@@ -8,6 +8,8 @@ import { Icon } from '@/shared/ui/Icon';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 
@@ -32,7 +34,7 @@ export const ArticleListItemList = memo(({
       </div>
       <Text text={title} className={styles.title} />
       <Text text={types.join(', ')} className={styles.types} />
-      <img src={img} alt={title} className={styles.img} />
+      <AppImage fallback={<Skeleton width="100%" height={250} />} src={img} alt={title} className={styles.img} />
       {textBlock && (
         <div className={styles.textBlock}>
           <ArticleTextBlockComponent {...textBlock} />
