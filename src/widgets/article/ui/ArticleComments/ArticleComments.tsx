@@ -4,7 +4,7 @@ import {
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { AddCommentForm } from 'src/features/addCommentForm';
+import { AddCommentForm } from '@/features/addCommentForm';
 import { Text } from '@/shared/ui/Text';
 import { CommentList } from '@/entities/Comment';
 

@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { LoginModal } from 'src/features/authByUsername';
+import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
 import { AppLink, AppLinkColor } from '@/shared/ui/AppLink';
