@@ -9,9 +9,10 @@ declare module '*.png';
 declare module '*.jpg';
 
 declare module '*.svg' {
-  import type React from 'react';
+  import { SVGProps } from 'react';
 
-  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
+  const SVG: SVGProps<SVGSVGElement>;
+  // @ts-ignore
   export default SVG;
 }
 
