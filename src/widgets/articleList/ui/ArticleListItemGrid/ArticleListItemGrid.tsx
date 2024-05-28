@@ -8,14 +8,14 @@ import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 
 import { IArticle } from '@/entities/Article';
 import { AppLink } from '@/shared/ui/AppLink';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 import styles from './ArticleListItemGrid.module.scss';
-import { RouterPath } from '@/shared/const/router';
 
 export const ArticleListItemGrid = memo(({
   img, title, createdAt, types, views, id,
 }: IArticle) => (
-  <AppLink to={`${RouterPath.articles}/${id}`}>
+  <AppLink to={getRouteArticleDetails(id)}>
     <Card className={styles.container}>
       <div className={styles.imageWrapper}>
         <img src={img} alt={title} className={styles.img} />

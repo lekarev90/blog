@@ -8,12 +8,12 @@ import { Button, ButtonVariants } from '@/shared/ui/Button';
 import { AppLink, AppLinkColor } from '@/shared/ui/AppLink';
 import { Text, TextVariant } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
-
 import { NotificationModal } from '@/features/navbar';
+import { getRouteArticleCreate } from '@/shared/const/router';
+
 import { NavbarMenuDropDown } from '../NavbarMenuDropDown/NavbarMenuDropDown';
 
 import styles from './Navbar.module.scss';
-import { RouterPath } from '@/shared/const/router';
 
 export const Navbar = memo(() => {
   const { t } = useTranslation();
@@ -32,7 +32,7 @@ export const Navbar = memo(() => {
 
   const userAreaButtons = authData ? (
     <HStack maxWidth justify="between" align="center">
-      <AppLink to={RouterPath.article_create} color={AppLinkColor.SECONDARY}>
+      <AppLink to={getRouteArticleCreate()} color={AppLinkColor.SECONDARY}>
         {t('translation:navbar.createArticle')}
       </AppLink>
       <HStack gap="16" className={styles.dropdownWrapper}>

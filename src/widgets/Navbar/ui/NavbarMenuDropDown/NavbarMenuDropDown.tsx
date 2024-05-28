@@ -8,7 +8,7 @@ import {
   isUserAdmin, isUserManager, IUser, userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { RouterPath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface NavbarMenuDropDownProps {
   authData: IUser;
@@ -32,13 +32,13 @@ export const NavbarMenuDropDown = memo(({ authData }: NavbarMenuDropDownProps) =
       ? [
         {
           value: t('translation:navbar.adminLink'),
-          to: `${RouterPath.admin_panel}`,
+          to: getRouteAdmin(),
         },
       ]
       : []),
     {
       value: t('translation:navbar.profileLink'),
-      to: `${RouterPath.profile}/${authData.id}`,
+      to: getRouteProfile(authData.id),
     },
     {
       value: t('translation:navbar.authModalButton.logout'),

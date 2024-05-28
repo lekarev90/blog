@@ -7,22 +7,22 @@ import { Button, ButtonVariants } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 
 import { getIsCanEditArticle } from '@/entities/Article';
-import { RouterPath } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
-export const ArticleDetailsHeader = memo(({ id }: {id: string}) => {
+export const ArticleDetailsHeader = memo(({ id }: { id: string }) => {
   const { t } = useTranslation();
 
   const isCanEditArticle = useSelector(getIsCanEditArticle);
 
   return (
     <HStack justify="between">
-      <AppLink to={RouterPath.articles}>
+      <AppLink to={getRouteArticles()}>
         <Button variant={ButtonVariants.OUTLINE}>
           {t('articles:goBack')}
         </Button>
       </AppLink>
       {isCanEditArticle && (
-        <AppLink to={`${RouterPath.articles}/${id}/edit`}>
+        <AppLink to={getRouteArticleEdit(id)}>
           <Button variant={ButtonVariants.OUTLINE}>
             {t('articles:editButton')}
           </Button>

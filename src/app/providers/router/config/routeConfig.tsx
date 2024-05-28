@@ -10,7 +10,18 @@ import { ArticleEditPage } from '@/pages/articleEdit';
 import { AdminPanelPage } from '@/pages/adminPanel';
 import { AccessDeniedPage } from '@/pages/accessDenied';
 import { ERoles } from '@/entities/User';
-import { EAppRoutes, RouterPath } from '@/shared/const/router';
+import {
+  EAppRoutes,
+  getRouteForbidden,
+  getRouteArticleCreate,
+  getRouteMain,
+  getRouteAbout,
+  getRouteProfile,
+  getRouteArticles,
+  getRouteArticleDetails,
+  getRouteArticleEdit,
+  getRouteAdmin,
+} from '@/shared/const/router';
 
 export type TAppRouterProps = RouteProps & {
   isAuthOnly?: boolean;
@@ -19,50 +30,50 @@ export type TAppRouterProps = RouteProps & {
 
 export const routeConfig: Record<EAppRoutes, TAppRouterProps> = {
   [EAppRoutes.MAIN]: {
-    path: RouterPath.main,
+    path: getRouteMain(),
     element: <MainPage />,
   },
   [EAppRoutes.ABOUT]: {
-    path: RouterPath.about,
+    path: getRouteAbout(),
     element: <AboutPage />,
   },
   [EAppRoutes.PROFILE]: {
-    path: `${RouterPath.profile}/:id`,
+    path: getRouteProfile(':id'),
     element: <ProfilePage />,
     isAuthOnly: true,
   },
   [EAppRoutes.ARTICLES]: {
-    path: RouterPath.articles,
+    path: getRouteArticles(),
     element: <ArticlePage />,
     isAuthOnly: true,
   },
   [EAppRoutes.ARTICLE_DETAILS]: {
-    path: `${RouterPath.article_details}:id`,
+    path: getRouteArticleDetails(':id'),
     element: <ArticleDetailsPage />,
     isAuthOnly: true,
   },
   [EAppRoutes.ARTICLE_CREATE]: {
-    path: `${RouterPath.article_create}`,
+    path: getRouteArticleCreate(),
     element: <ArticleEditPage />,
     isAuthOnly: true,
   },
   [EAppRoutes.ARTICLE_EDIT]: {
-    path: `${RouterPath.article_edit}`,
+    path: getRouteArticleEdit(':id'),
     element: <ArticleEditPage />,
     isAuthOnly: true,
   },
   [EAppRoutes.ADMIN_PANEL]: {
-    path: `${RouterPath.admin_panel}`,
+    path: getRouteAdmin(),
     element: <AdminPanelPage />,
     isAuthOnly: true,
     roles: [ERoles.MANAGER, ERoles.ADMIN],
   },
   [EAppRoutes.ACCESS_DENIED]: {
-    path: `${RouterPath.access_denied}`,
+    path: getRouteForbidden(),
     element: <AccessDeniedPage />,
   },
   [EAppRoutes.NOT_FOUND]: {
-    path: RouterPath['404'],
+    path: '*',
     element: <NotFoundPage />,
   },
 };

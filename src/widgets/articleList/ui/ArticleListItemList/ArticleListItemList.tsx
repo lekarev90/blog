@@ -6,17 +6,16 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppLink } from '@/shared/ui/AppLink';
 
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-
-import { AppLink } from '@/shared/ui/AppLink';
 
 import {
   ArticleTextBlockComponent, EArticleBlockType, IArticle, IArticleTextBlock,
 } from '@/entities/Article';
 
 import styles from './ArticleListItemList.module.scss';
-import { RouterPath } from '@/shared/const/router';
 
 export const ArticleListItemList = memo(({
   user, views, createdAt, types, title, img, blocks, id,
@@ -40,7 +39,7 @@ export const ArticleListItemList = memo(({
         </div>
       )}
       <div className={styles.footer}>
-        <AppLink to={`${RouterPath.article_details}${id}`}>
+        <AppLink to={getRouteArticleDetails(id)}>
           <Button variant={ButtonVariants.OUTLINE}>
             {t('translation:readMore')}
           </Button>
