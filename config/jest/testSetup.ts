@@ -12,3 +12,18 @@ global.ResizeObserver = class {
 };
 
 global.TextEncoder = TextEncoder;
+
+jest.mock('axios', () => ({
+  create: () => ({
+    get: jest.fn(),
+    post: jest.fn(),
+    put: jest.fn(),
+    patch: jest.fn(),
+    delete: jest.fn(),
+    interceptors: {
+      request: {
+        use: jest.fn(),
+      },
+    },
+  }),
+}));

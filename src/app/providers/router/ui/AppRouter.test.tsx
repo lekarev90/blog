@@ -3,8 +3,23 @@ import { componentRender } from '@/shared/lib/tests/componentRender/componentRen
 import { AppRouter } from './AppRouter';
 import { getRouteAdmin, getRouteMain, getRouteProfile } from '@/shared/const/router';
 import { ERoles } from '@/entities/User';
+import { mockedApi } from '@/shared/const/tests';
 
 describe('app/AppRouter', () => {
+  beforeAll(() => {
+    mockedApi.get.mockResolvedValue({
+      data: {
+        id: 'string',
+        firstName: 'string',
+        lastName: 'string',
+        age: 'string',
+        city: 'string',
+        username: 'string',
+        avatar: 'string',
+      },
+    });
+  });
+
   test('Page should be render', async () => {
     componentRender(<AppRouter />, {
       route: getRouteMain(),
@@ -39,7 +54,13 @@ describe('app/AppRouter', () => {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
       initialState: {
-        user: { initialized: true, authData: { id: '1', username: 'yo' } },
+        user: {
+          initialized: true,
+          authData: {
+            id: '1',
+            username: 'yo',
+          },
+        },
       },
     });
 
@@ -52,7 +73,13 @@ describe('app/AppRouter', () => {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
-        user: { initialized: true, authData: { id: '1', username: 'yo' } },
+        user: {
+          initialized: true,
+          authData: {
+            id: '1',
+            username: 'yo',
+          },
+        },
       },
     });
 
@@ -65,7 +92,14 @@ describe('app/AppRouter', () => {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
-        user: { initialized: true, authData: { id: '1', username: 'yo', roles: [ERoles.ADMIN] } },
+        user: {
+          initialized: true,
+          authData: {
+            id: '1',
+            username: 'yo',
+            roles: [ERoles.ADMIN],
+          },
+        },
       },
     });
 

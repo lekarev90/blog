@@ -1,15 +1,14 @@
 import { screen } from '@testing-library/react';
 import i18n from 'i18next';
 import { userEvent } from '@testing-library/user-event';
-
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { IStateSchema } from '@/app/providers/StoreProvider';
-
-import { $api } from '@/shared/api/api';
+import { mockedApi } from '@/shared/const/tests';
 
 import {
   EProfileCardTestIdButtons,
-  EProfileCardTestIdInputs, EValidateProfileError,
+  EProfileCardTestIdInputs,
+  EValidateProfileError,
   getProfileCardTestId,
   getValidateTextError,
   profileReducer,
@@ -121,7 +120,7 @@ describe('widgets/Profile', () => {
       asyncReducers,
     });
 
-    const mockedPut = jest.spyOn($api, 'put').mockImplementation();
+    const mockedPut = mockedApi.put.mockResolvedValue({});
 
     const editButton = screen.getByTestId(getProfileCardTestId(EProfileCardTestIdButtons.EDIT_BUTTON));
     const saveButton = screen.getByTestId(getProfileCardTestId(EProfileCardTestIdButtons.SAVE_BUTTON));

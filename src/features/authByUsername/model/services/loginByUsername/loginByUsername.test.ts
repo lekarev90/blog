@@ -1,11 +1,9 @@
-import i18n from '@/shared/config/i18n/i18nTest.config';
+import i18n from 'i18next';
 
 import { userActions } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 import { loginByUsername } from './loginByUsername';
-
-jest.mock('axios');
 
 describe('loginByUsername', () => {
   test('success login', async () => {

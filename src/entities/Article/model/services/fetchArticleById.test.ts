@@ -1,13 +1,9 @@
+import i18n from 'i18next';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import i18n from '@/shared/config/i18n/i18nTest.config';
 
 import { fetchArticleById } from './fetchArticleById';
 
 describe('loginByUsername', () => {
-  beforeAll(async () => {
-    await i18n.init();
-  });
-
   test('success response with data', async () => {
     const data = { someData: 'text', id: '2' };
 
