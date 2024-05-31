@@ -10,7 +10,7 @@ describe('Routing', () => {
 
   describe('User authorized', () => {
     it('Visit profile page', () => {
-      cy.login('testUser', '123');
+      cy.login(Cypress.env('testUser'), Cypress.env('testUserPassword'));
       cy.visit('/profile/1');
       cy.get(selectByTestId('profile-page')).should('exist');
     });

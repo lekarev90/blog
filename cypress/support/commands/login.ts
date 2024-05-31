@@ -3,7 +3,7 @@ import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localstorage';
 export const login = (username: string = 'testUser', password: string = '123') => {
   cy.request({
     method: 'POST',
-    url: 'http://localhost:8000/login',
+    url: `${Cypress.env('api_server')}/login`,
     body: {
       username,
       password,
