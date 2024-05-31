@@ -2472,6 +2472,14 @@
       "roles": [
         "USER"
       ]
+    },
+    {
+      "id": "4",
+      "username": "testUser",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ]
     }
   ],
   "profile": [
