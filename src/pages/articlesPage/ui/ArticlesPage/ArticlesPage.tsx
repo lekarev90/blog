@@ -1,17 +1,22 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Page } from '@/shared/ui/Page';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import {
-  ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData, ArticleListHeader,
+  ArticleListHeader, ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,
 } from '@/widgets/articleList';
 
 import { VStack } from '@/shared/ui/Stack';
+import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import { EArticlesView } from '@/entities/Article';
 
 const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();
   const { isLoading } = useSelector(getArticlesListData) || {};
+  const initView = (localStorage.getItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY) as EArticlesView) || EArticlesView.LIST;
+
+  const [articlesView, setArticlesView] = useState(initView);
 
   const articles = useSelector(getArticles.selectAll);
 
@@ -19,11 +24,16 @@ const ArticlesPage = memo(() => {
     dispatch(fetchNextArticlesListPage());
   }, [dispatch]);
 
+  const onSwitchArticleSwitch = (newView: EArticlesView) => {
+    setArticlesView(newView);
+    localStorage.setItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY, newView);
+  };
+
   return (
     <Page onScrollEnd={onLoadNextPart}>
       <VStack Component="section" gap="32">
-        <ArticleListHeader />
-        <ArticlesList articles={articles} isLoading={isLoading} withMoreButton />
+        <ArticleListHeader articlesView={articlesView} onSwitchArticleSwitch={onSwitchArticleSwitch} />
+        <ArticlesList articles={articles} isLoading={isLoading} articlesView={articlesView} withMoreButton />
       </VStack>
     </Page>
   );

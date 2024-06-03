@@ -26,7 +26,7 @@ export const ArticleListItemList = memo(({
   const textBlock = blocks.find((block) => block.type === EArticleBlockType.TEXT) as IArticleTextBlock;
 
   return (
-    <Card className={styles.container}>
+    <Card className={styles.container} data-testid="ArticlesList.Item.List">
       <div className={styles.header}>
         {user.avatar && <Avatar src={user.avatar} alt={user.username} size={30} />}
         <Text text={user.username} className={styles.user} />

@@ -28,10 +28,10 @@ const BLOCKS: Record<EArticleBlockType, FC<TArticleBlock & any>> = {
 export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
   blocks, title, subtitle, img, views, createdAt,
 }) => (
-  <VStack Component="article" gap="16">
+  <VStack Component="article" gap="16" data-testid="ArticleDetails">
     <VStack gap="4">
       {img && <Avatar alt={title} src={img} size={200} />}
-      {title && <Text size={TextSize.L} title={title} text={subtitle} />}
+      {title && <Text size={TextSize.L} title={title} text={subtitle} titleDataTestId="ArticleDetails.Title" />}
       <HStack gap="4">
         <Icon Svg={EyeIcon} />
         <Text text={views} />

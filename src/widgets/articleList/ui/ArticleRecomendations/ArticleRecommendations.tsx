@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Text } from '@/shared/ui/Text';
 import { VStack } from '@/shared/ui/Stack';
+import { EArticlesView } from '@/entities/Article';
 
 import { ArticlesList } from '../ArticleList/ArticlesList';
 import { useGetArticleRecommendationsQuery } from '../../api/getArticleRecommendations';
@@ -15,7 +16,7 @@ export const ArticleRecommendations = memo(() => {
   return (
     <VStack Component="section" gap="16">
       <Text title={t('articles:recommendationTitle')} />
-      <ArticlesList articles={articles} isLoading={isLoading} withMoreButton={false} />
+      <ArticlesList articles={articles} isLoading={isLoading} withMoreButton={false} articlesView={EArticlesView.GRID} />
     </VStack>
   );
 });

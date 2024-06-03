@@ -16,16 +16,18 @@ interface CommentCardProps extends IComment {
   className?: string;
 }
 
-export const CommentCard = memo(({ user, text, className }: CommentCardProps) => {
+export const CommentCard = memo(({
+  user, text, className,
+}: CommentCardProps) => {
   const { username, avatar, id: userId } = user;
 
   return (
-    <div className={cx(styles.container, className)}>
+    <div className={cx(styles.container, className)} data-testid="CommentCard">
       <AppLink to={getRouteProfile(userId)} className={styles.header}>
         {avatar && <Avatar src={avatar} alt={username} size={30} />}
         <Text title={username} />
       </AppLink>
-      <Text text={text} className={styles.text} />
+      <Text text={text} className={styles.text} textDataTestId="CommentCard.Text" />
     </div>
   );
 });

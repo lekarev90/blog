@@ -15,18 +15,21 @@ import { articlesSearchActions, articlesSearchReducer } from '../../model/slices
 import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';
 import { articlesListActions } from '../../model/slices/articlesListSlice';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList';
-import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
 
 const reducers = {
   articlesSearch: articlesSearchReducer,
 };
 
-export const ArticleListHeader = memo(() => {
+interface IArticleListHeaderProps {
+  articlesView: EArticlesView
+  onSwitchArticleSwitch: (newView: EArticlesView) => void
+}
+
+export const ArticleListHeader = memo(({ articlesView, onSwitchArticleSwitch }: IArticleListHeaderProps) => {
   const { t } = useTranslation('articles');
   const dispatch = useAppDispatch();
 
   const { type = EArticleTypes.ALL } = useSelector(getArticlesSearchText) || {};
-  const { articlesView = EArticlesView.GRID } = useSelector(getArticlesListData) || {};
 
   const fetchArticlesWithFullReset = useCallback(() => {
     dispatch(articlesListActions.setPage(1));
@@ -46,15 +49,11 @@ export const ArticleListHeader = memo(() => {
     fetchArticlesWithFullReset();
   }, [dispatch, fetchArticlesWithFullReset]);
 
-  const onSwitchView = useCallback((view: EArticlesView) => {
-    dispatch(articlesListActions.setArticlesView(view));
-  }, [dispatch]);
-
   return (
     <DynamicModuleLoader reducers={reducers}>
       <HStack justify="between">
         <ArticlesListSort onSwitchSort={fetchArticlesWithFullReset} />
-        <ArticlesListViewSwitcher onSwitchView={onSwitchView} currentArticleView={articlesView} />
+        <ArticlesListViewSwitcher onSwitchView={onSwitchArticleSwitch} currentArticleView={articlesView} />
       </HStack>
       <VStack gap="8">
         <HStack Component={Card}>

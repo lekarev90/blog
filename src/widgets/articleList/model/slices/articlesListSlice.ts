@@ -2,12 +2,11 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 
 import { IStateSchema } from '@/app/providers/StoreProvider';
 
-import { EArticlesView, IArticle } from '@/entities/Article';
-import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import { IArticle } from '@/entities/Article';
 
-import { ARTICLES_LIST_DATA } from '../helpers/helpers';
 import { IArticlesListSchema } from '../types/articlesListSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList';
+import { QUANTITY_LIMIT } from '../const/const';
 
 const articlesListAdapter = createEntityAdapter({
   selectId: (comment: IArticle) => comment.id,
@@ -20,9 +19,6 @@ const initialState = articlesListAdapter.getInitialState<IArticlesListSchema>({
   entities: {},
   page: 0,
   hasMore: true,
-  articlesView: EArticlesView.LIST,
-  quantityLimit: ARTICLES_LIST_DATA[EArticlesView.LIST].SKELETON_QUANTITY,
-  _inited: false,
 });
 
 export const getArticles = articlesListAdapter.getSelectors<IStateSchema>(
@@ -33,20 +29,6 @@ const articlesListSlice = createSlice({
   name: 'articlesListSlice',
   initialState,
   reducers: {
-    init: (state) => {
-      const initialArticleListView = (localStorage.getItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY) as EArticlesView) || EArticlesView.LIST;
-      const quantityLimit = ARTICLES_LIST_DATA[initialArticleListView].SKELETON_QUANTITY;
-
-      state.articlesView = initialArticleListView;
-      state.quantityLimit = quantityLimit;
-      state._inited = true;
-    },
-    setArticlesView: (state, action: PayloadAction<EArticlesView>) => {
-      const quantityLimit = ARTICLES_LIST_DATA[action.payload].SKELETON_QUANTITY;
-      localStorage.setItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY, action.payload);
-      state.articlesView = action.payload;
-      state.quantityLimit = quantityLimit;
-    },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
@@ -70,7 +52,7 @@ const articlesListSlice = createSlice({
         state.error = undefined;
         state.isLoading = false;
 
-        state.hasMore = action.payload.length >= state.quantityLimit;
+        state.hasMore = action.payload.length >= QUANTITY_LIMIT;
 
         const { withSetAll } = action.meta.arg || {};
 

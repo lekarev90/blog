@@ -12,25 +12,25 @@ interface AddCommentFormProps {
   onChangeComment: (text: string) => void;
 }
 
-export const AddCommentForm = ({
-  text = '', onChangeComment, onSendComment,
-}: AddCommentFormProps) => {
+export const AddCommentForm = ({ text = '', onChangeComment, onSendComment }: AddCommentFormProps) => {
   const { t } = useTranslation('comments');
 
   return (
-    <HStack gap="32" maxWidth align="stretch">
+    <HStack gap="32" maxWidth align="stretch" data-testid="AddCommentForm">
       <Input
         name="comment"
         placeholder={t('comments:addComment')}
         value={text}
         onChange={onChangeComment}
         className={styles.input}
+        data-testid="AddCommentForm.Input"
       />
       <Button
         className={styles.button}
         variant={ButtonVariants.OUTLINE}
         onClick={onSendComment}
         disabled={!text}
+        data-testid="AddCommentForm.Button"
       >
         {t('comments:sendComment')}
       </Button>

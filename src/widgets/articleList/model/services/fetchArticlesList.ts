@@ -8,13 +8,14 @@ import { getArticlesSortData } from '@/features/articleList';
 
 import { getArticlesListData } from '../selectors/articlesList.selectors';
 import { getArticlesSearchText } from '../selectors/articlesSearch.selectors';
+import { QUANTITY_LIMIT } from '../const/const';
 
 export const fetchArticlesList = createAsyncThunk<IArticle[], {withSetAll: boolean } | undefined, IThunkConfig<string>>(
   'articles/fetchArticlesList',
   async (_, { extra, rejectWithValue, getState }) => {
     const state = getState() as IStateSchema;
 
-    const { quantityLimit, page } = getArticlesListData(state) || {};
+    const { page } = getArticlesListData(state) || {};
     const { sortBy, orderBy } = getArticlesSortData(state) || {};
     const { text, type } = getArticlesSearchText(state) || {};
 
@@ -29,7 +30,7 @@ export const fetchArticlesList = createAsyncThunk<IArticle[], {withSetAll: boole
       const { data } = await extra.api.get<IArticle[]>(`${ARTICLES_REQUEST_URL}`, {
         params: {
           _expand: 'user',
-          _limit: quantityLimit,
+          _limit: QUANTITY_LIMIT,
           _page: page,
           _sort: sortBy,
           _order: orderBy,

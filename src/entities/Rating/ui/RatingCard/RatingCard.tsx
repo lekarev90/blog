@@ -29,15 +29,18 @@ export const RatingCard = memo(({
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
-  const onSelectStars = useCallback((selectedStarsCount: number) => {
-    setStarsCount(selectedStarsCount);
+  const onSelectStars = useCallback(
+    (selectedStarsCount: number) => {
+      setStarsCount(selectedStarsCount);
 
-    if (hasFeedback) {
-      setIsModalOpen(true);
-    } else {
-      onAccept?.(selectedStarsCount);
-    }
-  }, [hasFeedback, onAccept]);
+      if (hasFeedback) {
+        setIsModalOpen(true);
+      } else {
+        onAccept?.(selectedStarsCount);
+      }
+    },
+    [hasFeedback, onAccept],
+  );
 
   const acceptHandle = useCallback(() => {
     setIsModalOpen(false);
@@ -52,12 +55,17 @@ export const RatingCard = memo(({
   const modalContent = (
     <>
       <Text title={feedbackTitle} />
-      <Input name="feedbackRating" placeholder={t('translation:feedbackRating.placeholder')} onChange={setFeedback} />
+      <Input
+        name="feedbackRating"
+        placeholder={t('translation:feedbackRating.placeholder')}
+        onChange={setFeedback}
+        data-testid="RatingCard.Input"
+      />
     </>
   );
 
   return (
-    <Card>
+    <Card data-testid="RatingCard">
       <VStack gap="8" align="center">
         <Text title={starsCount ? t('translation:feedbackRating.rated') : title} />
         <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
@@ -68,10 +76,10 @@ export const RatingCard = memo(({
           <VStack maxWidth gap="32">
             {modalContent}
             <HStack gap="16" justify="end">
-              <Button onClick={cancelHandle} variant={ButtonVariants.OUTLINE_RED}>
+              <Button onClick={cancelHandle} variant={ButtonVariants.OUTLINE_RED} data-testid="RatingCard.Close">
                 {t('translation:feedbackRating.closeBtn')}
               </Button>
-              <Button onClick={acceptHandle} variant={ButtonVariants.OUTLINE}>
+              <Button onClick={acceptHandle} variant={ButtonVariants.OUTLINE} data-testid="RatingCard.Send">
                 {t('translation:feedbackRating.sendFeedbackBtn')}
               </Button>
             </HStack>

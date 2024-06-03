@@ -49,7 +49,11 @@ export const ArticleComments = memo(({ id }: ArticleCommentsProps) => {
     <DynamicModuleLoader reducers={reducers}>
       <VStack Component="section" gap="16">
         <Text title={t('articles:commentTitle')} />
-        <AddCommentForm text={commentText} onSendComment={onChangeComment} onChangeComment={setCommentText} />
+        <AddCommentForm
+          text={commentText}
+          onSendComment={onChangeComment}
+          onChangeComment={setCommentText}
+        />
         <CommentList isLoading={isCommentsLoading} comments={comments} />
       </VStack>
     </DynamicModuleLoader>

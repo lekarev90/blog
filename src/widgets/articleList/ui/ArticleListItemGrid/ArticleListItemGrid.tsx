@@ -18,7 +18,7 @@ export const ArticleListItemGrid = memo(({
   img, title, createdAt, types, views, id,
 }: IArticle) => (
   <AppLink to={getRouteArticleDetails(id)}>
-    <Card className={styles.container}>
+    <Card className={styles.container} data-testid="ArticlesList.Item.Grid">
       <div className={styles.imageWrapper}>
         <AppImage fallback={<Skeleton width={200} height={200} />} src={img} alt={title} className={styles.img} />
         <Text size={TextSize.S} text={createdAt} className={styles.dateWrapper} descriptionClassName={styles.dateText} />

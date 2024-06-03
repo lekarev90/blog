@@ -29,7 +29,8 @@ interface SectionTitleProps {
   descriptionClassName?: string;
   titleClassName?: string;
   tooltipDescriptionText?: string;
-  'data-testid'?: string;
+  titleDataTestId?: string;
+  textDataTestId?: string;
 }
 
 type HTMLTagProps<T> = HTMLProps<T> & { [key: string]: any };
@@ -43,7 +44,8 @@ export const Text = memo(
     textTag,
     variant = TextVariant.PRIMARY,
     size = TextSize.M,
-    'data-testid': dataTestId = 'TEXT',
+    titleDataTestId,
+    textDataTestId,
     descriptionClassName,
     titleClassName,
   }: SectionTitleProps) => {
@@ -54,14 +56,14 @@ export const Text = memo(
       className: cx(styles.title, titleClassName),
       children: title,
       title,
-      'data-testid': `${dataTestId}.Title`,
+      'data-testid': titleDataTestId,
     };
 
     const textProps: HTMLTagProps<typeof TextWrapperTag> = {
       className: cx(styles.text, descriptionClassName),
       children: text,
       title: text,
-      'data-testid': `${dataTestId}.Text`,
+      'data-testid': textDataTestId,
     };
 
     return (

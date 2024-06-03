@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -8,21 +8,22 @@ import { Text } from '@/shared/ui/Text';
 import { EArticlesView, IArticle } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { TFlexGap, HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, TFlexGap, VStack } from '@/shared/ui/Stack';
 
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
 import { fetchNextArticlesListPage } from '../../model/services/fetchNextArticlesListPage';
-import { articlesListActions, articlesListReducer } from '../../model/slices/articlesListSlice';
+import { articlesListReducer } from '../../model/slices/articlesListSlice';
 import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
-import { ARTICLES_LIST_DATA } from '../../model/helpers/helpers';
+import { ARTICLES_LIST_DATA, QUANTITY_LIMIT } from '../../model/const/const';
 
 import styles from './ArticlesList.module.scss';
 
-interface ArticleListProps {
+interface IArticleListProps {
   className?: string;
   articles?: IArticle[];
   isLoading?: boolean;
   withMoreButton?: boolean;
+  articlesView: EArticlesView;
 }
 
 const reducers = {
@@ -30,16 +31,14 @@ const reducers = {
 };
 
 export const ArticlesList = memo(({
-  isLoading, withMoreButton, articles = [],
-}: ArticleListProps) => {
+  isLoading, withMoreButton, articles = [], articlesView,
+}: IArticleListProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  const {
-    hasMore, articlesView = EArticlesView.LIST, quantityLimit = 9, _inited,
-  } = useSelector(getArticlesListData) || {};
+  const { hasMore } = useSelector(getArticlesListData) || {};
 
-  const isShowMoreButton = withMoreButton && hasMore && ARTICLES_LIST_DATA[articlesView]?.HAS_MORE_BUTTON && !isLoading;
+  const isShowMoreButton = withMoreButton && hasMore && ARTICLES_LIST_DATA[articlesView].HAS_MORE_BUTTON && !isLoading;
   const isListView = articlesView === EArticlesView.LIST;
 
   const Component = ARTICLES_LIST_DATA[articlesView].COMPONENT;
@@ -48,7 +47,9 @@ export const ArticlesList = memo(({
   const StackComponent = isListView ? VStack : HStack;
   const stackProps: Record<string, TFlexGap> = isListView ? { gap: '16' } : { gap: '8' };
 
-  const skeletonComponents = Array.from({ length: quantityLimit }, (_, index) => <ComponentSkeleton key={index} />);
+  const skeletonComponents = Array.from({ length: QUANTITY_LIMIT }, (_, index) => (
+    <ComponentSkeleton key={index} />
+  ));
 
   const renderComponent = useCallback(
     () => articles.map((article, index) => <Component key={index} {...article} />),
@@ -59,16 +60,12 @@ export const ArticlesList = memo(({
     dispatch(fetchNextArticlesListPage());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(articlesListActions.init());
-  }, [dispatch]);
-
   useInitSortAndSearchFromSearchParams();
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <StackComponent align="stretch" {...stackProps}>
-        {_inited && renderComponent()}
+      <StackComponent align="stretch" data-testid="ArticlesList" {...stackProps}>
+        {Boolean(articles?.length) && renderComponent()}
         {isLoading && skeletonComponents}
         {isShowMoreButton && (
           <StackComponent

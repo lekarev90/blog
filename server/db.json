@@ -2466,7 +2466,7 @@
       "avatar": "https://picsum.photos/200/300"
     },
     {
-      "id": "3",
+      "id": "4",
       "username": "noAvatar",
       "password": "123",
       "roles": [
@@ -2474,7 +2474,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": "5",
       "username": "testUser",
       "password": "123",
       "roles": [
@@ -2514,6 +2514,28 @@
       "country": "Spain",
       "city": "Valencia",
       "username": "Live_is_good",
+      "avatar": "https://picsum.photos/600/600"
+    },
+    {
+      "id": "4",
+      "firstName": "Mikhail",
+      "lastName": "Prohrov",
+      "age": "39",
+      "currency": "USD",
+      "country": "Spain",
+      "city": "Valencia",
+      "username": "noAvatar",
+      "avatar": "https://picsum.photos/600/600"
+    },
+    {
+      "id": "5",
+      "firstName": "Test name",
+      "lastName": "Tes 2nd name",
+      "age": "25",
+      "currency": "USD",
+      "country": "Spain",
+      "city": "Valencia",
+      "username": "testUser",
       "avatar": "https://picsum.photos/600/600"
     }
   ],
