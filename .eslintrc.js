@@ -17,13 +17,11 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    // project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'lekarev'],
   rules: {
     'react/no-array-index-key': 0,
     'react/prop-types': 0,
-    // 'react/jsx-indent-props': [2, 2],
     'react/jsx-max-props-per-line': [
       2,
       {
@@ -35,7 +33,6 @@ module.exports = {
     ],
     'no-underscore-dangle': 0,
     'no-console': ['error', { allow: ['warn', 'error', 'assert'] }],
-    '@typescript-eslint/indent': [2, 2],
     'react/jsx-filename-extension': [
       2,
       {
