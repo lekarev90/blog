@@ -6,9 +6,9 @@ import { ETheme } from '@/shared/const/ETheme';
 import { useJsonSettings } from '@/entities/User';
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const { theme: defaultTheme = ETheme.LIGHT } = useJsonSettings();
+  const { theme: defaultTheme } = useJsonSettings();
 
-  const [theme, setTheme] = useState<ETheme>(defaultTheme);
+  const [theme, setTheme] = useState<ETheme>(defaultTheme || ETheme.LIGHT);
   const [isThemeInitialized, setIsThemeInitialized] = useState(false);
 
   const defaultProps = useMemo(
@@ -20,7 +20,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 
   useEffect(() => {
-    if (!isThemeInitialized) {
+    if (!isThemeInitialized && defaultTheme) {
       setTheme(defaultTheme);
       setIsThemeInitialized(true);
     }
