@@ -1,43 +1,42 @@
 import { useContext } from 'react';
 
 import { ThemeContext } from '../context/ThemeContext';
-import { Theme } from '../../const/theme';
-import { LOCAL_STORAGE_THEME_KEY } from '../../const/localstorage';
+import { ETheme } from '../../const/ETheme';
 
 interface UseThemeResult {
-  toggleTheme: () => void;
-  theme: Theme;
+  toggleTheme: (saveAction?: (theme: ETheme) => void) => void;
+  theme: ETheme;
 }
 
 export const useTheme = (): UseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext);
 
-  const toggleTheme = (): void => {
-    let newTheme: Theme;
+  const toggleTheme = (saveAction?: (theme: ETheme) => void): void => {
+    let newTheme: ETheme;
 
     switch (theme) {
-      case Theme.DARK:
-        newTheme = Theme.LIGHT;
+      case ETheme.DARK:
+        newTheme = ETheme.LIGHT;
         break;
-      case Theme.LIGHT:
-        newTheme = Theme.ORANGE;
+      case ETheme.LIGHT:
+        newTheme = ETheme.ORANGE;
         break;
-      case Theme.ORANGE:
-        newTheme = Theme.DARK;
+      case ETheme.ORANGE:
+        newTheme = ETheme.DARK;
         break;
       default:
-        newTheme = Theme.LIGHT;
+        newTheme = ETheme.LIGHT;
     }
 
     if (setTheme) {
       setTheme(newTheme);
     }
 
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+    saveAction?.(newTheme);
   };
 
   return {
-    theme: theme || Theme.LIGHT,
+    theme: theme || ETheme.LIGHT,
     toggleTheme,
   };
 };

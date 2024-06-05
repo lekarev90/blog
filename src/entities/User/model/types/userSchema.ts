@@ -1,5 +1,7 @@
-import { ERoles } from '../const/const';
 import { IFeatureFlags } from '@/shared/types/IFeatureFlags';
+
+import { ERoles } from '../const/const';
+import { IJsonSettings } from './jsonSettings';
 
 export interface IUser {
   id: string;
@@ -7,7 +9,8 @@ export interface IUser {
   password?: string;
   roles?: ERoles[];
   avatar?: string;
-  features?: IFeatureFlags
+  features?: IFeatureFlags;
+  jsonSettings?: IJsonSettings;
 }
 
 export interface IUserSchema {

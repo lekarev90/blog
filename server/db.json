@@ -2448,6 +2448,9 @@
       "features": {
         "isArticleRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "orange"
+      },
       "avatar": "https://picsum.photos/200/200"
     },
     {
@@ -2459,6 +2462,9 @@
       ],
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "dark"
       },
       "avatar": "https://picsum.photos/200/300"
     },
@@ -2472,6 +2478,9 @@
       "features": {
         "isArticleRatingEnabled": false
       },
+      "jsonSettings": {
+        "theme": "dark"
+      },
       "avatar": "https://picsum.photos/200/300"
     },
     {
@@ -2483,6 +2492,9 @@
       ],
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "dark"
       }
     },
     {
@@ -2494,6 +2506,9 @@
       ],
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "dark"
       }
     }
   ],

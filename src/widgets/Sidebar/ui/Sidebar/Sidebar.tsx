@@ -3,9 +3,9 @@ import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/Button';
 import { LangSwitcher } from '@/shared/ui/LangSwitcher';
-import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';
 import { VStack } from '@/shared/ui/Stack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
