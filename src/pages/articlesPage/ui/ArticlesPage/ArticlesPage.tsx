@@ -8,13 +8,13 @@ import {
 } from '@/widgets/articleList';
 
 import { VStack } from '@/shared/ui/Stack';
-import { ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import { LOCALSTORAGE_ARTICLES_LIST_VIEW_KEY } from '@/shared/const/localstorage';
 import { EArticlesView } from '@/entities/Article';
 
 const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();
   const { isLoading } = useSelector(getArticlesListData) || {};
-  const initView = (localStorage.getItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY) as EArticlesView) || EArticlesView.LIST;
+  const initView = (localStorage.getItem(LOCALSTORAGE_ARTICLES_LIST_VIEW_KEY) as EArticlesView) || EArticlesView.LIST;
 
   const [articlesView, setArticlesView] = useState(initView);
 
@@ -26,7 +26,7 @@ const ArticlesPage = memo(() => {
 
   const onSwitchArticleSwitch = (newView: EArticlesView) => {
     setArticlesView(newView);
-    localStorage.setItem(ARTICLES_LIST_VIEW_LOCALSTORAGE_KEY, newView);
+    localStorage.setItem(LOCALSTORAGE_ARTICLES_LIST_VIEW_KEY, newView);
   };
 
   return (

@@ -1,12 +1,13 @@
 import React, { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { getUserAuthData, userActions } from '@/entities/User';
+import { getUserAuthData, initAuthData } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
+import { PageLoader } from '@/widgets/PageLoader';
 
 const App = () => {
   const { theme } = useTheme();
@@ -18,8 +19,12 @@ const App = () => {
   }, [theme]);
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
+    dispatch(initAuthData());
   }, [dispatch]);
+
+  if (!initialized) {
+    return <PageLoader />;
+  }
 
   return (
     <div className="app">

@@ -24,16 +24,6 @@ describe('userReducer', () => {
     expect(result).toEqual(expectedState);
   });
 
-  test('initAuthData', () => {
-    const initialState: DeepPartial<IUserSchema> = {};
-
-    const expectedState: DeepPartial<IUserSchema> = { initialized: true };
-
-    const result = userReducer(initialState as IUserSchema, userActions.initAuthData());
-
-    expect(result).toEqual(expectedState);
-  });
-
   test('logout', () => {
     const authData: IUser = { id: '123', username: 'username', roles: [ERoles.ADMIN] };
 

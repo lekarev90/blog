@@ -1,4 +1,4 @@
-import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localstorage';
+import { LOCALSTORAGE_USER_KEY } from '../../../src/shared/const/localstorage';
 import { IUser } from '../../../src/entities/User';
 
 const defaultTestUser = Cypress.env('testUser');
@@ -25,7 +25,7 @@ export const login = (username: string = defaultTestUser, password: string = def
       password,
     },
   }).then(({ body }) => {
-    window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body));
+    window.localStorage.setItem(LOCALSTORAGE_USER_KEY, JSON.stringify(body));
 
     return body;
   });
