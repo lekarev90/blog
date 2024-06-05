@@ -7,15 +7,14 @@ import { Page } from '@/shared/ui/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRating } from '@/features/articleRaiting';
 import { ArticleRecommendations } from '@/widgets/articleList';
+import { toggleFeatures } from '@/shared/lib/features';
 
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 const ArticleDetailsPage = memo(() => {
   const { t } = useTranslation('articles');
   const { id } = useParams<{ id: string }>();
-
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
   if (!id) {
     return (
@@ -25,11 +24,21 @@ const ArticleDetailsPage = memo(() => {
     );
   }
 
+  const rating = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => (
+      <Card>
+        {t('articles:features.rating.comingSoon')}
+      </Card>
+    ),
+  });
+
   return (
     <VStack Component={Page} gap="32" flexWrap={false}>
       <ArticleDetailsHeader id={id} />
       <ArticleRoot id={id} />
-      {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+      {rating}
       <ArticleRecommendations />
       <ArticleComments id={id} />
     </VStack>
