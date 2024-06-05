@@ -2445,6 +2445,9 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://picsum.photos/200/200"
     },
     {
@@ -2454,6 +2457,9 @@
       "roles": [
         "MANAGER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://picsum.photos/200/300"
     },
     {
@@ -2463,6 +2469,9 @@
       "roles": [
         "USER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://picsum.photos/200/300"
     },
     {
@@ -2471,7 +2480,10 @@
       "password": "123",
       "roles": [
         "USER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": false
+      }
     },
     {
       "id": "5",
@@ -2479,7 +2491,10 @@
       "password": "123",
       "roles": [
         "MANAGER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": true
+      }
     }
   ],
   "profile": [

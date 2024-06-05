@@ -9,10 +9,13 @@ import { ArticleRating } from '@/features/articleRaiting';
 import { ArticleRecommendations } from '@/widgets/articleList';
 
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
+import { getFeatureFlag } from '@/shared/lib/features';
 
 const ArticleDetailsPage = memo(() => {
   const { t } = useTranslation('articles');
   const { id } = useParams<{ id: string }>();
+
+  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
   if (!id) {
     return (
@@ -26,7 +29,7 @@ const ArticleDetailsPage = memo(() => {
     <VStack Component={Page} gap="32" flexWrap={false}>
       <ArticleDetailsHeader id={id} />
       <ArticleRoot id={id} />
-      <ArticleRating articleId={id} />
+      {isArticleRatingEnabled && <ArticleRating articleId={id} />}
       <ArticleRecommendations />
       <ArticleComments id={id} />
     </VStack>
