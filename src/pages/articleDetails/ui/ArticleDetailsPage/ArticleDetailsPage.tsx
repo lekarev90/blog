@@ -7,7 +7,7 @@ import { Page } from '@/shared/ui/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRating } from '@/features/articleRaiting';
 import { ArticleRecommendations } from '@/widgets/articleList';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import { Card } from '@/shared/ui/Card';
@@ -24,21 +24,19 @@ const ArticleDetailsPage = memo(() => {
     );
   }
 
-  const rating = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => (
-      <Card>
-        {t('articles:features.rating.comingSoon')}
-      </Card>
-    ),
-  });
-
   return (
     <VStack Component={Page} gap="32" flexWrap={false}>
       <ArticleDetailsHeader id={id} />
       <ArticleRoot id={id} />
-      {rating}
+      <ToggleFeatures
+        feature="isArticleRatingEnabled"
+        on={<ArticleRating articleId={id} />}
+        off={(
+          <Card>
+            {t('articles:features.rating.comingSoon')}
+          </Card>
+          )}
+      />
       <ArticleRecommendations />
       <ArticleComments id={id} />
     </VStack>
