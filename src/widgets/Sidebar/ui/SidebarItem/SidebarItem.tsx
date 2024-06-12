@@ -20,7 +20,11 @@ interface SidebarItemProps {
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const { authData } = useSelector(getUserAuthData);
 
-  if (item.isAuthOnly && !authData) {
+  const {
+    path, text, Icon, isAuthOnly,
+  } = item;
+
+  if (isAuthOnly && !authData) {
     return null;
   }
 
@@ -28,11 +32,11 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     <AppLink
       className={cx(styles.menuItem, { collapsed })}
       color={AppLinkColor.SECONDARY}
-      to={item.path}
+      to={path}
     >
-      <item.Icon className={styles.icon} />
+      <Icon width={20} height={20} className={styles.icon} />
       <span className={styles.link}>
-        {item.text}
+        {text}
       </span>
     </AppLink>
   );

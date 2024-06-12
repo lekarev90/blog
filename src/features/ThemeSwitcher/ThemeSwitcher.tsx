@@ -1,18 +1,18 @@
 import { type FC, memo, useCallback } from 'react';
 
 import { useTheme } from '@/shared/lib/hooks/useTheme';
-import DarkThemeIcon from '@/shared/assets/icons/theme-dark.svg';
-import LightThemeIcon from '@/shared/assets/icons/theme-light.svg';
 import { ETheme } from '@/shared/const/ETheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { saveJsonSettings } from '@/entities/User';
 
+import ThemeIcon from '@/shared/assets/icons/theme.svg';
+
 import { Button, ButtonVariants } from '../../shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon';
 
 export const ThemeSwitcher: FC = memo(() => {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const dispatch = useAppDispatch();
-  const currentIcon = theme === ETheme.DARK ? <DarkThemeIcon /> : <LightThemeIcon />;
 
   const onToggleThemeHandler = useCallback(
     () => {
@@ -25,7 +25,7 @@ export const ThemeSwitcher: FC = memo(() => {
 
   return (
     <Button onClick={onToggleThemeHandler} variant={ButtonVariants.CLEAR}>
-      {currentIcon}
+      <Icon Svg={ThemeIcon} width={40} height={40} />
     </Button>
   );
 });

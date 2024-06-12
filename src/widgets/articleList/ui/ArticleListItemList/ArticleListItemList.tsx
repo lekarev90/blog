@@ -47,7 +47,7 @@ export const ArticleListItemList = memo(({
           </Button>
         </AppLink>
         <Text text={String(views)} className={styles.views} />
-        <Icon Svg={EyeIcon} />
+        <Icon Svg={EyeIcon} width={20} height={20} />
       </div>
     </Card>
   );

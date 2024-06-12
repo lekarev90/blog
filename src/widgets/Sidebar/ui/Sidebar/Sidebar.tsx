@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/Button';
 import { LangSwitcher } from '@/shared/ui/LangSwitcher';
-import { VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/AppLogo';
 
@@ -76,10 +76,10 @@ export const Sidebar = memo(() => {
               <SidebarItem key={item.path} item={item} collapsed={collapsed} />
             ))}
           </VStack>
-          <VStack align="center" className={styles.switchers}>
+          <HStack justify="center" gap="8" className={styles.switchers}>
             <ThemeSwitcher />
             <LangSwitcher />
-          </VStack>
+          </HStack>
         </nav>
       )}
     />

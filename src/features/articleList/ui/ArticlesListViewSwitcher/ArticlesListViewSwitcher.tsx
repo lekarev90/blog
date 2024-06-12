@@ -38,7 +38,7 @@ export const ArticlesListViewSwitcher = memo(({ onSwitchView, currentArticleView
   <HStack gap="8">
     {Object.values(viewTypes).map(({ view, icon }) => (
       <Button onClick={() => onSwitchView(view)} key={view}>
-        <Icon Svg={icon} inverted className={cx({ isActive: view === currentArticleView })} />
+        <Icon Svg={icon} width={24} height={24} inverted className={cx({ isActive: view === currentArticleView })} />
       </Button>
     ))}
   </HStack>

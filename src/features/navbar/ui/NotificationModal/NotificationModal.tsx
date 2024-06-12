@@ -26,6 +26,8 @@ export const NotificationModal = memo(() => {
     <Icon
       Svg={Notification}
       className={styles.icon}
+      height={25}
+      width={25}
       inverted
     />
   );

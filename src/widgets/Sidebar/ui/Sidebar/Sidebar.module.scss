@@ -35,12 +35,20 @@
   width: var(--sidebar-width-v2);
   background: var(--light-bg-v2);
   border-radius: 32px;
+  display: flex;
+  flex-direction: column;
 
   & .menuContainer {
     margin-top: 0;
+    flex: 1 0 auto;
+  }
+
+  & .switchers {
+    position: static;
+    margin-bottom: 20px;
   }
 }
 
 .logo {
-  padding: 20px;
+  padding: 0 20px;
 }

@@ -26,7 +26,7 @@ export const ArticleListItemGrid = memo(({
       <div className={styles.infoWrapper}>
         <Text text={types.join(', ')} className={styles.typesWrapper} descriptionClassName={styles.typesText} />
         <Text text={String(views)} className={styles.views} />
-        <Icon Svg={EyeIcon} />
+        <Icon Svg={EyeIcon} width={20} height={20} />
       </div>
       <Text text={title} className={styles.title} />
     </Card>
