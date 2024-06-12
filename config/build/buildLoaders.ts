@@ -7,6 +7,19 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
     test: /\.svg$/,
     use: ['@svgr/webpack'],
     exclude: /node_modules/,
+    options: {
+      icon: true,
+      svgoConfig: {
+        plugins: [
+          {
+            name: 'convertColors',
+            params: {
+              currentColor: true,
+            },
+          },
+        ],
+      },
+    },
   };
 
   const tsLoader = {
