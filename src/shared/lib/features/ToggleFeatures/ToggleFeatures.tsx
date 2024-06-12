@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { getFeatureFlag } from '../setGetFeatures';
+import { getFeatureFlag } from '../model/helpers/setGetFeatures';
 import { IFeatureFlags } from '@/shared/types/IFeatureFlags';
 
 interface IToggleFeaturesProps {
