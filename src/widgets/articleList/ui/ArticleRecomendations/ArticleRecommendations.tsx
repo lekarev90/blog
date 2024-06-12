@@ -3,8 +3,8 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { EArticlesView } from '@/entities/Article';
+import { Text } from '@/shared/ui/depricated/Text';
 import { VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
 
 import { useGetArticleRecommendationsQuery } from '../../api/getArticleRecommendations';
 import { ArticlesList } from '../ArticleList/ArticlesList';

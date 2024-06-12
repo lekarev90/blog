@@ -6,7 +6,7 @@ import {
 } from '@/entities/Article';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Text, TextVariant } from '@/shared/ui/Text';
+import { Text, TextVariant } from '@/shared/ui/depricated/Text';
 
 import styles from './ArticleRoot.module.scss';
 

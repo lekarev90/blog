@@ -4,9 +4,9 @@ import { BrowserView, MobileView } from 'react-device-detect';
 
 import { NotificationList } from '@/entities/Notification';
 import Notification from '@/shared/assets/icons/notification-20-20.svg';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/depricated/Button';
+import { Icon } from '@/shared/ui/depricated/Icon';
 import { Drawer } from '@/shared/ui/Drawer';
-import { Icon } from '@/shared/ui/Icon';
 import { Popover } from '@/shared/ui/Popover';
 
 import styles from './NotificationModal.module.scss';

@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 
+import { Text } from '@/shared/ui/depricated/Text';
 import { VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
 
 import { IArticleTextBlock } from '../../model/types/article';
 

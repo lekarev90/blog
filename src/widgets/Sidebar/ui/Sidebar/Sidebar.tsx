@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/AppLogo';
-import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/Button';
-import { LangSwitcher } from '@/shared/ui/LangSwitcher';
+import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { LangSwitcher } from '@/shared/ui/depricated/LangSwitcher';
 import { HStack, VStack } from '@/shared/ui/Stack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';

@@ -8,8 +8,8 @@ import {
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Dropdown } from '@/shared/ui/Dropdown';
+import { Avatar } from '@/shared/ui/depricated/Avatar';
+import { Dropdown } from '@/shared/ui/depricated/Dropdown';
 
 interface NavbarMenuDropDownProps {
   authData: IUser;

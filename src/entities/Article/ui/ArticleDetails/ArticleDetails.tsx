@@ -2,10 +2,10 @@ import { FC, memo } from 'react';
 
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Icon } from '@/shared/ui/Icon';
+import { Avatar } from '@/shared/ui/depricated/Avatar';
+import { Icon } from '@/shared/ui/depricated/Icon';
+import { Text, TextSize } from '@/shared/ui/depricated/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { Text, TextSize } from '@/shared/ui/Text';
 
 import { EArticleBlockType } from '../../model/const/const';
 import { IArticle, TArticleBlock } from '../../model/types/article';

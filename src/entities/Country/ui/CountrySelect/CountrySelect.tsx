@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { ListBox } from '@/shared/ui/ListBox';
+import { ListBox } from '@/shared/ui/depricated/ListBox';
 
 import { ECountrySchema } from '../../model/const/const';
 import { CountrySelectorFieldName } from '../../model/types/countrySchema';

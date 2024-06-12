@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import { Card } from '@/shared/ui/Card';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { Card } from '@/shared/ui/depricated/Card';
+import { Skeleton } from '@/shared/ui/depricated/Skeleton';
 
 import styles from './ArticleListItemList.module.scss';
 

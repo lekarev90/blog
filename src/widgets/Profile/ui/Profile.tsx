@@ -18,8 +18,8 @@ import {
   updateProfileData,
 } from '@/features/editableProfileCard';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { Text, TextVariant } from '@/shared/ui/depricated/Text';
 import { VStack } from '@/shared/ui/Stack';
-import { Text, TextVariant } from '@/shared/ui/Text';
 
 export const Profile: FC = memo(() => {
   const { t } = useTranslation('profile');

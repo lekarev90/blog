@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { Loader } from '@/shared/ui/Loader';
+import { Loader } from '@/shared/ui/depricated/Loader';
 
 import styles from './PageLoader.module.scss';
 

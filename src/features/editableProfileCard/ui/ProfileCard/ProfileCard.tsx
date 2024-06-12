@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 
 import { CountrySelect } from '@/entities/Country';
 import { CurrencySelect } from '@/entities/Currency';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Input } from '@/shared/ui/Input';
-import { Loader } from '@/shared/ui/Loader';
+import { Avatar } from '@/shared/ui/depricated/Avatar';
+import { Input } from '@/shared/ui/depricated/Input';
+import { Loader } from '@/shared/ui/depricated/Loader';
 import { VStack } from '@/shared/ui/Stack';
 
 import { EProfileCardTestIdInputs, getProfileCardTestId } from '../../model/const/const';

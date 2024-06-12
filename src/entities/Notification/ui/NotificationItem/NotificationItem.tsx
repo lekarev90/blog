@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import { AppLink } from '@/shared/ui/AppLink';
-import { Card } from '@/shared/ui/Card';
-import { Text } from '@/shared/ui/Text';
+import { AppLink } from '@/shared/ui/depricated/AppLink';
+import { Card } from '@/shared/ui/depricated/Card';
+import { Text } from '@/shared/ui/depricated/Text';
 
 import { INotificationSchema } from '../../model/types/NotificationSchema';
 

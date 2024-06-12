@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { TSortOrder } from '@/shared/types/sort';
-import { Select, SelectOptions } from '@/shared/ui/Select';
+import { Select, SelectOptions } from '@/shared/ui/depricated/Select';
 import { HStack } from '@/shared/ui/Stack';
 
 import { EArticleSortField, ESortFieldNames } from '../../model/const/const';

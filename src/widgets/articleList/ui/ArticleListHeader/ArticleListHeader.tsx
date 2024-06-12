@@ -8,8 +8,8 @@ import { ArticlesListSort, ArticlesListTabs, ArticlesListViewSwitcher } from '@/
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/depricated/Card';
+import { Input } from '@/shared/ui/depricated/Input';
 import { HStack, VStack } from '@/shared/ui/Stack';
 
 import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';

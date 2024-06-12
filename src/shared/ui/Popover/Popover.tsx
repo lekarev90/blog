@@ -4,7 +4,7 @@ import { Popover as HPopover, PopoverButton, PopoverPanel } from '@headlessui/re
 import { AnchorProps } from '@headlessui/react/dist/internal/floating';
 import classNames from 'classnames/bind';
 
-import { Button } from '../Button/Button';
+import { Button } from '../depricated/Button';
 
 import styles from './Popover.module.scss';
 

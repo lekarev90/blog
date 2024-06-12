@@ -7,14 +7,14 @@ import {
 } from '@/entities/Article';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/AppImage';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { Card } from '@/shared/ui/Card';
-import { Icon } from '@/shared/ui/Icon';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text } from '@/shared/ui/Text';
+import { AppImage } from '@/shared/ui/depricated/AppImage';
+import { AppLink } from '@/shared/ui/depricated/AppLink';
+import { Avatar } from '@/shared/ui/depricated/Avatar';
+import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { Card } from '@/shared/ui/depricated/Card';
+import { Icon } from '@/shared/ui/depricated/Icon';
+import { Skeleton } from '@/shared/ui/depricated/Skeleton';
+import { Text } from '@/shared/ui/depricated/Text';
 
 import styles from './ArticleListItemList.module.scss';
 

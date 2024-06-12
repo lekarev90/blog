@@ -5,8 +5,8 @@ import classNames from 'classnames/bind';
 import { EArticlesView } from '@/entities/Article';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import GridIcon from '@/shared/assets/icons/tiled-24-24.svg';
-import { Button } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
+import { Button } from '@/shared/ui/depricated/Button';
+import { Icon } from '@/shared/ui/depricated/Icon';
 import { HStack } from '@/shared/ui/Stack';
 
 import styles from './ArticlesListViewSwitcher.module.scss';

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames/bind';
 
 import { getUserAuthData } from '@/entities/User';
-import { AppLink, AppLinkColor } from '@/shared/ui/AppLink';
+import { AppLink, AppLinkColor } from '@/shared/ui/depricated/AppLink';
 
 import { ISidebarItem } from '../../model/types/types';
 

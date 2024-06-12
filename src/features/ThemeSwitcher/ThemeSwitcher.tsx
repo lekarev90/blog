@@ -5,9 +5,8 @@ import ThemeIcon from '@/shared/assets/icons/theme.svg';
 import { ETheme } from '@/shared/const/ETheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
-import { Icon } from '@/shared/ui/Icon';
-
-import { Button, ButtonVariants } from '../../shared/ui/Button/Button';
+import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { Icon } from '@/shared/ui/depricated/Icon';
 
 export const ThemeSwitcher: FC = memo(() => {
   const { toggleTheme } = useTheme();
