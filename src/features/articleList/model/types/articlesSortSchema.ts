@@ -1,4 +1,5 @@
 import { TSortOrder } from '@/shared/types/sort';
+
 import { EArticleSortField, ESortFieldNames } from '../const/const';
 
 export interface IArticlesListSortSchema {

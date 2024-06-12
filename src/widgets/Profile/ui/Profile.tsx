@@ -1,13 +1,10 @@
 import {
   FC, memo, useCallback, useState,
 } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Text, TextVariant } from '@/shared/ui/Text';
+import { useTranslation } from 'react-i18next';
 
-import { VStack } from '@/shared/ui/Stack';
 import {
   getIsProfileDataSame,
   getProfileData,
@@ -20,6 +17,9 @@ import {
   TProfileFieldName,
   updateProfileData,
 } from '@/features/editableProfileCard';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextVariant } from '@/shared/ui/Text';
 
 export const Profile: FC = memo(() => {
   const { t } = useTranslation('profile');

@@ -1,5 +1,6 @@
-import classNames from 'classnames/bind';
 import { memo } from 'react';
+
+import classNames from 'classnames/bind';
 import { Link, type LinkProps } from 'react-router-dom';
 
 import styles from './AppLink.module.scss';

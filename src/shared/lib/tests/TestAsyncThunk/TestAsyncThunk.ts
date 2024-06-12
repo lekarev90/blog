@@ -1,6 +1,7 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { MockedFunction } from 'jest-mock';
+
 import { IStateSchema } from '@/app/providers/StoreProvider';
 import { mockedApi } from '@/shared/const/tests';
 

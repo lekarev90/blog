@@ -1,9 +1,10 @@
 import { useLayoutEffect } from 'react';
+
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useSearchParams } from 'react-router-dom';
 
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { articlesSortActions, articlesSearchActions } from '@/features/articleList';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 
 export const useInitSortAndSearchFromSearchParams = () => {
   const actions: Record<string, ActionCreatorWithPayload<any>> = {

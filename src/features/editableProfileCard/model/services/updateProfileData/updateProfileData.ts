@@ -4,9 +4,8 @@ import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
 
 import { EValidateProfileError } from '../../const/const';
 import { getProfileData } from '../../selectors/profile.selectors';
-import { validateProfileData } from '../validateProfileData/validateProfileData';
-
 import { IProfile } from '../../types/profileCardSchema';
+import { validateProfileData } from '../validateProfileData/validateProfileData';
 
 const PROFILE_URL = '/profile';
 

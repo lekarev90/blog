@@ -1,5 +1,6 @@
 import { isEqual } from 'lodash';
 import { createSelector } from 'reselect';
+
 import { IStateSchema } from '@/app/providers/StoreProvider';
 import { getUserAuthData } from '@/entities/User';
 

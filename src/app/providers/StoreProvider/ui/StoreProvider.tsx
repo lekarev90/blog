@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
+
+import { ReducersMapObject } from '@reduxjs/toolkit';
 
 import { IStateSchema } from '../config/StateSchema';
 import { createReduxStore } from '../config/store';

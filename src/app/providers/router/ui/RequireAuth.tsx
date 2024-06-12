@@ -1,8 +1,9 @@
 import { FC, ReactNode, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate, useLocation } from 'react-router';
-import { ERoles, getUserAuthData } from '@/entities/User';
 
+import { Navigate, useLocation } from 'react-router';
+
+import { ERoles, getUserAuthData } from '@/entities/User';
 import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 
 interface RequireAuthProps {

@@ -1,9 +1,11 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import i18n from 'i18next';
+
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { IThunkConfig } from '@/app/providers/StoreProvider';
 
-import { IArticle } from '../types/article';
 import { ARTICLES_REQUEST_URL } from '../const/const';
+import { IArticle } from '../types/article';
 
 export const fetchArticleById = createAsyncThunk<IArticle, string, IThunkConfig<string>>(
   'article/fetchArticleById',

@@ -1,16 +1,17 @@
 import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import { useTranslation } from 'react-i18next';
 
-import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { AppLink, AppLinkColor } from '@/shared/ui/AppLink';
-import { Text, TextVariant } from '@/shared/ui/Text';
-import { HStack } from '@/shared/ui/Stack';
+import { LoginModal } from '@/features/authByUsername';
 import { NotificationModal } from '@/features/navbar';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { AppLink, AppLinkColor } from '@/shared/ui/AppLink';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
+import { Text, TextVariant } from '@/shared/ui/Text';
 
 import { NavbarMenuDropDown } from '../NavbarMenuDropDown/NavbarMenuDropDown';
 

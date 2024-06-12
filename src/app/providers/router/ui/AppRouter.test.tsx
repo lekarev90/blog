@@ -1,9 +1,11 @@
 import { screen } from '@testing-library/react';
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
-import { AppRouter } from './AppRouter';
-import { getRouteAdmin, getRouteMain, getRouteProfile } from '@/shared/const/router';
+
 import { ERoles } from '@/entities/User';
+import { getRouteAdmin, getRouteMain, getRouteProfile } from '@/shared/const/router';
 import { mockedApi } from '@/shared/const/tests';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+
+import { AppRouter } from './AppRouter';
 
 describe('app/AppRouter', () => {
   beforeAll(() => {

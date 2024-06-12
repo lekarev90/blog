@@ -1,14 +1,15 @@
 import { memo, useState } from 'react';
-import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
+
+import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppLogo } from '@/shared/ui/AppLogo';
 import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/Button';
 import { LangSwitcher } from '@/shared/ui/LangSwitcher';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/AppLogo';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

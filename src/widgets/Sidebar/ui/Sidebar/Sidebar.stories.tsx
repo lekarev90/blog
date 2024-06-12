@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { Sidebar } from './Sidebar';
 
 export default {

@@ -1,9 +1,10 @@
-import path from 'path';
-import type webpack from 'webpack';
 import dotenv from 'dotenv';
+import path from 'path';
 
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { type BuildEnv, type BuildPaths } from './config/build/types/config';
+
+import type webpack from 'webpack';
 
 dotenv.config({ path: './.env' });
 

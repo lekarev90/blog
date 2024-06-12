@@ -1,9 +1,10 @@
 import { memo, useState } from 'react';
+
 import classNames from 'classnames/bind';
 
-import { Icon } from '../Icon/Icon';
-
 import StarIcon from '@/shared/assets/icons/star.svg';
+
+import { Icon } from '../Icon/Icon';
 
 import styles from './StarRating.module.scss';
 

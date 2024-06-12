@@ -1,12 +1,14 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { Reducer } from 'redux';
-import { IStateSchema } from './StateSchema';
+
 import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
-import { scrollReducer } from '@/shared/ui/Page';
 import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { scrollReducer } from '@/shared/ui/Page';
+
 import { createReducerManager } from './reducerManager';
+import { IStateSchema } from './StateSchema';
 
 export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: ReducersMapObject<IStateSchema>) => {
   const rootReducers: ReducersMapObject<IStateSchema> = {

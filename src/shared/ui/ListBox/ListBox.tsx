@@ -1,9 +1,9 @@
 import { Fragment, ReactNode } from 'react';
-import classNames from 'classnames/bind';
 
 import {
   Field, Label, Listbox as HListBox, ListboxButton, ListboxOption, ListboxOptions,
 } from '@headlessui/react';
+import classNames from 'classnames/bind';
 
 import { Button, ButtonVariants } from '../Button/Button';
 

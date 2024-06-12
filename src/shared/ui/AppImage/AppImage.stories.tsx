@@ -1,9 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { AppImage } from './AppImage';
-import { Icon } from '../Icon';
 
 import SomeIcon from '@/shared/assets/icons/star.svg';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { Icon } from '../Icon';
+
+import { AppImage } from './AppImage';
 
 export default {
   title: 'shared/AppImage',

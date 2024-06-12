@@ -1,5 +1,6 @@
 import { CountrySelectField } from '@/entities/Country';
 import { CurrencySelectField } from '@/entities/Currency';
+
 import { EValidateProfileError } from '../const/const';
 
 export interface IProfile extends CountrySelectField, CurrencySelectField {

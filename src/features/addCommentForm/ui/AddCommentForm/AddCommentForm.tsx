@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-import { Input } from '@/shared/ui/Input';
 import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 import { HStack } from '@/shared/ui/Stack';
 
 import styles from './AddCommentForm.module.scss';

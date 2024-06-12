@@ -1,10 +1,10 @@
 import { Meta } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { Navbar } from '../../../widgets/Navbar';
+import { Sidebar } from '../../../widgets/Sidebar';
+import { StoreDecorator } from '../../config/storybook/StoreDecorator/StoreDecorator';
+
 import { MainLayout } from './MainLayout';
-// eslint-disable-next-line lekarev/layer-imports
-import { Navbar } from '@/widgets/Navbar';
-// eslint-disable-next-line lekarev/layer-imports
-import { Sidebar } from '@/widgets/Sidebar';
 
 export default {
   title: 'shared/layouts/MainLayout',

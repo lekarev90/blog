@@ -1,4 +1,5 @@
 import i18n from 'i18next';
+
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 import { fetchArticleById } from './fetchArticleById';

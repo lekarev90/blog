@@ -1,20 +1,20 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+
 import { useTranslation } from 'react-i18next';
 
+import { EArticlesView, IArticle } from '@/entities/Article';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Card } from '@/shared/ui/Card';
+import { HStack, TFlexGap, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import { EArticlesView, IArticle } from '@/entities/Article';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack, TFlexGap, VStack } from '@/shared/ui/Stack';
-
+import { ARTICLES_LIST_DATA, QUANTITY_LIMIT } from '../../model/const/const';
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
+import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
 import { fetchNextArticlesListPage } from '../../model/services/fetchNextArticlesListPage';
 import { articlesListReducer } from '../../model/slices/articlesListSlice';
-import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
-import { ARTICLES_LIST_DATA, QUANTITY_LIMIT } from '../../model/const/const';
 
 import styles from './ArticlesList.module.scss';
 

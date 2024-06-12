@@ -3,11 +3,11 @@ import { ECountrySchema } from '@/entities/Country';
 import { ECurrency } from '@/entities/Currency';
 
 import { EValidateProfileError } from '../const/const';
+import { IProfile } from '../types/profileCardSchema';
+
 import {
   getIsProfileDataSame, getProfileData, getProfileErrors, getProfileIsLoading, getProfilePrevData,
 } from './profile.selectors';
-
-import { IProfile } from '../types/profileCardSchema';
 
 const userData: IProfile = {
   id: '1',

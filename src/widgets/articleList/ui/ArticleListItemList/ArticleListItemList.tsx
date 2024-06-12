@@ -1,21 +1,20 @@
 import { memo } from 'react';
+
 import { useTranslation } from 'react-i18next';
-
-import { Card } from '@/shared/ui/Card';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Text } from '@/shared/ui/Text';
-import { Icon } from '@/shared/ui/Icon';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { getRouteArticleDetails } from '@/shared/const/router';
-import { AppLink } from '@/shared/ui/AppLink';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
-
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 
 import {
   ArticleTextBlockComponent, EArticleBlockType, IArticle, IArticleTextBlock,
 } from '@/entities/Article';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { Card } from '@/shared/ui/Card';
+import { Icon } from '@/shared/ui/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text } from '@/shared/ui/Text';
 
 import styles from './ArticleListItemList.module.scss';
 

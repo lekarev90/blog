@@ -4,6 +4,7 @@ import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk
 
 import { EValidateProfileError } from '../../const/const';
 import { IProfile, IProfileSchema } from '../../types/profileCardSchema';
+
 import { updateProfileData } from './updateProfileData';
 
 const userData: IProfile = {

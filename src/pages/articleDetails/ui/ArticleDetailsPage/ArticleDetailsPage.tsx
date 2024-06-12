@@ -1,16 +1,17 @@
 import { memo } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 
-import { ArticleComments, ArticleRoot } from '@/widgets/article';
+import { ArticleRating } from '@/features/articleRaiting';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 import { Page } from '@/shared/ui/Page';
 import { VStack } from '@/shared/ui/Stack';
-import { ArticleRating } from '@/features/articleRaiting';
+import { ArticleComments, ArticleRoot } from '@/widgets/article';
 import { ArticleRecommendations } from '@/widgets/articleList';
-import { ToggleFeatures } from '@/shared/lib/features';
 
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
-import { Card } from '@/shared/ui/Card';
 
 const ArticleDetailsPage = memo(() => {
   const { t } = useTranslation('articles');

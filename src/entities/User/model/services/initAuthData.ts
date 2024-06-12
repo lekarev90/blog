@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import i18n from '@/shared/config/i18n/i18n';
 import { IThunkConfig } from '@/app/providers/StoreProvider';
+import i18n from '@/shared/config/i18n/i18n';
+import { LOCALSTORAGE_USER_KEY } from '@/shared/const/localstorage';
 
 import { IUser } from '../..';
 import { getUserDataByIdQuery } from '../api/userApi';
-import { LOCALSTORAGE_USER_KEY } from '@/shared/const/localstorage';
 
 export const initAuthData = createAsyncThunk<IUser, void, IThunkConfig<string>>(
   'user/initAuth',

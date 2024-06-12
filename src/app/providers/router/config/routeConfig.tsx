@@ -1,15 +1,15 @@
 import { RouteProps } from 'react-router-dom';
-import { ArticleDetailsPage } from '@/pages/articleDetails';
-import { ArticlePage } from '@/pages/articlesPage';
-import { ProfilePage } from '@/pages/ProfilePage';
 
+import { ERoles } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
+import { AccessDeniedPage } from '@/pages/accessDenied';
+import { AdminPanelPage } from '@/pages/adminPanel';
+import { ArticleDetailsPage } from '@/pages/articleDetails';
+import { ArticleEditPage } from '@/pages/articleEdit';
+import { ArticlePage } from '@/pages/articlesPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { ArticleEditPage } from '@/pages/articleEdit';
-import { AdminPanelPage } from '@/pages/adminPanel';
-import { AccessDeniedPage } from '@/pages/accessDenied';
-import { ERoles } from '@/entities/User';
+import { ProfilePage } from '@/pages/ProfilePage';
 import {
   EAppRoutes,
   getRouteForbidden,

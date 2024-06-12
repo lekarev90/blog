@@ -1,8 +1,9 @@
 import { Fragment, memo, ReactNode } from 'react';
-import classNames from 'classnames/bind';
+
 import {
   Menu, MenuButton, MenuItem, MenuItems,
 } from '@headlessui/react';
+import classNames from 'classnames/bind';
 
 import { AppLink } from '../AppLink/AppLink';
 import { Button } from '../Button/Button';

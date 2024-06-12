@@ -1,6 +1,8 @@
-import { render, type RenderResult } from '@testing-library/react';
 import React, { type ReactNode } from 'react';
+
+import { render, type RenderResult } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
+
 import i18nTestConfig from '@/shared/config/i18n/i18nTest.config';
 
 // eslint-disable-next-line

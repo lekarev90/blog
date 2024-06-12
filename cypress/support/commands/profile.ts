@@ -1,5 +1,5 @@
-import { LOCALSTORAGE_USER_KEY } from '../../../src/shared/const/localstorage';
 import { IUser } from '../../../src/entities/User';
+import { LOCALSTORAGE_USER_KEY } from '../../../src/shared/const/localstorage';
 
 const defaultTestUser = Cypress.env('testUser');
 const defaultTestUserPassword = Cypress.env('testUserPassword');

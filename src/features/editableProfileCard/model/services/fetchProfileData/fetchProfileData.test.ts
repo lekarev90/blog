@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 import { EValidateProfileError } from '../../const/const';
+
 import { fetchProfileData } from './fetchProfileData';
 
 describe('fetchProfileData', () => {

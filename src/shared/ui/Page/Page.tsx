@@ -1,16 +1,17 @@
 import {
   memo, MutableRefObject, ReactNode, useRef, UIEvent, useLayoutEffect,
 } from 'react';
-import classNames from 'classnames/bind';
-import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 
+import classNames from 'classnames/bind';
+import { useLocation } from 'react-router';
+
 import { IStateSchema } from '@/app/providers/StoreProvider';
-import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { ITestId } from '@/shared/types/tests';
-import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { ITestId } from '@/shared/types/tests';
 
 import { getScrollByPath } from './model/selectors/scroll.selectors';
 import { scrollActions } from './model/slices/scrollSlice';

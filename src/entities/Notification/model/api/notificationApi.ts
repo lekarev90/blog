@@ -1,6 +1,7 @@
 import { rtkApi } from '@/shared/api/rtkApi';
-import { INotificationSchema } from '../types/NotificationSchema';
+
 import { NOTIFICATION_REQUEST_URL } from '../const/const';
+import { INotificationSchema } from '../types/NotificationSchema';
 
 export const notificationApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({

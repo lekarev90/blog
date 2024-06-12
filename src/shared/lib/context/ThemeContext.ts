@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+
 import { ETheme } from '@/shared/const/ETheme';
 
 export interface ThemeContextProps {

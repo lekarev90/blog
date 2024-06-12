@@ -1,6 +1,7 @@
-import '../../../../shared/config/i18n/i18nTest.config';
-import { StoryFn, StoryContext } from '@storybook/react';
+import '../../i18n/i18nTest.config';
 import { useEffect } from 'react';
+
+import { StoryFn, StoryContext } from '@storybook/react';
 import { useTranslation } from 'react-i18next';
 
 export const WithI18Decorator = (Story: StoryFn, context: StoryContext) => {

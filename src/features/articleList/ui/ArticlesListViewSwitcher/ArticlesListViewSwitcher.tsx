@@ -1,12 +1,12 @@
 import { FunctionComponent, memo, SVGProps } from 'react';
+
 import classNames from 'classnames/bind';
 
-import { Button } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
-
+import { EArticlesView } from '@/entities/Article';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import GridIcon from '@/shared/assets/icons/tiled-24-24.svg';
-import { EArticlesView } from '@/entities/Article';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import { HStack } from '@/shared/ui/Stack';
 
 import styles from './ArticlesListViewSwitcher.module.scss';

@@ -1,6 +1,7 @@
 import { IStateSchema } from '@/app/providers/StoreProvider';
 
 import { IUser } from '../types/userSchema';
+
 import { getUserAuthData } from './user.selectors';
 
 describe('user.selectors', () => {

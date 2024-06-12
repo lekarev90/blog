@@ -1,10 +1,9 @@
-import { screen } from '@testing-library/react';
 import i18n from 'i18next';
-import { userEvent } from '@testing-library/user-event';
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
-import { IStateSchema } from '@/app/providers/StoreProvider';
-import { mockedApi } from '@/shared/const/tests';
 
+import { screen } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
+
+import { IStateSchema } from '@/app/providers/StoreProvider';
 import {
   EProfileCardTestIdButtons,
   EProfileCardTestIdInputs,
@@ -13,6 +12,8 @@ import {
   getValidateTextError,
   profileReducer,
 } from '@/features/editableProfileCard';
+import { mockedApi } from '@/shared/const/tests';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 import { Profile } from './Profile';
 

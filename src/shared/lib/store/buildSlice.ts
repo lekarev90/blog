@@ -1,6 +1,8 @@
+import { useMemo } from 'react';
+
 import { bindActionCreators, createSlice } from '@reduxjs/toolkit';
 import { SliceCaseReducers, SliceSelectors, CreateSliceOptions } from '@reduxjs/toolkit/dist';
-import { useMemo } from 'react';
+
 import { useAppDispatch } from '../hooks/useAppDispatch.hook';
 
 export const buildSlice = <

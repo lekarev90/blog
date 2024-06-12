@@ -1,10 +1,11 @@
 import { memo } from 'react';
+
 import classNames from 'classnames/bind';
 
+import { getRouteProfile } from '@/shared/const/router';
+import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
-import { AppLink } from '@/shared/ui/AppLink';
-import { getRouteProfile } from '@/shared/const/router';
 
 import { IComment } from '../../model/types/comment';
 

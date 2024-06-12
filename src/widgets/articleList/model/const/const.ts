@@ -1,9 +1,9 @@
 import { EArticlesView } from '@/entities/Article';
 
-import { ArticleListItemListSkeleton } from '../../ui/ArticleListItemList/ArticleListItemListSkeleton';
-import { ArticleListItemList } from '../../ui/ArticleListItemList/ArticleListItemList';
-import { ArticleListItemGridSkeleton } from '../../ui/ArticleListItemGrid/ArticleListItemGridSkeleton';
 import { ArticleListItemGrid } from '../../ui/ArticleListItemGrid/ArticleListItemGrid';
+import { ArticleListItemGridSkeleton } from '../../ui/ArticleListItemGrid/ArticleListItemGridSkeleton';
+import { ArticleListItemList } from '../../ui/ArticleListItemList/ArticleListItemList';
+import { ArticleListItemListSkeleton } from '../../ui/ArticleListItemList/ArticleListItemListSkeleton';
 
 export const QUANTITY_LIMIT = 10;
 

@@ -1,15 +1,14 @@
 import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Page } from '@/shared/ui/Page';
+import { EArticlesView } from '@/entities/Article';
+import { LOCALSTORAGE_ARTICLES_LIST_VIEW_KEY } from '@/shared/const/localstorage';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { Page } from '@/shared/ui/Page';
+import { VStack } from '@/shared/ui/Stack';
 import {
   ArticleListHeader, ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,
 } from '@/widgets/articleList';
-
-import { VStack } from '@/shared/ui/Stack';
-import { LOCALSTORAGE_ARTICLES_LIST_VIEW_KEY } from '@/shared/const/localstorage';
-import { EArticlesView } from '@/entities/Article';
 
 const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();

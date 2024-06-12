@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default {

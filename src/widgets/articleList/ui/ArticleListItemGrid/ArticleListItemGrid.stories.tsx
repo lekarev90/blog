@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { articlesMockWithRandom } from '@/entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { ArticleListItemGrid } from './ArticleListItemGrid';
 
 // @ts-ignore

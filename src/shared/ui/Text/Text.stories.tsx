@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import { Text, TextSize, TextVariant } from './Text';
 
 export default {

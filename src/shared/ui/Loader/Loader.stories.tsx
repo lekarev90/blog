@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+
 import { Loader } from './Loader';
 
 export default {

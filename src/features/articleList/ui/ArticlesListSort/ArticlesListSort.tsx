@@ -1,17 +1,18 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
+
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
 
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Select, SelectOptions } from '@/shared/ui/Select';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { TSortOrder } from '@/shared/types/sort';
+import { Select, SelectOptions } from '@/shared/ui/Select';
 import { HStack } from '@/shared/ui/Stack';
 
+import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
 import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';
 import { articlesSortActions, articlesSortReducer } from '../../model/slices/articlesSortSlice';
-import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
-import { TSortOrder } from '@/shared/types/sort';
 
 type TSwitchValue = EArticleSortField | TSortOrder;
 

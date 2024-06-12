@@ -1,11 +1,12 @@
 import { memo, useMemo } from 'react';
+
 import classNames from 'classnames/bind';
 
-import { AppImage } from '../AppImage';
-import { Skeleton } from '../Skeleton';
-import { Icon } from '../Icon';
-
 import DefaultAvatar from '@/shared/assets/icons/user-filled.svg';
+
+import { AppImage } from '../AppImage';
+import { Icon } from '../Icon';
+import { Skeleton } from '../Skeleton';
 
 import styles from './Avatar.module.scss';
 

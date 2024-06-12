@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { AppLink } from '@/shared/ui/AppLink';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { HStack } from '@/shared/ui/Stack';
+import { useTranslation } from 'react-i18next';
 
 import { getIsCanEditArticle } from '@/entities/Article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
 
 export const ArticleDetailsHeader = memo(({ id }: { id: string }) => {
   const { t } = useTranslation();

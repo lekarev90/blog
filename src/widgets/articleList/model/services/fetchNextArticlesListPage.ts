@@ -2,9 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
 
-import { articlesListActions } from '../slices/articlesListSlice';
-import { fetchArticlesList } from './fetchArticlesList';
 import { getArticlesListData } from '../selectors/articlesList.selectors';
+import { articlesListActions } from '../slices/articlesListSlice';
+
+import { fetchArticlesList } from './fetchArticlesList';
 
 export const fetchNextArticlesListPage = createAsyncThunk<void, { withSetAll: boolean } | undefined, IThunkConfig<string>>(
   'articles/fetchNextArticlesListPage',

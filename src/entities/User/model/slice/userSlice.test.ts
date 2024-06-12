@@ -1,8 +1,9 @@
 import { DeepPartial } from '@/shared/const/types';
-import { ERoles } from '../const/const';
-import { userActions, userReducer } from './userSlice';
 
+import { ERoles } from '../const/const';
 import { IUser, IUserSchema } from '../types/userSchema';
+
+import { userActions, userReducer } from './userSlice';
 
 describe('userReducer', () => {
   beforeAll(() => {

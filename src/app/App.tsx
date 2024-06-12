@@ -2,14 +2,15 @@ import React, { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { getUserAuthData, initAuthData } from '@/entities/User';
-import { AppRouter } from './providers/router';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Navbar } from '@/widgets/Navbar';
-import { Sidebar } from '@/widgets/Sidebar';
-import { useTheme } from '@/shared/lib/hooks/useTheme';
-import { PageLoader } from '@/widgets/PageLoader';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
+import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
+import { Sidebar } from '@/widgets/Sidebar';
+
+import { AppRouter } from './providers/router';
 import { withTheme } from './providers/ThemeProvider';
 
 const App = memo(() => {

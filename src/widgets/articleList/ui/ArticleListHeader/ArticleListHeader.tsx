@@ -1,20 +1,21 @@
 import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { Input } from '@/shared/ui/Input';
-import { Card } from '@/shared/ui/Card';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useDebounce } from '@/shared/lib/hooks/useDebounce';
-import { ArticlesListSort, ArticlesListTabs, ArticlesListViewSwitcher } from '@/features/articleList';
-import { EArticlesView, EArticleTypes } from '@/entities/Article';
+import { useTranslation } from 'react-i18next';
 
-import { articlesSearchActions, articlesSearchReducer } from '../../model/slices/articlesSearchSlice';
+import { EArticlesView, EArticleTypes } from '@/entities/Article';
+import { ArticlesListSort, ArticlesListTabs, ArticlesListViewSwitcher } from '@/features/articleList';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
+import { HStack, VStack } from '@/shared/ui/Stack';
+
 import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';
-import { articlesListActions } from '../../model/slices/articlesListSlice';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList';
+import { articlesListActions } from '../../model/slices/articlesListSlice';
+import { articlesSearchActions, articlesSearchReducer } from '../../model/slices/articlesSearchSlice';
 
 const reducers = {
   articlesSearch: articlesSearchReducer,

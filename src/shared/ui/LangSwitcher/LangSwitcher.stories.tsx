@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+
 import { LangSwitcher } from './LangSwitcher';
 
 export default {

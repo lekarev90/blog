@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import classNames from 'classnames/bind';
 
 import styles from './Overlay.module.scss';

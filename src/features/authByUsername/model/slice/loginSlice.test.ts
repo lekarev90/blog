@@ -1,5 +1,6 @@
-import { loginReducer, loginActions } from './loginSlice';
 import { ILoginSchema } from '../types/loginSchema';
+
+import { loginReducer, loginActions } from './loginSlice';
 
 describe('loginSlice', () => {
   test('set username', () => {

@@ -1,4 +1,5 @@
 import { ComponentProps, ElementType } from 'react';
+
 import { Flex, FlexProps } from '../Flex/Flex';
 
 type HStackProps <T extends ElementType> = Omit<FlexProps, 'direction'> & {

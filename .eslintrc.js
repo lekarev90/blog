@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:cypress/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:cypress/recommended', 'plugin:import/recommended', 'plugin:import/typescript'],
   settings: {
     react: {
       version: 'detect',
@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'lekarev'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'lekarev', 'import'],
   rules: {
     'react/no-array-index-key': 0,
     'react/prop-types': 0,
@@ -84,6 +84,47 @@ module.exports = {
         ignoreImportPatterns: ['**/StoreProvider'],
       },
     ],
+    'import/no-cycle': 0,
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ['builtin', 'external'], // Библиотеки (react, redux и т.д.)
+          ['internal'], // Абсолютные пути (использование алиасов)
+          ['parent'], // Родительские относительные пути
+          ['sibling'], // Соседние относительные пути
+          ['index'], // Импорты из текущей папки
+          ['type', 'unknown'], // Импорты стилей
+        ],
+        pathGroups: [
+          {
+            pattern: '{react,react-dom,classnames,bind,react-redux,i18next}',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: './*.scss',
+            group: 'unknown',
+            position: 'after',
+            patternOptions: {
+              matchBase: true,
+            },
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+
   },
   globals: {
     __IS_DEV__: true,

@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+
 import ArticlesPage from './ArticlesPage';
 
 export default {

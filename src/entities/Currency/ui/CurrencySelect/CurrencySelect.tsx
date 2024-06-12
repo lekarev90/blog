@@ -1,7 +1,9 @@
 import { memo, useCallback } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
 import { ListBox } from '@/shared/ui/ListBox';
+
 import { ECurrency } from '../../model/const/const';
 import { CurrencySelectorFieldName } from '../../model/types/ECurrency';
 

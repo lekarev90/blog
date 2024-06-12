@@ -1,6 +1,7 @@
-import { rtkApi } from '@/shared/api/rtkApi';
-import { ARTICLE_RATINGS_REQUEST_URL } from '../const/const';
 import { IRating } from '@/entities/Rating';
+import { rtkApi } from '@/shared/api/rtkApi';
+
+import { ARTICLE_RATINGS_REQUEST_URL } from '../const/const';
 
 interface IGetArticleRatingArg {
   userId: string

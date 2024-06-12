@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+
 import { ListBox } from './ListBox';
 
 export default {

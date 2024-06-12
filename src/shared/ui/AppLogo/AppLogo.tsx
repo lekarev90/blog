@@ -1,10 +1,11 @@
 import { memo } from 'react';
+
 import classNames from 'classnames/bind';
 
 import Cat from '@/shared/assets/icons/cat.svg';
 
-import { HStack } from '../Stack';
 import { Icon } from '../Icon';
+import { HStack } from '../Stack';
 
 import styles from './AppLogo.module.scss';
 

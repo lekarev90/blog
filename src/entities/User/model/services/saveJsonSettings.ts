@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import i18n from '@/shared/config/i18n/i18n';
 import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
+import i18n from '@/shared/config/i18n/i18n';
 
 import { getUserAuthData, IJsonSettings } from '../..';
-import { getJsonSettings } from '../selectors/jsonSettings';
 import { setJsonSettingsMutation } from '../api/userApi';
+import { getJsonSettings } from '../selectors/jsonSettings';
 
 export const saveJsonSettings = createAsyncThunk<IJsonSettings, IJsonSettings, IThunkConfig<string>>(
   'user/saveJsonSettings',

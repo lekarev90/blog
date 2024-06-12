@@ -1,12 +1,12 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Text, TextVariant } from '@/shared/ui/Text';
 import {
   ArticleDetails, ArticleDetailsLoading, articleDetailsReducer, fetchArticleById, getArticleDetails,
 } from '@/entities/Article';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { Text, TextVariant } from '@/shared/ui/Text';
 
 import styles from './ArticleRoot.module.scss';
 

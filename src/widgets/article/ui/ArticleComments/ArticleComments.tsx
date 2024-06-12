@@ -2,20 +2,20 @@ import {
   memo, useCallback, useEffect, useState,
 } from 'react';
 import { useSelector } from 'react-redux';
+
 import { useTranslation } from 'react-i18next';
 
-import { AddCommentForm } from '@/features/addCommentForm';
-import { Text } from '@/shared/ui/Text';
 import { CommentList } from '@/entities/Comment';
-
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { AddCommentForm } from '@/features/addCommentForm';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
-import { addArticleComment } from '../../model/services/addArticleCommet';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/articleComments.selectors';
+import { addArticleComment } from '../../model/services/addArticleCommet';
 import { fetchCommentsByArticleId } from '../../model/services/fetchArticleCommets';
+import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 
 interface ArticleCommentsProps {
   id: string;

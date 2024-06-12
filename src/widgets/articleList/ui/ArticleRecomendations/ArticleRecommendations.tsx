@@ -1,12 +1,13 @@
 import { memo } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
-import { Text } from '@/shared/ui/Text';
-import { VStack } from '@/shared/ui/Stack';
 import { EArticlesView } from '@/entities/Article';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
-import { ArticlesList } from '../ArticleList/ArticlesList';
 import { useGetArticleRecommendationsQuery } from '../../api/getArticleRecommendations';
+import { ArticlesList } from '../ArticleList/ArticlesList';
 
 export const ArticleRecommendations = memo(() => {
   const { t } = useTranslation('articles');

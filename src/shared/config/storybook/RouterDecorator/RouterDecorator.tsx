@@ -1,5 +1,6 @@
-import { StoryContext, StoryFn } from '@storybook/react';
 import React, { Fragment } from 'react';
+
+import { StoryContext, StoryFn } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 
 export const RouterDecorator = (Story: StoryFn, { parameters }: StoryContext) => {

@@ -1,9 +1,9 @@
 import i18n from 'i18next';
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from '@/app/providers/StoreProvider';
 import { IUser, userActions } from '@/entities/User';
-
 import { LOCALSTORAGE_USER_KEY } from '@/shared/const/localstorage';
 
 interface ILoginByUsername {

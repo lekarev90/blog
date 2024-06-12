@@ -1,4 +1,5 @@
 import { buildSelector } from '@/shared/lib/store';
+
 import { IJsonSettings } from '../types/jsonSettings';
 
 const defaultJsonSettings: IJsonSettings = {};

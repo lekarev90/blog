@@ -1,10 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import i18n from '@/shared/config/i18n/i18n';
-
 import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
 import { IComment } from '@/entities/Comment';
 import { getUserAuthData } from '@/entities/User';
+import i18n from '@/shared/config/i18n/i18n';
 
 import { ARTICLES_COMMENT_REQUEST_URL } from '../const/const';
 

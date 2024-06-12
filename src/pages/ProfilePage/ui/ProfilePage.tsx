@@ -1,11 +1,12 @@
 import React, { memo, useEffect } from 'react';
+
 import { useParams } from 'react-router';
 
 import { fetchProfileData, profileReducer } from '@/features/editableProfileCard';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Profile } from '@/widgets/Profile';
 import { Page } from '@/shared/ui/Page';
+import { Profile } from '@/widgets/Profile';
 
 const reducers: ReducersList = {
   profile: profileReducer,

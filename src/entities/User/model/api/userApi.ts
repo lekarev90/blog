@@ -1,7 +1,7 @@
 import { rtkApi } from '@/shared/api/rtkApi';
 
-import { IUser } from '../types/userSchema';
 import { IJsonSettings } from '../types/jsonSettings';
+import { IUser } from '../types/userSchema';
 
 interface ISetJsonSettings {
   userId: string;

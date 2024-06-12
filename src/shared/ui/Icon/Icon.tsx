@@ -1,4 +1,5 @@
 import { FunctionComponent, SVGProps } from 'react';
+
 import classNames from 'classnames/bind';
 
 import styles from './Icon.module.scss';

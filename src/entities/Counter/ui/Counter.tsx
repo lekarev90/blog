@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 
-import { Button, ButtonVariants } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
+import { Button, ButtonVariants } from '@/shared/ui/Button';
 
-import { decrementAction, incrementAction } from '../model/slice/counterSlice';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { decrementAction, incrementAction } from '../model/slice/counterSlice';
 
 export const Counter = () => {
   const dispatch = useAppDispatch();

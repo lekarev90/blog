@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import { AppLink, AppLinkColor } from './AppLink';
 
 export default {

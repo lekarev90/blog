@@ -1,10 +1,11 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
+import { useTranslation } from 'react-i18next';
+
 import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { Text } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 import { EProfileCardTestIdButtons, getProfileCardTestId } from '../../model/const/const';
 import { getIsProfileOwner } from '../../model/selectors/profile.selectors';

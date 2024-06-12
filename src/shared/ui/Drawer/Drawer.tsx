@@ -1,6 +1,7 @@
 import {
   memo, ReactNode, useCallback, useEffect,
 } from 'react';
+
 import classNames from 'classnames/bind';
 
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';

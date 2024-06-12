@@ -1,14 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import i18n from '@/shared/config/i18n/i18n';
 
 import { IStateSchema, IThunkConfig } from '@/app/providers/StoreProvider';
-import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
 import { IArticle, ARTICLES_REQUEST_URL, EArticleTypes } from '@/entities/Article';
 import { getArticlesSortData } from '@/features/articleList';
+import i18n from '@/shared/config/i18n/i18n';
+import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
 
+import { QUANTITY_LIMIT } from '../const/const';
 import { getArticlesListData } from '../selectors/articlesList.selectors';
 import { getArticlesSearchText } from '../selectors/articlesSearch.selectors';
-import { QUANTITY_LIMIT } from '../const/const';
 
 export const fetchArticlesList = createAsyncThunk<IArticle[], {withSetAll: boolean } | undefined, IThunkConfig<string>>(
   'articles/fetchArticlesList',

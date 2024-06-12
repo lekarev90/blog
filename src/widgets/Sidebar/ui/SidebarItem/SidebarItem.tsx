@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
-import { getUserAuthData } from '@/entities/User';
+import classNames from 'classnames/bind';
 
+import { getUserAuthData } from '@/entities/User';
 import { AppLink, AppLinkColor } from '@/shared/ui/AppLink';
 
 import { ISidebarItem } from '../../model/types/types';

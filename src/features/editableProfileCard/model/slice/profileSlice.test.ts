@@ -1,14 +1,13 @@
-import { DeepPartial } from '@/shared/const/types';
-
 import { ECountrySchema } from '@/entities/Country';
 import { ECurrency } from '@/entities/Currency';
+import { DeepPartial } from '@/shared/const/types';
 
 import { EValidateProfileError } from '../const/const';
-import { profileActions, profileReducer } from './profileSlice';
-
-import { IProfile, IProfileSchema } from '../types/profileCardSchema';
-import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { IProfile, IProfileSchema } from '../types/profileCardSchema';
+
+import { profileActions, profileReducer } from './profileSlice';
 
 const userData: IProfile = {
   id: '1',

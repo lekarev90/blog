@@ -1,6 +1,7 @@
 import { IFeatureFlags } from '@/shared/types/IFeatureFlags';
 
 import { ERoles } from '../const/const';
+
 import { IJsonSettings } from './jsonSettings';
 
 export interface IUser {

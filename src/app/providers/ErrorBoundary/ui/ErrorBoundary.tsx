@@ -2,8 +2,11 @@
 import {
   Component, type ErrorInfo, type ReactNode, Suspense, JSX,
 } from 'react';
+
 import { types } from 'sass';
+
 import { ErrorPage } from '@/pages/ErrorPage';
+
 import Error = types.Error
 
 interface ErrorBoundaryProps {

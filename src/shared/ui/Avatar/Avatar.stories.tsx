@@ -1,8 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import picture from './storybook.jpg';
-
 import { Avatar } from './Avatar';
+import picture from './storybook.jpg';
 
 export default {
   title: 'shared/Avatar',

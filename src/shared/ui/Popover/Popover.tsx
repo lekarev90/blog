@@ -1,9 +1,9 @@
 import { memo, ReactNode } from 'react';
-import classNames from 'classnames/bind';
 
 import { Popover as HPopover, PopoverButton, PopoverPanel } from '@headlessui/react';
-
 import { AnchorProps } from '@headlessui/react/dist/internal/floating';
+import classNames from 'classnames/bind';
+
 import { Button } from '../Button/Button';
 
 import styles from './Popover.module.scss';

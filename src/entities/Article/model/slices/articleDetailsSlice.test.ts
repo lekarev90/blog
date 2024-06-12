@@ -1,9 +1,10 @@
 import { DeepPartial } from '@/shared/const/types';
 
-import { articleDetailsReducer } from './articleDetailsSlice';
 import { fetchArticleById } from '../services/fetchArticleById';
 import { IArticle } from '../types/article';
 import { IArticleDetailsSchema } from '../types/articleDetailsSchema';
+
+import { articleDetailsReducer } from './articleDetailsSlice';
 
 describe('articleDetailsSlice', () => {
   test('fetchArticleById completed', () => {
