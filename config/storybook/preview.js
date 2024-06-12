@@ -18,13 +18,21 @@ export const globalTypes = {
     name: 'Theme',
     defaultValue: 'light',
     description: 'Global theme for components',
-
     toolbar: {
       icon: 'circlehollow',
       items: [
-        { value: 'light', title: 'Light' },
-        { value: 'dark', title: 'Dark' },
-        { value: 'orange', title: 'Orange' },
+        {
+          value: 'light',
+          title: 'Light',
+        },
+        {
+          value: 'dark',
+          title: 'Dark',
+        },
+        {
+          value: 'orange',
+          title: 'Orange',
+        },
       ],
       dynamicTitle: true,
     },
@@ -36,12 +44,23 @@ export const globalTypes = {
     toolbar: {
       icon: 'globe',
       items: [
-        { value: 'en', title: 'English' },
-        { value: 'ru', title: 'Russian' },
+        {
+          value: 'en',
+          title: 'English',
+        },
+        {
+          value: 'ru',
+          title: 'Russian',
+        },
       ],
       dynamicTitle: true,
     },
   },
 };
 
-export const decorators = [ThemeDecorator, StyleDecorator, WithI18Decorator, RouterDecorator];
+export const decorators = [
+  ThemeDecorator,
+  StyleDecorator,
+  WithI18Decorator,
+  RouterDecorator,
+];

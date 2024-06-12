@@ -10,6 +10,7 @@ import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { ITestId } from '@/shared/types/tests';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { getScrollByPath } from './model/selectors/scroll.selectors';
 import { scrollActions } from './model/slices/scrollSlice';
@@ -18,7 +19,7 @@ import styles from './Page.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface PageProps extends ITestId{
+interface PageProps extends ITestId {
   className?: string;
   children?: ReactNode;
   onScrollEnd?: () => void;
@@ -61,9 +62,20 @@ export const Page = memo(({
   });
 
   return (
-    <main ref={wrapperRef} className={cx(styles.container, className)} onScroll={handleScroll} data-testid={dataTestId}>
-      {children}
-      <div ref={triggerRef} />
-    </main>
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <main ref={wrapperRef} className={cx(styles.container, className)} onScroll={handleScroll} data-testid={dataTestId}>
+          {children}
+          <div ref={triggerRef} />
+        </main>
+      )}
+      off={(
+        <main ref={wrapperRef} className={cx(styles.containerV2, className)} onScroll={handleScroll} data-testid={dataTestId}>
+          {children}
+          <div ref={triggerRef} />
+        </main>
+      )}
+    />
   );
 });

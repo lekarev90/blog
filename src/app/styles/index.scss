@@ -14,6 +14,13 @@ body {
   min-height: 100vh;
 }
 
+.app_v2 {
+  background: var(--bg-v2);
+  min-height: 100vh;
+  font: var(--font-m-v2);
+  color: var(--text-v2);
+}
+
 .main-container {
   display: flex;
 }

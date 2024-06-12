@@ -7,7 +7,6 @@ import styles from './ArticleDetailsLoading.module.scss';
 export const ArticleDetailsLoading: FC = () => (
   <div className={styles.container}>
     <Skeleton
-      className={styles.avatar}
       borderRadius="50%"
       height={200}
       width={200}

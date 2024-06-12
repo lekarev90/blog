@@ -10,6 +10,7 @@ import { Text, TextVariant } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationModal } from '@/features/navbar';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { NavbarMenuDropDown } from '../NavbarMenuDropDown/NavbarMenuDropDown';
 
@@ -31,28 +32,63 @@ export const Navbar = memo(() => {
   }, []);
 
   const userAreaButtons = authData ? (
-    <HStack maxWidth justify="between" align="center">
-      <AppLink to={getRouteArticleCreate()} color={AppLinkColor.SECONDARY}>
-        {t('translation:navbar.createArticle')}
-      </AppLink>
-      <HStack gap="16" className={styles.dropdownWrapper}>
-        <NotificationModal />
-        <NavbarMenuDropDown authData={authData} />
-      </HStack>
-    </HStack>
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <HStack maxWidth justify="between" align="center">
+          <AppLink to={getRouteArticleCreate()} color={AppLinkColor.SECONDARY}>
+            {t('translation:navbar.createArticle')}
+          </AppLink>
+          <HStack gap="16" className={styles.dropdownWrapper}>
+            <NotificationModal />
+            <NavbarMenuDropDown authData={authData} />
+          </HStack>
+        </HStack>
+)}
+      off={(
+        <HStack gap="16" className={styles.dropdownWrapper}>
+          <NotificationModal />
+          <NavbarMenuDropDown authData={authData} />
+        </HStack>
+
+)}
+    />
   ) : (
-    <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
-      {t('translation:navbar.authModalButton.login')}
-    </Button>
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
+          {t('translation:navbar.authModalButton.login')}
+        </Button>
+)}
+      off={(
+        <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
+          {t('translation:navbar.authModalButton.login')}
+        </Button>
+)}
+    />
   );
 
   return (
-    <HStack Component="header" align="center" maxWidth className={styles.container}>
-      <Text variant={TextVariant.INVERTED} className={styles.mainTitle} title={t('translation:mainTitleLogo')} />
-      <div className={styles.links}>
-        {userAreaButtons}
-      </div>
-      <LoginModal onClose={onCloseAuthModal} isOpen={isAuthModalOpen} />
-    </HStack>
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <HStack Component="header" align="center" maxWidth className={styles.container}>
+          <Text variant={TextVariant.INVERTED} className={styles.mainTitle} title={t('translation:mainTitleLogo')} />
+          <div className={styles.links}>
+            {userAreaButtons}
+          </div>
+          <LoginModal onClose={onCloseAuthModal} isOpen={isAuthModalOpen} />
+        </HStack>
+)}
+      off={(
+        <HStack Component="header" align="center" maxWidth className={styles.containerV2}>
+          <div className={styles.links}>
+            {userAreaButtons}
+          </div>
+          <LoginModal onClose={onCloseAuthModal} isOpen={isAuthModalOpen} />
+        </HStack>
+)}
+    />
   );
 });

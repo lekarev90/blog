@@ -7,6 +7,8 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/Button';
 import { LangSwitcher } from '@/shared/ui/LangSwitcher';
 import { VStack } from '@/shared/ui/Stack';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppLogo } from '@/shared/ui/AppLogo';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -28,35 +30,58 @@ export const Sidebar = memo(() => {
   };
 
   const containerClassName = cx(styles.container, { collapsed });
+  const containerV2ClassName = cx(styles.containerV2, { collapsed });
 
   return (
-    <nav
-      data-testid="sidebar"
-      className={containerClassName}
-    >
-      <Button
-        data-testid="sidebar-toggle"
-        square
-        variant={ButtonVariants.BACKGROUND_INVERTED}
-        className={styles.collapseButton}
-        onClick={onToggle}
-        size={ButtonSize.L}
-      >
-        {sidebarStateText}
-      </Button>
-      <VStack className={styles.menuContainer}>
-        {sidebarItems.map((item) => (
-          <SidebarItem
-            key={item.path}
-            item={item}
-            collapsed={collapsed}
-          />
-        ))}
-      </VStack>
-      <VStack align="center" className={styles.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher />
-      </VStack>
-    </nav>
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <nav data-testid="sidebar" className={containerClassName}>
+          <Button
+            data-testid="sidebar-toggle"
+            square
+            variant={ButtonVariants.BACKGROUND_INVERTED}
+            className={styles.collapseButton}
+            onClick={onToggle}
+            size={ButtonSize.L}
+          >
+            {sidebarStateText}
+          </Button>
+          <VStack className={styles.menuContainer}>
+            {sidebarItems.map((item) => (
+              <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+            ))}
+          </VStack>
+          <VStack align="center" className={styles.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher />
+          </VStack>
+        </nav>
+      )}
+      off={(
+        <nav data-testid="sidebar" className={containerV2ClassName}>
+          <AppLogo className={styles.logo} />
+          <Button
+            data-testid="sidebar-toggle"
+            square
+            variant={ButtonVariants.BACKGROUND_INVERTED}
+            className={styles.collapseButton}
+            onClick={onToggle}
+            size={ButtonSize.L}
+          >
+            {sidebarStateText}
+          </Button>
+          <VStack className={styles.menuContainer}>
+            {sidebarItems.map((item) => (
+              <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+            ))}
+          </VStack>
+          <VStack align="center" className={styles.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher />
+          </VStack>
+        </nav>
+      )}
+    />
   );
 });

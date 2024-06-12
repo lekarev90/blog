@@ -8,6 +8,8 @@ import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 const App = () => {
   const { theme } = useTheme();
@@ -27,15 +29,27 @@ const App = () => {
   }
 
   return (
-    <div className="app">
-      <Suspense fallback="">
-        <Navbar />
-        <div className="main-container">
-          <Sidebar />
-          {initialized && <AppRouter />}
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <div className="app">
+          <Suspense fallback="">
+            <Navbar />
+            <div className="main-container">
+              <Sidebar />
+              <AppRouter />
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      )}
+      off={(
+        <div className="app_v2">
+          <Suspense fallback="">
+            <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
+          </Suspense>
+        </div>
+      )}
+    />
   );
 };
 

@@ -12,10 +12,10 @@ $label-positions: 24px;
 .select {
   background: none;
   outline: none;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 2px 10px 2px 2px;
   border: 1px solid;
-  border-color: var(--primary-color);
+  border-color: var(--secondary-color)
 }
 
 .option {

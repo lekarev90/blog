@@ -1,5 +1,7 @@
 :root {
   --font-family-main: consolas, 'Times New Roman', serif;
+  --font-family-text-v2: 'Nunito Sans', sans-serif;
+  --font-family-header-v2: 'Roboto', sans-serif;
   --font-size-s: 12px;
   --font-line-s: 20px;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
@@ -27,5 +29,17 @@
   --over-color: rgba(0 0 0 / 60%);
   --red-light: #F00;
   --red-dark: #CE0505;
+
+  // redesigned
+
+  // sizes
+
+  --sidebar-width-v2: 220px;
+
+  // font
+  --font-s-v2: var(--font-size-s) / var(--font-line-s) var(--font-family-text-v2);
+  --font-m-v2: var(--font-size-m) / var(--font-line-m) var(--font-family-text-v2);
+  --font-l-v2: var(--font-size-l) / var(--font-line-l) var(--font-family-header-v2);
+  --font-xl-v2: var(--font-size-xl) / var(--font-line-xl) var(--font-family-header-v2);
 }
 

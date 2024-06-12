@@ -33,7 +33,7 @@ const _Tabs = <T extends string>({
   return (
     <div className={cx(styles.container, className)}>
       {tabs.map((tab) => {
-        const isActive = tab.value === value ? ECardTheme.DEFAULT : ECardTheme.OUTLINED;
+        const isActive = tab.value === value ? ECardTheme.DEFAULT : ECardTheme.OUTLINED_SECONDARY;
 
         return (
           <Card className={cx(tabClassName)} theme={isActive} key={tab.value} onClick={clickHandle(tab)}>

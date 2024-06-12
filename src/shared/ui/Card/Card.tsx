@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 export const enum ECardTheme {
   DEFAULT = 'default',
   OUTLINED = 'outlined',
+  OUTLINED_SECONDARY = 'outlined_secondary',
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{

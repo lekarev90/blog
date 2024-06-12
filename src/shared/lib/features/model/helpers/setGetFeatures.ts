@@ -1,6 +1,6 @@
 import { IFeatureFlags } from '@/shared/types/IFeatureFlags';
 
-let featureFlags: IFeatureFlags;
+let featureFlags: IFeatureFlags = {};
 
 export const setFeatureFlags = (newFeatureFlags?: IFeatureFlags) => {
   if (newFeatureFlags) {

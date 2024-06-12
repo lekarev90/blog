@@ -32,7 +32,7 @@ export const Avatar = memo(({
 
   return (
     <AppImage
-      fallback={<Skeleton height={size} width={size} borderRadius="12px" />}
+      fallback={<Skeleton height={size} width={size} borderRadius="50%" />}
       errorFallback={<Icon Svg={DefaultAvatar} inverted={invertedDefaultAvatar} />}
       src={src}
       alt={alt}
