@@ -34,4 +34,10 @@ export default defineConfig({
     __IS_DEV__: JSON.stringify(true),
     __API__: JSON.stringify('http://localhost:8000'),
   },
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+      generateScopedName: '[name]__[local]__[hash:base64:3]',
+    },
+  },
 });
