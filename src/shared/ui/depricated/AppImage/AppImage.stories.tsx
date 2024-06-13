@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import SomeIcon from '@/shared/assets/icons/star.svg';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { Icon } from '../depricated/Icon';
+import { Icon } from '../Icon';
 
 import { AppImage } from './AppImage';
 

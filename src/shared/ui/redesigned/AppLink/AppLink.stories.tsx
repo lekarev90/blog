@@ -12,8 +12,8 @@ export default {
 
 export const Default = {};
 
-export const Secondary: StoryObj<typeof AppLink> = {
+export const Red: StoryObj<typeof AppLink> = {
   args: {
-    variant: 'secondary',
+    variant: 'red',
   },
 };
