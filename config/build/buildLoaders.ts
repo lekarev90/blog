@@ -6,21 +6,23 @@ import type webpack from 'webpack';
 export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack'],
-    exclude: /node_modules/,
-    options: {
-      icon: true,
-      svgoConfig: {
-        plugins: [
-          {
-            name: 'convertColors',
-            params: {
-              currentColor: true,
+    use: [{
+      loader: '@svgr/webpack',
+      options: {
+        icon: true,
+        svgoConfig: {
+          plugins: [
+            {
+              name: 'convertColors',
+              params: {
+                currentColor: true,
+              },
             },
-          },
-        ],
+          ],
+        },
       },
-    },
+    }],
+    exclude: /node_modules/,
   };
 
   const tsLoader = {
