@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 
 import { getIsCanEditArticle } from '@/entities/Article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { HStack } from '@/shared/ui/Stack';
+import { AppLink } from '@/shared/ui/depricated/AppLink';
+import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { HStack } from '@/shared/ui/depricated/Stack';
 
 export const ArticleDetailsHeader = memo(({ id }: { id: string }) => {
   const { t } = useTranslation();

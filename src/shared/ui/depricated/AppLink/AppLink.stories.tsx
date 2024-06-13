@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { AppLink, AppLinkColor } from './AppLink';
+import { AppLink } from './AppLink';
 
 export default {
-  title: 'shared/AppLink',
+  title: 'deprecated/shared/AppLink',
   component: AppLink,
   args: {
     children: 'link text',
@@ -14,6 +14,6 @@ export const Default = {};
 
 export const Secondary: StoryObj<typeof AppLink> = {
   args: {
-    color: AppLinkColor.SECONDARY,
+    variant: 'secondary',
   },
 };

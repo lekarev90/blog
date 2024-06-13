@@ -5,7 +5,7 @@ import {
 } from '@headlessui/react';
 import classNames from 'classnames/bind';
 
-import { Button, ButtonVariants } from '../Button/Button';
+import { Button, ButtonVariants } from '../Button';
 
 import styles from './ListBox.module.scss';
 

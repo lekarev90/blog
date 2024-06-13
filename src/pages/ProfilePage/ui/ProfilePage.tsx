@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import { fetchProfileData, profileReducer } from '@/features/editableProfileCard';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Page } from '@/shared/ui/Page';
+import { Page } from '@/shared/ui/depricated/Page';
 import { Profile } from '@/widgets/Profile';
 
 const reducers: ReducersList = {

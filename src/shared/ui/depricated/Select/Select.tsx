@@ -2,7 +2,7 @@ import { ChangeEvent, useCallback, useMemo } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { VStack } from '../../Stack';
+import { VStack } from '../Stack';
 
 import styles from './Select.module.scss';
 

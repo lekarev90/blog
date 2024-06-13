@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 
+import { VStack } from '@/shared/ui/depricated/Stack';
 import { Text, TextSize } from '@/shared/ui/depricated/Text';
-import { VStack } from '@/shared/ui/Stack';
 
 import { IArticleImageBlock } from '../../model/types/article';
 

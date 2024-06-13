@@ -5,7 +5,7 @@ import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
 import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { scrollReducer } from '@/shared/ui/Page';
+import { scrollReducer } from '@/shared/ui/depricated/Page';
 
 import { createReducerManager } from './reducerManager';
 import { IStateSchema } from './StateSchema';

@@ -5,9 +5,9 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import { NotificationList } from '@/entities/Notification';
 import Notification from '@/shared/assets/icons/notification-20-20.svg';
 import { Button } from '@/shared/ui/depricated/Button';
+import { Drawer } from '@/shared/ui/depricated/Drawer';
 import { Icon } from '@/shared/ui/depricated/Icon';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Popover } from '@/shared/ui/Popover';
+import { Popover } from '@/shared/ui/depricated/Popover';
 
 import styles from './NotificationModal.module.scss';
 
@@ -26,8 +26,8 @@ export const NotificationModal = memo(() => {
     <Icon
       Svg={Notification}
       className={styles.icon}
-      height={25}
-      width={25}
+      height={20}
+      width={20}
       inverted
     />
   );

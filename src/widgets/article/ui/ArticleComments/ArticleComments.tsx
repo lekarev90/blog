@@ -9,8 +9,8 @@ import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
+import { VStack } from '@/shared/ui/depricated/Stack';
+import { Text } from '@/shared/ui/depricated/Text';
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/articleComments.selectors';
 import { addArticleComment } from '../../model/services/addArticleCommet';

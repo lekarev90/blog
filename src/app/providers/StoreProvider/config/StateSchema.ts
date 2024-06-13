@@ -10,7 +10,7 @@ import { IArticlesListSortSchema, IArticlesSearch } from '@/features/articleList
 import { ILoginSchema } from '@/features/authByUsername';
 import { IProfileSchema } from '@/features/editableProfileCard';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { IScroll } from '@/shared/ui/Page';
+import { IScroll } from '@/shared/ui/depricated/Page';
 import { IArticleDetailsCommentsSchema } from '@/widgets/article';
 import { IArticlesListSchema, IArticleRecommendationsSchema } from '@/widgets/articleList';
 

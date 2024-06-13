@@ -7,24 +7,17 @@ import styles from './AppLink.module.scss';
 
 const cx = classNames.bind(styles);
 
-export enum AppLinkColor {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
+export type TAppLinkVariant = 'primary'| 'secondary'
 
 export interface AppLinkProps extends LinkProps {
   className?: string;
-  color?: AppLinkColor;
+  variant?: TAppLinkVariant;
 }
 
-/**
- * @deprecated
- */
-
 export const AppLink = memo(({
-  className, to, children, color = AppLinkColor.PRIMARY, ...props
+  className, to, children, variant = 'secondary', ...props
 }: AppLinkProps) => {
-  const containerClassNames = cx(styles.container, className, { [color]: color });
+  const containerClassNames = cx(styles.container, className, { [variant]: variant });
 
   return (
     <Link

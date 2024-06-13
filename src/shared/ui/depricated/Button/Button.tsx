@@ -62,8 +62,4 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   );
 });
 
-/**
- * @deprecated
- */
-
 export const Button = memo(_Button) as typeof _Button;

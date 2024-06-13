@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Button, ButtonSize, ButtonVariants } from './Button';
 
 export default {
-  title: 'shared/Button',
+  title: 'deprecated/shared/Button',
   component: Button,
   args: {
     children: 'text',

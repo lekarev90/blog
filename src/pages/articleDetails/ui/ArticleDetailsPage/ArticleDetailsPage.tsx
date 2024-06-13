@@ -6,8 +6,8 @@ import { useParams } from 'react-router';
 import { ArticleRating } from '@/features/articleRaiting';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/depricated/Card';
-import { Page } from '@/shared/ui/Page';
-import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/shared/ui/depricated/Page';
+import { VStack } from '@/shared/ui/depricated/Stack';
 import { ArticleComments, ArticleRoot } from '@/widgets/article';
 import { ArticleRecommendations } from '@/widgets/articleList';
 

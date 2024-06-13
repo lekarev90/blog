@@ -2476,7 +2476,8 @@
         "USER"
       ],
       "features": {
-        "isArticleRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isOldDesign": true
       },
       "jsonSettings": {
         "theme": "dark"

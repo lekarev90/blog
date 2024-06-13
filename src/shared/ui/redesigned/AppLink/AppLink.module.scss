@@ -1,0 +1,19 @@
+.container {
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.primary {
+  color: var(--text-v2);
+
+  &:hover {
+    color: var(--accent-v2);
+  }
+}
+
+.red {
+  color: var(--cancel-v2);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

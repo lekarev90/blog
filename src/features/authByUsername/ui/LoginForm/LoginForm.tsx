@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Button, ButtonVariants } from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
-import { Text, TextVariant } from '@/shared/ui/Text';
+import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { Input } from '@/shared/ui/depricated/Input';
+import { Text, TextVariant } from '@/shared/ui/depricated/Text';
 
 import { getLoginState } from '../../model/selectors/loginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';

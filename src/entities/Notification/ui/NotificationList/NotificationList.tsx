@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import { Skeleton } from '@/shared/ui/depricated/Skeleton';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/depricated/Stack';
 
 import { useGetNotificationsQuery } from '../../model/api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';

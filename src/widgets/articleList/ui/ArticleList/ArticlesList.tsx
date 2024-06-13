@@ -7,8 +7,8 @@ import { EArticlesView, IArticle } from '@/entities/Article';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Card } from '@/shared/ui/depricated/Card';
+import { HStack, TFlexGap, VStack } from '@/shared/ui/depricated/Stack';
 import { Text } from '@/shared/ui/depricated/Text';
-import { HStack, TFlexGap, VStack } from '@/shared/ui/Stack';
 
 import { ARTICLES_LIST_DATA, QUANTITY_LIMIT } from '../../model/const/const';
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';

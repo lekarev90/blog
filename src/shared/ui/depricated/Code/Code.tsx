@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
 
-import { Button, ButtonSize } from '../Button/Button';
+import { Button, ButtonSize } from '../Button';
 import { Icon } from '../Icon/Icon';
 
 import styles from './Code.module.scss';

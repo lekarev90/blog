@@ -1,7 +1,6 @@
 .link {
   transition: opacity 0.2s ease-in-out;
   opacity: 1;
-  flex: 1 0 100%;
   white-space: nowrap;
 }
 
@@ -13,16 +12,31 @@
 }
 
 .menuItem {
-  margin-top: 10px;
   display: flex;
   align-items: center;
+  padding: 0 16px;
   gap: 15px;
-  color: var(--inverted-primary-color);
-  text-decoration: none;
 }
 
 .icon {
-  flex: 1 0 auto;
   fill: var(--inverted-primary-color)
 }
 
+.collapsedV2 {
+  justify-content: center;
+
+  .link {
+    display: none;
+  }
+
+  &.menuItem {
+    padding: 0;
+  }
+}
+
+.activeLink {
+  background: linear-gradient(89.97deg, rgb(29 89 255 / 30%) 1.15%, rgb(94 211 243 / 0%) 99.97%);
+  position: relative;
+  border-left: 2px solid;
+  border-color: var(--accent-v2);
+}

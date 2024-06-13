@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 import Cat from '@/shared/assets/icons/cat.svg';
 
-import { Icon } from '../depricated/Icon';
-import { HStack } from '../Stack';
+import { Icon } from '../../depricated/Icon';
+import { HStack } from '../../depricated/Stack';
 
 import styles from './AppLogo.module.scss';
 

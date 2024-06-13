@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { HStack } from '@/shared/ui/depricated/Stack';
 import { Text } from '@/shared/ui/depricated/Text';
-import { HStack } from '@/shared/ui/Stack';
 
 import { EProfileCardTestIdButtons, getProfileCardTestId } from '../../model/const/const';
 import { getIsProfileOwner } from '../../model/selectors/profile.selectors';

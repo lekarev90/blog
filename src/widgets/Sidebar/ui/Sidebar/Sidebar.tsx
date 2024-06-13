@@ -4,12 +4,14 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 
+import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/AppLogo';
 import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/depricated/Button';
-import { LangSwitcher } from '@/shared/ui/depricated/LangSwitcher';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/depricated/Stack';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -48,7 +50,7 @@ export const Sidebar = memo(() => {
           >
             {sidebarStateText}
           </Button>
-          <VStack className={styles.menuContainer}>
+          <VStack className={styles.menuContainer} gap="8">
             {sidebarItems.map((item) => (
               <SidebarItem key={item.path} item={item} collapsed={collapsed} />
             ))}
@@ -61,17 +63,14 @@ export const Sidebar = memo(() => {
       )}
       off={(
         <nav data-testid="sidebar" className={containerV2ClassName}>
-          <AppLogo className={styles.logo} />
-          <Button
+          <AppLogo width={collapsed ? 45 : 150} height={collapsed ? 45 : 150} />
+          <Icon
             data-testid="sidebar-toggle"
-            square
-            variant={ButtonVariants.BACKGROUND_INVERTED}
-            className={styles.collapseButton}
+            clickable
+            className={cx(styles.collapseButton, { collapsed })}
             onClick={onToggle}
-            size={ButtonSize.L}
-          >
-            {sidebarStateText}
-          </Button>
+            Svg={ArrowIcon}
+          />
           <VStack className={styles.menuContainer}>
             {sidebarItems.map((item) => (
               <SidebarItem key={item.path} item={item} collapsed={collapsed} />
