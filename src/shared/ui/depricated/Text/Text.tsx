@@ -5,13 +5,17 @@ import classNames from 'classnames/bind';
 import styles from './Text.module.scss';
 
 const cx = classNames.bind(styles);
-
+/**
+ * @deprecated
+ */
 export enum TextVariant {
   PRIMARY = 'primary',
   INVERTED = 'inverted',
   ERROR = 'error',
 }
-
+/**
+ * @deprecated
+ */
 export enum TextSize {
   S = 's',
   M = 'm',

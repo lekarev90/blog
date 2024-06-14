@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 import DefaultAvatar from '@/shared/assets/icons/user-filled.svg';
 
-import { AppImage } from '../AppImage';
+import { AppImage } from '../../redesigned/AppImage';
 import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
 

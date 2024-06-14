@@ -19,7 +19,6 @@ interface InputProps<T extends string> extends HTMLInputProps {
 /**
  * @deprecated
  */
-
 export const _Input = <T extends string>({
   value,
   onChange,
@@ -53,5 +52,7 @@ export const _Input = <T extends string>({
     />
   );
 };
-
+/**
+ * @deprecated
+ */
 export const Input = memo(_Input) as typeof _Input;

@@ -7,7 +7,7 @@ import { CurrencySelect } from '@/entities/Currency';
 import { Avatar } from '@/shared/ui/depricated/Avatar';
 import { Input } from '@/shared/ui/depricated/Input';
 import { Loader } from '@/shared/ui/depricated/Loader';
-import { VStack } from '@/shared/ui/depricated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { EProfileCardTestIdInputs, getProfileCardTestId } from '../../model/const/const';
 import { IProfile, TProfileFieldName } from '../../model/types/profileCardSchema';

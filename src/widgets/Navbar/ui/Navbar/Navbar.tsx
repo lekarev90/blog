@@ -10,8 +10,8 @@ import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink } from '@/shared/ui/depricated/AppLink';
 import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
-import { HStack } from '@/shared/ui/depricated/Stack';
 import { Text, TextVariant } from '@/shared/ui/depricated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import { NavbarMenuDropDown } from '../NavbarMenuDropDown/NavbarMenuDropDown';
 

@@ -1,6 +1,6 @@
 import { Code } from '@/shared/ui/depricated/Code';
-import { VStack } from '@/shared/ui/depricated/Stack';
 import { Text } from '@/shared/ui/depricated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { IArticleCodeBlock } from '../../model/types/article';
 

@@ -7,7 +7,7 @@ import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import GridIcon from '@/shared/assets/icons/tiled-24-24.svg';
 import { Button } from '@/shared/ui/depricated/Button';
 import { Icon } from '@/shared/ui/depricated/Icon';
-import { HStack } from '@/shared/ui/depricated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import styles from './ArticlesListViewSwitcher.module.scss';
 

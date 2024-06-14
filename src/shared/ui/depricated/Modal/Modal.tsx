@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 import { useModal } from '@/shared/lib/hooks/useModal';
 
-import { Overlay } from '../Overlay';
-import { Portal } from '../Portal';
+import { Overlay } from '../../redesigned/Overlay';
+import { Portal } from '../../redesigned/Portal';
 
 import styles from './Modal.module.scss';
 

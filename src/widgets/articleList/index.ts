@@ -7,6 +7,6 @@ export { fetchNextArticlesListPage } from './model/services/fetchNextArticlesLis
 export { fetchArticlesList } from './model/services/fetchArticlesList';
 export { articlesListReducer } from './model/slices/articlesListSlice';
 export { type IArticlesListSchema } from './model/types/articlesListSchema';
-export { ArticlesList } from './ui/ArticleList/ArticlesList';
+export { ArticlesList } from '@/widgets/articleList/ui/ArticlesList/ArticlesList';
 export { type IArticleRecommendationsSchema } from './model/types/articleRecommendationsSchema';
 export { ARTICLES_LIST_DATA } from './model/const/const';

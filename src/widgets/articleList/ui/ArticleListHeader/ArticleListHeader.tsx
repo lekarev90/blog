@@ -10,7 +10,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { Card } from '@/shared/ui/depricated/Card';
 import { Input } from '@/shared/ui/depricated/Input';
-import { HStack, VStack } from '@/shared/ui/depricated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList';

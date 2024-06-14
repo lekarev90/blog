@@ -9,10 +9,6 @@ import { Button as ButtonDeprecated, ButtonVariants } from '../../shared/ui/depr
 
 import styles from './LangSwitcher.module.scss';
 
-/**
- * @deprecated
- */
-
 export const LangSwitcher: FC = memo(() => {
   const { t, i18n } = useTranslation();
 

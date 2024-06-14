@@ -5,7 +5,7 @@ import { EArticlesView } from '@/entities/Article';
 import { LOCALSTORAGE_ARTICLES_LIST_VIEW_KEY } from '@/shared/const/localstorage';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Page } from '@/shared/ui/depricated/Page';
-import { VStack } from '@/shared/ui/depricated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import {
   ArticleListHeader, ArticlesList, fetchNextArticlesListPage, getArticles, getArticlesListData,
 } from '@/widgets/articleList';

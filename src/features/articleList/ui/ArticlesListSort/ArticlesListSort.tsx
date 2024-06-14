@@ -8,7 +8,7 @@ import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { TSortOrder } from '@/shared/types/sort';
 import { Select, SelectOptions } from '@/shared/ui/depricated/Select';
-import { HStack } from '@/shared/ui/depricated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
 import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';

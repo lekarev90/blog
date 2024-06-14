@@ -3,11 +3,11 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { EArticlesView } from '@/entities/Article';
-import { VStack } from '@/shared/ui/depricated/Stack';
 import { Text } from '@/shared/ui/depricated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { useGetArticleRecommendationsQuery } from '../../api/getArticleRecommendations';
-import { ArticlesList } from '../ArticleList/ArticlesList';
+import { ArticlesList } from '../ArticlesList/ArticlesList';
 
 export const ArticleRecommendations = memo(() => {
   const { t } = useTranslation('articles');

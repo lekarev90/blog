@@ -7,7 +7,7 @@ import { getIsCanEditArticle } from '@/entities/Article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/depricated/AppLink';
 import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
-import { HStack } from '@/shared/ui/depricated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 export const ArticleDetailsHeader = memo(({ id }: { id: string }) => {
   const { t } = useTranslation();

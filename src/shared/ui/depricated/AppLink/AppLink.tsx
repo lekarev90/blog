@@ -14,6 +14,9 @@ export interface AppLinkProps extends LinkProps {
   variant?: TAppLinkVariant;
 }
 
+/**
+ * @deprecated
+ */
 export const AppLink = memo(({
   className, to, children, variant = 'secondary', ...props
 }: AppLinkProps) => {

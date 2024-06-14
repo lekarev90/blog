@@ -9,9 +9,9 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/depricated/Button';
-import { HStack, VStack } from '@/shared/ui/depricated/Stack';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

@@ -5,7 +5,9 @@ import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
-
+/**
+ * @deprecated
+ */
 export enum ButtonVariants {
   CLEAR = 'clear',
   CLEAR_INVERTED = 'clearInverted',
@@ -14,7 +16,9 @@ export enum ButtonVariants {
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
 }
-
+/**
+ * @deprecated
+ */
 export enum ButtonSize {
   M = 'size_m',
   L = 'size_l',
@@ -62,4 +66,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   );
 });
 
+/**
+ * @deprecated
+ */
 export const Button = memo(_Button) as typeof _Button;

@@ -11,7 +11,9 @@ interface IconProps extends SVGProps<SVGSVGElement>{
   Svg: FunctionComponent<SVGProps<SVGSVGElement>>;
   inverted?: boolean
 }
-
+/**
+ * @deprecated
+ */
 export const Icon = ({
   Svg, className, inverted = false, ...props
 }: IconProps) => (
