@@ -31,10 +31,7 @@ const isToggleFunction = (node: Node) => {
   let isToggleFeatures = false;
 
   node.forEachChild((child) => {
-    if (
-      child.isKind(SyntaxKind.Identifier)
-            && child.getText() === toggleFunctionName
-    ) {
+    if (child.isKind(SyntaxKind.Identifier) && child.getText() === toggleFunctionName) {
       isToggleFeatures = true;
     }
   });
@@ -49,9 +46,7 @@ const isToggleComponent = (node: Node) => {
 };
 
 const replaceToggleFunction = (node: Node) => {
-  const objectOptions = node.getFirstDescendantByKind(
-    SyntaxKind.ObjectLiteralExpression,
-  );
+  const objectOptions = node.getFirstDescendantByKind(SyntaxKind.ObjectLiteralExpression);
 
   if (!objectOptions) return;
 
@@ -60,16 +55,9 @@ const replaceToggleFunction = (node: Node) => {
 
   const featureNameProperty = objectOptions.getProperty('name');
 
-  const onFunction = onFunctionProperty?.getFirstDescendantByKind(
-    SyntaxKind.ArrowFunction,
-  );
-  const offFunction = offFunctionProperty?.getFirstDescendantByKind(
-    SyntaxKind.ArrowFunction,
-  );
-  const featureName = featureNameProperty
-    ?.getFirstDescendantByKind(SyntaxKind.StringLiteral)
-    ?.getText()
-    .slice(1, -1);
+  const onFunction = onFunctionProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
+  const offFunction = offFunctionProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
+  const featureName = featureNameProperty?.getFirstDescendantByKind(SyntaxKind.StringLiteral)?.getText().slice(1, -1);
 
   if (featureName !== removedFeatureName) return;
 
@@ -82,16 +70,12 @@ const replaceToggleFunction = (node: Node) => {
   }
 };
 
-const getAttributeNodeByName = (
-  jsxAttributes: JsxAttribute[],
-  name: string,
-) => jsxAttributes.find((node) => node.getNameNode().getText() === name);
+const getAttributeNodeByName = (jsxAttributes: JsxAttribute[], name: string) => jsxAttributes.find((node) => node
+  .getNameNode()
+  .getText() === name);
 
 const getReplacedComponent = (attribute?: JsxAttribute) => {
-  const value = attribute
-    ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
-    ?.getExpression()
-    ?.getText();
+  const value = attribute?.getFirstDescendantByKind(SyntaxKind.JsxExpression)?.getExpression()?.getText();
 
   if (value?.startsWith('(')) {
     return value.slice(1, -1);
@@ -107,10 +91,7 @@ const replaceComponent = (node: Node) => {
   const offAttribute = getAttributeNodeByName(attributes, 'off');
 
   const featureNameAttribute = getAttributeNodeByName(attributes, 'feature');
-  const featureName = featureNameAttribute
-    ?.getFirstDescendantByKind(SyntaxKind.StringLiteral)
-    ?.getText()
-    ?.slice(1, -1);
+  const featureName = featureNameAttribute?.getFirstDescendantByKind(SyntaxKind.StringLiteral)?.getText()?.slice(1, -1);
 
   if (featureName !== removedFeatureName) return;
 
@@ -127,16 +108,14 @@ const replaceComponent = (node: Node) => {
 };
 
 files.forEach((sourceFile) => {
+  // eslint-disable-next-line consistent-return
   sourceFile.forEachDescendant((node) => {
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-      replaceToggleFunction(node);
+      return replaceToggleFunction(node);
     }
 
-    if (
-      node.isKind(SyntaxKind.JsxSelfClosingElement)
-            && isToggleComponent(node)
-    ) {
-      replaceComponent(node);
+    if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToggleComponent(node)) {
+      return replaceComponent(node);
     }
   });
 });
