@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 import { useLocation } from 'react-router';
 
 import { IStateSchema } from '@/app/providers/StoreProvider';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
@@ -43,7 +43,11 @@ export const Page = memo(({
 
   useInfiniteScroll({
     triggerRef,
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isOldDesign',
+      on: () => wrapperRef,
+      off: () => undefined,
+    }),
     callback: onScrollEnd,
   });
 
