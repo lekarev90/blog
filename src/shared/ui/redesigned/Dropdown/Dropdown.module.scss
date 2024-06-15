@@ -10,27 +10,27 @@
 }
 
 .menuItems {
-  outline: none;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background: var(--inverted-bg-color);
+  background: var(--dark-bg-v2);
   position: absolute;
-  left: 0;
   z-index: 10000;
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px var(--listbox-bg);
+  border-radius: 18px;
+  box-shadow: 4px 4px 8px var(--dark-bg-v2);
+  border: 1px solid;
+  border-color: var(--accent-v2);
+  outline: none;
+  overflow: hidden;
 }
 
 .menuItem {
   cursor: pointer;
   padding: 10px 20px;
-  transition: opacity 0.2s ease-in-out;
-  color: var(--inverted-primary-color);
+  transition: color 0.2s ease-in-out;
+  color: var(--text-v2);
 
   &.focus {
-    background: var(--inverted-secondary-color);
-    color: #fff;
-    opacity: 0.8;
+    background: var(--light-bg-v2);
   }
 }

@@ -47,7 +47,7 @@ export const Navbar = memo(() => {
         </HStack>
       )}
       off={(
-        <HStack gap="16" className={styles.dropdownWrapper}>
+        <HStack gap="16" className={styles.dropdownWrapperV2}>
           <NotificationModal />
           <NavbarMenuDropDown authData={authData} />
         </HStack>

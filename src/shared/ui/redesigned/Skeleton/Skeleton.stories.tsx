@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from './Skeleton';
 
 export default {
-  title: 'deprecated/shared/Skeleton',
+  title: 'shared/Skeleton',
   component: Skeleton,
   args: {
     children: 'text',

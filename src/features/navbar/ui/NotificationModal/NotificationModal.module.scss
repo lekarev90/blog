@@ -4,6 +4,9 @@
 }
 
 .scrollContainer {
+  border-radius: 18px;
+  border: 1px solid var(--accent-v2);
+  overflow: hidden;
   min-height: 100px;
   max-height: 250px;
   width: 400px;

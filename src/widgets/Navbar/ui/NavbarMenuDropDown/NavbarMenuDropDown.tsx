@@ -7,9 +7,12 @@ import {
   isUserAdmin, isUserManager, IUser, userActions,
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Avatar } from '@/shared/ui/depricated/Avatar';
-import { Dropdown } from '@/shared/ui/depricated/Dropdown';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/depricated/Avatar';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/depricated/Dropdown';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Dropdown';
 
 interface NavbarMenuDropDownProps {
   authData: IUser;
@@ -48,16 +51,20 @@ export const NavbarMenuDropDown = memo(({ authData }: NavbarMenuDropDownProps) =
   ];
 
   return (
-    <Dropdown
-      TriggerComponent={(
-        <Avatar
-          invertedDefaultAvatar
-          src={authData.avatar}
-          alt={authData.username}
-          size={25}
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <DropdownDeprecated
+          TriggerComponent={<AvatarDeprecated invertedDefaultAvatar src={authData.avatar} alt={authData.username} size={25} />}
+          items={droDownItems}
         />
       )}
-      items={droDownItems}
+      off={(
+        <Dropdown
+          TriggerComponent={<Avatar src={authData.avatar} alt={authData.username} size={40} />}
+          items={droDownItems}
+        />
+      )}
     />
   );
 });

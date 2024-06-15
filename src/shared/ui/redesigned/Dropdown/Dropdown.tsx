@@ -23,10 +23,6 @@ interface DropdownProps {
   items: DropdownItem[];
 }
 
-/**
- * @deprecated
- */
-
 export const Dropdown = memo(({ items, TriggerComponent }: DropdownProps) => (
   <Menu>
     <MenuButton as="div" className={styles.triggerWrapper}>
@@ -38,6 +34,7 @@ export const Dropdown = memo(({ items, TriggerComponent }: DropdownProps) => (
       anchor={{
         to: 'bottom',
         gap: 8,
+        padding: 16,
       }}
     >
       {items.map(({ value, to, onClick }) => (

@@ -21,9 +21,7 @@ const defaultAnchor: AnchorProps = {
   to: 'bottom end',
   gap: '10',
 };
-/**
- * @deprecated
- */
+
 export const Popover = memo(({
   children, TriggerComponent, anchor = defaultAnchor, panelClassName,
 }: PopoverProps) => (

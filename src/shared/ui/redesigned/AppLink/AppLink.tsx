@@ -12,7 +12,7 @@ export type TAppLinkVariant = 'primary'| 'red'
 export interface AppLinkProps extends LinkProps {
   className?: string;
   variant?: TAppLinkVariant;
-  activeClassName: string;
+  activeClassName?: string;
 }
 
 export const AppLink = memo(({

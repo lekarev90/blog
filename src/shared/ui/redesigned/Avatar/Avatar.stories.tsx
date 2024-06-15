@@ -4,7 +4,7 @@ import { Avatar } from './Avatar';
 import picture from './storybook.jpg';
 
 export default {
-  title: 'deprecated/shared/Avatar',
+  title: 'shared/Avatar',
   component: Avatar,
   args: {
     src: picture,

@@ -1,0 +1,48 @@
+$button-width: 200px;
+
+.field {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.button {
+  min-width: $button-width;
+  position: relative;
+}
+
+.options {
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  min-width: $button-width;
+  background: var(--dark-bg-v2);
+  position: absolute;
+  left: 0;
+  z-index: 10000;
+  border-radius: 18px;
+  box-shadow: 4px 4px 8px var(--dark-bg-v2);
+}
+
+.option {
+  padding: 10px 20px;
+  transition: opacity 0.2s ease-in-out;
+
+  &.selected {
+    background: var(--secondary-color);
+    color: #fff;
+  }
+
+  &.focus:not(.selected) {
+    background: var(--inverted-secondary-color);
+    color: #fff;
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+  }
+}
