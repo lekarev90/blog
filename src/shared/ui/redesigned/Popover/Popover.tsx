@@ -2,6 +2,7 @@ import { memo, ReactNode } from 'react';
 
 import { Popover as HPopover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { AnchorProps } from '@headlessui/react/dist/internal/floating';
+import { ReactTag } from '@headlessui/react/dist/types';
 import classNames from 'classnames/bind';
 
 import { Button } from '../Button';
@@ -15,6 +16,7 @@ interface PopoverProps {
   children: ReactNode;
   TriggerComponent: ReactNode;
   anchor?: AnchorProps
+  as?: ReactTag
 }
 
 const defaultAnchor: AnchorProps = {
@@ -23,10 +25,10 @@ const defaultAnchor: AnchorProps = {
 };
 
 export const Popover = memo(({
-  children, TriggerComponent, anchor = defaultAnchor, panelClassName,
+  children, TriggerComponent, anchor = defaultAnchor, panelClassName, as,
 }: PopoverProps) => (
   <HPopover>
-    <PopoverButton as={Button}>
+    <PopoverButton as={as || Button}>
       {TriggerComponent}
     </PopoverButton>
     <PopoverPanel anchor={anchor} className={cx(styles.panel, panelClassName)}>

@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  padding: 8px 16px;
+  border: 2px solid;
+  border-color: var(--icon-v2);
+  height: 38px;
+  width: 100%;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.addonLeft,
+.addonRight {
+  display: flex;
+}
+
+.withAddonLeft {
+  padding-left: 8px;
+}
+
+.withAddonRight {
+  padding-right: 8px;
+}
+
+.isFocused {
+  border-color: var(--accent-v2);
+
+  .addonLeft svg,
+  .addonRight svg {
+    color: var(--accent-v2);
+  }
+}
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  color: var(--text-v2);
+  background: none;
+
+  &::placeholder {
+    color: var(--hint-v2);
+  }
+}

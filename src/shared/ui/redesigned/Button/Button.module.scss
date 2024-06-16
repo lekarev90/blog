@@ -1,11 +1,25 @@
+.addonLeft,
+.addonRight {
+  display: flex;
+
+  svg {
+    color: var(--hint-v2);
+  }
+}
+
 .container {
   cursor: pointer;
   color: var(--text-v2);
   padding: 6px 15px;
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
 
   &:hover:not([disabled]) {
    color: var(--accent-v2);
+
+    .addonLeft svg,
+    .addonRight svg {
+      color: var(--accent-v2);
+    }
   }
 }
 
@@ -21,6 +35,14 @@
   border-color: var(--primary-color);
   color: var(--primary-color);
   background: none;
+}
+
+.filled {
+  background: var(--light-bg-v2);
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 32px;
 }
 
 .square {
@@ -62,3 +84,18 @@
 .isWide {
   width: 100%;
 }
+
+.withAddonLeft,
+.withAddonRight {
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.withAddonLeft {
+  padding-left: 8px;
+}
+
+.withAddonRight {
+  padding-right: 8px;
+}
+

@@ -12,6 +12,8 @@ $button-width: 200px;
 .button {
   min-width: $button-width;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .options {
@@ -30,15 +32,14 @@ $button-width: 200px;
 .option {
   padding: 10px 20px;
   transition: opacity 0.2s ease-in-out;
+  color: var(--text-v2);
 
   &.selected {
-    background: var(--secondary-color);
-    color: #fff;
+    background: var(--light-bg-v2);
   }
 
   &.focus:not(.selected) {
-    background: var(--inverted-secondary-color);
-    color: #fff;
+    background: var(--hint-v2);
     opacity: 0.8;
   }
 

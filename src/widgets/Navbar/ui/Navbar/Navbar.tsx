@@ -47,7 +47,7 @@ export const Navbar = memo(() => {
         </HStack>
       )}
       off={(
-        <HStack gap="16" className={styles.dropdownWrapperV2}>
+        <HStack gap="16" flexWrap={false}>
           <NotificationModal />
           <NavbarMenuDropDown authData={authData} />
         </HStack>
@@ -82,7 +82,7 @@ export const Navbar = memo(() => {
         </HStack>
       )}
       off={(
-        <HStack Component="header" align="center" maxWidth className={styles.containerV2}>
+        <HStack Component="header" align="center" className={styles.containerV2}>
           <div className={styles.links}>
             {userAreaButtons}
           </div>

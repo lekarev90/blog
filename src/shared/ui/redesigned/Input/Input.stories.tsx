@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import { Input } from './Input';
 
 export default {
-  title: 'deprecated/shared/Input',
+  title: 'shared/Input',
   component: Input,
   args: {
     placeholder: 'some placeholder',

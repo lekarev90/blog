@@ -3,7 +3,9 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { EArticleTypes } from '@/entities/Article';
-import { Tabs } from '@/shared/ui/depricated/Tabs';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Tabs as TabsDeprecated } from '@/shared/ui/depricated/Tabs';
+import { Tabs } from '@/shared/ui/redesigned/Tabs';
 
 import styles from './ArticlesListTabs.module.scss';
 
@@ -101,5 +103,28 @@ export const ArticlesListTabs = memo(({ currentType, onTabClick }: IArticlesList
     [t],
   );
 
-  return <Tabs tabs={articleTypes} className={styles.tabs} tabClassName={styles.tab} onTabClick={onTabClick} value={currentType} />;
+  return (
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <TabsDeprecated
+          tabs={articleTypes}
+          className={styles.tabs}
+          tabClassName={styles.tab}
+          onTabClick={onTabClick}
+          value={currentType}
+        />
+      )}
+      off={(
+        <Tabs
+          tabs={articleTypes}
+          className={styles.tabsV2}
+          tabClassName={styles.tabV2}
+          onTabClick={onTabClick}
+          value={currentType}
+          direction="column"
+        />
+      )}
+    />
+  );
 });

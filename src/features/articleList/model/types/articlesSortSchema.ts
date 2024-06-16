@@ -5,5 +5,5 @@ import { EArticleSortField, ESortFieldNames } from '../const/const';
 export interface IArticlesListSortSchema {
   [ESortFieldNames.ORDER_BY]: TSortOrder;
   [ESortFieldNames.SORT_BY]: EArticleSortField;
-  searchText: string;
+  initialized?: boolean
 }

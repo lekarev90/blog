@@ -36,8 +36,6 @@ export const NotificationModal = memo(() => {
           onClick={onOpenDrawer}
           Svg={NotificationIcon}
           className={styles.icon}
-          height={20}
-          width={20}
         />
 )}
     />
@@ -56,7 +54,7 @@ export const NotificationModal = memo(() => {
             </PopoverDeprecated>
           )}
           off={(
-            <Popover TriggerComponent={triggerComponent}>
+            <Popover as="div" TriggerComponent={triggerComponent}>
               <div className={styles.scrollContainer}>
                 <NotificationList />
               </div>

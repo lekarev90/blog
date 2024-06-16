@@ -2449,7 +2449,8 @@
         "isArticleRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "dark"
+        "theme": "dark",
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://picsum.photos/200/200"
     },
@@ -2480,7 +2481,8 @@
         "isOldDesign": true
       },
       "jsonSettings": {
-        "theme": "dark"
+        "theme": "light",
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://picsum.photos/200/300"
     },
@@ -2539,7 +2541,7 @@
     {
       "id": "3",
       "firstName": "Mikhail",
-      "lastName": "Prohrov",
+      "lastName": "Prohroff",
       "age": "39",
       "currency": "USD",
       "country": "Spain",

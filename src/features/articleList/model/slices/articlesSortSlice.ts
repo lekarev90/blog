@@ -8,7 +8,7 @@ import { IArticlesListSortSchema } from '../types/articlesSortSchema';
 const initialState: IArticlesListSortSchema = {
   orderBy: 'asc',
   sortBy: EArticleSortField.CREATED,
-  searchText: '',
+  initialized: false,
 };
 
 export const articlesSortSlice = createSlice({
@@ -21,8 +21,8 @@ export const articlesSortSlice = createSlice({
     setSort: (state, action: PayloadAction<EArticleSortField>) => {
       state.sortBy = action.payload;
     },
-    init: (state, action: PayloadAction<string>) => {
-      state.searchText = action.payload;
+    init: (state) => {
+      state.initialized = true;
     },
   },
 });

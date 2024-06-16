@@ -5,10 +5,12 @@ import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
 
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { TSortOrder } from '@/shared/types/sort';
 import { Select, SelectOptions } from '@/shared/ui/depricated/Select';
-import { HStack } from '@/shared/ui/redesigned/Stack';
+import { ListBox } from '@/shared/ui/redesigned/ListBox';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 import { EArticleSortField, ESortFieldNames } from '../../model/const/const';
 import { getArticlesSortData } from '../../model/selectors/articlesSort.selectors';
@@ -84,22 +86,45 @@ export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) 
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <HStack gap="8" flexWrap={false}>
-        <Select
-          options={sortOptions}
-          value={sortBy}
-          name={ESortFieldNames.SORT_BY}
-          onChange={onSwitchSortHandler}
-          label={t('articles:sortBy')}
-        />
-        <Select
-          options={orderOptions}
-          value={orderBy}
-          name={ESortFieldNames.ORDER_BY}
-          onChange={onSwitchSortHandler}
-          label={t('articles:orderBy')}
-        />
-      </HStack>
+      <ToggleFeatures
+        feature="isOldDesign"
+        on={(
+          <HStack gap="8" flexWrap={false}>
+            <Select
+              options={sortOptions}
+              value={sortBy}
+              name={ESortFieldNames.SORT_BY}
+              onChange={onSwitchSortHandler}
+              label={t('articles:sortBy')}
+            />
+            <Select
+              options={orderOptions}
+              value={orderBy}
+              name={ESortFieldNames.ORDER_BY}
+              onChange={onSwitchSortHandler}
+              label={t('articles:orderBy')}
+            />
+          </HStack>
+        )}
+        off={(
+          <VStack gap="8">
+            <ListBox
+              defaultValue="asc"
+              items={sortOptions}
+              value={sortBy}
+              name={ESortFieldNames.SORT_BY}
+              onChange={onSwitchSortHandler}
+            />
+            <ListBox
+              defaultValue={EArticleSortField.CREATED}
+              items={orderOptions}
+              value={orderBy}
+              name={ESortFieldNames.ORDER_BY}
+              onChange={onSwitchSortHandler}
+            />
+          </VStack>
+        )}
+      />
     </DynamicModuleLoader>
   );
 });

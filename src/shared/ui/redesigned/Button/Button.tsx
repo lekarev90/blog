@@ -1,4 +1,6 @@
-import { type ButtonHTMLAttributes, forwardRef, memo } from 'react';
+import {
+  type ButtonHTMLAttributes, forwardRef, memo, ReactNode,
+} from 'react';
 
 import classNames from 'classnames/bind';
 
@@ -6,49 +8,50 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-type TButtonVariants = 'clear' | 'outline'
+type TButtonVariants = 'clear' | 'outline' | 'filled';
 
-type TButtonSize = 'm' | 'l' | 'xl'
+type TButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: TButtonVariants;
-  square?: boolean;
   size?: TButtonSize;
-  isWide?: boolean
+  isWide?: boolean;
+  addonLeft?: ReactNode;
+  addonRight?: ReactNode;
 }
 
-const _Button = forwardRef<HTMLButtonElement, ButtonProps>(({
-  className,
-  children,
-  variant = 'clear',
-  square,
-  size = 'm',
-  disabled,
-  isWide,
-  ...props
-}: ButtonProps, ref) => {
-  const mods: Record<string, string | boolean | undefined> = {
-    [variant]: variant,
-    [size]: size,
-    square,
-    disabled,
-    isWide,
-  };
+const _Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({
+    className, children, variant = 'clear', size = 'm', disabled, isWide, addonLeft, addonRight, ...props
+  }: ButtonProps, ref) => {
+    const mods: Record<string, string | boolean | undefined> = {
+      [variant]: variant,
+      [size]: size,
+      disabled,
+      isWide,
+      withAddonLeft: Boolean(addonLeft),
+      withAddonRight: Boolean(addonRight),
+    };
 
-  const containerClassNames = cx(styles.container, className, mods);
+    const containerClassNames = cx(styles.container, className, mods);
 
-  return (
-    <button
-      type="button"
-      className={containerClassNames}
-      disabled={disabled}
-      ref={ref}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-});
+    return (
+      <button type="button" className={containerClassNames} disabled={disabled} ref={ref} {...props}>
+        {addonLeft && (
+          <div className={styles.addonLeft}>
+            {addonLeft}
+          </div>
+        )}
+        {children}
+        {addonRight && (
+          <div className={styles.addonRight}>
+            {addonRight}
+          </div>
+        )}
+      </button>
+    );
+  },
+);
 
 export const Button = memo(_Button) as typeof _Button;

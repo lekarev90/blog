@@ -6,20 +6,22 @@ import styles from './Card.module.scss';
 
 const cx = classNames.bind(styles);
 
-type TCardTheme = 'default' | 'outlined' | 'light'
+export type TCardVariant = 'default' | 'outlined' | 'light'
 type TCardPaddings = '0' | '8' | '16' | '24'
+type TCardBorder = 'normal' | 'rounded'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
-  variant?: TCardTheme;
+  variant?: TCardVariant;
   padding?: TCardPaddings;
+  borderRadius?: TCardBorder;
 }
 
 export const Card = ({
-  className, children, variant = 'default', padding = '8', ...props
+  className, children, variant = 'default', padding = '8', borderRadius = 'normal', ...props
 }: CardProps) => (
-  <div className={cx(styles.container, { [`variant-${variant}`]: variant, [`padding-${padding}`]: padding }, className)} {...props}>
+  <div className={cx(styles.container, `variant-${variant}`, `padding-${padding}`, `borderRadius-${borderRadius}`, className)} {...props}>
     {children}
   </div>
 );

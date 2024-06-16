@@ -79,7 +79,7 @@ export const Page = memo(({
         </main>
       )}
       off={(
-        <main ref={wrapperRef} className={cx(styles.containerV2, className)} onScroll={handleScroll} data-testid={dataTestId}>
+        <main ref={wrapperRef} onScroll={handleScroll} data-testid={dataTestId}>
           {children}
           <div ref={triggerRef} />
         </main>

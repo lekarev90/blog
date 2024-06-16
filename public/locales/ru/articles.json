@@ -6,9 +6,10 @@
   "orderBy": "Упорядочить по",
   "recommendationTitle": "Рекомендации",
   "search": {
-    "placeholder": "Введите текст для поиска"
+    "placeholder": "Поиск..."
   },
   "sort": {
+    "titleCommon": "Сортировать по:",
     "orderBy": {
       "asc": "возрастанию",
       "desc": "убыванию"

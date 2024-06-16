@@ -4,12 +4,14 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { EArticlesView, IArticle } from '@/entities/Article';
+import { articlesSortReducer } from '@/features/articleList';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Card } from '@/shared/ui/depricated/Card';
 import { Text } from '@/shared/ui/depricated/Text';
 import { HStack, TFlexGap, VStack } from '@/shared/ui/redesigned/Stack';
 
+import { articlesSearchReducer } from '../../../../features/articleList/model/slices/articlesSearchSlice';
 import { ARTICLES_LIST_DATA, QUANTITY_LIMIT } from '../../model/const/const';
 import { useInitSortAndSearchFromSearchParams } from '../../model/helpers/useInitSortAndSearchFromSearchParams';
 import { getArticlesListData } from '../../model/selectors/articlesList.selectors';
@@ -28,6 +30,8 @@ interface IArticleListProps {
 
 const reducers = {
   articlesList: articlesListReducer,
+  articlesSearch: articlesSearchReducer,
+  articlesSort: articlesSortReducer,
 };
 
 export const ArticlesList = memo(({

@@ -4,26 +4,22 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { EArticlesView, EArticleTypes } from '@/entities/Article';
-import { ArticlesListSort, ArticlesListTabs, ArticlesListViewSwitcher } from '@/features/articleList';
-import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  ArticlesListSort, ArticlesListTabs, ArticlesListViewSwitcher, articlesSearchActions,
+} from '@/features/articleList';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { Card } from '@/shared/ui/depricated/Card';
 import { Input } from '@/shared/ui/depricated/Input';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
+import { articlesListActions } from '../..';
 import { getArticlesSearchText } from '../../model/selectors/articlesSearch.selectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList';
-import { articlesListActions } from '../../model/slices/articlesListSlice';
-import { articlesSearchActions, articlesSearchReducer } from '../../model/slices/articlesSearchSlice';
-
-const reducers = {
-  articlesSearch: articlesSearchReducer,
-};
 
 interface IArticleListHeaderProps {
-  articlesView: EArticlesView
-  onSwitchArticleSwitch: (newView: EArticlesView) => void
+  articlesView: EArticlesView;
+  onSwitchArticleSwitch: (newView: EArticlesView) => void;
 }
 
 export const ArticleListHeader = memo(({ articlesView, onSwitchArticleSwitch }: IArticleListHeaderProps) => {
@@ -31,6 +27,7 @@ export const ArticleListHeader = memo(({ articlesView, onSwitchArticleSwitch }: 
   const dispatch = useAppDispatch();
 
   const { type = EArticleTypes.ALL } = useSelector(getArticlesSearchText) || {};
+  const { text = '' } = useSelector(getArticlesSearchText) || {};
 
   const fetchArticlesWithFullReset = useCallback(() => {
     dispatch(articlesListActions.setPage(1));
@@ -51,17 +48,19 @@ export const ArticleListHeader = memo(({ articlesView, onSwitchArticleSwitch }: 
   }, [dispatch, fetchArticlesWithFullReset]);
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    // <DynamicModuleLoader reducers={reducers}>
+    <>
       <HStack justify="between">
         <ArticlesListSort onSwitchSort={fetchArticlesWithFullReset} />
         <ArticlesListViewSwitcher onSwitchView={onSwitchArticleSwitch} currentArticleView={articlesView} />
       </HStack>
       <VStack gap="8">
         <HStack Component={Card}>
-          <Input name="search" placeholder={t('articles:search.placeholder')} onChange={onChangeSearchText} />
+          <Input name="search" placeholder={t('articles:search.placeholder')} onChange={onChangeSearchText} value={text} />
         </HStack>
         <ArticlesListTabs onTabClick={onTypeClick} currentType={type} />
       </VStack>
-    </DynamicModuleLoader>
+    </>
+    // </DynamicModuleLoader>
   );
 });

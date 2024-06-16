@@ -1,5 +1,9 @@
 .tab {
   padding: 5px;
+}
+
+.tab,
+.tabV2{
   min-width: 35px;
   text-align: center;
   cursor: pointer;
@@ -12,4 +16,8 @@
 
 .tabs {
   gap: 10px;
+}
+
+.tabsV2 {
+  align-items: flex-start;
 }
