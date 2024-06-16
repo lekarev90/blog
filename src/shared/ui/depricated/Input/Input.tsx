@@ -1,5 +1,5 @@
 import React, {
-  InputHTMLAttributes, memo, useEffect, useRef,
+  InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 
 import styles from './Input.module.scss';
@@ -20,7 +20,7 @@ interface InputProps<T extends string> extends HTMLInputProps {
  * @deprecated
  */
 export const _Input = <T extends string>({
-  value,
+  value = '',
   onChange,
   type = 'text',
   placeholder,
@@ -30,6 +30,12 @@ export const _Input = <T extends string>({
 }: InputProps<T>) => {
   const ref = useRef<HTMLInputElement>(null);
 
+  const [inputValue, setInputValue] = useState(value);
+
+  useEffect(() => {
+    setInputValue(value);
+  }, [value]);
+
   useEffect(() => {
     if (autofocus) {
       ref.current?.focus();
@@ -37,6 +43,7 @@ export const _Input = <T extends string>({
   }, [autofocus]);
 
   const onChangeHandler = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(target.value);
     onChange?.(target.value, name);
   };
 
@@ -45,13 +52,14 @@ export const _Input = <T extends string>({
       placeholder={placeholder}
       ref={ref}
       className={styles.input}
-      value={value}
+      value={inputValue}
       onChange={onChangeHandler}
       type={type}
       {...props}
     />
   );
 };
+
 /**
  * @deprecated
  */
