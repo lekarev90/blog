@@ -2,7 +2,9 @@ import { memo, useCallback } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { ListBox } from '@/shared/ui/depricated/ListBox';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/depricated/ListBox';
+import { ListBox } from '@/shared/ui/redesigned/ListBox';
 
 import { ECountrySchema } from '../../model/const/const';
 import { CountrySelectorFieldName } from '../../model/types/countrySchema';
@@ -35,13 +37,29 @@ export const CountrySelect = memo(({ value, isReadonly, onChange }: CountrySelec
   }, [onChange]);
 
   return (
-    <ListBox
-      items={options}
-      onChange={onChangeHandler}
-      value={value}
-      disabled={isReadonly}
-      label={t('translation:countrySelectorLabel')}
-      defaultValue={t('translation:countrySelectorDefaultValue')}
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <ListBoxDeprecated
+          items={options}
+          onChange={onChangeHandler}
+          value={value}
+          disabled={isReadonly}
+          label={t('translation:countrySelectorLabel')}
+          defaultValue={t('translation:countrySelectorDefaultValue')}
+        />
+)}
+      off={(
+        <ListBox
+          items={options}
+          onChange={onChangeHandler}
+          value={value}
+          disabled={isReadonly}
+          label={t('translation:countrySelectorLabel')}
+          defaultValue={t('translation:countrySelectorDefaultValue')}
+          name="country"
+        />
+)}
     />
   );
 });

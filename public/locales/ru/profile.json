@@ -13,7 +13,19 @@
     "currency": "Валюта",
     "firstName": "Ваше имя",
     "lastName": "Ваша фамилия",
-    "username": "Никнейм"
+    "username": "Никнейм",
+    "city": "Город"
+  },
+  "inputLabels": {
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "age": "Возраст",
+    "city": "Город",
+    "username": "Никнейм",
+    "avatar": "Ссылка на аватар",
+    "currency": "Валюта",
+    "country": "Страна"
+
   },
   "pageTitle": "Профиль",
   "resetButton": "Отменить",

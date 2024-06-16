@@ -7,7 +7,23 @@
   border-color: var(--icon-v2);
   height: 38px;
   width: 100%;
-  transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.disabled {
+  opacity: 0.8;
+}
+
+.inputHeight-s {
+  height: 32px;
+}
+
+.inputHeight-m {
+  height: 38px;
+}
+
+.inputHeight-l {
+  height: 44px;
 }
 
 .addonLeft,

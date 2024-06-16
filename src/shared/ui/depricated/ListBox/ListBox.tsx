@@ -34,7 +34,7 @@ interface ListBoxProps {
 export const ListBox = ({
   className, items, disabled, value, defaultValue, onChange, label,
 }: ListBoxProps) => (
-  <Field className={styles.field} disabled={disabled}>
+  <Field disabled={disabled}>
     {label && (
       <Label>
         {label}

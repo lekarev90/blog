@@ -2,6 +2,8 @@ $button-width: 200px;
 
 .field {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -46,4 +48,8 @@ $button-width: 200px;
   &.disabled {
     opacity: 0.4;
   }
+}
+
+.labelArea {
+  min-height: 20px;
 }

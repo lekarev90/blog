@@ -2,7 +2,9 @@ import { memo, useCallback } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { ListBox } from '@/shared/ui/depricated/ListBox';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/depricated/ListBox';
+import { ListBox } from '@/shared/ui/redesigned/ListBox';
 
 import { ECurrency } from '../../model/const/const';
 import { CurrencySelectorFieldName } from '../../model/types/ECurrency';
@@ -31,18 +33,37 @@ const options = [
 export const CurrencySelect = memo(({ value, isReadonly, onChange }: CurrencySelectorProps) => {
   const { t } = useTranslation();
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange(value, 'currency');
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange(value, 'currency');
+    },
+    [onChange],
+  );
 
   return (
-    <ListBox
-      items={options}
-      onChange={onChangeHandler}
-      value={value}
-      disabled={isReadonly}
-      label={t('translation:currencySelectorLabel')}
-      defaultValue={t('translation:currencySelectorDefaultValue')}
+    <ToggleFeatures
+      feature="isOldDesign"
+      on={(
+        <ListBoxDeprecated
+          items={options}
+          onChange={onChangeHandler}
+          value={value}
+          disabled={isReadonly}
+          label={t('translation:currencySelectorLabel')}
+          defaultValue={t('translation:currencySelectorDefaultValue')}
+        />
+      )}
+      off={(
+        <ListBox
+          items={options}
+          onChange={onChangeHandler}
+          value={value}
+          disabled={isReadonly}
+          label={t('translation:currencySelectorLabel')}
+          defaultValue={t('translation:currencySelectorDefaultValue')}
+          name="currency"
+        />
+      )}
     />
   );
 });

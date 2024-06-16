@@ -7,7 +7,7 @@ import styles from './Flex.module.scss';
 export type TFlexJustify = 'start' | 'end' | 'center' | 'between';
 export type TFlexAlign = 'start' | 'end' | 'center' | 'stretch';
 export type TFlexDirection = 'row' | 'column';
-export type TFlexGap = '2' | '4' | '8' | '16' | '32';
+export type TFlexGap = '2' | '4' | '8' | '16' | '24' | '32';
 
 export interface FlexProps {
   className?: string;

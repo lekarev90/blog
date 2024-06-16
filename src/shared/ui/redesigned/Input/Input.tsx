@@ -4,9 +4,13 @@ import React, {
 
 import classNames from 'classnames/bind';
 
+import { VStack } from '../Stack';
+
 import styles from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+
+type TInputHeight = 's' | 'm' | 'l';
 
 interface InputProps<T extends string> extends HTMLInputProps {
   wrapperClassName?: string;
@@ -18,6 +22,9 @@ interface InputProps<T extends string> extends HTMLInputProps {
   autofocus?: boolean;
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
+  label?: string;
+  inputHeight?: TInputHeight;
+  disabled?: boolean;
 }
 
 const cx = classNames.bind(styles);
@@ -32,6 +39,9 @@ export const _Input = <T extends string>({
   addonLeft,
   addonRight,
   wrapperClassName,
+  label,
+  inputHeight = 'm',
+  disabled,
   ...props
 }: InputProps<T>) => {
   const ref = useRef<HTMLInputElement>(null);
@@ -64,29 +74,38 @@ export const _Input = <T extends string>({
   };
 
   return (
-    <div className={cx(styles.wrapper, wrapperClassName, { withAddonLeft: addonLeft, withAddonRight: addonRight, isFocused })}>
-      {addonLeft && (
-      <div className={styles.addonLeft}>
-        {addonLeft}
+    <VStack gap="4">
+      <span className={styles.labelArea}>
+        {label}
+      </span>
+      <div className={cx(styles.wrapper, wrapperClassName, {
+        disabled, withAddonLeft: addonLeft, withAddonRight: addonRight, isFocused,
+      })}
+      >
+        {addonLeft && (
+        <div className={styles.addonLeft}>
+          {addonLeft}
+        </div>
+        )}
+        <input
+          placeholder={placeholder}
+          ref={ref}
+          className={cx(styles.input, `inputHeight-${inputHeight}`)}
+          value={inputValue}
+          onChange={onChangeHandler}
+          type={type}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          disabled={disabled}
+          {...props}
+        />
+        {addonRight && (
+        <div className={styles.addonRight}>
+          {addonRight}
+        </div>
+        )}
       </div>
-      )}
-      <input
-        placeholder={placeholder}
-        ref={ref}
-        className={styles.input}
-        value={inputValue}
-        onChange={onChangeHandler}
-        type={type}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        {...props}
-      />
-      {addonRight && (
-      <div className={styles.addonRight}>
-        {addonRight}
-      </div>
-      )}
-    </div>
+    </VStack>
   );
 };
 

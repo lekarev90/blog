@@ -11,6 +11,7 @@ import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 import { Button } from '../Button';
 import { Icon } from '../Icon';
+import { VStack } from '../Stack';
 
 import styles from './ListBox.module.scss';
 
@@ -25,32 +26,50 @@ interface ListBoxProps<T extends string, N extends string> {
   items: IListBoxItem<T>[];
   disabled?: boolean;
   value?: T;
-  name: N,
+  name: N;
   defaultValue?: T;
   onChange: (value: T, name: N) => void;
-  label?: string
+  label?: string;
+  isFullWidthButton?: boolean;
 }
 
 const cx = classNames.bind(styles);
 
 export const ListBox = <T extends string, N extends string>({
-  className, items, disabled, value, defaultValue, onChange, label, name,
+  className,
+  items,
+  disabled,
+  value,
+  defaultValue,
+  onChange,
+  label,
+  name,
+  isFullWidthButton,
 }: ListBoxProps<T, N>) => {
-  const onChangeHandler = useCallback((value: T) => {
-    onChange(value, name);
-  }, [name, onChange]);
+  const onChangeHandler = useCallback(
+    (value: T) => {
+      onChange(value, name);
+    },
+    [name, onChange],
+  );
 
   const selectedItem = useMemo(() => items.find((item) => item.value === value), [items, value]);
 
   return (
-    <Field className={styles.field} disabled={disabled}>
-      {label && (
-      <Label>
-        {label}
-      </Label>
-      )}
+    <Field disabled={disabled} as={VStack} gap="4">
+      <span className={styles.labelArea}>
+        <Label>
+          {label}
+        </Label>
+      </span>
       <HListBox as="div" className={cx(styles.container, className)} value={value || defaultValue} onChange={onChangeHandler}>
-        <ListboxButton as={Button} variant="filled" className={styles.button} addonRight={<Icon Svg={ArrowIcon} />}>
+        <ListboxButton
+          as={Button}
+          variant="dark"
+          className={styles.button}
+          addonRight={<Icon Svg={ArrowIcon} />}
+          isWide={isFullWidthButton}
+        >
           {selectedItem?.content || defaultValue}
         </ListboxButton>
         <ListboxOptions

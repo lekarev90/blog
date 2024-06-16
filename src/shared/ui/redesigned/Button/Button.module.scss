@@ -45,6 +45,14 @@
   border-radius: 32px;
 }
 
+.dark {
+  background: var(--dark-bg-v2);
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 32px;
+}
+
 .square {
   padding: 0;
 }

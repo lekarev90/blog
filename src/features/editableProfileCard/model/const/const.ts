@@ -14,6 +14,7 @@ export enum EProfileCardTestIdInputs {
   LAST_NAME = 'lastName',
   AGE = 'age',
   USERNAME = 'username',
+  CITY = 'city'
 }
 
 export enum EProfileCardTestIdButtons {

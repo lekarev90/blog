@@ -8,7 +8,7 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-type TButtonVariants = 'clear' | 'outline' | 'filled';
+type TButtonVariants = 'clear' | 'outline' | 'filled' | 'dark';
 
 type TButtonSize = 'm' | 'l' | 'xl';
 
@@ -19,6 +19,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isWide?: boolean;
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
+  fullWidth?: boolean;
 }
 
 const _Button = forwardRef<HTMLButtonElement, ButtonProps>(

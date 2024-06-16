@@ -52,7 +52,7 @@ export const ArticleListFilters = () => {
   );
 
   return (
-    <VStack Component={Card} gap="32" padding="24" className={styles.container}>
+    <VStack Component={Card} variant="light" gap="32" padding="24" className={styles.container}>
       <Input
         wrapperClassName={styles.inputWrapper}
         name="search"
