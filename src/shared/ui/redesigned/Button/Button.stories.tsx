@@ -22,39 +22,6 @@ export const Outline: StoryObj<typeof Button> = {
   },
 };
 
-export const Square: StoryObj<typeof Button> = {
-  args: {
-    variant: 'outline',
-    square: true,
-  },
-};
-
-export const SquareSizeM: StoryObj<typeof Button> = {
-  args: {
-    children: '<',
-    variant: 'outline',
-    square: true,
-    size: 'm',
-  },
-};
-
-export const SquareSizeL: StoryObj<typeof Button> = {
-  args: {
-    children: '<',
-    variant: 'outline',
-    square: true,
-    size: 'l',
-  },
-};
-export const SquareSizeXL: StoryObj<typeof Button> = {
-  args: {
-    children: '<',
-    variant: 'outline',
-    square: true,
-    size: 'xl',
-  },
-};
-
 export const Disabled: StoryObj<typeof Button> = {
   args: {
     children: 'disabled',
