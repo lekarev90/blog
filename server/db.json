@@ -2446,10 +2446,11 @@
         "ADMIN"
       ],
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isOldDesign": false
       },
       "jsonSettings": {
-        "theme": "orange",
+        "theme": "dark",
         "isArticlesPageWasOpened": true
       },
       "avatar": "https://picsum.photos/200/200"

@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/authByUsername';
 import { NotificationModal } from '@/features/navbar';
+import { UiDesignSwitch } from '@/features/uiDesignSwitch';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink } from '@/shared/ui/depricated/AppLink';
@@ -40,14 +41,16 @@ export const Navbar = memo(() => {
           <AppLink to={getRouteArticleCreate()} variant="secondary">
             {t('translation:navbar.createArticle')}
           </AppLink>
-          <HStack gap="16" className={styles.dropdownWrapper}>
+          <HStack gap="16" align="center" className={styles.dropdownWrapper}>
+            <UiDesignSwitch />
             <NotificationModal />
             <NavbarMenuDropDown authData={authData} />
           </HStack>
         </HStack>
       )}
       off={(
-        <HStack gap="16" flexWrap={false}>
+        <HStack gap="16" align="center" flexWrap={false}>
+          <UiDesignSwitch />
           <NotificationModal />
           <NavbarMenuDropDown authData={authData} />
         </HStack>

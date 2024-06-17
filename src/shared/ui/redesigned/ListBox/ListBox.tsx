@@ -9,7 +9,7 @@ import classNames from 'classnames/bind';
 
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
-import { Button } from '../Button';
+import { Button, TButtonVariants } from '../Button';
 import { Icon } from '../Icon';
 import { VStack } from '../Stack';
 
@@ -32,6 +32,7 @@ interface ListBoxProps<T extends string, N extends string> {
   label?: string;
   isFullWidthButton?: boolean;
   showLabelArea?: boolean
+  buttonVariant?: TButtonVariants
 }
 
 const cx = classNames.bind(styles);
@@ -47,6 +48,7 @@ export const ListBox = <T extends string, N extends string>({
   name,
   isFullWidthButton,
   showLabelArea = true,
+  buttonVariant = 'dark',
 }: ListBoxProps<T, N>) => {
   const onChangeHandler = useCallback(
     (value: T) => {
@@ -70,7 +72,7 @@ export const ListBox = <T extends string, N extends string>({
       <HListBox as="div" className={cx(styles.container, className)} value={value || defaultValue} onChange={onChangeHandler}>
         <ListboxButton
           as={Button}
-          variant="dark"
+          variant={buttonVariant}
           className={styles.button}
           addonRight={<Icon Svg={ArrowIcon} />}
           isWide={isFullWidthButton}
