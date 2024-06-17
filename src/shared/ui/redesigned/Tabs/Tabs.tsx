@@ -38,7 +38,7 @@ const _Tabs = <T extends string>({
   return (
     <Flex direction={direction} gap={gap} className={cx(styles.container, className)}>
       {tabs.map((tab) => {
-        const isActive: TCardVariant = tab.value === value ? 'default-outlined' : 'light';
+        const isActive: TCardVariant = tab.value === value ? 'outlined' : 'light';
 
         return (
           <Card

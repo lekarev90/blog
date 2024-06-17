@@ -6,7 +6,7 @@ import styles from './Card.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type TCardVariant = 'default' | 'outlined' | 'light' | 'default-outlined'
+export type TCardVariant = 'default' | 'outlined' | 'light'
 type TCardPaddings = '0' | '8' | '16' | '24'
 type TCardBorder = 'normal' | 'rounded'
 

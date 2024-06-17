@@ -31,14 +31,10 @@
 }
 
 .variant-outlined {
-  border: 1px solid var(--accent-v2);
+  border: 1px solid;
+  border-color: var(--icon-v2);
 }
 
 .variant-light {
   background: var(--light-bg-v2);
-}
-
-.variant-default-outlined {
-  background: var(--dark-bg-v2);
-  border: 1px solid var(--accent-v2);
 }
