@@ -56,3 +56,9 @@
     font: var(--font-l-v2);
   }
 }
+
+.bold {
+  .title, .text {
+    font-weight: 700;
+  }
+}

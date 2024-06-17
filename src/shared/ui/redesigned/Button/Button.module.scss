@@ -11,7 +11,7 @@
   cursor: pointer;
   color: var(--text-v2);
   padding: 6px 15px;
-  transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
   &:hover:not([disabled]) {
    color: var(--accent-v2);
@@ -32,9 +32,13 @@
 
 .outline {
   border: 1px solid;
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  border-color: var(--icon-v2);
   background: none;
+  border-radius: 34px;
+
+  &:hover:not([disabled]) {
+    border-color: var(--accent-v2);
+  }
 }
 
 .filled {
