@@ -1,6 +1,8 @@
 import { memo } from 'react';
 
-import { Skeleton } from '@/shared/ui/depricated/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/depricated/Skeleton';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { useGetNotificationsQuery } from '../../model/api/notificationApi';
@@ -11,11 +13,17 @@ export const NotificationList = memo(() => {
     pollingInterval: 1000,
   });
 
+  const SkeletonComponent = toggleFeatures({
+    name: 'isOldDesign',
+    on: () => SkeletonDeprecated,
+    off: () => Skeleton,
+  });
+
   const skeletons = (
     <>
-      <Skeleton width="100%" height="80px" borderRadius="8px" />
-      <Skeleton width="100%" height="80px" borderRadius="8px" />
-      <Skeleton width="100%" height="80px" borderRadius="8px" />
+      <SkeletonComponent width="100%" height="80px" borderRadius="8px" />
+      <SkeletonComponent width="100%" height="80px" borderRadius="8px" />
+      <SkeletonComponent width="100%" height="80px" borderRadius="8px" />
     </>
   );
 
