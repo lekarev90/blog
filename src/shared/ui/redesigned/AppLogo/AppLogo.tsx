@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 import Cat from '@/shared/assets/icons/cat.svg';
 
-import { Icon } from '../../depricated/Icon';
+import { Icon } from '../Icon';
 import { HStack } from '../Stack';
 
 import styles from './AppLogo.module.scss';
@@ -19,8 +19,8 @@ interface IAppLogoProps {
 
 export const AppLogo = memo(({ className, height = 150, width = 150 }: IAppLogoProps) => (
   <HStack maxWidth justify="center" className={cx(styles.logoWrapper, className)}>
+    <Icon Svg={Cat} className={styles.cat} height={height} width={width} />
     <div className={styles.gradientBig} />
     <div className={styles.gradientSmall} />
-    <Icon Svg={Cat} className={styles.cat} height={height} width={width} />
   </HStack>
 ));

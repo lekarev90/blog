@@ -23,5 +23,7 @@
 }
 
 .cat {
-  fill: var(--icon-v2)
+  fill: var(--icon-v2);
+  position: relative;
+  z-index: 10;
 }
