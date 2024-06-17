@@ -1,0 +1,62 @@
+.container {
+  width: 230px;
+  height: 100%;
+  transition: transform .3s ease-out, opacity .3s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+    opacity: 0.8;
+  }
+}
+
+.imageWrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+}
+
+.dateWrapper {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.dateText {
+  padding: 0 5px;
+  background-color: rgb(255 255 255 / 60%);
+  border-radius: 5px;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.typesWrapper {
+  flex: 1 0 auto;
+}
+
+.typesText {
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.views {
+  margin-left: auto;
+}
+
+.title {
+  margin-top: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

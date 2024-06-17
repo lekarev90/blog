@@ -6,10 +6,13 @@ import { useTranslation } from 'react-i18next';
 import { EArticlesView, IArticle } from '@/entities/Article';
 import { articlesSortReducer } from '@/features/articleList';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Card } from '@/shared/ui/depricated/Card';
-import { Text } from '@/shared/ui/depricated/Text';
+import { Card as CardDeprecated } from '@/shared/ui/depricated/Card';
+import { Text as TextDeprecated } from '@/shared/ui/depricated/Text';
+import { Card } from '@/shared/ui/redesigned/Card';
 import { HStack, TFlexGap, VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import { articlesSearchReducer } from '../../../../features/articleList/model/slices/articlesSearchSlice';
 import { ARTICLES_LIST_DATA, QUANTITY_LIMIT } from '../../model/const/const';
@@ -51,9 +54,7 @@ export const ArticlesList = memo(({
   const StackComponent = isListView ? VStack : HStack;
   const stackProps: Record<string, TFlexGap> = isListView ? { gap: '16' } : { gap: '8' };
 
-  const skeletonComponents = Array.from({ length: QUANTITY_LIMIT }, (_, index) => (
-    <ComponentSkeleton key={index} />
-  ));
+  const skeletonComponents = Array.from({ length: QUANTITY_LIMIT }, (_, index) => <ComponentSkeleton key={index} />);
 
   const renderComponent = useCallback(
     () => articles.map((article, index) => <Component key={index} {...article} />),
@@ -73,14 +74,22 @@ export const ArticlesList = memo(({
         {isLoading && skeletonComponents}
         {isShowMoreButton && (
           <StackComponent
-            Component={Card}
+            Component={toggleFeatures({
+              name: 'isOldDesign',
+              on: () => CardDeprecated,
+              off: () => Card,
+            })}
             className={styles.fetchMore}
             align="center"
             justify="center"
             maxWidth
             onClick={onLoadNextPart}
           >
-            <Text text={t('translation:loadMore')} />
+            <ToggleFeatures
+              feature="isOldDesign"
+              on={<TextDeprecated text={t('translation:loadMore')} />}
+              off={<Text text={t('translation:loadMore')} />}
+            />
           </StackComponent>
         )}
       </StackComponent>
