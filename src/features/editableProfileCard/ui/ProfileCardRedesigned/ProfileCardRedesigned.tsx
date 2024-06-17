@@ -22,45 +22,59 @@ export interface IProfileCardRedesignedProps {
 }
 
 export const SkeletonProfileCardRedesigned = () => (
-  <VStack gap="32" maxWidth>
-    <HStack justify="center" maxWidth>
+  <VStack
+    gap="32"
+    maxWidth
+    Component={Card}
+    variant="light"
+    padding="16"
+  >
+    <HStack
+      justify="center"
+      maxWidth
+
+    >
       <Skeleton width="200px" height="200px" borderRadius="50%" />
     </HStack>
-    <HStack gap="24" align="start" maxWidth Component={Card}>
+    <HStack
+      gap="24"
+      align="start"
+      maxWidth
+    >
       <VStack gap="16" className={styles.inputsColumn}>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="38px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="38px" />
         </HStack>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="38px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="38px" />
         </HStack>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="38px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="38px" />
         </HStack>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="38px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="38px" />
         </HStack>
       </VStack>
       <VStack gap="16" className={styles.inputsColumn}>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="38px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="38px" />
         </HStack>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="38px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="38px" />
         </HStack>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="32px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="32px" />
         </HStack>
         <HStack gap="4">
-          <Skeleton width="20%" height="20px" />
-          <Skeleton width="100%" height="32px" />
+          <Skeleton inverted width="20%" height="20px" />
+          <Skeleton inverted width="100%" height="32px" />
         </HStack>
       </VStack>
     </HStack>
@@ -73,7 +87,13 @@ export const ProfileCardRedesigned = memo(({
   const { t } = useTranslation('profile');
 
   return (
-    <VStack gap="32" maxWidth>
+    <VStack
+      gap="32"
+      maxWidth
+      Component={Card}
+      variant="light"
+      padding="16"
+    >
       <HStack justify="center" maxWidth>
         <Avatar src={data?.avatar} alt="profile-image" size={200} />
       </HStack>
@@ -81,9 +101,6 @@ export const ProfileCardRedesigned = memo(({
         gap="24"
         align="start"
         maxWidth
-        Component={Card}
-        variant="light"
-        padding="16"
       >
         <VStack gap="16" className={styles.inputsColumn}>
           <Input

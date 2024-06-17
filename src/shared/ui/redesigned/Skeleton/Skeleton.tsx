@@ -11,6 +11,7 @@ interface SkeletonProps {
   height?: string | number;
   width?: string | number;
   borderRadius?: string;
+  inverted?: boolean
 }
 
 export const Skeleton = ({
@@ -18,6 +19,7 @@ export const Skeleton = ({
   width,
   height,
   borderRadius,
+  inverted,
 }: SkeletonProps) => {
   const style: CSSProperties = {
     width,
@@ -25,10 +27,5 @@ export const Skeleton = ({
     borderRadius,
   };
 
-  return (
-    <div
-      className={cx(styles.container, className)}
-      style={style}
-    />
-  );
+  return <div className={cx(styles.container, className, { inverted })} style={style} />;
 };
