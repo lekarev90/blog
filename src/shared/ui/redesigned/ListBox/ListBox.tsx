@@ -31,6 +31,7 @@ interface ListBoxProps<T extends string, N extends string> {
   onChange: (value: T, name: N) => void;
   label?: string;
   isFullWidthButton?: boolean;
+  showLabelArea?: boolean
 }
 
 const cx = classNames.bind(styles);
@@ -45,6 +46,7 @@ export const ListBox = <T extends string, N extends string>({
   label,
   name,
   isFullWidthButton,
+  showLabelArea = true,
 }: ListBoxProps<T, N>) => {
   const onChangeHandler = useCallback(
     (value: T) => {
@@ -57,11 +59,14 @@ export const ListBox = <T extends string, N extends string>({
 
   return (
     <Field disabled={disabled} as={VStack} gap="4">
-      <span className={styles.labelArea}>
-        <Label>
-          {label}
-        </Label>
-      </span>
+      {showLabelArea
+        && (
+        <span className={styles.labelArea}>
+          <Label>
+            {label}
+          </Label>
+        </span>
+        )}
       <HListBox as="div" className={cx(styles.container, className)} value={value || defaultValue} onChange={onChangeHandler}>
         <ListboxButton
           as={Button}

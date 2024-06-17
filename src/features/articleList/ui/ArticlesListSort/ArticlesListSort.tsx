@@ -114,6 +114,7 @@ export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) 
               value={sortBy}
               name={ESortFieldNames.SORT_BY}
               onChange={onSwitchSortHandler}
+              showLabelArea={false}
             />
             <ListBox
               defaultValue={EArticleSortField.CREATED}
@@ -121,6 +122,7 @@ export const ArticlesListSort = memo(({ onSwitchSort }: IArticlesListSortProps) 
               value={orderBy}
               name={ESortFieldNames.ORDER_BY}
               onChange={onSwitchSortHandler}
+              showLabelArea={false}
             />
           </VStack>
         )}
