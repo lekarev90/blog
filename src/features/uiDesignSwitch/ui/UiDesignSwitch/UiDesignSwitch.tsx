@@ -43,7 +43,7 @@ export const UiDesignSwitch = memo(() => {
     );
   };
 
-  return isLoading ? <Skeleton height={32} width={200} />
+  return isLoading ? <Skeleton height={32} width={200} borderRadius="12px" />
     : (
       <ListBox
         showLabelArea={false}

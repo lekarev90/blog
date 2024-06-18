@@ -36,6 +36,11 @@
   }
 }
 
+.bold {
+  .title, .text {
+    font-weight: 700;
+  }
+}
 
 .size_m {
   .title {
@@ -55,10 +60,12 @@
   .text {
     font: var(--font-l-v2);
   }
-}
 
-.bold {
-  .title, .text {
-    font-weight: 700;
+  &.bold {
+    .title {
+      font-weight: 900;
+    }
   }
 }
+
+

@@ -59,6 +59,7 @@ export const Sidebar = memo(() => {
           <VStack align="center" className={styles.switchers}>
             <ThemeSwitcher />
             <LangSwitcher />
+            {!collapsed && <UiDesignSwitch />}
           </VStack>
         </nav>
       )}

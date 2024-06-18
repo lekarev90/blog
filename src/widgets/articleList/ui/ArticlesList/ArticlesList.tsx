@@ -11,6 +11,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
 import { Card as CardDeprecated } from '@/shared/ui/depricated/Card';
 import { Text as TextDeprecated } from '@/shared/ui/depricated/Text';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { TCardVariant } from '@/shared/ui/redesigned/Card/Card';
 import { HStack, TFlexGap, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
@@ -23,12 +24,15 @@ import { articlesListReducer } from '../../model/slices/articlesListSlice';
 
 import styles from './ArticlesList.module.scss';
 
+type TArticleWithCardVariant = IArticle & {cardVariant?: TCardVariant}
+
 interface IArticleListProps {
   className?: string;
-  articles?: IArticle[];
+  articles?: TArticleWithCardVariant[];
   isLoading?: boolean;
   withMoreButton?: boolean;
   articlesView: EArticlesView;
+  cardVariant?: TCardVariant
 }
 
 const reducers = {
@@ -38,7 +42,7 @@ const reducers = {
 };
 
 export const ArticlesList = memo(({
-  isLoading, withMoreButton, articles = [], articlesView,
+  isLoading, withMoreButton, articles = [], articlesView, cardVariant,
 }: IArticleListProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
@@ -57,8 +61,8 @@ export const ArticlesList = memo(({
   const skeletonComponents = Array.from({ length: QUANTITY_LIMIT }, (_, index) => <ComponentSkeleton key={index} />);
 
   const renderComponent = useCallback(
-    () => articles.map((article, index) => <Component key={index} {...article} />),
-    [Component, articles],
+    () => articles.map((article, index) => <Component key={index} cardVariant={cardVariant} {...article} />),
+    [Component, articles, cardVariant],
   );
 
   const onLoadNextPart = useCallback(() => {

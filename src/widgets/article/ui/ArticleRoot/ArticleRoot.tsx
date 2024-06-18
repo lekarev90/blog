@@ -5,8 +5,10 @@ import {
   ArticleDetails, ArticleDetailsLoading, articleDetailsReducer, fetchArticleById, getArticleDetails,
 } from '@/entities/Article';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Text, TextVariant } from '@/shared/ui/depricated/Text';
+import { Text as TextDeprecated, TextVariant } from '@/shared/ui/depricated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import styles from './ArticleRoot.module.scss';
 
@@ -31,10 +33,14 @@ export const ArticleRoot = memo(({ id }: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       {isLoading && <ArticleDetailsLoading />}
-      {error && <Text className={styles.error} text="ERROR" variant={TextVariant.ERROR} />}
-      {isContentReady && (
-        <ArticleDetails {...data} />
+      {error && (
+        <ToggleFeatures
+          feature="isOldDesign"
+          on={<TextDeprecated className={styles.error} text="ERROR" variant={TextVariant.ERROR} />}
+          off={<Text className={styles.error} text="ERROR" variant="error" />}
+        />
       )}
+      {isContentReady && <ArticleDetails {...data} />}
     </DynamicModuleLoader>
   );
 });

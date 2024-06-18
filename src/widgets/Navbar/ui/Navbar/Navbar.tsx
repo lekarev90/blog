@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/authByUsername';
 import { NotificationModal } from '@/features/navbar';
-import { UiDesignSwitch } from '@/features/uiDesignSwitch';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink } from '@/shared/ui/depricated/AppLink';

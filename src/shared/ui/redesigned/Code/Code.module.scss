@@ -7,6 +7,15 @@
   padding: 10px;
 }
 
+.containerV2 {
+  max-width: 100%;
+  position: relative;
+  border: 1px solid;
+  border-color: var(--accent-v2);
+  background: var(--dark-bg-v2);
+  padding: 10px;
+}
+
 .button {
   position: absolute;
   right: 20px;
@@ -17,12 +26,16 @@
   overflow-y: auto;
 }
 
-
-
 .copyIcon {
   fill: none;
 
   path {
     stroke: var(--primary-color);
   }
+}
+
+.copyIconV2 {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
