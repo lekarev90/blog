@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { UiDesignSwitch } from '@/features/uiDesignSwitch';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button, ButtonSize, ButtonVariants } from '@/shared/ui/depricated/Button';
@@ -79,6 +80,7 @@ export const Sidebar = memo(() => {
           <HStack justify="center" gap="8" className={styles.switchers}>
             <ThemeSwitcher />
             <LangSwitcher />
+            {!collapsed && <UiDesignSwitch />}
           </HStack>
         </nav>
       )}

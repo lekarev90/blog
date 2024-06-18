@@ -42,7 +42,6 @@ export const Navbar = memo(() => {
             {t('translation:navbar.createArticle')}
           </AppLink>
           <HStack gap="16" align="center" className={styles.dropdownWrapper}>
-            <UiDesignSwitch />
             <NotificationModal />
             <NavbarMenuDropDown authData={authData} />
           </HStack>
@@ -50,7 +49,6 @@ export const Navbar = memo(() => {
       )}
       off={(
         <HStack gap="16" align="center" flexWrap={false}>
-          <UiDesignSwitch />
           <NotificationModal />
           <NavbarMenuDropDown authData={authData} />
         </HStack>

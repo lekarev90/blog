@@ -47,7 +47,7 @@ export const UiDesignSwitch = memo(() => {
     : (
       <ListBox
         showLabelArea={false}
-        buttonVariant="filled"
+        buttonVariant="dark"
         name="design_switch"
         onChange={onChangeHandle}
         items={items}
