@@ -1,3 +1,4 @@
+export { ArticleAdditional } from './ui/ArticleAdditional/ArticleAdditional';
 export { addArticleComment } from './model/services/addArticleCommet';
 export { fetchCommentsByArticleId } from './model/services/fetchArticleCommets';
 export { getArticleCommentsIsLoading } from './model/selectors/articleComments.selectors';

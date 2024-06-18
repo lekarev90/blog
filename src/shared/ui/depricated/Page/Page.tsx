@@ -26,9 +26,6 @@ interface PageProps extends ITestId {
   onScrollEnd?: () => void;
 }
 
-/**
- * @deprecated
- */
 export const Page = memo(({
   className, children, onScrollEnd, 'data-testid': dataTestId,
 }: PageProps) => {

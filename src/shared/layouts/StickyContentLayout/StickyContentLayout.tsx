@@ -20,7 +20,7 @@ export const StickyContentLayout = memo(({
     <div className={styles.content}>
       {content}
     </div>
-    {left && (
+    {right && (
     <div className={styles.right}>
       {right}
     </div>

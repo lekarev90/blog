@@ -82,7 +82,7 @@
           "code": "  const onSaveButton = useCallback(() => {\n    dispatch(updateProfileData());\n    setIsReadonly(true);\n  }, [dispatch]);\n\n  const onChangeHandler = useCallback(\n    (value: string, name: TProfileFieldName) => {\n      dispatch(profileActions.setProfileDataValue({ value, name }));\n    },\n    [dispatch],\n  );"
         }
       ],
-      "userId": 2
+      "userId": 1
     },
     {
       "id": "462",
@@ -2447,10 +2447,10 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isOldDesign": true
+        "isOldDesign": false
       },
       "jsonSettings": {
-        "theme": "dark",
+        "theme": "orange",
         "isArticlesPageWasOpened": true
       },
       "avatar": "https://picsum.photos/200/200"
