@@ -60,7 +60,7 @@ export const ArticlesListViewSwitcher = memo(({ onSwitchView, currentArticleView
       </HStack>
     )}
     off={(
-      <HStack Component={Card} maxWidth flexWrap={false} borderRadius="rounded">
+      <HStack Component={Card} maxWidth flexWrap={false} borderRadius="rounded" variant="light">
         {Object.values(viewTypes).map(({ view, icon }) => (
           <Icon
             clickable

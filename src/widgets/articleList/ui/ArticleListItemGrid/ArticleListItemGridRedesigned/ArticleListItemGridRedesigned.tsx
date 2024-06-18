@@ -26,6 +26,7 @@ export const ArticleListItemGridRedesigned = memo(({
       padding="0"
       borderRadius="rounded"
       data-testid="ArticlesList.Item.Grid"
+      variant="light"
     >
       <AppImage fallback={<Skeleton width={200} height={140} />} src={img} alt={title} className={styles.img} />
       <VStack gap="8" className={styles.infoWrapper} flexWrap={false}>

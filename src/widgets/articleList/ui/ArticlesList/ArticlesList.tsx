@@ -52,7 +52,7 @@ export const ArticlesList = memo(({
   const ComponentSkeleton = ARTICLES_LIST_DATA[articlesView].COMPONENT_SKELETON;
 
   const StackComponent = isListView ? VStack : HStack;
-  const stackProps: Record<string, TFlexGap> = isListView ? { gap: '16' } : { gap: '8' };
+  const stackProps: Record<string, TFlexGap> = { gap: '16' };
 
   const skeletonComponents = Array.from({ length: QUANTITY_LIMIT }, (_, index) => <ComponentSkeleton key={index} />);
 

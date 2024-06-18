@@ -24,7 +24,14 @@ export const ArticleListItemListRedesigned = memo(({
   const textBlock = blocks.find((block) => block.type === EArticleBlockType.TEXT) as IArticleTextBlock;
 
   return (
-    <VStack gap="16" maxWidth Component={Card} padding="24" data-testid="ArticlesList.Item.List">
+    <VStack
+      gap="16"
+      maxWidth
+      Component={Card}
+      padding="24"
+      data-testid="ArticlesList.Item.List"
+      variant="light"
+    >
       <HStack gap="8" align="center" className={styles.header}>
         {user.avatar && <Avatar src={user.avatar} alt={user.username} size={32} />}
         <Text bold text={user.username} />
