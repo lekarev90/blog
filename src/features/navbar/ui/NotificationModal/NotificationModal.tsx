@@ -7,9 +7,9 @@ import NotificationIconDeprecated from '@/shared/assets/icons/notification-20-20
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button as DeprecatedButton } from '@/shared/ui/depricated/Button';
-import { Drawer } from '@/shared/ui/depricated/Drawer';
 import { Icon as IconDeprecated } from '@/shared/ui/depricated/Icon';
 import { Popover as PopoverDeprecated } from '@/shared/ui/depricated/Popover';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popover';
 

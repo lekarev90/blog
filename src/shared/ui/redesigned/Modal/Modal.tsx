@@ -2,10 +2,11 @@ import { ReactNode } from 'react';
 
 import classNames from 'classnames/bind';
 
+import { toggleFeatures } from '@/shared/lib/features';
 import { useModal } from '@/shared/lib/hooks/useModal';
 
-import { Overlay } from '../../redesigned/Overlay';
-import { Portal } from '../../redesigned/Portal';
+import { Overlay } from '../Overlay';
+import { Portal } from '../Portal';
 
 import styles from './Modal.module.scss';
 
@@ -33,14 +34,20 @@ export const Modal = ({
     isClosed,
   };
 
-  const containerClassNames = cx(styles.container, className, mods);
+  const designedClassname = toggleFeatures({
+    name: 'isOldDesign',
+    on: () => 'oldDesign',
+    off: () => 'newDesign',
+  });
+
+  const containerClassNames = cx(styles.container, designedClassname, className, mods);
 
   if (lazy && !isMounted) {
     return null;
   }
 
   return (
-    <Portal>
+    <Portal element={document.getElementById('app') ?? document.body}>
       <div className={containerClassNames}>
         <Overlay onClick={onCloseHandler} />
         <div className={styles.content}>

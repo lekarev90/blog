@@ -5,9 +5,10 @@ import {
 import classNames from 'classnames/bind';
 
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { toggleFeatures } from '@/shared/lib/features';
 
-import { Overlay } from '../../redesigned/Overlay/Overlay';
-import { Portal } from '../../redesigned/Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
 
 import styles from './Drawer.module.scss';
 
@@ -78,10 +79,16 @@ export const DrawerContent = memo(({
 
   const display = y.to((py) => (py < height ? 'block' : 'none'));
 
+  const designedClassname = toggleFeatures({
+    name: 'isOldDesign',
+    on: () => 'oldDesign',
+    off: () => 'newDesign',
+  });
+
   return (
-    <Portal>
+    <Portal element={document.getElementById('app') ?? document.body}>
       <div
-        className={cx(styles.container, className)}
+        className={cx(styles.container, designedClassname, className)}
       >
         <Overlay onClick={close} />
         <Spring.a.div

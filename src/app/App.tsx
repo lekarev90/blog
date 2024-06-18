@@ -34,7 +34,7 @@ const App = memo(() => {
     <ToggleFeatures
       feature="isOldDesign"
       on={(
-        <div className="app">
+        <div id="app" className="app">
           <Suspense fallback="">
             <Navbar />
             <div className="main-container">
@@ -45,7 +45,7 @@ const App = memo(() => {
         </div>
       )}
       off={(
-        <div className="app_v2">
+        <div id="app" className="app_v2">
           <Suspense fallback="">
             <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
           </Suspense>

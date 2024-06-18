@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 
 import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
 import { Card } from '@/shared/ui/depricated/Card';
-import { Drawer } from '@/shared/ui/depricated/Drawer';
 import { Input } from '@/shared/ui/depricated/Input';
-import { Modal } from '@/shared/ui/depricated/Modal';
 import { StarRating } from '@/shared/ui/depricated/StarRating';
 import { Text } from '@/shared/ui/depricated/Text';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 interface RatingCardProps {
