@@ -57,6 +57,18 @@
   border-radius: 32px;
 }
 
+.outlineRed {
+  border: 1px solid;
+  border-color: var(--cancel-v2);
+  color: var(--text-v2);
+  background: none;
+  border-radius: 34px;
+
+  &:hover:not([disabled]) {
+    color: var(--cancel-v2);
+  }
+}
+
 .square {
   padding: 0;
 }

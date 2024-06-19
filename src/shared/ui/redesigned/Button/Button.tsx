@@ -8,7 +8,7 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type TButtonVariants = 'clear' | 'outline' | 'filled' | 'dark';
+export type TButtonVariants = 'clear' | 'outline' | 'filled' | 'dark' | 'outlineRed';
 
 type TButtonSize = 'm' | 'l' | 'xl';
 

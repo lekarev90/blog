@@ -2450,7 +2450,7 @@
         "isOldDesign": false
       },
       "jsonSettings": {
-        "theme": "orange",
+        "theme": "dark",
         "isArticlesPageWasOpened": true
       },
       "avatar": "https://picsum.photos/200/200"
@@ -2608,6 +2608,18 @@
       "rate": 3,
       "feedback": "Вполне",
       "id": "J992kdA"
+    },
+    {
+      "userId": "1",
+      "articleId": "954",
+      "rate": 2,
+      "id": "lkviKxU"
+    },
+    {
+      "userId": "1",
+      "articleId": "1017",
+      "rate": 1,
+      "id": "mHLI-TN"
     }
   ],
   "profile-ratings": [

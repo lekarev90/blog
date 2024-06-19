@@ -1,0 +1,12 @@
+.star {
+  fill: none;
+
+  &.isFilled {
+    fill: var(--icon-v2);
+    stroke: var(--icon-v2);
+
+    &:hover {
+      color: var(--icon-v2);
+    }
+  }
+}
