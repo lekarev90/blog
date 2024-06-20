@@ -13,6 +13,7 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 type TInputHeight = 's' | 'm' | 'l';
 
 interface InputProps<T extends string> extends HTMLInputProps {
+  inputClassName?: string;
   wrapperClassName?: string;
   name: T;
   value?: string;
@@ -23,6 +24,7 @@ interface InputProps<T extends string> extends HTMLInputProps {
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
   label?: string;
+  disableLabelArea?: boolean;
   inputHeight?: TInputHeight;
   disabled?: boolean;
 }
@@ -39,7 +41,9 @@ export const _Input = <T extends string>({
   addonLeft,
   addonRight,
   wrapperClassName,
+  inputClassName,
   label,
+  disableLabelArea,
   inputHeight = 'm',
   disabled,
   ...props
@@ -75,12 +79,18 @@ export const _Input = <T extends string>({
 
   return (
     <VStack gap="4">
+      {!disableLabelArea && (
       <span className={styles.labelArea}>
         {label}
       </span>
-      <div className={cx(styles.wrapper, wrapperClassName, {
-        disabled, withAddonLeft: addonLeft, withAddonRight: addonRight, isFocused,
-      })}
+      )}
+      <div
+        className={cx(styles.wrapper, wrapperClassName, {
+          disabled,
+          withAddonLeft: addonLeft,
+          withAddonRight: addonRight,
+          isFocused,
+        })}
       >
         {addonLeft && (
         <div className={styles.addonLeft}>
@@ -90,7 +100,7 @@ export const _Input = <T extends string>({
         <input
           placeholder={placeholder}
           ref={ref}
-          className={cx(styles.input, `inputHeight-${inputHeight}`)}
+          className={cx(styles.input, inputClassName, `inputHeight-${inputHeight}`)}
           value={inputValue}
           onChange={onChangeHandler}
           type={type}
