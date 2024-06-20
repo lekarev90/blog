@@ -77,7 +77,7 @@ export const RatingCardRedesigned = memo(({
           <VStack maxWidth gap="32">
             {modalContent}
             <HStack gap="16" justify="end">
-              <Button onClick={cancelHandle} variant="outlineRed" data-testid="RatingCard.Close">
+              <Button onClick={cancelHandle} variant="outline" outlineColor="error" data-testid="RatingCard.Close">
                 {t('translation:feedbackRating.closeBtn')}
               </Button>
               <Button onClick={acceptHandle} variant="outline" data-testid="RatingCard.Send">

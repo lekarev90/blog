@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 export type TCardVariant = 'default' | 'outlined' | 'light'
 type TCardPaddings = '0' | '8' | '16' | '24'
-type TCardBorder = 'normal' | 'rounded'
+type TCardBorder = 'normal' | 'rounded' | 'partial'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;

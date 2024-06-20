@@ -8,13 +8,15 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type TButtonVariants = 'clear' | 'outline' | 'filled' | 'dark' | 'outlineRed';
+export type TButtonVariants = 'clear' | 'outline' | 'filled' | 'dark'
+export type TButtonOutlineColor = 'normal' | 'success' | 'error';
 
 type TButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: TButtonVariants;
+  outlineColor?: TButtonOutlineColor;
   size?: TButtonSize;
   isWide?: boolean;
   addonLeft?: ReactNode;
@@ -23,11 +25,24 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const _Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({
-    className, children, variant = 'clear', size = 'm', disabled, isWide, addonLeft, addonRight, ...props
-  }: ButtonProps, ref) => {
+  (
+    {
+      className,
+      children,
+      variant = 'clear',
+      outlineColor = 'normal',
+      size = 'm',
+      disabled,
+      isWide,
+      addonLeft,
+      addonRight,
+      ...props
+    }: ButtonProps,
+    ref,
+  ) => {
     const mods: Record<string, string | boolean | undefined> = {
       [variant]: variant,
+      [outlineColor]: outlineColor,
       [size]: size,
       disabled,
       isWide,
@@ -40,15 +55,15 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button type="button" className={containerClassNames} disabled={disabled} ref={ref} {...props}>
         {addonLeft && (
-          <div className={styles.addonLeft}>
-            {addonLeft}
-          </div>
+        <div className={styles.addonLeft}>
+          {addonLeft}
+        </div>
         )}
         {children}
         {addonRight && (
-          <div className={styles.addonRight}>
-            {addonRight}
-          </div>
+        <div className={styles.addonRight}>
+          {addonRight}
+        </div>
         )}
       </button>
     );

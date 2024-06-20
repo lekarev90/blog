@@ -1,13 +1,18 @@
-import { memo, useCallback, useEffect } from 'react';
+import { FormEvent, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
 
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
-import { Input } from '@/shared/ui/depricated/Input';
-import { Text, TextVariant } from '@/shared/ui/depricated/Text';
+import { Button as ButtonDeprecated, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { Input as InputDeprecated } from '@/shared/ui/depricated/Input';
+import { Text as TextDeprecated, TextVariant } from '@/shared/ui/depricated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import { getLoginState } from '../../model/selectors/loginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -47,62 +52,72 @@ const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
   );
 
   const onLoginClick = useCallback(async () => {
-    const result = await dispatch(loginByUsername({ username, password }));
+    const result = await dispatch(
+      loginByUsername({
+        username,
+        password,
+      }),
+    );
 
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
     }
   }, [dispatch, password, username, onSuccess]);
 
-  const onEnterDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
-        onLoginClick();
-      }
-    },
-    [onLoginClick],
-  );
+  const onSubmitHandel = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  useEffect(() => {
-    window.addEventListener('keydown', onEnterDown);
-
-    return () => {
-      window.removeEventListener('keydown', onEnterDown);
-    };
-  }, [onEnterDown]);
+    onLoginClick();
+  }, [onLoginClick]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={styles.container}>
-        <Text title={t('translation:authModal.title')} />
-        {error && (
-          <Text
-            text={error}
-            variant={TextVariant.ERROR}
+      <form onSubmit={onSubmitHandel}>
+        <VStack gap="8">
+          <ToggleFeatures
+            feature="isOldDesign"
+            on={(
+              <>
+                <TextDeprecated title={t('translation:authModal.title')} />
+                {error && <TextDeprecated text={error} variant={TextVariant.ERROR} />}
+                <InputDeprecated
+                  name="username"
+                  placeholder={t('translation:authModal.username')}
+                  autofocus
+                  onChange={onChangeUsername}
+                  value={username}
+                />
+                <InputDeprecated
+                  name="password"
+                  placeholder={t('translation:authModal.password')}
+                  onChange={onChangePassword}
+                  value={password}
+                />
+                <ButtonDeprecated className={styles.loginBtn} variant={ButtonVariants.OUTLINE} type="submit" disabled={isLoading}>
+                  {t('translation:authModal.loginBtn')}
+                </ButtonDeprecated>
+              </>
+          )}
+            off={(
+              <>
+                <Text title={t('translation:authModal.title')} />
+                {error && <Text text={error} variant={TextVariant.ERROR} />}
+                <Input
+                  name="username"
+                  placeholder={t('translation:authModal.username')}
+                  autofocus
+                  onChange={onChangeUsername}
+                  value={username}
+                />
+                <Input name="password" placeholder={t('translation:authModal.password')} onChange={onChangePassword} value={password} />
+                <Button className={styles.loginBtn} variant="outline" type="submit" disabled={isLoading}>
+                  {t('translation:authModal.loginBtn')}
+                </Button>
+              </>
+          )}
           />
-        )}
-        <Input
-          name="username"
-          placeholder={t('translation:authModal.username')}
-          autofocus
-          onChange={onChangeUsername}
-          value={username}
-        />
-        <Input
-          name="password"
-          placeholder={t('translation:authModal.password')}
-          onChange={onChangePassword}
-          value={password}
-        />
-        <Button
-          className={styles.loginBtn}
-          variant={ButtonVariants.OUTLINE}
-          onClick={onLoginClick}
-          disabled={isLoading}
-        >
-          {t('translation:authModal.loginBtn')}
-        </Button>
-      </div>
+        </VStack>
+      </form>
     </DynamicModuleLoader>
   );
 });

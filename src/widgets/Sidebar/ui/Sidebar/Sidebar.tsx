@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
 
+import { getUserAuthData } from '@/entities/User';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { UiDesignSwitch } from '@/features/uiDesignSwitch';
@@ -26,6 +27,7 @@ export const Sidebar = memo(() => {
 
   const [collapsed, setCollapsed] = useState(false);
   const sidebarItems = useSelector(getSidebarItems(t));
+  const authData = useSelector(getUserAuthData);
 
   const sidebarStateText = t(`translation:sidebar.${collapsed ? 'open' : 'hide'}`);
 
@@ -81,7 +83,7 @@ export const Sidebar = memo(() => {
           <HStack justify="center" gap="8" className={styles.switchers}>
             <ThemeSwitcher />
             <LangSwitcher />
-            {!collapsed && <UiDesignSwitch />}
+            {!collapsed && authData && <UiDesignSwitch />}
           </HStack>
         </nav>
       )}

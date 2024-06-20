@@ -9,8 +9,9 @@ import { NotificationModal } from '@/features/navbar';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink } from '@/shared/ui/depricated/AppLink';
-import { Button, ButtonVariants } from '@/shared/ui/depricated/Button';
+import { Button as ButtonDeprecated, ButtonVariants } from '@/shared/ui/depricated/Button';
 import { Text, TextVariant } from '@/shared/ui/depricated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import { NavbarMenuDropDown } from '../NavbarMenuDropDown/NavbarMenuDropDown';
@@ -57,12 +58,12 @@ export const Navbar = memo(() => {
     <ToggleFeatures
       feature="isOldDesign"
       on={(
-        <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
+        <ButtonDeprecated variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
           {t('translation:navbar.authModalButton.login')}
-        </Button>
+        </ButtonDeprecated>
       )}
       off={(
-        <Button variant={ButtonVariants.CLEAR_INVERTED} className={styles.authButton} onClick={onOpenAuthModal}>
+        <Button variant="clear" className={styles.authButton} onClick={onOpenAuthModal}>
           {t('translation:navbar.authModalButton.login')}
         </Button>
       )}

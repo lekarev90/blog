@@ -26,7 +26,7 @@ export const ArticleListItemGridRedesigned = memo(
         className={styles.card}
         Component={Card}
         padding="0"
-        borderRadius="rounded"
+        borderRadius="partial"
         data-testid="ArticlesList.Item.Grid"
         variant={cardVariant}
       >

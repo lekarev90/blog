@@ -32,12 +32,19 @@
 
 .outline {
   border: 1px solid;
-  border-color: var(--icon-v2);
   background: none;
   border-radius: 34px;
 
-  &:hover:not([disabled]) {
-    border-color: var(--accent-v2);
+  &.normal {
+    border-color: var(--icon-v2);
+  }
+
+  &.error {
+    border-color: var(--cancel-v2);
+  }
+
+  &.success {
+    border-color: var(--save-v2);
   }
 }
 
@@ -55,18 +62,6 @@
   outline: none;
   padding: 8px 16px;
   border-radius: 32px;
-}
-
-.outlineRed {
-  border: 1px solid;
-  border-color: var(--cancel-v2);
-  color: var(--text-v2);
-  background: none;
-  border-radius: 34px;
-
-  &:hover:not([disabled]) {
-    color: var(--cancel-v2);
-  }
 }
 
 .square {
