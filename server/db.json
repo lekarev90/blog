@@ -2435,6 +2435,12 @@
       "text": "Интересная статья!",
       "articleId": "948",
       "userId": "2"
+    },
+    {
+      "articleId": "1274",
+      "userId": "1",
+      "text": "ghbdt",
+      "id": "gBhMf0z"
     }
   ],
   "users": [
@@ -2447,7 +2453,7 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isOldDesign": false
+        "isOldDesign": true
       },
       "jsonSettings": {
         "theme": "dark",
@@ -2620,6 +2626,18 @@
       "articleId": "1017",
       "rate": 1,
       "id": "mHLI-TN"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "rate": 5,
+      "id": "5jIqo9e"
+    },
+    {
+      "userId": "1",
+      "articleId": "462",
+      "rate": 3,
+      "id": "2mWdNx0"
     }
   ],
   "profile-ratings": [

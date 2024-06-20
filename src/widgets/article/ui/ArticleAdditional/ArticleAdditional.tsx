@@ -39,7 +39,7 @@ export const ArticleAdditional = memo(() => {
       )}
       <HStack gap="8">
         <Avatar src={data.user?.avatar} alt="author avatar" size={32} />
-        <Text bold text={data.user.username} />
+        <Text boldText text={data.user.username} />
         <Text text={data.createdAt} />
       </HStack>
       <HStack gap="8">

@@ -28,7 +28,7 @@ export const AddCommentForm = ({ text = '', onChangeComment, onSendComment }: Ad
 
   return (
     <form onSubmit={handleSubmit}>
-      <HStack gap="32" maxWidth align="stretch" data-testid="AddCommentForm">
+      <HStack gap="32" maxWidth align="stretch" data-testid="AddCommentForm" flexWrap={false}>
         <ToggleFeatures
           feature="isOldDesign"
           on={(

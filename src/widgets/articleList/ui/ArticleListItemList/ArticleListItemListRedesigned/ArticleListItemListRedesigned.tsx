@@ -35,11 +35,11 @@ export const ArticleListItemListRedesigned = memo(({
     >
       <HStack gap="8" align="center" className={styles.header}>
         {user.avatar && <Avatar src={user.avatar} alt={user.username} size={32} />}
-        <Text bold text={user.username} />
+        <Text boldText text={user.username} />
         <Text text={createdAt} />
       </HStack>
       <VStack gap="8">
-        <Text bold title={title} />
+        <Text boldTitle title={title} />
         <Text text={subtitle} />
       </VStack>
       <AppImage fallback={<Skeleton width="100%" height={250} />} src={img} alt={title} className={styles.img} />

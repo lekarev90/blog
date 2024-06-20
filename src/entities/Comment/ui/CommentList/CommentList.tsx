@@ -2,14 +2,14 @@ import { memo } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { Text } from '@/shared/ui/depricated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text as TextDeprecated } from '@/shared/ui/depricated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import { IComment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { CommentCardSkeleton } from '../CommentCardSkeleton/CommentCardSkeleton';
-
-import styles from './CommentList.module.scss';
 
 interface CommentListProps {
   className?: string;
@@ -24,17 +24,17 @@ export const CommentList = memo(({ isLoading = false, comments = [] }: CommentLi
   const isContentReady = !isLoading && comments.length;
 
   return (
-    <VStack gap="8">
+    <VStack gap="16">
       {isLoading && skeletons}
-      {isContentReady
-        ? comments.map((comment) => (
-          <CommentCard
-            key={comment.id}
-            className={styles.comment}
-            {...comment}
-          />
-        ))
-        : <Text text={t('comments:noComments')} />}
+      {isContentReady ? (
+        comments.map((comment) => <CommentCard key={comment.id} {...comment} />)
+      ) : (
+        <ToggleFeatures
+          feature="isOldDesign"
+          on={<TextDeprecated text={t('comments:noComments')} />}
+          off={<Text text={t('comments:noComments')} />}
+        />
+      )}
     </VStack>
   );
 });

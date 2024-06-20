@@ -23,7 +23,8 @@ interface ISectionTitleProps {
   tooltipDescriptionText?: string;
   titleDataTestId?: string;
   textDataTestId?: string;
-  bold?: boolean
+  boldTitle?: boolean
+  boldText?: boolean
 }
 
 type HTMLTagProps<T> = HTMLProps<T> & { [key: string]: any };
@@ -41,7 +42,8 @@ export const Text = memo(
     textDataTestId,
     descriptionClassName,
     titleClassName,
-    bold,
+    boldTitle,
+    boldText,
   }: ISectionTitleProps) => {
     const TitleWrapperTag = titleTag || 'h3';
     const TextWrapperTag = textTag || 'p';
@@ -65,7 +67,8 @@ export const Text = memo(
         className={cx(styles.container, className, {
           [variant]: variant,
           [`size_${size}`]: size,
-          bold,
+          boldTitle,
+          boldText,
         })}
       >
         {title && <TitleWrapperTag {...titleProps} />}

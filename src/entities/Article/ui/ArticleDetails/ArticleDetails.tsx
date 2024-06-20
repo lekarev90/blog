@@ -52,7 +52,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
       )}
       off={(
         <VStack gap="8" flexWrap={false}>
-          <Text bold titleTag="h1" size="l" title={title} titleDataTestId="ArticleDetails.Title" />
+          <Text boldTitle titleTag="h1" size="l" title={title} titleDataTestId="ArticleDetails.Title" />
           <Text textTag="h3" size="l" text={subtitle} titleDataTestId="ArticleDetails.Subtitle" />
           <AppImage fallback={<Skeleton height={420} width="100%" borderRadius="16px" />} src={img} alt={title} className={styles.img} />
         </VStack>

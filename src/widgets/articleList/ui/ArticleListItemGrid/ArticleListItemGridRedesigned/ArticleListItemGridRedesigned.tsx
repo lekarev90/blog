@@ -43,7 +43,7 @@ export const ArticleListItemGridRedesigned = memo(
             </HStack>
             <HStack gap="8">
               <Avatar size={32} src={user.avatar} alt="user avatar" className={styles.avatar} />
-              <Text bold text={user.username} />
+              <Text boldText text={user.username} />
             </HStack>
           </VStack>
         </VStack>
