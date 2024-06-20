@@ -54,7 +54,7 @@ const ArticleDetailsPage = memo(() => {
             <HStack gap="24" Component={Card} padding="24" borderRadius="rounded" className={styles.additionalWrapper}>
               <ArticleAdditional />
             </HStack>
-)}
+          )}
         />
       )}
     />
