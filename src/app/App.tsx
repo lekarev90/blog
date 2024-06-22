@@ -2,10 +2,10 @@ import React, { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { getUserAuthData, initAuthData } from '@/entities/User';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch.hook';
-import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
@@ -14,20 +14,25 @@ import { AppRouter } from './providers/router';
 import { withTheme } from './providers/ThemeProvider';
 
 const App = memo(() => {
-  const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const { initialized } = useSelector(getUserAuthData);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
 
   useEffect(() => {
     dispatch(initAuthData());
   }, [dispatch]);
 
   if (!initialized) {
-    return <PageLoader />;
+    return (
+      <ToggleFeatures
+        feature="isOldDesign"
+        on={<PageLoader />}
+        off={(
+          <div id="app" className="app_v2">
+            <AppLoaderLayout />
+          </div>
+        )}
+      />
+    );
   }
 
   return (

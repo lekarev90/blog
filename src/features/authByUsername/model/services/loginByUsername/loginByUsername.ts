@@ -4,11 +4,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from '@/app/providers/StoreProvider';
 import { IUser, userActions } from '@/entities/User';
-import { LOCALSTORAGE_USER_KEY } from '@/shared/const/localstorage';
 
 interface ILoginByUsername {
-  username: string
-  password: string
+  username: string;
+  password: string;
 }
 
 const LOGIN_URL = 'http://localhost:8000/login';
@@ -22,7 +21,6 @@ export const loginByUsername = createAsyncThunk<IUser, ILoginByUsername, IThunkC
         throw new Error();
       }
 
-      localStorage.setItem(LOCALSTORAGE_USER_KEY, JSON.stringify(data));
       dispatch(userActions.setAuthData(data));
 
       return data;

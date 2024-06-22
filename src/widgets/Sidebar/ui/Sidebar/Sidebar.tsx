@@ -27,7 +27,7 @@ export const Sidebar = memo(() => {
 
   const [collapsed, setCollapsed] = useState(false);
   const sidebarItems = useSelector(getSidebarItems(t));
-  const authData = useSelector(getUserAuthData);
+  const { authData } = useSelector(getUserAuthData);
 
   const sidebarStateText = t(`translation:sidebar.${collapsed ? 'open' : 'hide'}`);
 
