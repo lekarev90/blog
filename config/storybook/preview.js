@@ -1,7 +1,8 @@
-import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
-import { WithI18Decorator } from '../../src/shared/config/storybook/WithI18Decorator/WithI18Decorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { NewDesignDecorator } from '../../src/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { WithI18Decorator } from '../../src/shared/config/storybook/WithI18Decorator/WithI18Decorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -63,4 +64,5 @@ export const decorators = [
   StyleDecorator,
   WithI18Decorator,
   RouterDecorator,
+  NewDesignDecorator(),
 ];

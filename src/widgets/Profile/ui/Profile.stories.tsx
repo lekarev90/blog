@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/react';
 
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { Profile } from './Profile';
@@ -11,3 +12,7 @@ export default {
 } as Meta<typeof Profile>;
 
 export const Default = {};
+
+export const Redesigned = {
+  decorators: [NewDesignDecorator(false)],
+};

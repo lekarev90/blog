@@ -11,9 +11,7 @@ export const ThemeDecorator = (Story: StoryFn, context: StoryContext) => {
 
   return (
     <ThemeProvider>
-      <div className={`app ${theme}`}>
-        <Story />
-      </div>
+      <Story />
     </ThemeProvider>
   );
 };

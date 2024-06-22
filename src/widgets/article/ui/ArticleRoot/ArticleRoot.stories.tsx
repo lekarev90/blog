@@ -1,15 +1,17 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { NewDesignedMaxWidth } from '@/shared/config/storybook/NewDesignedMaxWidth/NewDesignedMaxWidth';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { ARTICLES_REQUEST_URL } from '../../../../entities/Article/model/const/const';
 import { articlesMock1 } from '../../../../entities/Article/model/mock/articlesMock';
+import { NewDesignDecorator } from '../../../../shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { ARTICLES_COMMENT_REQUEST_URL } from '../../model/const/const';
 
 import { ArticleRoot } from './ArticleRoot';
 
 export default {
-  title: 'entities/ArticleRoot',
+  title: 'widgets/ArticleRoot',
   component: ArticleRoot,
   decorators: [StoreDecorator({})],
   parameters: {
@@ -48,13 +50,13 @@ export default {
         ],
       },
       {
-        url: `${__API__}${ARTICLES_REQUEST_URL}/1`,
+        url: `${__API__}${ARTICLES_REQUEST_URL}/1?&_expand=user`,
         method: 'GET',
         status: 200,
         response: articlesMock1,
       },
       {
-        url: `${__API__}${ARTICLES_REQUEST_URL}/2`,
+        url: `${__API__}${ARTICLES_REQUEST_URL}/2?&_expand=user`,
         method: 'GET',
         status: 200,
         response: {
@@ -79,7 +81,7 @@ export default {
         },
       },
       {
-        url: `${__API__}${ARTICLES_REQUEST_URL}/3`,
+        url: `${__API__}${ARTICLES_REQUEST_URL}/3?&_expand=user`,
         method: 'GET',
         status: 200,
         response: {
@@ -117,6 +119,27 @@ export const Code: StoryObj<typeof ArticleRoot> = {
 };
 
 export const Image: StoryObj<typeof ArticleRoot> = {
+  args: {
+    id: '3',
+  },
+};
+
+export const RedesignedText: StoryObj<typeof ArticleRoot> = {
+  decorators: [NewDesignedMaxWidth, NewDesignDecorator(false)],
+  args: {
+    id: '1',
+  },
+};
+
+export const RedesignedCode: StoryObj<typeof ArticleRoot> = {
+  decorators: [NewDesignedMaxWidth, NewDesignDecorator(false)],
+  args: {
+    id: '2',
+  },
+};
+
+export const RedesignedImage: StoryObj<typeof ArticleRoot> = {
+  decorators: [NewDesignedMaxWidth, NewDesignDecorator(false)],
   args: {
     id: '3',
   },

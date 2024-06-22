@@ -53,7 +53,7 @@ export default ({ config } : {config: webpack.Configuration }) => {
 
   config!.module!.rules.push({
     test: /\.(ts|tsx)$/,
-    use: 'babel-loader', // Используйте Babel для транспиляции TypeScript и JSX
+    use: 'babel-loader',
     exclude: /node_modules/,
   });
 
