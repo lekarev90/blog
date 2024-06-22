@@ -10,12 +10,14 @@ import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
 import { withTheme } from './providers/ThemeProvider';
 
 const App = memo(() => {
   const dispatch = useAppDispatch();
   const { initialized } = useSelector(getUserAuthData);
+  const ScrollToolbar = useAppToolbar();
 
   useEffect(() => {
     dispatch(initAuthData());
@@ -52,7 +54,7 @@ const App = memo(() => {
       off={(
         <div id="app" className="app_v2">
           <Suspense fallback="">
-            <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
+            <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} toolbar={ScrollToolbar} />
           </Suspense>
         </div>
       )}

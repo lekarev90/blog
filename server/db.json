@@ -2453,10 +2453,10 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isOldDesign": true
+        "isOldDesign": false
       },
       "jsonSettings": {
-        "theme": "light",
+        "theme": "dark",
         "isArticlesPageWasOpened": true
       },
       "avatar": "https://picsum.photos/200/200"
