@@ -21,7 +21,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isWide?: boolean;
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
-  fullWidth?: boolean;
 }
 
 const _Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -43,7 +42,7 @@ const _Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const mods: Record<string, string | boolean | undefined> = {
       [variant]: variant,
       [outlineColor]: outlineColor,
-      [size]: size,
+      [`size_${size}`]: size,
       disabled,
       isWide,
       withAddonLeft: Boolean(addonLeft),

@@ -17,18 +17,20 @@
   transition: 0.3s transform;
   transform: scale(0.5);
   max-width: 60%;
-  color: var(--primary-color);
+
 }
 
 .oldDesign {
   .content {
     background: var(--bg-color);
+    color: var(--primary-color);
   }
 }
 
 .newDesign {
   .content {
     background: var(--light-bg-v2);
+    color: var(--text-v2);
   }
 }
 

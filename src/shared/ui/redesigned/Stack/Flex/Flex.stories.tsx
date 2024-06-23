@@ -1,9 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 import { Flex } from './Flex';
 
 export default {
   title: 'shared/Flex',
+  decorators: [NewDesignDecorator(false)],
   component: Flex,
   args: {
     gap: '8',

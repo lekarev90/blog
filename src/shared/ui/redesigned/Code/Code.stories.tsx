@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 import { Code } from './Code';
 
 export default {
@@ -25,6 +27,7 @@ export default {
       + '      </Button>\n'
       + '    </pre>',
   },
+  decorators: [NewDesignDecorator(false)],
 } as Meta<typeof Code>;
 
 export const Default: StoryObj<typeof Code> = {};

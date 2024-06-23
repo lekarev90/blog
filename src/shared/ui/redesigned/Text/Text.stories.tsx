@@ -1,10 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 import { Text } from './Text';
 
 export default {
   title: 'shared/Text',
   component: Text,
+  decorators: [NewDesignDecorator(false)],
 } as Meta<typeof Text>;
 
 export const Common: StoryObj<typeof Text> = {
@@ -63,5 +66,21 @@ export const SizeL: StoryObj<typeof Text> = {
     title: 'Title hey ya',
     text: 'Some text for presentation',
     size: 'l',
+  },
+};
+
+export const BoldText: StoryObj<typeof Text> = {
+  args: {
+    title: 'Title hey ya',
+    text: 'Text bold',
+    boldText: true,
+  },
+};
+
+export const BoldTitle: StoryObj<typeof Text> = {
+  args: {
+    title: 'Title bold',
+    text: 'Text hey ya',
+    boldTitle: true,
   },
 };

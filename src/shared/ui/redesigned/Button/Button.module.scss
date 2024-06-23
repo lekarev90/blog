@@ -8,13 +8,15 @@
 }
 
 .container {
-  cursor: pointer;
   color: var(--text-v2);
   padding: 6px 15px;
   transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
 
   &:hover:not([disabled]) {
-   color: var(--accent-v2);
+    cursor: pointer;
+    color: var(--accent-v2);
 
     .addonLeft svg,
     .addonRight svg {
@@ -62,25 +64,6 @@
   outline: none;
   padding: 8px 16px;
   border-radius: 32px;
-}
-
-.square {
-  padding: 0;
-}
-
-.square.size_m {
-  width: var(--font-line-m);
-  height: var(--font-line-m);
-}
-
-.square.size_l {
-  width: var(--font-line-l);
-  height: var(--font-line-l);
-}
-
-.square.size_xl {
-  width: var(--font-line-xl);
-  height: var(--font-line-xl);
 }
 
 .size_m {

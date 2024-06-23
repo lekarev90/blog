@@ -1,10 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 import { Skeleton } from './Skeleton';
 
 export default {
   title: 'shared/Skeleton',
   component: Skeleton,
+  decorators: [NewDesignDecorator(false)],
   args: {
     children: 'text',
   },

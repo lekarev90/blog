@@ -30,14 +30,7 @@ export const NotificationModal = memo(() => {
     <ToggleFeatures
       feature="isOldDesign"
       on={<IconDeprecated Svg={NotificationIconDeprecated} className={styles.icon} height={20} width={20} inverted />}
-      off={(
-        <Icon
-          clickable
-          onClick={onOpenDrawer}
-          Svg={NotificationIcon}
-          className={styles.icon}
-        />
-)}
+      off={<Icon clickable onClick={onOpenDrawer} Svg={NotificationIcon} className={styles.icon} />}
     />
   );
 
